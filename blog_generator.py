@@ -1,0 +1,205 @@
+import base64
+
+with open('logo_web.png', 'rb') as f:
+    LOGO_B64 = base64.b64encode(f.read()).decode()
+
+# Shared CSS — a trimmed version of the main site's stylesheet: same brand
+# variables, nav, footer, buttons, modal, plus new typography rules for
+# article body copy and the post-listing cards. Duplicated into every blog
+# page (rather than a linked stylesheet) to match how the main site works:
+# every page here is a single, fully self-contained file — drop it anywhere
+# and it renders correctly, no separate asset pipeline to keep in sync.
+SHARED_CSS = """
+:root{
+  --navy:#293A4D; --navy-deep:#1C2938; --cream:#FCF8E6; --white:#FFFFFF; --mist:#EFF3F6;
+  --coral:#CD5245; --sage:#93BC8E; --sage-text:#51674E; --harbor:#3B6E8F; --slate:#5B6B70;
+  --line: rgba(41,58,77,0.14); --max: 880px;
+}
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{ margin:0; background:var(--white); color:var(--navy); font-family:'Archivo',sans-serif; font-size:17px; line-height:1.6; -webkit-font-smoothing:antialiased; }
+h1,h2,h3,.serif{ font-family:'Fraunces',serif; font-weight:500; letter-spacing:-0.01em; margin:0; }
+a{ color:inherit; }
+.wrap{ max-width:var(--max); margin:0 auto; padding:0 32px; }
+img{ max-width:100%; display:block; }
+
+header{ position:sticky; top:0; z-index:20; background:rgba(255,255,255,0.92); backdrop-filter:blur(6px); border-bottom:1px solid var(--line); }
+nav.wrap{ display:flex; align-items:center; justify-content:space-between; height:76px; max-width:1100px; }
+.brand{ display:flex; align-items:center; gap:10px; text-decoration:none; }
+.brand img{ width:34px; height:34px; }
+.brand span{ font-family:'Fraunces',serif; font-size:22px; font-weight:600; color:var(--navy); }
+.navlinks{ display:flex; align-items:center; gap:36px; }
+.navlinks a{ text-decoration:none; color:var(--navy); font-size:15px; }
+.navlinks a:hover{ color:var(--coral); }
+.btn{ display:inline-block; padding:11px 22px; border-radius:3px; font-size:15px; font-family:inherit; text-decoration:none; border:1px solid transparent; cursor:pointer; }
+.btn-primary{ background:var(--coral); color:#fff; }
+.btn-primary:hover{ background:#c13c2f; }
+.navcta{ display:flex; gap:14px; align-items:center; }
+.nav-login{ font-size:15px; color:var(--navy); text-decoration:none; }
+.nav-login:hover{ color:var(--coral); }
+
+main{ padding:56px 0 88px; }
+
+.eyebrow{ font-family:'Fraunces',serif; font-style:italic; font-size:14px; color:var(--slate); margin-bottom:10px; }
+.post-title{ font-size:38px; color:var(--navy); line-height:1.15; margin-bottom:16px; }
+.post-meta{ font-size:14px; color:var(--slate); margin-bottom:36px; }
+article.post-body h2{ font-size:24px; color:var(--navy); margin:40px 0 14px; }
+article.post-body h3{ font-size:19px; color:var(--navy); margin:28px 0 10px; }
+article.post-body p{ color:var(--navy); margin:0 0 18px; }
+article.post-body ul, article.post-body ol{ margin:0 0 18px; padding-left:22px; color:var(--navy); }
+article.post-body li{ margin-bottom:8px; }
+article.post-body strong{ color:var(--navy); }
+article.post-body blockquote{ margin:24px 0; padding:4px 0 4px 20px; border-left:3px solid var(--coral); color:var(--slate); font-style:italic; }
+.post-cta{ background:var(--mist); border-radius:10px; padding:28px 30px; margin-top:44px; }
+.post-cta h3{ font-size:20px; margin-bottom:8px; }
+.post-cta p{ color:var(--slate); margin-bottom:16px; }
+
+.post-list-item{ padding:28px 0; border-top:1px solid var(--line); }
+.post-list-item:first-child{ border-top:none; }
+.post-list-item .eyebrow{ margin-bottom:6px; }
+.post-list-item h2{ font-size:24px; margin-bottom:8px; }
+.post-list-item h2 a{ text-decoration:none; color:var(--navy); }
+.post-list-item h2 a:hover{ color:var(--coral); }
+.post-list-item p{ color:var(--slate); margin:0; }
+
+footer{ border-top:1px solid var(--line); padding:48px 0; }
+footer .wrap{ display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:24px; max-width:1100px; }
+footer .brand span{ font-size:18px; }
+footer .fnote{ font-size:14px; color:var(--slate); margin-top:10px; max-width:44ch; line-height:1.5; }
+footer .fnav{ display:flex; gap:28px; flex-wrap:wrap; }
+footer .fnav a{ text-decoration:none; font-size:14px; color:var(--slate); }
+footer .fnav a:hover{ color:var(--coral); }
+.copyright{ font-size:13px; color:var(--slate); margin-top:36px; max-width:1100px; margin-left:auto; margin-right:auto; padding:0 32px; }
+
+.hs-modal-overlay{ display:none; position:fixed; inset:0; z-index:1000; background:rgba(28,41,56,0.6); align-items:center; justify-content:center; padding:24px; }
+.hs-modal-overlay.open{ display:flex; }
+.hs-modal{ background:#fff; border-radius:8px; width:100%; max-width:500px; max-height:88vh; overflow-y:auto; padding:40px 30px 30px; position:relative; box-shadow:0 30px 80px rgba(0,0,0,0.28); }
+.hs-modal-close{ position:absolute; top:12px; right:14px; background:none; border:none; font-size:26px; line-height:1; cursor:pointer; color:var(--slate); padding:6px; }
+.hs-modal-close:hover{ color:var(--coral); }
+.hs-modal h3{ font-family:'Fraunces',serif; font-size:22px; color:var(--navy); margin:0 0 6px; }
+.hs-modal p.sub{ color:var(--slate); font-size:14.5px; margin:0 0 20px; }
+
+@media (max-width: 700px){
+  nav.wrap{ flex-wrap:wrap; height:auto; padding-top:16px; padding-bottom:16px; row-gap:12px; }
+  .navlinks{ order:3; width:100%; gap:20px; flex-wrap:wrap; }
+  .post-title{ font-size:28px; }
+}
+"""
+
+HEAD = """<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{title}</title>
+<meta name="description" content="{description}" />
+<link rel="canonical" href="{canonical}" />
+<link rel="icon" href="data:image/png;base64,{logo_b64}" />
+
+<meta property="og:type" content="{og_type}" />
+<meta property="og:title" content="{title}" />
+<meta property="og:description" content="{description}" />
+<meta property="og:url" content="{canonical}" />
+<meta property="og:site_name" content="Buoy" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="{title}" />
+<meta name="twitter:description" content="{description}" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
+<style>{css}</style>
+{json_ld}"""
+
+NAV = """<header>
+  <nav class="wrap">
+    <a class="brand" href="/">
+      <img src="data:image/png;base64,{logo_b64}" alt="Buoy mark" />
+      <span>Buoy</span>
+    </a>
+    <div class="navlinks">
+      <a href="/#how-it-works">How it works</a>
+      <a href="/#product">Product</a>
+      <a href="/#story">Why Buoy</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/blog/">Blog</a>
+    </div>
+    <div class="navcta">
+      <a class="nav-login" href="https://admin.buildwithbuoy.com/dashboard/login">Log in</a>
+      <button class="btn btn-primary" onclick="openAuditModal(event)">Book an audit call</button>
+    </div>
+  </nav>
+</header>"""
+
+FOOTER_AND_MODAL = """<footer>
+  <div class="wrap">
+    <div>
+      <a class="brand" href="/">
+        <img src="data:image/png;base64,{logo_b64}" alt="Buoy mark" style="width:28px;height:28px;" />
+        <span>Buoy</span>
+      </a>
+      <p class="fnote">Buoy documents how your GTM process is supposed to work, then flags the moment your CRM drifts from it — so small problems get caught today, not discovered in next quarter's board deck.</p>
+    </div>
+    <div class="fnav">
+      <a href="/#how-it-works">How it works</a>
+      <a href="/#product">Product</a>
+      <a href="/#story">Why Buoy</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/blog/">Blog</a>
+      <a href="mailto:alex@buildwithbuoy.com">alex@buildwithbuoy.com</a>
+    </div>
+  </div>
+  <p class="copyright">&copy; 2026 Buoy. Mockup site for internal review.</p>
+</footer>
+
+<div class="hs-modal-overlay" id="hs-modal-overlay">
+  <div class="hs-modal" role="dialog" aria-modal="true" aria-labelledby="hs-modal-title">
+    <button class="hs-modal-close" onclick="closeAuditModal()" aria-label="Close">&times;</button>
+    <h3 id="hs-modal-title">Book an audit call</h3>
+    <p class="sub">Tell us a bit about your business and we'll follow up to schedule a time.</p>
+    <div class="hs-form-frame" data-region="na2" data-form-id="8dd9daaf-2e19-460c-90ba-590573d0a90c" data-portal-id="247350596"></div>
+  </div>
+</div>
+<script src="https://js-na2.hsforms.net/forms/embed/247350596.js" defer></script>
+<script>
+  function openAuditModal(e){{
+    if (e) e.preventDefault();
+    document.getElementById('hs-modal-overlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }}
+  function closeAuditModal(){{
+    document.getElementById('hs-modal-overlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }}
+  document.getElementById('hs-modal-overlay').addEventListener('click', function(e){{
+    if (e.target === this) closeAuditModal();
+  }});
+  document.addEventListener('keydown', function(e){{
+    if (e.key === 'Escape') closeAuditModal();
+  }});
+</script>
+
+<!-- HubSpot tracking code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/247350596.js"></script>"""
+
+
+def build_page(title, description, canonical, body_html, og_type="website", json_ld=""):
+    head = HEAD.format(
+        title=title, description=description, canonical=canonical,
+        og_type=og_type, logo_b64=LOGO_B64, css=SHARED_CSS, json_ld=json_ld
+    )
+    nav = NAV.format(logo_b64=LOGO_B64)
+    footer = FOOTER_AND_MODAL.format(logo_b64=LOGO_B64)
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+{head}
+</head>
+<body>
+{nav}
+<main class="wrap">
+{body_html}
+</main>
+{footer}
+</body>
+</html>
+"""
+
+print("generator ready")
