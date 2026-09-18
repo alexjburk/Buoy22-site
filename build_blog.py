@@ -23,8 +23,8 @@ POSTS = [
         "slug": "hubspot-crm-data-quality-playbook",
         "title": "The HubSpot CRM Data Quality Playbook",
         "description": "A RevOps playbook for HubSpot CRM data quality: required fields, property sprawl, stage integrity, freeform criteria, and when native tools stop.",
-        "date": "2026-10-06",
-        "date_display": "October 6, 2026",
+        "date": "2026-09-18",
+        "date_display": "September 18, 2026",
         "excerpt": "If the portal looks complete but forecasts still miss and next steps say “will follow up,” you have a process problem dressed up as hygiene."
     }
 ]
