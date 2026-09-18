@@ -142,6 +142,7 @@
   .rule-card{ margin-bottom:26px; padding-left:20px; border-left:3px solid var(--line); }
   .rule-card.red{ border-color:var(--coral); }
   .rule-card.amber{ border-color:#C48A2A; }
+  .rule-card.harbor{ border-color:var(--harbor); }
   .rule-card h4{ font-family:'Fraunces', serif; font-size:18px; color:var(--navy); margin-bottom:6px; }
   .rule-card p{ color:var(--slate); font-size:15.5px; }
 
@@ -350,6 +351,10 @@
           <h4>Filled in isn't the same as true</h4>
           <p>"Next step: followed up, will call again" isn't blank — a simple rule would wave it through. Checked against this client's actual stage-exit criteria, it's flagged: no real commitment, no timeline, nothing to hold the deal to.</p>
         </div>
+        <div class="rule-card harbor">
+          <h4>Two systems can both look right and still disagree</h4>
+          <p>A rep moves a deal to Solution Presentation. This client's forecasting agent independently reads the same deal as still in Initial Discovery. Neither field is blank, neither throws an error — HubSpot has no concept of checking whether two systems' answers to the same question actually agree. Buoy does, the moment either one changes.</p>
+        </div>
       </div>
     </div>
     <div class="cross-object">
@@ -427,6 +432,7 @@
         <div class="price">Custom</div>
         <ul>
           <li>Forecasting / Sales Process Agent</li>
+          <li>Validation checks the agent's own output against your CRM, not just the reverse</li>
           <li>Built and maintained by Buoy</li>
           <li>Additional agents scoped individually</li>
           <li>Requires Validation + Sonar live</li>
