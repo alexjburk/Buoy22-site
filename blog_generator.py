@@ -50,6 +50,12 @@ article.post-body ul, article.post-body ol{ margin:0 0 18px; padding-left:22px; 
 article.post-body li{ margin-bottom:8px; }
 article.post-body strong{ color:var(--navy); }
 article.post-body blockquote{ margin:24px 0; padding:4px 0 4px 20px; border-left:3px solid var(--coral); color:var(--slate); font-style:italic; }
+article.post-body hr{ border:none; border-top:1px solid var(--line); margin:40px 0; }
+.table-wrap{ overflow-x:auto; margin:0 0 22px; }
+.table-wrap table{ width:100%; border-collapse:collapse; font-size:15px; }
+.table-wrap th, .table-wrap td{ text-align:left; padding:10px 14px; border-bottom:1px solid var(--line); vertical-align:top; }
+.table-wrap th{ background:var(--mist); color:var(--navy); font-family:'Fraunces',serif; font-weight:500; white-space:nowrap; }
+.table-wrap tr:last-child td{ border-bottom:none; }
 .post-cta{ background:var(--mist); border-radius:10px; padding:28px 30px; margin-top:44px; }
 .post-cta h3{ font-size:20px; margin-bottom:8px; }
 .post-cta p{ color:var(--slate); margin-bottom:16px; }
@@ -83,6 +89,7 @@ footer .fnav a:hover{ color:var(--coral); }
   nav.wrap{ flex-wrap:wrap; height:auto; padding-top:16px; padding-bottom:16px; row-gap:12px; }
   .navlinks{ order:3; width:100%; gap:20px; flex-wrap:wrap; }
   .post-title{ font-size:28px; }
+  .table-wrap th, .table-wrap td{ font-size:14px; padding:8px 10px; }
 }
 """
 
