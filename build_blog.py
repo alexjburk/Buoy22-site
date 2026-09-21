@@ -26,6 +26,14 @@ POSTS = [
         "date": "2026-09-18",
         "date_display": "September 18, 2026",
         "excerpt": "If the portal looks complete but forecasts still miss and next steps say “will follow up,” you have a process problem dressed up as hygiene."
+    },
+    {
+        "slug": "what-happens-in-a-crm-audit",
+        "title": "What Actually Happens in a CRM Audit? A Property-by-Property Walkthrough",
+        "description": "A CRM audit isn't a health score or a report — it's a structured, property-by-property review of what your CRM actually does, compared with what your process says it should. Here's the real method.",
+        "date": "2026-09-21",
+        "date_display": "September 21, 2026",
+        "excerpt": "A CRM audit isn't a report you read once. It's a field-by-field decision process — and the decisions it produces are more specific than \"keep\" or \"delete.\""
     }
 ]
 
@@ -704,6 +712,83 @@ post_body = f"""
 <div class="post-cta">
   <h3>Start with the scorecard, not another dashboard</h3>
   <p>Buoy documents how your process is actually supposed to run, then flags freeform and stage drift live on the record &mdash; the part native HubSpot data-quality tools don't reach.</p>
+  <button class="btn btn-primary" onclick="openAuditModal(event)">Book an audit call</button>
+</div>
+</article>
+"""
+
+html = build_page(
+    title=post["title"] + " | Buoy",
+    description=post["description"],
+    canonical=f"{SITE_URL}/blog/{post['slug']}.html",
+    body_html=post_body,
+    og_type="article",
+    json_ld=json_ld_for_post(post)
+)
+
+with open(f"blog/{post['slug']}.html", "w") as f:
+    f.write(html)
+
+print(f"wrote blog/{post['slug']}.html")
+
+# ---------------------------------------------------------------------------
+# Post 3
+# ---------------------------------------------------------------------------
+post = POSTS[2]
+
+post_body = f"""
+<p class="eyebrow">Published {post['date_display']}</p>
+<h1 class="post-title">{post['title']}</h1>
+<p class="post-meta">By the Buoy team &middot; 5 min read</p>
+
+<article class="post-body">
+<p>A CRM audit is a structured, property-by-property review of what your CRM actually does — every field, every workflow, every stage — compared against what your business is actually supposed to be doing. It isn't a generic health score or a one-time report you read and file away. It's a series of specific, explicit decisions, made one property at a time, about what stays, what goes, and what nobody's agreed on yet.</p>
+
+<h2>The actual method: check usage, trace the logic, decide</h2>
+
+<p>For every property on an object, the same three-step pattern repeats. First, check where it's actually used — most CRMs can show you whether a field appears in any workflow, form, report, or view. Second, if it is used somewhere, open that workflow and trace what it's actually doing, not what its name implies it does. Third, make an explicit call. That third step is where most audits are vague and where a real one has to be specific — "review the data" isn't a decision, and neither is "clean it up."</p>
+
+<p>In practice, every property lands in one of five buckets:</p>
+<ul>
+<li><strong>Keep</strong> — it works as intended, no changes needed.</li>
+<li><strong>Delete</strong> — no longer serves a purpose, safe to remove.</li>
+<li><strong>Turn into a rule</strong> — the field itself is fine, but what counts as a <em>correct</em> value needs to be written down as an explicit, checkable condition instead of left to interpretation.</li>
+<li><strong>Pending on a person</strong> — genuinely undecidable in this session; a specific stakeholder needs to weigh in before it can close.</li>
+<li><strong>Blocked on a process decision</strong> — the field isn't the problem. The process it's supposed to reflect hasn't been agreed on yet, so there's nothing to decide until that happens separately.</li>
+</ul>
+
+<p>That last bucket matters more than it sounds like it should. A field can be perfectly well-built and still be un-auditable, because the real issue is one level up — the business hasn't actually settled on what the process should be. Forcing a data decision onto an unresolved process question just produces a field that's "fixed" until the process changes again next quarter.</p>
+
+<h2>What audits actually find (three patterns worth knowing before you start)</h2>
+
+<h3>Shadow duplicates of native platform fields</h3>
+<p>Most CRMs calculate certain things automatically — days since last contact, weighted pipeline value, that kind of thing. It's extremely common to find a custom-built field quietly recreating one of these, usually because whoever built it didn't know the native version existed, or built it before the platform added one. Neither field is wrong exactly, but now there are two sources of truth for the same number, and nothing forces them to agree.</p>
+
+<h3>Fields that are populated and still wrong</h3>
+<p>The most common surprise in any real audit isn't a blank field — it's a filled-in one that's quietly inaccurate. A date field everyone assumes is reliable turns out to be off by a meaningful margin on a real share of records, and often nobody can say exactly why. This is the sharpest version of the problem an audit exists to catch: the field isn't broken in any way a formatting check would notice. It's just not telling the truth, and it's been that way long enough that it's shaped decisions before anyone caught it.</p>
+
+<h3>Dependencies that live outside the CRM entirely</h3>
+<p>Before removing or hiding anything, a real audit has to check more than internal usage. A property can show zero workflows, zero forms, and zero reports referencing it inside the CRM, and still break something the moment it's deleted — because a finance spreadsheet or a reporting export pulls that column every month, completely invisible from inside the CRM itself. Checking internal usage alone isn't enough; the audit has to account for what consumes the data downstream, outside the platform.</p>
+
+<h2>How long does a CRM audit actually take?</h2>
+<p>Longer than a checklist. For a CRM with a meaningful amount of custom-built complexity — hundreds of properties spread across Deals, Companies, and Contacts — a proper audit moves object by object, and each major object takes real, focused working time to get through carefully. This isn't something to compress into an afternoon; treating it that way is usually how audits end up being cleanup theater instead of an actual fix.</p>
+
+<h2>What you actually get at the end</h2>
+<p>Two things, not one. A clear, current picture of how the business actually runs today — not the onboarding-deck version — and a set of best-practice recommendations for what should change, grounded in real GTM and CRM architecture judgment rather than a generic template. The second part is what separates an audit from a cleanup: a cleanup tidies up what's already there, an audit tells you what should be different.</p>
+
+<h2>Common questions</h2>
+<h3>What's the difference between a CRM audit and a data cleanup?</h3>
+<p>A data cleanup fixes formatting, duplicates, and blanks. A CRM audit goes further: it checks whether each property, workflow, and stage still reflects the process your business actually runs today, not just whether the data looks tidy. A field can pass every cleanup check and still be drifted.</p>
+<h3>Do I need to fix my sales process before auditing my CRM?</h3>
+<p>No — for many teams, the audit is what surfaces that the process needs to be redefined in the first place. Some properties end up flagged as blocked on a process decision rather than fixed immediately, which is a normal and expected outcome, not a failed audit.</p>
+<h3>How long does a CRM audit actually take?</h3>
+<p>It depends on how much custom complexity has accumulated, but for a CRM with hundreds of properties across Deals, Companies, and Contacts, expect real, focused work — not a single afternoon. A thorough audit typically moves object by object, with each major object taking substantial dedicated time to get through properly.</p>
+<h3>What happens to a field nobody's sure about?</h3>
+<p>It gets marked pending rather than forced into a decision on the spot. A good audit process explicitly tracks which fields are waiting on a specific person's input, so nothing gets deleted or kept just to close out the list.</p>
+
+<div class="post-cta">
+  <h3>See what a real audit finds in your CRM</h3>
+  <p>Buoy runs this exact process — property by property, workflow by workflow — then builds the enforcement layer that keeps it from drifting back.</p>
   <button class="btn btn-primary" onclick="openAuditModal(event)">Book an audit call</button>
 </div>
 </article>
