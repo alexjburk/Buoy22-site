@@ -45,5 +45,5 @@ add it to the `POSTS` list, and regenerate the index for you.
 - No tagging/categories — fine for a handful of posts, worth adding once
   there are enough posts that a flat list stops being browsable.
 - No image support built into the template beyond what plain HTML/CSS
-  gives you — a post with a screenshot would need the image base64-encoded
-  and inlined the same way the logo is, or hosted somewhere and linked to.
+  gives you — a post with a screenshot can link a file in the repo (the
+  same way the favicon and logo are served), or be base64-encoded and inlined.
