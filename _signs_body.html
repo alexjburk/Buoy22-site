@@ -1,0 +1,40 @@
+<p class="eyebrow">Published September 22, 2026</p>
+<h1 class="post-title">10 Signs Your CRM Data Has Drifted (Before It Shows Up in Your Forecast)</h1>
+<p class="post-meta">By the Buoy team &middot; 6 min read</p>
+
+<article class="post-body">
+<p>Most CRM problems people notice are the obvious kind: a blank field, a duplicate contact, a broken workflow that throws an error. Drift doesn't look like that. A drifted field is filled in, formatted correctly, and passes every validation check that exists — it's just quietly stopped meaning what everyone assumes it means.</p>
+<p>Here are ten concrete signs that drift has already started, not hypothetical warning signs — things worth actually going and checking for in your own CRM this week.</p>
+<h2>1. A field's value hasn't changed in months, despite obvious activity on the record</h2>
+<p>If "Last Contacted," "Deal Stage," or a similar field has been static for months on a record that clearly has emails, calls, and notes logged against it, something's disconnected between what's actually happening and what's being recorded. The activity is real. The field just isn't tracking it anymore.</p>
+<h2>2. Two fields that are supposed to track different things always have the same value</h2>
+<p>This is usually a shadow duplicate — a custom field quietly recreating something the platform already calculates natively, or two people building the same tracking mechanism at different times without realizing the other existed. Neither field is technically wrong. But now there are two sources of truth for one number, and nothing forces them to agree when reality changes.</p>
+<h2>3. Nobody can explain what a property is for, but it's still required on the form</h2>
+<p>Required fields accumulate. Six months after the person who added a field leaves, the requirement usually outlives the reason for it. If you ask three people what a field is supposed to capture and get three different answers, that field is no longer doing its job — it's just a mandatory box someone fills in to get past the form.</p>
+<h2>4. Close dates or renewal dates get corrected <em>after the fact</em>, not entered accurately up front</h2>
+<p>If the pattern is "the close date said next Tuesday, and three weeks later someone goes back and fixes it to what actually happened," the field isn't broken — it's just never trusted in real time, only in hindsight. That's a specific, common version of drift: a date field that's accurate eventually, but useless for anything happening today, including your forecast.</p>
+<h2>5. Reps have their own personal shorthand for a field that doesn't match its actual definition</h2>
+<p>"Next step: will call again" is the clearest example. It's not blank. It would pass any formatting check. It also doesn't commit to anything, has no date attached, and tells a manager nothing about whether the deal is actually moving. When a field becomes a place reps write <em>something</em> rather than the <em>specific thing</em> it was designed to capture, that's drift with a very low bar to clear.</p>
+<h2>6. Deleting or hiding a property feels risky, and nobody's sure why</h2>
+<p>This is one of the more dangerous signs, because the danger is invisible until someone acts on it. A property can show zero workflows, zero forms, and zero internal usage — and still break a finance spreadsheet or a reporting export the moment it's removed, because that dependency lives entirely outside the CRM. If your instinct is "let's not touch that one, just in case," there's very likely a real dependency nobody has mapped.</p>
+<h2>7. New reps get trained by shadowing someone, not by reading a written process</h2>
+<p>If "how we actually sell" only exists as tribal knowledge passed rep to rep, it's already vulnerable to drift — every retelling is a chance for the process to bend slightly. It's also a real business risk on its own: the moment your most tenured rep leaves, a meaningful share of your actual process leaves with them.</p>
+<h2>8. Your forecast is "directionally right" but rarely precisely right</h2>
+<p>Consistently close-but-not-accurate forecasting is one of the most common downstream symptoms of upstream data drift. <a href="/#problem">Xactly's 2024 Sales Forecasting Benchmark Report</a> found only one in five B2B sales orgs hit their forecast within 5% of target — most teams have simply stopped expecting precision, without connecting that to the specific fields quietly feeding the forecast bad information.</p>
+<h2>9. A workflow still runs for a process you stopped following six months ago</h2>
+<p>Processes change. Workflows built to support the old process often don't get updated or retired — they just keep running, silently, doing something that made sense under a process nobody follows anymore. This is a specific, common flavor of drift: not bad data, but a real, active system enforcing a decision your team already moved past.</p>
+<h2>10. You've had the "we should really clean up the CRM" conversation more than once</h2>
+<p>If this conversation keeps happening without anything durably changing, that's not a discipline problem — it's a sign that a one-time cleanup was never going to hold. Data cleans up fine for a few weeks after a push, then drifts right back, because nothing is actually enforcing the standard once everyone's attention moves elsewhere.</p>
+<h2>What to do if several of these sound familiar</h2>
+<p>None of these are catastrophic on their own — that's exactly why they're easy to miss. The pattern that matters is how many of these are true <em>at once</em>, and for how long they've been true. A CRM with two or three of these signs is probably fine with a focused cleanup. A CRM with six or more of these signs usually needs something more structural: a real <a href="/blog/hubspot-crm-data-quality-playbook.html">audit</a> that reviews every property against what your process is actually supposed to be, followed by continuous enforcement so the standards don't quietly erode again — which is the part a one-time cleanup can never do on its own.</p>
+<h2>Common questions</h2>
+<p><strong>Is this the same thing as "bad data quality"?</strong> Related, but narrower. Bad data quality usually means typos, duplicates, and formatting errors — real problems, but visible ones. <a href="/blog/what-is-crm-data-drift.html">Drift</a> is specifically about data that looks completely fine and has quietly stopped being true. A field can have perfect data quality by every standard check and still be drifted.</p>
+<p><strong>How many of these signs mean I have a real problem?</strong> There's no hard cutoff, but as a rule of thumb: one or two signs is normal wear and tear in any CRM. Four or more, especially if they've been true for a while, usually means the underlying process has moved and the CRM hasn't caught up — worth a real look, not just a training reminder to the team.</p>
+<p><strong>Can I just fix these myself without a full audit?</strong> For one or two isolated issues, sure. The harder part is that drift is rarely isolated — the same root cause (an undefined process, an untracked dependency, a field nobody owns) tends to produce several of these signs at once, which is why a systematic review usually finds more than a spot-check does.</p>
+
+<div class="post-cta">
+  <h3>See which of these apply in your HubSpot</h3>
+  <p>Buoy starts with a property-by-property audit — Keep, Delete, or Turn into a rule — then Validation keeps those standards honest in-record so drift doesn&rsquo;t quietly reopen after cleanup week.</p>
+  <button class="btn btn-primary" onclick="openAuditModal(event)">Book an audit call</button>
+</div>
+</article>
