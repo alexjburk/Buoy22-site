@@ -20,4 +20,8 @@
     <loc>https://buildwithbuoy.com/blog/what-happens-in-a-crm-audit.html</loc>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://buildwithbuoy.com/blog/signs-your-crm-data-has-drifted.html</loc>
+    <priority>0.7</priority>
+  </url>
 </urlset>

@@ -34,6 +34,14 @@ POSTS = [
         "date": "2026-09-21",
         "date_display": "September 21, 2026",
         "excerpt": "A CRM audit isn't a report you read once. It's a field-by-field decision process — and the decisions it produces are more specific than \"keep\" or \"delete.\""
+    },
+    {
+        "slug": "signs-your-crm-data-has-drifted",
+        "title": "10 Signs Your CRM Data Has Drifted (Before It Shows Up in Your Forecast)",
+        "description": "Blank fields are easy to spot. Drift isn't — it's a field that looks completely normal and just isn't telling the truth anymore. Here are 10 concrete signs to check for.",
+        "date": "2026-09-22",
+        "date_display": "September 22, 2026",
+        "excerpt": "Blank fields are easy to catch. Drift is harder — it's a field that looks completely normal and just isn't telling the truth anymore. Here's what to actually look for."
     }
 ]
 
@@ -807,6 +815,30 @@ with open(f"blog/{post['slug']}.html", "w") as f:
     f.write(html)
 
 print(f"wrote blog/{post['slug']}.html")
+
+# ---------------------------------------------------------------------------
+# Post 4 — 10 Signs Your CRM Data Has Drifted
+# Article body is kept in _signs_body.html (not inlined here).
+# ---------------------------------------------------------------------------
+post = next(p for p in POSTS if p["slug"] == "signs-your-crm-data-has-drifted")
+signs_body_path = "_signs_body.html"
+try:
+    with open(signs_body_path) as f:
+        post_body = f.read()
+except FileNotFoundError:
+    print(f"kept existing blog/{post['slug']}.html (no {signs_body_path})")
+else:
+    html = build_page(
+        title=post["title"] + " | Buoy",
+        description=post["description"],
+        canonical=f"{SITE_URL}/blog/{post['slug']}.html",
+        body_html=post_body,
+        og_type="article",
+        json_ld=json_ld_for_post(post)
+    )
+    with open(f"blog/{post['slug']}.html", "w") as f:
+        f.write(html)
+    print(f"wrote blog/{post['slug']}.html")
 
 # ---------------------------------------------------------------------------
 # Blog index — lists every post in POSTS, newest first
