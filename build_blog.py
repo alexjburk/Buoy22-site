@@ -59,7 +59,7 @@ def json_ld_for_post(post):
   "publisher": {{
     "@type": "Organization",
     "name": "Buoy",
-    "logo": {{"@type": "ImageObject", "url": "{SITE_URL}/favicon.png"}}
+    "logo": {{"@type": "ImageObject", "url": "{SITE_URL}/logo-512.png"}}
   }},
   "mainEntityOfPage": {{"@type": "WebPage", "@id": "{SITE_URL}/blog/{post['slug']}.html"}}
 }}

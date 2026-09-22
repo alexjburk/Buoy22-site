@@ -1,8 +1,3 @@
-import base64
-
-with open('logo_web.png', 'rb') as f:
-    LOGO_B64 = base64.b64encode(f.read()).decode()
-
 # Shared CSS — a trimmed version of the main site's stylesheet: same brand
 # variables, nav, footer, buttons, modal, plus new typography rules for
 # article body copy and the post-listing cards. Duplicated into every blog
@@ -26,7 +21,7 @@ img{ max-width:100%; display:block; }
 header{ position:sticky; top:0; z-index:20; background:rgba(255,255,255,0.92); backdrop-filter:blur(6px); border-bottom:1px solid var(--line); }
 nav.wrap{ display:flex; align-items:center; justify-content:space-between; height:76px; max-width:1100px; }
 .brand{ display:flex; align-items:center; gap:10px; text-decoration:none; }
-.brand img{ width:34px; height:34px; }
+.brand img{ width:34px; height:34px; object-fit:contain; }
 .brand span{ font-family:'Fraunces',serif; font-size:22px; font-weight:600; color:var(--navy); }
 .navlinks{ display:flex; align-items:center; gap:36px; }
 .navlinks a{ text-decoration:none; color:var(--navy); font-size:15px; }
@@ -98,7 +93,11 @@ HEAD = """<meta charset="UTF-8" />
 <title>{title}</title>
 <meta name="description" content="{description}" />
 <link rel="canonical" href="{canonical}" />
-<link rel="icon" href="data:image/png;base64,{logo_b64}" />
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="64x64" href="/favicon-64.png">
+<link rel="icon" type="image/png" sizes="128x128" href="/favicon-128.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
 <meta property="og:type" content="{og_type}" />
 <meta property="og:title" content="{title}" />
@@ -118,7 +117,7 @@ HEAD = """<meta charset="UTF-8" />
 NAV = """<header>
   <nav class="wrap">
     <a class="brand" href="/">
-      <img src="data:image/png;base64,{logo_b64}" alt="Buoy mark" />
+      <img src="/logo.png" alt="Buoy mark" />
       <span>Buoy</span>
     </a>
     <div class="navlinks">
@@ -139,7 +138,7 @@ FOOTER_AND_MODAL = """<footer>
   <div class="wrap">
     <div>
       <a class="brand" href="/">
-        <img src="data:image/png;base64,{logo_b64}" alt="Buoy mark" style="width:28px;height:28px;" />
+        <img src="/logo.png" alt="Buoy mark" style="width:28px;height:28px;" />
         <span>Buoy</span>
       </a>
       <p class="fnote">Buoy documents how your GTM process is supposed to work, then flags the moment your CRM drifts from it — so small problems get caught today, not discovered in next quarter's board deck.</p>
@@ -190,10 +189,10 @@ FOOTER_AND_MODAL = """<footer>
 def build_page(title, description, canonical, body_html, og_type="website", json_ld=""):
     head = HEAD.format(
         title=title, description=description, canonical=canonical,
-        og_type=og_type, logo_b64=LOGO_B64, css=SHARED_CSS, json_ld=json_ld
+        og_type=og_type, css=SHARED_CSS, json_ld=json_ld
     )
-    nav = NAV.format(logo_b64=LOGO_B64)
-    footer = FOOTER_AND_MODAL.format(logo_b64=LOGO_B64)
+    nav = NAV
+    footer = FOOTER_AND_MODAL.format()
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
