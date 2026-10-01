@@ -24,4 +24,8 @@
     <loc>https://buildwithbuoy.com/blog/signs-your-crm-data-has-drifted.html</loc>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://buildwithbuoy.com/blog/why-forecasts-miss-when-crm-drift-becomes-a-board-problem.html</loc>
+    <priority>0.7</priority>
+  </url>
 </urlset>
