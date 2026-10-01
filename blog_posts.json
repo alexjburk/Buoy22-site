@@ -1,0 +1,49 @@
+[
+  {
+    "slug": "what-is-crm-data-drift",
+    "title": "What Is CRM Data Drift? Why Your Sales Team Can't See It",
+    "description": "CRM data drift is the gap between what your team is supposed to do and what your CRM actually shows. Here's what causes it, and why nobody notices until forecasting breaks.",
+    "date": "2026-09-15",
+    "date_display": "September 15, 2026",
+    "excerpt": "Nobody deletes their sales process on purpose. It erodes one skipped field at a time \u2014 and by the time it shows up in a missed forecast, it's already been happening for months.",
+    "source": "legacy"
+  },
+  {
+    "slug": "hubspot-crm-data-quality-playbook",
+    "title": "The HubSpot CRM Data Quality Playbook",
+    "description": "A RevOps playbook for HubSpot CRM data quality: required fields, property sprawl, stage integrity, freeform criteria, and when native tools stop.",
+    "date": "2026-09-18",
+    "date_display": "September 18, 2026",
+    "excerpt": "If the portal looks complete but forecasts still miss and next steps say \u201cwill follow up,\u201d you have a process problem dressed up as hygiene.",
+    "source": "legacy",
+    "note": "Live since 2026-09-18 per buildwithbuoy.com (date/excerpt synced to live site 2026-09-29)."
+  },
+  {
+    "slug": "what-happens-in-a-crm-audit",
+    "title": "What Actually Happens in a CRM Audit? A Property-by-Property Walkthrough",
+    "description": "A CRM audit isn't a health score or a report \u2014 it's a structured, property-by-property review of what your CRM actually does, compared with what your process says it should. Here's the real method.",
+    "date": "2026-09-21",
+    "date_display": "September 21, 2026",
+    "excerpt": "A CRM audit isn't a report you read once. It's a field-by-field decision process \u2014 and the decisions it produces are more specific than \"keep\" or \"delete.\"",
+    "source": "legacy",
+    "note": "Live since 2026-09-21 per buildwithbuoy.com; added to registry 2026-09-29 (HTML not in ship working copy)."
+  },
+  {
+    "slug": "signs-your-crm-data-has-drifted",
+    "title": "10 Signs Your CRM Data Has Drifted (Before It Shows Up in Your Forecast)",
+    "description": "Blank fields are easy to spot. Drift isn't \u2014 it's a field that looks completely normal and just isn't telling the truth anymore. Here are 10 concrete signs to check for.",
+    "date": "2026-09-22",
+    "date_display": "September 22, 2026",
+    "excerpt": "Blank fields are easy to catch. Drift is harder \u2014 it's a field that looks completely normal and just isn't telling the truth anymore. Here's what to actually look for.",
+    "source": "legacy"
+  },
+  {
+    "slug": "why-forecasts-miss-when-crm-drift-becomes-a-board-problem",
+    "title": "When CRM Drift Becomes a Board Problem (and Why Forecasts Miss)",
+    "description": "CRM drift is the gap between how GTM is supposed to run and what HubSpot records say. How CEOs, COOs, and CROs catch it today\u2014not in next quarter's board deck.",
+    "date": "2026-10-01",
+    "date_display": "October 1, 2026",
+    "excerpt": "Board surprises rarely start in the forecast. They start when HubSpot records quietly drift from how your GTM process is supposed to work. Document the process, flag the drift in-record, and the miss stops being a surprise.",
+    "source": "calendar"
+  }
+]
