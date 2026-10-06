@@ -45,5 +45,14 @@
     "date_display": "October 1, 2026",
     "excerpt": "Board surprises rarely start in the forecast. They start when HubSpot records quietly drift from how your GTM process is supposed to work. Document the process, flag the drift in-record, and the miss stops being a surprise.",
     "source": "calendar"
+  },
+  {
+    "slug": "sales-process-forecasting-integrity-in-hubspot",
+    "title": "Process Truth in HubSpot: Before You Trust the Forecast",
+    "description": "Process truth in HubSpot means deal records still match how your sales process is supposed to run. How CEOs, COOs, and CROs document it, flag drift, and only then trust the forecast.",
+    "date": "2026-10-06",
+    "date_display": "October 6, 2026",
+    "excerpt": "Write down how your sales process is supposed to run\u2014stage exit criteria, next steps, close dates, loss reasons\u2014then flag the moment HubSpot drifts from it. The forecast is only as honest as the record underneath it.",
+    "source": "calendar"
   }
 ]
