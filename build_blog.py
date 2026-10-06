@@ -532,7 +532,7 @@ post2_article_html = """
 <p>Three or four points = pass. Zero to two = fail. Track pass rate on the scorecard.</p>
 <h3>Where Buoy for HubSpot fits (softly)</h3>
 <p><strong>Buoy (buildwithbuoy.com)</strong> documents how your GTM/CRM process should run, then helps enforce it with a <strong>record-level overlay</strong> inside HubSpot. Native HubSpot can insist a field is filled; Buoy for HubSpot evaluates whether freeform fields meet your criteria and flags drift live on the record—not only when someone tries to change stage. Diagnostic and hygiene platforms remain useful for portal health scores and configuration sprawl; Buoy’s focus is process truth while the rep is still looking at the deal, ticket, or onboarding record.</p>
-<p>If your scorecard shows strong completion and weak freeform pass rates, you are past “buy another cleanup tool.” You are in process documentation + enforcement territory—typically <strong>Audit → Validation</strong> (~$20k one-time, then ~$24k/yr ongoing).</p>
+<p>If your scorecard shows strong completion and weak freeform pass rates, you are past “buy another cleanup tool.” You are in process documentation + enforcement territory—typically <strong>Audit → Validation</strong>, with Validation scoped to your process.</p>
 <hr />
 <h2>Governance: owners, cadence, and SLAs</h2>
 <p>Tools without governance recreate the same mess in six months. Keep governance lightweight enough that people follow it.</p>
@@ -705,7 +705,7 @@ post2_article_html = """
 <hr />
 <h2>Soft CTA: checklist + Book Audit</h2>
 <p>If you only do one thing after reading this playbook, baseline the scorecard on a single pipeline and score twenty next steps with a manager. That afternoon of honesty beats another quarter of dashboard theater.</p>
-<p>When you want a structured reset—property sprawl decisions, multi-object process documentation, and a clear line between what native HubSpot should enforce and what needs live, in-record criteria—<a href="https://buildwithbuoy.com/">book a Buoy Audit</a> (productized HubSpot GTM/CRM process audit, typically ~$20k). Teams that need ongoing enforcement after the reset usually move into <strong>Buoy Validation</strong> (~$24k/yr). Enterprise and PE portfolio standardization builds on the same foundation: shared definitions first, then enforcement that makes them stick.</p>
+<p>When you want a structured reset—property sprawl decisions, multi-object process documentation, and a clear line between what native HubSpot should enforce and what needs live, in-record criteria—<a href="https://buildwithbuoy.com/">book a Buoy Audit</a> (productized HubSpot GTM/CRM process audit). Teams that need ongoing enforcement after the reset usually move into <strong>Buoy Validation</strong>, scoped to your process. Enterprise and PE portfolio standardization builds on the same foundation: shared definitions first, then enforcement that makes them stick.</p>
 <p>Buoy is <strong>Buoy for HubSpot</strong> at <a href="https://buildwithbuoy.com/">buildwithbuoy.com</a>—process documentation plus live enforcement inside HubSpot. It is not an unrelated “Buoy CRM” product elsewhere on the web.</p>
 <p><strong>Download the checklist</strong> (use the printable section above) · <strong><a href="https://buildwithbuoy.com/">Book an Audit</a></strong> · Continue with <a href="/blog/enforce-sales-process-hubspot">enforce sales process in HubSpot</a></p>"""
 
