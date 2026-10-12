@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>What Actually Happens in a CRM Audit? A Property-by-Property Walkthrough | Buoy</title>
-<meta name="description" content="A CRM audit isn't a health score or a report — it's a structured, property-by-property review of what your CRM actually does, compared with what your process says it should. Here's the real method." />
+<meta name="description" content="The Audit is two equal halves: the top-down process, and a bottom-up property cleanup. This post walks the property half." />
 <link rel="canonical" href="https://buildwithbuoy.com/blog/what-happens-in-a-crm-audit.html" />
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
@@ -14,12 +14,12 @@
 
 <meta property="og:type" content="article" />
 <meta property="og:title" content="What Actually Happens in a CRM Audit? A Property-by-Property Walkthrough | Buoy" />
-<meta property="og:description" content="A CRM audit isn't a health score or a report — it's a structured, property-by-property review of what your CRM actually does, compared with what your process says it should. Here's the real method." />
+<meta property="og:description" content="The Audit is two equal halves: the top-down process, and a bottom-up property cleanup. This post walks the property half." />
 <meta property="og:url" content="https://buildwithbuoy.com/blog/what-happens-in-a-crm-audit.html" />
 <meta property="og:site_name" content="Buoy" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="What Actually Happens in a CRM Audit? A Property-by-Property Walkthrough | Buoy" />
-<meta name="twitter:description" content="A CRM audit isn't a health score or a report — it's a structured, property-by-property review of what your CRM actually does, compared with what your process says it should. Here's the real method." />
+<meta name="twitter:description" content="The Audit is two equal halves: the top-down process, and a bottom-up property cleanup. This post walks the property half." />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -65,6 +65,10 @@ article.post-body ul, article.post-body ol{ margin:0 0 18px; padding-left:22px; 
 article.post-body li{ margin-bottom:8px; }
 article.post-body strong{ color:var(--navy); }
 article.post-body blockquote{ margin:24px 0; padding:4px 0 4px 20px; border-left:3px solid var(--coral); color:var(--slate); font-style:italic; }
+article.post-body table{ width:100%; border-collapse:collapse; margin:0 0 22px; font-size:15px; }
+article.post-body th, article.post-body td{ border:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top; }
+article.post-body th{ background:var(--mist); font-weight:600; }
+article.post-body code{ font-size:0.92em; background:var(--mist); padding:1px 5px; border-radius:3px; }
 article.post-body hr{ border:none; border-top:1px solid var(--line); margin:40px 0; }
 .table-wrap{ overflow-x:auto; margin:0 0 22px; }
 .table-wrap table{ width:100%; border-collapse:collapse; font-size:15px; }
@@ -112,7 +116,7 @@ footer .fnav a:hover{ color:var(--coral); }
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "What Actually Happens in a CRM Audit? A Property-by-Property Walkthrough",
-  "description": "A CRM audit isn't a health score or a report \u2014 it's a structured, property-by-property review of what your CRM actually does, compared with what your process says it should. Here's the real method.",
+  "description": "The Audit is two equal halves: the top-down process, and a bottom-up property cleanup. This post walks the property half.",
   "datePublished": "2026-09-21",
   "dateModified": "2026-09-21",
   "author": {"@type": "Organization", "name": "Buoy"},
@@ -140,7 +144,6 @@ footer .fnav a:hover{ color:var(--coral); }
       <a href="/blog/">Blog</a>
     </div>
     <div class="navcta">
-      <a class="nav-login" href="https://admin.buildwithbuoy.com/dashboard/login">Log in</a>
       <button class="btn btn-primary" onclick="openAuditModal(event)">Book an audit call</button>
     </div>
   </nav>
@@ -152,7 +155,7 @@ footer .fnav a:hover{ color:var(--coral); }
 <p class="post-meta">By the Buoy team &middot; 5 min read</p>
 
 <article class="post-body">
-<p>A CRM audit is a structured, property-by-property review of what your CRM actually does — every field, every workflow, every stage — compared against what your business is actually supposed to be doing. It isn't a generic health score or a one-time report you read and file away. It's a series of specific, explicit decisions, made one property at a time, about what stays, what goes, and what nobody's agreed on yet.</p>
+<p>The Audit — Clean — is two equal halves: the top-down process your business should run, and a bottom-up review of what the CRM actually does. This post is the property half. It isn't a generic health score or a one-time report you read and file away. It's a series of specific decisions, one property at a time, about what stays, what goes, and what nobody's agreed on yet.</p>
 
 <h2>The actual method: check usage, trace the logic, decide</h2>
 
@@ -197,8 +200,8 @@ footer .fnav a:hover{ color:var(--coral); }
 <p>It gets marked pending rather than forced into a decision on the spot. A good audit process explicitly tracks which fields are waiting on a specific person's input, so nothing gets deleted or kept just to close out the list.</p>
 
 <div class="post-cta">
-  <h3>See what a real audit finds in your CRM</h3>
-  <p>Buoy runs this exact process — property by property, workflow by workflow — then builds the enforcement layer that keeps it from drifting back.</p>
+  <h3>Can you trust the numbers you take to the board?</h3>
+  <p>Book an audit call.</p>
   <button class="btn btn-primary" onclick="openAuditModal(event)">Book an audit call</button>
 </div>
 </article>
@@ -211,7 +214,7 @@ footer .fnav a:hover{ color:var(--coral); }
         <img src="/logo.png" alt="Buoy mark" style="width:28px;height:28px;" />
         <span>Buoy</span>
       </a>
-      <p class="fnote">Buoy documents how your GTM process is supposed to work, then flags the moment your CRM drifts from it — so small problems get caught today, not discovered in next quarter's board deck.</p>
+      <p class="fnote">Done with you, a small number of clients at a time: the Audit (Clean), Validation (Protected), and Filled in from your own business. Sonar, on the roadmap, will add Intelligence.</p>
     </div>
     <div class="fnav">
       <a href="/#how-it-works">How it works</a>
@@ -222,7 +225,7 @@ footer .fnav a:hover{ color:var(--coral); }
       <a href="mailto:alex@buildwithbuoy.com">alex@buildwithbuoy.com</a>
     </div>
   </div>
-  <p class="copyright">&copy; 2026 Buoy. Mockup site for internal review.</p>
+  <p class="copyright">&copy; 2026 Buoy.</p>
 </footer>
 
 <div class="hs-modal-overlay" id="hs-modal-overlay">

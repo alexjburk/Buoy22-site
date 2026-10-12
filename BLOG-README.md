@@ -16,10 +16,9 @@ add it to the `POSTS` list, and regenerate the index for you.
 1. Open `build_blog.py`. Copy the `post = POSTS[0]` block's structure — add
    a new entry to the `POSTS` list at the top with your new post's slug,
    title, description, date, and excerpt.
-2. Write the actual post content as a new Python string (copy the `post_body`
-   variable as a starting structure), or just hand-edit a copy of
-   `blog/_post-template.html` directly if you'd rather skip the script
-   entirely for a one-off post.
+2. Write the post body in `build_blog.py`, or as a fragment under
+   `blog_sources/` and point `POSTS` at it with `body_file`. Do not
+   hand-edit the generated HTML. The script overwrites those files.
 3. If using the script: run `python3 build_blog.py` — this regenerates the
    post file, rebuilds `blog/index.html` to include it, and updates
    `sitemap.xml` automatically.
@@ -37,7 +36,7 @@ add it to the `POSTS` list, and regenerate the index for you.
   engine has to stumble onto pages via links alone.
 - **Every page shares the same nav, footer, audit-call modal, and HubSpot
   tracking script** as the main site, so a blog reader gets the exact same
-  brand experience and can book a call without leaving the post.
+  brand experience and can book an audit call without leaving the post.
 
 ## What's NOT done here, worth knowing
 

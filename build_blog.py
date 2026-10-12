@@ -30,10 +30,10 @@ POSTS = [
     {
         "slug": "what-happens-in-a-crm-audit",
         "title": "What Actually Happens in a CRM Audit? A Property-by-Property Walkthrough",
-        "description": "A CRM audit isn't a health score or a report — it's a structured, property-by-property review of what your CRM actually does, compared with what your process says it should. Here's the real method.",
+        "description": "The Audit is two equal halves: the top-down process, and a bottom-up property cleanup. This post walks the property half.",
         "date": "2026-09-21",
         "date_display": "September 21, 2026",
-        "excerpt": "A CRM audit isn't a report you read once. It's a field-by-field decision process — and the decisions it produces are more specific than \"keep\" or \"delete.\""
+        "excerpt": "The Audit is two equal halves: the top-down process, and bottom-up property cleanup. The decisions are more specific than keep or delete."
     },
     {
         "slug": "signs-your-crm-data-has-drifted",
@@ -42,7 +42,34 @@ POSTS = [
         "date": "2026-09-22",
         "date_display": "September 22, 2026",
         "excerpt": "Blank fields are easy to catch. Drift is harder — it's a field that looks completely normal and just isn't telling the truth anymore. Here's what to actually look for."
-    }
+    },
+    {
+        "slug": "why-forecasts-miss-when-crm-drift-becomes-a-board-problem",
+        "title": "When CRM Drift Becomes a Board Problem (and Why Forecasts Miss)",
+        "description": "CRM drift is the gap between how GTM is supposed to run and what HubSpot records say. How CEOs, COOs, and CROs catch it today—not in next quarter's board deck.",
+        "date": "2026-10-01",
+        "date_display": "October 1, 2026",
+        "excerpt": "Board surprises rarely start in the forecast. They start when HubSpot records quietly drift from how your GTM process is supposed to work. Document the process, flag the drift in-record, and the miss stops being a surprise.",
+        "body_file": "blog_sources/why-forecasts-miss-when-crm-drift-becomes-a-board-problem.html",
+    },
+    {
+        "slug": "sales-process-forecasting-integrity-in-hubspot",
+        "title": "Process Truth in HubSpot: Before You Trust the Forecast",
+        "description": "Process truth in HubSpot means deal records still match how your sales process is supposed to run. How CEOs, COOs, and CROs document it, flag drift, and only then trust the forecast.",
+        "date": "2026-10-06",
+        "date_display": "October 6, 2026",
+        "excerpt": "Write down how your sales process is supposed to run—stage exit criteria, next steps, close dates, loss reasons—then flag the moment HubSpot drifts from it. The forecast is only as honest as the record underneath it.",
+        "body_file": "blog_sources/sales-process-forecasting-integrity-in-hubspot.html",
+    },
+    {
+        "slug": "live-in-the-record-vs-live-in-the-report-where-decision-foundations-hold",
+        "title": "Live in the Record vs Live in the Report: Which Numbers Can You Take to the Board?",
+        "description": "Your board deck is only as true as the HubSpot records under it. How CEOs, COOs, and CROs decide which numbers to trust, and why the truth has to live in the record, not the report.",
+        "date": "2026-10-08",
+        "date_display": "October 8, 2026",
+        "excerpt": "You want to trust the numbers you take to the board. Reports add up records. If the truth only shows up after someone fixes the report, it shows up too late. Agree on the process, flag drift in the record, then trust the rollup.",
+        "body_file": "blog_sources/live-in-the-record-vs-live-in-the-report-where-decision-foundations-hold.html",
+    },
 ]
 
 
@@ -85,7 +112,7 @@ post_body = f"""
 
 <p>Drift is asymptomatic by design. Every individual skipped field, every vague "will follow up" logged as a next step, looks harmless in isolation — it's one deal, one rep, one bad day. Nothing breaks. No error message fires. The CRM keeps working exactly as before, which is precisely the problem: a system that keeps functioning gives you no signal that what it's telling you has quietly stopped being true.</p>
 
-<p>The cost shows up downstream, disconnected from the cause. Research on data quality broadly estimates organizations lose <a href="/#problem">15–25% of annual revenue</a> to exactly this kind of erosion — not from one catastrophic failure, but from thousands of small ones compounding. By the time it's visible, it usually looks like a forecasting problem, not a data problem: Xactly's 2024 benchmark found only one in five B2B sales orgs hit their forecast within 5% of target. Nobody traces a missed forecast back to a next-step field that quietly stopped meaning anything six months earlier — but that's usually exactly where it started.</p>
+<p>The cost shows up downstream, disconnected from the cause. Thomas Redman, writing in MIT Sloan Management Review, estimates poor data quality costs most companies <a href="https://sloanreview.mit.edu/article/seizing-opportunity-in-data-quality/">15–25% of revenue</a> — not from one catastrophic failure, but from thousands of small ones compounding. By the time it's visible, it usually looks like a forecasting problem, not a data problem: <a href="https://www.xactlycorp.com/company/press-room/new-forecasting-research-uncovers-need-collaboration">Xactly's 2024 benchmark</a> found 4 in 5 sales and finance leaders missed a quarterly forecast in the past year. Nobody traces a missed forecast back to a next-step field that quietly stopped meaning anything six months earlier — but that's usually exactly where it started.</p>
 
 <h2>What drift actually looks like inside a real CRM</h2>
 
@@ -106,8 +133,8 @@ post_body = f"""
 <blockquote>Drift isn't a data problem you fix once. It's a gap you have to keep watching, because it never stops trying to reopen.</blockquote>
 
 <div class="post-cta">
-  <h3>See what drift looks like in your own CRM</h3>
-  <p>Buoy audits how your process is actually supposed to run, then flags the moment your CRM drifts from it — live, before it becomes a forecasting problem.</p>
+  <h3>Can you trust the numbers you take to the board?</h3>
+  <p>Book an audit call.</p>
   <button class="btn btn-primary" onclick="openAuditModal(event)">Book an audit call</button>
 </div>
 </article>
@@ -256,8 +283,7 @@ post2_article_html = """
 </tr>
 </tbody>
 </table></div>
-<p><strong>Takeaway:</strong> Native HubSpot is excellent at <strong>presence, format, and stage-transition control</strong>. Native HubSpot is limited at <strong>semantic freeform quality</strong> and <strong>continuous, in-record process enforcement</strong>. Audit products and hygiene platforms (including tools like PortalPilot and similar portal health scorers) help you <em>find</em> sprawl and broken configuration. They are complementary to—not the same as—live process markers on the record.</p>
-<p>When you are ready to compare blank checks with deeper enforcement, see <a href="/blog/enforce-sales-process-hubspot">enforce sales process in HubSpot</a>.</p>
+<p><strong>Takeaway:</strong> Native HubSpot is excellent at <strong>presence, format, and stage-transition control</strong>. Native HubSpot is limited at <strong>semantic freeform quality</strong> and <strong>continuous checks on the record</strong>. Hygiene platforms help you <em>find</em> sprawl and broken configuration. They are not Validation.</p>
 <hr />
 <h2>The playbook scorecard: 6–8 metrics that matter</h2>
 <p>Do not start with a 40-metric dashboard. Start with a scorecard your VP Sales will actually open. The table below is a <strong>playbook framework</strong> (illustrative thresholds you can tune)—not a published Buoy customer benchmark.</p>
@@ -330,7 +356,7 @@ post2_article_html = """
 </tr>
 </tbody>
 </table></div>
-<h3>How to run the scorecard without buying anything new</h3>
+<h3>How to run the scorecard</h3>
 <ol>
 <li>Pick one pipeline and one quarter of history.</li>
 <li>Build four lists/reports for metrics 1, 2, 4, and 7.</li>
@@ -339,10 +365,10 @@ post2_article_html = """
 <li>Review rare properties monthly (metric 3)—do not delete on day one.</li>
 <li>Bring metric 8 to the forecast meeting as a standing slide.</li>
 </ol>
-<p>If metrics 1–2 look fine but 5–6 look terrible, you have already found Buoy’s wedge: <strong>filled ≠ true</strong>. Hygiene tools will congratulate you. Process quality will not.</p>
+<p>If metrics 1–2 look fine but 5–6 look terrible, you have already found the gap: <strong>complete ≠ true</strong>. Hygiene tools will congratulate you. Process quality will not.</p>
 <hr />
-<h2>A 10-day DIY HubSpot CRM data quality audit</h2>
-<p>This outline is designed so a sharp RevOps pair can learn the truth of the portal. It also maps cleanly to when a productized <a href="https://buildwithbuoy.com/">Buoy Audit</a> (~$20k) is the better use of calendar time: multi-pipeline complexity, PE-style standardization pressure, or when freeform fail rates need quantification across objects.</p>
+<h2>A 10-day DIY pass, and when to book the Audit</h2>
+<p>This outline is a DIY sketch. The <strong>Audit</strong> is $20,000, done with you: top-down process and bottom-up property cleanup, as equal halves. <a href="/#contact" onclick="openAuditModal(event)">Book an audit call</a> when the portal is too tangled to sort in ten days.</p>
 <h3>Day 1–2: Inventory and owners</h3>
 <ul>
 <li>Export custom properties for Deals, Contacts, Companies, Tickets (and any critical custom objects).</li>
@@ -367,7 +393,7 @@ post2_article_html = """
 <li>For each open stage, pull 10 recent deals.</li>
 <li>Ask: What buyer evidence should exist before this stage? What does the CRM actually show?</li>
 <li>Note Super Admin overrides and workflow/API stage changes if you can see them in history.</li>
-<li>Capture gaps for a future <a href="/blog/hubspot-deal-stage-exit-criteria">HubSpot deal stage exit criteria guide</a>.</li>
+<li>Capture gaps in stage exit criteria.</li>
 </ul>
 <h3>Day 7: Freeform quality sample</h3>
 <ul>
@@ -464,7 +490,7 @@ post2_article_html = """
 <li><strong>Never enforce a field you plan to kill.</strong> Enforcement amplifies sprawl if the property is noise.</li>
 <li><strong>Batch communications.</strong> Tell Sales and Marketing which fields disappeared and which remain canonical.</li>
 </ol>
-<p>A deeper property-only deep dive belongs in the follow-on pillar on <a href="/blog/hubspot-property-audit">HubSpot unused properties and property audits</a>. For this playbook, the point is simpler: <strong>you cannot have HubSpot CRM data quality on top of an infinite data model.</strong></p>
+<p>For this playbook, the point is simpler: <strong>you cannot have HubSpot CRM data quality on top of an infinite data model.</strong></p>
 <hr />
 <h2>Stage integrity and exit criteria (brief)</h2>
 <p>Data quality and stage design are the same system. If anyone can skip from Discovery to Negotiation without evidence, your completion metrics will look fine while conversion math lies.</p>
@@ -492,16 +518,16 @@ post2_article_html = """
 </tbody>
 </table></div>
 <p>Native HubSpot supports much of this with conditional stage properties and pipeline rules. Those tools still primarily check <strong>presence at stage move</strong>. They do not continuously argue with a stale deal sitting in Commit with a close date that slipped three times.</p>
-<p>Treat this section as the bridge to process enforcement content: <a href="/blog/hubspot-deal-stage-exit-criteria">HubSpot deal stage exit criteria guide</a> and <a href="/blog/enforce-sales-process-hubspot">enforce sales process in HubSpot</a>. Get the definitions right before you buy more automation.</p>
+<p>Get the definitions right before you automate a process that is not written down.</p>
 <hr />
-<h2>Freeform field quality: where “filled in” still fails</h2>
+<h2>Freeform field quality: where a completed field still fails</h2>
 <p>This is the educational heart of Buoy’s product wedge—stated plainly, without theater.</p>
 <p>HubSpot can require that <strong>Next step</strong>, <strong>Closed-lost details</strong>, or <strong>Discovery notes</strong> are not blank. It cannot, natively and at scale, require that those strings meet your real process criteria.</p>
 <h3>What good freeform looks like</h3>
 <p><strong>Next step (pass examples)</strong></p>
 <ul>
-<li>“Buyer security review scheduled with Ana (CISO) for Oct 14; waiting on questionnaire return.”</li>
-<li>“Send revised commercial proposal to Sam by Friday; decision meeting booked for Oct 21.”</li>
+<li>“Buyer security review scheduled with the CISO for Oct 14; waiting on questionnaire return.”</li>
+<li>“Send revised commercial proposal to the buyer by Friday; decision meeting booked for Oct 21.”</li>
 </ul>
 <p><strong>Next step (fail examples)</strong></p>
 <ul>
@@ -512,7 +538,7 @@ post2_article_html = """
 </ul>
 <p><strong>Closed-lost detail (pass examples)</strong></p>
 <ul>
-<li>Primary reason: Lost to competitor → Competitor: Acme → Detail: “Chose Acme for existing SSO; price within 8%.”</li>
+<li>Primary reason: Lost to competitor → Detail: “Chose the incumbent for existing SSO.”</li>
 <li>Primary reason: No decision / timing → Detail: “Budget pushed to FY27; champion left; no reopen date.”</li>
 </ul>
 <p><strong>Closed-lost detail (fail examples)</strong></p>
@@ -530,9 +556,9 @@ post2_article_html = """
 <li>Would make sense to a manager who did not attend the last call.</li>
 </ol>
 <p>Three or four points = pass. Zero to two = fail. Track pass rate on the scorecard.</p>
-<h3>Where Buoy for HubSpot fits (softly)</h3>
-<p><strong>Buoy (buildwithbuoy.com)</strong> documents how your GTM/CRM process should run, then helps enforce it with a <strong>record-level overlay</strong> inside HubSpot. Native HubSpot can insist a field is filled; Buoy for HubSpot evaluates whether freeform fields meet your criteria and flags drift live on the record—not only when someone tries to change stage. Diagnostic and hygiene platforms remain useful for portal health scores and configuration sprawl; Buoy’s focus is process truth while the rep is still looking at the deal, ticket, or onboarding record.</p>
-<p>If your scorecard shows strong completion and weak freeform pass rates, you are past “buy another cleanup tool.” You are in process documentation + enforcement territory—typically <strong>Audit → Validation</strong>, with Validation scoped to your process.</p>
+<h3>Where Buoy fits</h3>
+<p><strong>Buoy</strong> is a done-with-you managed service, not another cleanup tool. The <strong>Audit</strong> ($20,000) is Clean: top-down process and bottom-up property cleanup, as equal halves. <strong>Validation</strong> is Protected: checks against decay and drift on the record. <strong>Filled in</strong> is our team filling the CRM from your own business, never generic AI-filled fields. <strong>Sonar</strong> (Intelligence) is on the roadmap. It will be the revenue leader's second brain, with proactive insight. It isn't available yet.</p>
+<p>If your scorecard shows strong completion and weak freeform pass rates, you are past another cleanup tool. <a href="/#contact" onclick="openAuditModal(event)">Book an audit call</a>.</p>
 <hr />
 <h2>Governance: owners, cadence, and SLAs</h2>
 <p>Tools without governance recreate the same mess in six months. Keep governance lightweight enough that people follow it.</p>
@@ -684,7 +710,7 @@ post2_article_html = """
 <ul>
 <li>☐ Exit criteria drafted per stage (buyer evidence, not opinion)</li>
 <li>☐ Freeform fail themes shared with managers (not only admins)</li>
-<li>☐ Decision made: DIY remediation vs. <a href="https://buildwithbuoy.com/">Book a Buoy Audit</a></li>
+<li>☐ <a href="/#contact" onclick="openAuditModal(event)">Book an audit call</a></li>
 </ul>
 <hr />
 <h2>FAQ: HubSpot CRM data quality</h2>
@@ -699,15 +725,11 @@ post2_article_html = """
 <h3>Can HubSpot require high-quality freeform fields like “Next step”?</h3>
 <p>HubSpot can require the field to be non-blank and can apply some validation patterns. It cannot natively and reliably enforce semantic criteria (buyer action + date + owner) the way a process-aware layer can. That gap is why filled portals still produce weak forecasts and weak coaching.</p>
 <h3>How often should we run a HubSpot CRM data quality audit?</h3>
-<p>Run a lightweight scorecard monthly and a deeper property/process audit at least annually—or after major org changes, CRM migrations, PE carve-outs/add-ons, or a painful forecast miss. Teams with heavy sprawl often need a structured reset (DIY 10-day audit or a productized Audit) before ongoing enforcement will stick.</p>
+<p>Run a lightweight scorecard monthly and a deeper property and process review at least annually—or after major org changes, CRM migrations, or a painful forecast miss. Teams with heavy sprawl often need a structured reset — a DIY pass, or the Audit at $20,000 — before Validation will stick.</p>
 <h3>When are native HubSpot tools not enough?</h3>
 <p>When completion rates look healthy but freeform fields fail process criteria; when gates are bypassed by workflows, API, or Super Admins; when drift happens between stage moves; or when you need the same process truth across deals, tickets, and onboarding—not just blank checks on one pipeline.</p>
 <hr />
-<h2>Soft CTA: checklist + Book Audit</h2>
-<p>If you only do one thing after reading this playbook, baseline the scorecard on a single pipeline and score twenty next steps with a manager. That afternoon of honesty beats another quarter of dashboard theater.</p>
-<p>When you want a structured reset—property sprawl decisions, multi-object process documentation, and a clear line between what native HubSpot should enforce and what needs live, in-record criteria—<a href="https://buildwithbuoy.com/">book a Buoy Audit</a> (productized HubSpot GTM/CRM process audit). Teams that need ongoing enforcement after the reset usually move into <strong>Buoy Validation</strong>, scoped to your process. Enterprise and PE portfolio standardization builds on the same foundation: shared definitions first, then enforcement that makes them stick.</p>
-<p>Buoy is <strong>Buoy for HubSpot</strong> at <a href="https://buildwithbuoy.com/">buildwithbuoy.com</a>—process documentation plus live enforcement inside HubSpot. It is not an unrelated “Buoy CRM” product elsewhere on the web.</p>
-<p><strong>Download the checklist</strong> (use the printable section above) · <strong><a href="https://buildwithbuoy.com/">Book an Audit</a></strong> · Continue with <a href="/blog/enforce-sales-process-hubspot">enforce sales process in HubSpot</a></p>"""
+<p>If you only do one thing after reading this playbook, baseline the scorecard on a single pipeline and score twenty next steps with a manager. Use the checklist above. When the portal is past a DIY pass, <a href="/#contact" onclick="openAuditModal(event)">book an audit call</a>. The Audit is $20,000. Validation (Protected) and Filled in are scoped after it. Sonar is on the roadmap.</p>"""
 
 post_body = f"""
 <p class="eyebrow">Published {post['date_display']}</p>
@@ -718,8 +740,8 @@ post_body = f"""
 {post2_article_html}
 
 <div class="post-cta">
-  <h3>Start with the scorecard, not another dashboard</h3>
-  <p>Buoy documents how your process is actually supposed to run, then flags freeform and stage drift live on the record &mdash; the part native HubSpot data-quality tools don't reach.</p>
+  <h3>Can you trust the numbers you take to the board?</h3>
+  <p>Book an audit call.</p>
   <button class="btn btn-primary" onclick="openAuditModal(event)">Book an audit call</button>
 </div>
 </article>
@@ -750,7 +772,7 @@ post_body = f"""
 <p class="post-meta">By the Buoy team &middot; 5 min read</p>
 
 <article class="post-body">
-<p>A CRM audit is a structured, property-by-property review of what your CRM actually does — every field, every workflow, every stage — compared against what your business is actually supposed to be doing. It isn't a generic health score or a one-time report you read and file away. It's a series of specific, explicit decisions, made one property at a time, about what stays, what goes, and what nobody's agreed on yet.</p>
+<p>The Audit — Clean — is two equal halves: the top-down process your business should run, and a bottom-up review of what the CRM actually does. This post is the property half. It isn't a generic health score or a one-time report you read and file away. It's a series of specific decisions, one property at a time, about what stays, what goes, and what nobody's agreed on yet.</p>
 
 <h2>The actual method: check usage, trace the logic, decide</h2>
 
@@ -795,8 +817,8 @@ post_body = f"""
 <p>It gets marked pending rather than forced into a decision on the spot. A good audit process explicitly tracks which fields are waiting on a specific person's input, so nothing gets deleted or kept just to close out the list.</p>
 
 <div class="post-cta">
-  <h3>See what a real audit finds in your CRM</h3>
-  <p>Buoy runs this exact process — property by property, workflow by workflow — then builds the enforcement layer that keeps it from drifting back.</p>
+  <h3>Can you trust the numbers you take to the board?</h3>
+  <p>Book an audit call.</p>
   <button class="btn btn-primary" onclick="openAuditModal(event)">Book an audit call</button>
 </div>
 </article>
@@ -841,6 +863,28 @@ else:
     print(f"wrote blog/{post['slug']}.html")
 
 # ---------------------------------------------------------------------------
+# Posts whose article HTML lives in blog_sources/ (edited there, never only
+# in the generated page).
+# ---------------------------------------------------------------------------
+for post in POSTS:
+    body_file = post.get("body_file")
+    if not body_file:
+        continue
+    with open(body_file) as f:
+        post_body = f.read()
+    html = build_page(
+        title=post["title"] + " | Buoy",
+        description=post["description"],
+        canonical=f"{SITE_URL}/blog/{post['slug']}.html",
+        body_html=post_body,
+        og_type="article",
+        json_ld=json_ld_for_post(post),
+    )
+    with open(f"blog/{post['slug']}.html", "w") as f:
+        f.write(html)
+    print(f"wrote blog/{post['slug']}.html")
+
+# ---------------------------------------------------------------------------
 # Blog index — lists every post in POSTS, newest first
 # ---------------------------------------------------------------------------
 list_items = ""
@@ -854,13 +898,13 @@ for p in sorted(POSTS, key=lambda x: x["date"], reverse=True):
 
 index_body = f"""
 <p class="eyebrow">Buoy</p>
-<h1 class="post-title" style="font-size:32px;">Notes on CRM data, sales process, and what actually holds up at scale</h1>
+<h1 class="post-title" style="font-size:32px;">Notes on trusting the numbers you take to the board</h1>
 {list_items}
 """
 
 index_html = build_page(
     title="Blog | Buoy",
-    description="Notes on CRM data quality, sales process adherence, and what it actually takes to scale a revenue team without the data falling apart.",
+    description="How a revenue leader gets one set of numbers: Clean, Protected, and Filled in. Sonar is on the roadmap.",
     canonical=f"{SITE_URL}/blog/",
     body_html=index_body
 )
@@ -871,8 +915,8 @@ print("wrote blog/index.html")
 
 # ---------------------------------------------------------------------------
 # Reusable template for future posts — copy this file, fill in the marked
-# spots, add an entry to POSTS in this script (or just hand-edit both files
-# if that's easier), rebuild the index.
+# spots, add an entry to POSTS in this script, then rebuild. Do not
+# hand-edit the generated HTML.
 # ---------------------------------------------------------------------------
 template_body = """
 <p class="eyebrow">Published [MONTH DAY, YEAR]</p>
@@ -891,8 +935,8 @@ template_body = """
 <blockquote>[Optional pull quote — one sharp sentence, not a summary.]</blockquote>
 
 <div class="post-cta">
-  <h3>See what drift looks like in your own CRM</h3>
-  <p>Buoy audits how your process is actually supposed to run, then flags the moment your CRM drifts from it &mdash; live, before it becomes a forecasting problem.</p>
+  <h3>Can you trust the numbers you take to the board?</h3>
+  <p>Book an audit call.</p>
   <button class="btn btn-primary" onclick="openAuditModal(event)">Book an audit call</button>
 </div>
 </article>

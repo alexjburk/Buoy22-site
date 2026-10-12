@@ -45,6 +45,10 @@ article.post-body ul, article.post-body ol{ margin:0 0 18px; padding-left:22px; 
 article.post-body li{ margin-bottom:8px; }
 article.post-body strong{ color:var(--navy); }
 article.post-body blockquote{ margin:24px 0; padding:4px 0 4px 20px; border-left:3px solid var(--coral); color:var(--slate); font-style:italic; }
+article.post-body table{ width:100%; border-collapse:collapse; margin:0 0 22px; font-size:15px; }
+article.post-body th, article.post-body td{ border:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top; }
+article.post-body th{ background:var(--mist); font-weight:600; }
+article.post-body code{ font-size:0.92em; background:var(--mist); padding:1px 5px; border-radius:3px; }
 article.post-body hr{ border:none; border-top:1px solid var(--line); margin:40px 0; }
 .table-wrap{ overflow-x:auto; margin:0 0 22px; }
 .table-wrap table{ width:100%; border-collapse:collapse; font-size:15px; }
@@ -128,7 +132,6 @@ NAV = """<header>
       <a href="/blog/">Blog</a>
     </div>
     <div class="navcta">
-      <a class="nav-login" href="https://admin.buildwithbuoy.com/dashboard/login">Log in</a>
       <button class="btn btn-primary" onclick="openAuditModal(event)">Book an audit call</button>
     </div>
   </nav>
@@ -141,7 +144,7 @@ FOOTER_AND_MODAL = """<footer>
         <img src="/logo.png" alt="Buoy mark" style="width:28px;height:28px;" />
         <span>Buoy</span>
       </a>
-      <p class="fnote">Buoy documents how your GTM process is supposed to work, then flags the moment your CRM drifts from it — so small problems get caught today, not discovered in next quarter's board deck.</p>
+      <p class="fnote">Done with you, a small number of clients at a time: the Audit (Clean), Validation (Protected), and Filled in from your own business. Sonar, on the roadmap, will add Intelligence.</p>
     </div>
     <div class="fnav">
       <a href="/#how-it-works">How it works</a>
@@ -152,7 +155,7 @@ FOOTER_AND_MODAL = """<footer>
       <a href="mailto:alex@buildwithbuoy.com">alex@buildwithbuoy.com</a>
     </div>
   </div>
-  <p class="copyright">&copy; 2026 Buoy. Mockup site for internal review.</p>
+  <p class="copyright">&copy; 2026 Buoy.</p>
 </footer>
 
 <div class="hs-modal-overlay" id="hs-modal-overlay">
