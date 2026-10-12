@@ -63,6 +63,20 @@ nav.wrap{ display:flex; align-items:center; justify-content:space-between; heigh
 .navlinks{ display:flex; align-items:center; gap:28px; }
 .navlinks a{ text-decoration:none; color:var(--ink); font-size:14px; }
 .navlinks a:hover{ color:var(--navy); }
+.nav-menu{
+  display:none; width:44px; height:44px; flex:none; padding:0;
+  border:1px solid var(--ink); background:transparent; color:var(--ink); cursor:pointer;
+  align-items:center; justify-content:center;
+}
+.nav-menu-bars, .nav-menu-bars::before, .nav-menu-bars::after{
+  display:block; width:16px; height:1.5px; background:currentColor; position:relative;
+}
+.nav-menu-bars::before, .nav-menu-bars::after{ content:""; position:absolute; left:0; }
+.nav-menu-bars::before{ top:-5px; }
+.nav-menu-bars::after{ top:5px; }
+.nav-menu[aria-expanded="true"] .nav-menu-bars{ background:transparent; }
+.nav-menu[aria-expanded="true"] .nav-menu-bars::before{ top:0; transform:rotate(45deg); }
+.nav-menu[aria-expanded="true"] .nav-menu-bars::after{ top:0; transform:rotate(-45deg); }
 .btn{
   display:inline-flex; align-items:center; justify-content:center;
   min-height:44px; padding:12px 18px; border-radius:0;
@@ -84,7 +98,7 @@ main{ padding:96px 0 96px; }
   font-family:"JetBrains Mono", ui-monospace, monospace;
   font-size:12px; letter-spacing:0.04em; color:var(--slate); margin-bottom:40px;
 }
-article.post-body{ max-width:66ch; }
+article.post-body{ max-width:620px; }
 article.post-body h2{ font-size:28px; margin:48px 0 14px; line-height:1.2; }
 article.post-body h3{ font-size:22px; margin:32px 0 10px; line-height:1.25; }
 article.post-body p{ margin:0 0 18px; }
@@ -136,11 +150,13 @@ footer .fnav a:hover{ color:var(--ink); }
 .hs-modal p.sub{ color:var(--slate); font-size:15px; margin:0 0 20px; }
 
 @media (max-width: 720px){
-  nav.wrap{ flex-wrap:wrap; height:auto; padding-top:14px; padding-bottom:14px; row-gap:4px; }
-  .navlinks{ order:3; width:100%; gap:0; flex-wrap:nowrap; overflow-x:auto; white-space:nowrap; }
-  .navlinks a{ white-space:nowrap; min-height:44px; display:inline-flex; align-items:center; flex:none; padding:0 14px; }
-  footer .fnav{ width:100%; flex-wrap:nowrap; overflow-x:auto; white-space:nowrap; gap:0; }
-  footer .fnav a{ white-space:nowrap; min-height:44px; display:inline-flex; align-items:center; flex:none; padding:0 14px; }
+  nav.wrap{ flex-wrap:wrap; height:auto; padding-top:8px; padding-bottom:8px; row-gap:0; }
+  .nav-menu{ display:inline-flex; }
+  .navlinks{ display:none; order:3; width:100%; flex-direction:column; align-items:stretch; gap:0; padding:4px 0 8px; }
+  .navlinks.is-open{ display:flex; }
+  .navlinks a{ white-space:nowrap; min-height:44px; display:flex; align-items:center; padding:0 4px; }
+  footer .fnav{ width:100%; flex-wrap:wrap; overflow:visible; }
+  footer .fnav a{ white-space:nowrap; min-height:44px; display:inline-flex; align-items:center; padding:0 10px; }
   .post-title{ font-size:36px; }
   .wrap{ padding:0 20px; }
 }
@@ -170,7 +186,7 @@ footer .fnav a:hover{ color:var(--ink); }
       <span class="sq" aria-hidden="true"></span>
       <span class="word">buoy<span class="dot" aria-hidden="true"></span></span>
     </a>
-    <div class="navlinks">
+    <div class="navlinks" id="site-nav">
       <a href="/#how-it-works">How it works</a>
       <a href="/#product">Product</a>
       <a href="/#story">Why Buoy</a>
@@ -178,6 +194,7 @@ footer .fnav a:hover{ color:var(--ink); }
       <a href="/blog/">Blog</a>
     </div>
     <div class="navcta">
+      <button class="nav-menu" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><span class="nav-menu-bars" aria-hidden="true"></span></button>
       <button class="btn btn-primary" onclick="openAuditModal(event)">Book an audit call</button>
     </div>
   </nav>
@@ -382,8 +399,34 @@ footer .fnav a:hover{ color:var(--ink); }
     if (e.target === this) closeAuditModal();
   });
   document.addEventListener('keydown', function(e){
-    if (e.key === 'Escape') closeAuditModal();
+    if (e.key !== 'Escape') return;
+    var menu = document.querySelector('.nav-menu');
+    if (menu && menu.getAttribute('aria-expanded') === 'true'){
+      setNavOpen(false);
+      menu.focus();
+      return;
+    }
+    closeAuditModal();
   });
+  function setNavOpen(open){
+    var menu = document.querySelector('.nav-menu');
+    var nav = document.getElementById('site-nav');
+    if (!menu || !nav) return;
+    menu.setAttribute('aria-expanded', open ? 'true' : 'false');
+    menu.setAttribute('aria-label', open ? 'Close menu' : 'Menu');
+    nav.classList.toggle('is-open', open);
+  }
+  var navMenu = document.querySelector('.nav-menu');
+  if (navMenu){
+    navMenu.addEventListener('click', function(){
+      var open = navMenu.getAttribute('aria-expanded') !== 'true';
+      setNavOpen(open);
+      if (open){
+        var first = document.querySelector('#site-nav a');
+        if (first) first.focus();
+      }
+    });
+  }
 </script>
 
 <!-- HubSpot tracking code -->
