@@ -898,7 +898,7 @@ for p in sorted(POSTS, key=lambda x: x["date"], reverse=True):
 
 index_body = f"""
 <p class="eyebrow">Buoy</p>
-<h1 class="post-title" style="font-size:32px;">Notes on trusting the numbers you take to the board</h1>
+<h1 class="post-title">Notes on trusting the numbers you take to the board</h1>
 {list_items}
 """
 
