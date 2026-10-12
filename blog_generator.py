@@ -157,7 +157,7 @@ FOOTER_AND_MODAL = """<footer>
       <a href="mailto:alex@buildwithbuoy.com">alex@buildwithbuoy.com</a>
     </div>
   </div>
-  <p class="copyright">&copy; 2026 Buoy. Mockup site for internal review.</p>
+  <p class="copyright">&copy; 2026 Buoy.</p>
 </footer>
 
 <div class="hs-modal-overlay" id="hs-modal-overlay">
