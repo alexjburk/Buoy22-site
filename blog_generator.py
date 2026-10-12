@@ -35,15 +35,16 @@ nav.wrap{ display:flex; align-items:center; justify-content:space-between; heigh
 .navlinks a{ text-decoration:none; color:var(--ink); font-size:14px; }
 .navlinks a:hover{ color:var(--navy); }
 .btn{
-  display:inline-block; padding:12px 18px; border-radius:0;
+  display:inline-flex; align-items:center; justify-content:center;
+  min-height:44px; padding:12px 18px; border-radius:0;
   font-family:Inter, sans-serif; font-size:14px; font-weight:500;
-  text-decoration:none; border:1px solid transparent; cursor:pointer;
+  white-space:nowrap; text-decoration:none; border:1px solid transparent; cursor:pointer;
 }
 .btn-primary{ background:var(--navy); color:var(--paper); }
 .btn-primary:hover{ background:#183049; }
 .navcta{ display:flex; gap:14px; align-items:center; }
 
-main{ padding:64px 0 96px; }
+main{ padding:96px 0 96px; }
 .eyebrow{
   font-family:"JetBrains Mono", ui-monospace, monospace;
   font-size:12px; letter-spacing:0.14em; text-transform:uppercase;
@@ -54,6 +55,7 @@ main{ padding:64px 0 96px; }
   font-family:"JetBrains Mono", ui-monospace, monospace;
   font-size:12px; letter-spacing:0.04em; color:var(--slate); margin-bottom:40px;
 }
+article.post-body{ max-width:66ch; }
 article.post-body h2{ font-size:28px; margin:48px 0 14px; line-height:1.2; }
 article.post-body h3{ font-size:22px; margin:32px 0 10px; line-height:1.25; }
 article.post-body p{ margin:0 0 18px; }
@@ -61,7 +63,7 @@ article.post-body a{ text-underline-offset:3px; }
 article.post-body ul, article.post-body ol{ margin:0 0 18px; padding-left:22px; }
 article.post-body li{ margin-bottom:8px; }
 article.post-body strong{ font-weight:600; }
-article.post-body blockquote{ margin:28px 0; padding:0 0 0 18px; border-left:1px solid var(--ink); color:var(--slate); }
+article.post-body blockquote{ margin:28px 0; padding:0 0 0 18px; border-left:2px solid var(--ink); color:var(--ink); font-family:Newsreader, serif; font-size:22px; line-height:1.35; font-weight:500; }
 article.post-body table{ width:100%; border-collapse:collapse; margin:0 0 22px; font-size:15px; }
 article.post-body th, article.post-body td{ border-bottom:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top; }
 article.post-body th{ font-family:"JetBrains Mono", ui-monospace, monospace; font-size:12px; letter-spacing:0.06em; text-transform:uppercase; font-weight:500; color:var(--slate); }
@@ -73,8 +75,9 @@ article.post-body hr{ border:none; border-top:1px solid var(--line); margin:40px
 .table-wrap th, .table-wrap td{ text-align:left; padding:10px 14px; border-bottom:1px solid var(--line); vertical-align:top; }
 .table-wrap th{ font-family:"JetBrains Mono", ui-monospace, monospace; font-size:12px; letter-spacing:0.06em; text-transform:uppercase; font-weight:500; color:var(--slate); }
 .table-wrap td{ font-variant-numeric:tabular-nums; }
-.post-cta{ background:var(--navy); color:var(--paper); padding:36px 32px; margin-top:56px; }
-.post-cta h3{ font-size:32px; line-height:1.15; color:var(--paper); margin:0 0 10px; max-width:22ch; }
+.post-cta{ background:var(--navy); color:var(--paper); padding:36px 32px; margin:56px 0 48px; }
+.post-cta h3,
+article.post-body .post-cta h3{ font-size:32px; line-height:1.15; color:var(--paper); margin:0 0 10px; max-width:22ch; font-weight:500; }
 .post-cta p{ color:var(--paper); margin:0 0 18px; }
 .post-cta .btn-primary{ background:var(--paper); color:var(--navy); }
 .post-cta .btn-primary:hover{ background:#fff; }
@@ -104,10 +107,12 @@ footer .fnav a:hover{ color:var(--ink); }
 .hs-modal p.sub{ color:var(--slate); font-size:15px; margin:0 0 20px; }
 
 @media (max-width: 720px){
-  nav.wrap{ flex-wrap:wrap; height:auto; padding-top:14px; padding-bottom:14px; row-gap:12px; }
-  .navlinks{ order:3; width:100%; gap:16px 20px; flex-wrap:wrap; }
+  nav.wrap{ flex-wrap:wrap; height:auto; padding-top:14px; padding-bottom:14px; row-gap:4px; }
+  .navlinks{ order:3; width:100%; gap:0; flex-wrap:nowrap; overflow-x:auto; white-space:nowrap; }
+  .navlinks a{ white-space:nowrap; min-height:44px; display:inline-flex; align-items:center; flex:none; padding:0 14px; }
+  footer .fnav{ width:100%; flex-wrap:nowrap; overflow-x:auto; white-space:nowrap; gap:0; }
+  footer .fnav a{ white-space:nowrap; min-height:44px; display:inline-flex; align-items:center; flex:none; padding:0 14px; }
   .post-title{ font-size:36px; }
-  .post-cta h3{ font-size:28px; }
   .wrap{ padding:0 20px; }
 }
 """
@@ -228,8 +233,10 @@ def build_page(title, description, canonical, body_html, og_type="website", json
 </head>
 <body>
 {nav}
-<main class="wrap">
+<main>
+<div class="wrap">
 {body_html}
+</div>
 </main>
 {footer}
 </body>
