@@ -103,10 +103,15 @@ HEAD = """<meta charset="UTF-8" />
 <meta property="og:title" content="{title}" />
 <meta property="og:description" content="{description}" />
 <meta property="og:url" content="{canonical}" />
+<meta property="og:image" content="https://buildwithbuoy.com/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Buoy — Trust the numbers you take to the board." />
 <meta property="og:site_name" content="Buoy" />
-<meta name="twitter:card" content="summary" />
+<meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="{title}" />
 <meta name="twitter:description" content="{description}" />
+<meta name="twitter:image" content="https://buildwithbuoy.com/assets/og-image.png" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -152,7 +157,7 @@ FOOTER_AND_MODAL = """<footer>
       <a href="mailto:alex@buildwithbuoy.com">alex@buildwithbuoy.com</a>
     </div>
   </div>
-  <p class="copyright">&copy; 2026 Buoy. Mockup site for internal review.</p>
+  <p class="copyright">&copy; 2026 Buoy.</p>
 </footer>
 
 <div class="hs-modal-overlay" id="hs-modal-overlay">
