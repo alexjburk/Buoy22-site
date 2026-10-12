@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200, initial-scale=1">
+<title>Buoy — Private Office</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=EB+Garamond:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    background: #1B3328;
+    color: #F6F1E6;
+    display: grid;
+    grid-template-columns: 84px 1fr;
+    font-family: "EB Garamond", serif;
+  }
+  .spine {
+    background: #14281F;
+    border-right: 1px solid #D4B56A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .spine span {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-weight: 500;
+    font-size: 22px;
+    font-variant-caps: all-small-caps;
+    letter-spacing: 0.5em;
+  }
+  .main {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 48px;
+    align-items: center;
+    padding: 56px 64px 56px 52px;
+  }
+  .kicker {
+    margin: 0 0 18px;
+    font-weight: 500;
+    font-size: 16px;
+    font-variant-caps: all-small-caps;
+    letter-spacing: 0.22em;
+    color: #D4B56A;
+  }
+  h1 {
+    margin: 0;
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 500;
+    font-size: 68px;
+    line-height: 0.96;
+    letter-spacing: -0.02em;
+    max-width: 12ch;
+  }
+  h1 em { font-style: italic; font-weight: 500; }
+  .note { margin: 28px 0 0; font-style: italic; font-size: 22px; color: #E4DCCB; max-width: 24ch; }
+  .plate { background: #F6F1E6; color: #1A2420; text-align: center; padding: 40px 32px 34px; outline: 1px solid #6E5532; outline-offset: -12px; }
+  .plate-k { margin: 0; font-weight: 500; font-size: 15px; font-variant-caps: all-small-caps; letter-spacing: 0.24em; color: #6E5532; }
+  .readings { display: flex; justify-content: space-between; margin: 22px 8px 0; font-family: "Cormorant Garamond", serif; font-weight: 500; font-size: 30px; color: #3C4A42; }
+  .rule { height: 1px; background: #6E5532; margin: 16px 28px 12px; }
+  .figure { margin: 0; font-family: "Cormorant Garamond", serif; font-weight: 500; font-size: 80px; line-height: 0.85; }
+  .cap { margin: 8px 0 0; font-style: italic; font-size: 20px; }
+</style>
+</head>
+<body>
+  <div class="spine"><span>Buoy</span></div>
+  <div class="main">
+    <div>
+      <p class="kicker">For revenue leaders on HubSpot</p>
+      <h1>Trust the numbers<br>you take to the <em>board.</em></h1>
+      <p class="note">Expert-led. Done with you. A small number of clients at a time.</p>
+    </div>
+    <div class="plate">
+      <p class="plate-k">Forecast</p>
+      <div class="readings"><span>4.2</span><span>3.8</span><span>5.1</span></div>
+      <div class="rule"></div>
+      <p class="figure">4.4</p>
+      <p class="cap">One figure</p>
+    </div>
+  </div>
+</body>
+</html>

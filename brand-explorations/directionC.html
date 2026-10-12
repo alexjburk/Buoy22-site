@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Buoy — Trust the numbers you take to the board</title>
+<meta name="description" content="Buoy is a hands-on GTM and HubSpot team. We work with you to clean up your CRM, fill it with what's true about your business, and keep it that way, so you can lead from numbers you trust.">
+<meta property="og:title" content="Buoy — Trust the numbers you take to the board">
+<meta property="og:description" content="Expert-led. Done with you. A small number of clients at a time.">
+<meta property="og:image" content="C_og.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  /* Direction C — Private Office
+     Palette:  #1B3328 green, #14281F spine, #F6F1E6 cream, #1A2420 ink, #3C4A42 muted, #D4B56A brass, #6E5532 brass-ink
+     Type:     Cormorant Garamond (display) + EB Garamond (text, small-caps wordmark)
+     Space:    8, 16, 24, 40, 64, 96, 128, 160
+     Icons:    thin intaglio seals
+     Hero:     a cream plate, three readings set aside for one figure */
+  :root {
+    --green: #1B3328;
+    --spine: #14281F;
+    --cream: #F6F1E6;
+    --ink: #1A2420;
+    --muted: #3C4A42;
+    --brass: #D4B56A;
+    --brass-ink: #6E5532;
+    --s1: 8px;
+    --s2: 16px;
+    --s3: 24px;
+    --s4: 40px;
+    --s5: 64px;
+    --s6: 96px;
+    --s7: 128px;
+    --s8: 160px;
+    --display: "Cormorant Garamond", Palatino, "Palatino Linotype", Georgia, serif;
+    --text: "EB Garamond", Georgia, serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scrollbar-width: none; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--green);
+    color: var(--cream);
+    font-family: var(--text);
+    font-size: 20px;
+    line-height: 1.5;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    color-scheme: dark;
+  }
+  h1, h2, h3, p, figure, ol { margin: 0; padding: 0; }
+  ol { list-style: none; }
+  button, a { font: inherit; }
+  button { cursor: pointer; }
+  a { color: inherit; }
+  :focus-visible { outline: 2px solid var(--brass); outline-offset: 3px; }
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+  .page { max-width: 1440px; margin: 0 auto; }
+  #hero, #where {
+    display: grid;
+    grid-template-columns: 84px minmax(0, 1fr);
+  }
+  .spine {
+    background: var(--spine);
+    color: var(--cream);
+    border-right: 1px solid var(--brass);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .spine span {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-family: var(--text);
+    font-weight: 500;
+    font-size: 20px;
+    font-variant-caps: all-small-caps;
+    letter-spacing: 0.48em;
+  }
+  .mobile-mark { display: none; }
+
+  .hero-inner { padding: var(--s7) 72px var(--s7) 56px; }
+  .kicker {
+    font-family: var(--text);
+    font-weight: 500;
+    font-size: 15px;
+    font-variant-caps: all-small-caps;
+    letter-spacing: 0.22em;
+    color: var(--brass);
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 360px;
+    gap: 56px;
+    align-items: center;
+    margin-top: var(--s5);
+  }
+  h1 {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: clamp(52px, 5.4vw, 78px);
+    line-height: 0.98;
+    letter-spacing: -0.015em;
+  }
+  h1 em { font-style: italic; font-weight: 500; }
+  .lede {
+    margin-top: var(--s4);
+    max-width: 38ch;
+    font-size: 21px;
+    line-height: 1.45;
+    color: #E4DCCB;
+  }
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--s2) var(--s4);
+    margin-top: var(--s4);
+  }
+  .cta {
+    appearance: none;
+    border: 0;
+    background: var(--cream);
+    color: var(--green);
+    padding: 14px 22px;
+    font-family: var(--text);
+    font-weight: 500;
+    font-size: 16px;
+    font-variant-caps: all-small-caps;
+    letter-spacing: 0.14em;
+    line-height: 1;
+    text-decoration: none;
+    display: inline-flex;
+  }
+  .cta:hover { background: #E9E2D4; }
+  .quiet {
+    font-size: 18px;
+    font-style: italic;
+    text-underline-offset: 0.25em;
+    text-decoration-thickness: 1px;
+    color: var(--cream);
+  }
+  .note {
+    margin-top: var(--s5);
+    max-width: 28ch;
+    font-style: italic;
+    font-size: 20px;
+    color: #E4DCCB;
+  }
+
+  .plate {
+    background: var(--cream);
+    color: var(--ink);
+    padding: 52px 40px 44px;
+    text-align: center;
+    outline: 1px solid var(--brass-ink);
+    outline-offset: -14px;
+  }
+  .plate-k {
+    font-weight: 500;
+    font-size: 15px;
+    font-variant-caps: all-small-caps;
+    letter-spacing: 0.26em;
+    color: var(--brass-ink);
+  }
+  .plate-readings {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 28px;
+    padding: 0 8px;
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 1;
+    color: var(--muted);
+  }
+  .plate-rule {
+    height: 1px;
+    background: var(--brass-ink);
+    margin: 22px 36px 18px;
+  }
+  .plate-figure {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: 88px;
+    line-height: 0.85;
+    letter-spacing: -0.02em;
+  }
+  .plate-c {
+    margin-top: 10px;
+    font-style: italic;
+    font-size: 20px;
+  }
+
+  #where { background: var(--cream); color: var(--ink); }
+  .where-inner { padding: var(--s6) 80px var(--s8) 64px; }
+  h2 {
+    font-family: var(--display);
+    font-weight: 500;
+    font-style: italic;
+    font-size: clamp(48px, 5vw, 72px);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+  }
+  .dek {
+    margin-top: var(--s3);
+    max-width: 42ch;
+    font-size: 22px;
+    font-style: italic;
+    color: var(--muted);
+  }
+  .stages { margin-top: var(--s6); }
+  .stage {
+    display: grid;
+    grid-template-columns: 96px minmax(180px, 0.8fr) minmax(0, 1.2fr);
+    gap: var(--s4);
+    align-items: start;
+    padding: 36px 0 40px;
+    border-top: 1px solid #8A8478;
+  }
+  .stage:last-child { border-bottom: 1px solid #8A8478; }
+  .num {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: 56px;
+    line-height: 0.8;
+    letter-spacing: -0.03em;
+    color: var(--green);
+  }
+  .tag {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 500;
+    font-size: 15px;
+    font-variant-caps: all-small-caps;
+    letter-spacing: 0.18em;
+    color: var(--brass-ink);
+  }
+  .seal { width: 28px; height: 28px; display: block; color: var(--green); flex: none; }
+  .seal circle, .seal path, .seal line { fill: none; stroke: currentColor; stroke-width: 0.9; }
+  .seal .solid { fill: currentColor; stroke: none; }
+  .stage h3 {
+    margin-top: 8px;
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  .copy {
+    font-size: 20px;
+    line-height: 1.45;
+    max-width: 42ch;
+    padding-top: 6px;
+  }
+
+  @media (max-width: 900px) {
+    #hero, #where { grid-template-columns: 1fr; }
+    .spine { display: none; }
+    .mobile-mark {
+      display: block;
+      font-family: var(--text);
+      font-weight: 500;
+      font-variant-caps: all-small-caps;
+      letter-spacing: 0.42em;
+      font-size: 18px;
+      margin-bottom: var(--s4);
+    }
+    #where .mobile-mark { color: var(--green); }
+    .hero-inner { padding: 36px 24px 64px; }
+    .where-inner { padding: 56px 24px 72px; }
+    .hero-grid { grid-template-columns: 1fr; gap: 48px; margin-top: 36px; }
+    h1 { font-size: 48px; }
+    .plate { max-width: 420px; }
+    .stage { grid-template-columns: 64px minmax(0, 1fr); gap: 16px 20px; }
+    .copy { grid-column: 1 / -1; padding-top: 0; }
+    .num { font-size: 40px; }
+    .stage h3 { font-size: 32px; }
+    h2 { font-size: 46px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div id="hero">
+    <div class="spine"><span>Buoy</span></div>
+    <div class="hero-inner">
+      <p class="mobile-mark">Buoy</p>
+      <p class="kicker">For revenue leaders on HubSpot</p>
+      <div class="hero-grid">
+        <div>
+          <h1>Trust the numbers<br>you take to the <em>board.</em></h1>
+          <p class="lede">Buoy is a hands-on GTM and HubSpot team. We work with you to clean up your CRM, fill it with what's true about your business, and keep it that way, so you can lead from numbers you trust.</p>
+          <div class="actions">
+            <button class="cta" type="button">Book an audit call</button>
+            <a class="quiet" href="#where">See how it works</a>
+          </div>
+          <p class="note">Expert-led. Done with you. A small number of clients at a time.</p>
+        </div>
+        <figure class="plate">
+          <p class="plate-k">Forecast</p>
+          <div class="plate-readings">
+            <span>4.2</span>
+            <span>3.8</span>
+            <span>5.1</span>
+          </div>
+          <div class="plate-rule" aria-hidden="true"></div>
+          <p class="plate-figure">4.4</p>
+          <p class="plate-c">One figure</p>
+          <figcaption class="sr-only">Three conflicting forecast readings, 4.2, 3.8 and 5.1, resolve to one figure, 4.4.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+
+  <section id="where" aria-labelledby="where-title">
+    <div class="spine" aria-hidden="true"><span>Buoy</span></div>
+    <div class="where-inner">
+      <p class="mobile-mark">Buoy</p>
+      <h2 id="where-title">Where this goes</h2>
+      <p class="dek">Buoy is the guide: GTM process and HubSpot architecture expertise, working from both ends.</p>
+      <ol class="stages">
+        <li class="stage">
+          <p class="num">01</p>
+          <div>
+            <p class="tag">
+              <svg class="seal" viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="10"/></svg>
+              Clean
+            </p>
+            <h3>The Audit</h3>
+          </div>
+          <p class="copy">Two halves, equal weight. Top-down, we start from the numbers you report and map the process behind them. Bottom-up, we go through what's in HubSpot and mark what to keep, delete, or turn into a rule. You keep the model whether or not you buy software.</p>
+        </li>
+        <li class="stage">
+          <p class="num">02</p>
+          <div>
+            <p class="tag">
+              <svg class="seal" viewBox="0 0 28 28" aria-hidden="true">
+                <circle cx="14" cy="14" r="10"/>
+                <path d="M4 14h20"/>
+              </svg>
+              Protected
+            </p>
+            <h3>Validation</h3>
+          </div>
+          <p class="copy">Validation checks stop decay and drift on the record.</p>
+        </li>
+        <li class="stage">
+          <p class="num">03</p>
+          <div>
+            <p class="tag">
+              <svg class="seal" viewBox="0 0 28 28" aria-hidden="true">
+                <circle cx="14" cy="14" r="10"/>
+                <circle class="solid" cx="14" cy="14" r="4.5"/>
+              </svg>
+              Service
+            </p>
+            <h3>Filled in</h3>
+          </div>
+          <p class="copy">Our team fills in your CRM from your own business: call transcripts, your other systems, and integrations. Set up for how you work, never generic AI-filled fields.</p>
+        </li>
+        <li class="stage">
+          <p class="num">04</p>
+          <div>
+            <p class="tag">
+              <svg class="seal" viewBox="0 0 28 28" aria-hidden="true">
+                <circle cx="14" cy="14" r="10"/>
+                <circle class="solid" cx="14" cy="14" r="1.4"/>
+                <path d="M14 7v3M14 18v3M7 14h3M18 14h3"/>
+              </svg>
+              On the roadmap
+            </p>
+            <h3>Intelligence</h3>
+          </div>
+          <p class="copy">Sonar will turn the CRM into your revenue leader's second brain, with proactive insight from data you already trust. It isn't available yet.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+</div>
+</body>
+</html>

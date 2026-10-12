@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200, initial-scale=1">
+<title>Buoy — Midnight Signal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    background: #081018;
+    color: #EDEAE3;
+    font-family: "Instrument Sans", sans-serif;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 400px;
+    padding: 56px 72px;
+    box-sizing: border-box;
+  }
+  .left { display: flex; flex-direction: column; height: 100%; }
+  .wordmark { display: inline-flex; align-items: center; gap: 12px; font-weight: 500; font-size: 22px; letter-spacing: 0.06em; }
+  .pip { width: 22px; height: 2px; background: #E6C15A; }
+  h1 {
+    margin: auto 0 28px;
+    font-family: "Instrument Serif", serif;
+    font-weight: 400;
+    font-size: 58px;
+    line-height: 0.96;
+    letter-spacing: -0.03em;
+    max-width: 12em;
+  }
+  p { margin: 0; font-size: 20px; color: #C9D0DA; letter-spacing: 0.01em; }
+  .right { display: flex; flex-direction: column; justify-content: center; position: relative; }
+  .k { font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: #A9B4C4; font-weight: 500; }
+  .conflict { position: relative; height: 150px; margin-top: 18px; }
+  .conflict span {
+    position: absolute;
+    font-family: "Instrument Serif", serif;
+    font-size: 36px;
+    color: #A9B4C4;
+    line-height: 1;
+  }
+  .conflict span:nth-child(1) { left: 0; top: 0; }
+  .conflict span:nth-child(2) { left: 38%; top: 52px; }
+  .conflict span:nth-child(3) { left: 10%; top: 108px; }
+  .trace { position: absolute; right: 6px; top: 4px; bottom: -28px; width: 1px; background: #E6C15A; }
+  .lock { height: 1px; background: #E6C15A; margin: 22px 6px 0 0; position: relative; }
+  .lock::after { content: ""; position: absolute; right: -3px; top: -3px; width: 7px; height: 7px; background: #E6C15A; }
+  .figure {
+    margin-top: 10px;
+    font-family: "Instrument Serif", serif;
+    font-style: italic;
+    font-size: 96px;
+    line-height: 0.86;
+    color: #E6C15A;
+    letter-spacing: -0.03em;
+  }
+  .cap { margin-top: 8px; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: #EDEAE3; font-weight: 500; }
+</style>
+</head>
+<body>
+  <div class="left">
+    <div class="wordmark"><span class="pip"></span>Buoy</div>
+    <h1>Trust the numbers<br>you take to the board.</h1>
+    <p>Expert-led. Done with you. A small number of clients at a time.</p>
+  </div>
+  <div class="right">
+    <p class="k">Forecast</p>
+    <div class="conflict">
+      <span>4.2</span><span>3.8</span><span>5.1</span>
+      <i class="trace"></i>
+    </div>
+    <div class="lock"></div>
+    <p class="figure">4.4</p>
+    <p class="cap">One figure</p>
+  </div>
+</body>
+</html>

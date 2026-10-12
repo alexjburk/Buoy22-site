@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Buoy — Trust the numbers you take to the board</title>
+<meta name="description" content="Buoy is a hands-on GTM and HubSpot team. We work with you to clean up your CRM, fill it with what's true about your business, and keep it that way, so you can lead from numbers you trust.">
+<meta property="og:title" content="Buoy — Trust the numbers you take to the board">
+<meta property="og:description" content="Expert-led. Done with you. A small number of clients at a time.">
+<meta property="og:image" content="A_og.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  /* Direction A — Midnight Signal
+     Palette:  #081018 ground, #EDEAE3 ink, #C9D0DA body, #A9B4C4 muted, #546478 line, #E6C15A signal
+     Type:     Instrument Serif (display) + Instrument Sans (text)
+     Space:    4, 8, 12, 16, 24, 32, 48, 64, 96, 128
+     Icons:    sharp 1.25px square-cap instrument marks
+     Hero:     three forecast readings locking to one figure */
+  :root {
+    --bg: #081018;
+    --ink: #EDEAE3;
+    --body: #C9D0DA;
+    --muted: #A9B4C4;
+    --line: #546478;
+    --signal: #E6C15A;
+    --signal-ink: #081018;
+    --s1: 4px;
+    --s2: 8px;
+    --s3: 12px;
+    --s4: 16px;
+    --s5: 24px;
+    --s6: 32px;
+    --s7: 48px;
+    --s8: 64px;
+    --s9: 96px;
+    --s10: 128px;
+    --serif: "Instrument Serif", "Iowan Old Style", Palatino, serif;
+    --sans: "Instrument Sans", "Avenir Next", "Segoe UI", sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scrollbar-width: none; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.55;
+    font-weight: 400;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    color-scheme: dark;
+  }
+  h1, h2, h3, p, figure, ol { margin: 0; padding: 0; }
+  ol { list-style: none; }
+  button, a { font: inherit; }
+  button { cursor: pointer; }
+  a { color: inherit; }
+  :focus-visible { outline: 2px solid var(--signal); outline-offset: 3px; }
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+  .page { max-width: 1440px; margin: 0 auto; }
+
+  /* header + hero */
+  #hero { padding: var(--s6) 72px var(--s10); }
+  .bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--s5);
+    padding-bottom: var(--s5);
+    border-bottom: 1px solid var(--line);
+  }
+  .wordmark {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 0.045em;
+  }
+  .pip { width: 18px; height: 2px; background: var(--signal); display: block; }
+  .kicker {
+    margin: 0;
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 420px;
+    gap: var(--s8);
+    align-items: center;
+    padding-top: var(--s9);
+  }
+  h1 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(52px, 5vw, 76px);
+    line-height: 0.96;
+    letter-spacing: -0.025em;
+    text-wrap: balance;
+  }
+  .lede {
+    margin-top: var(--s6);
+    max-width: 42ch;
+    color: var(--body);
+    font-size: 18px;
+    line-height: 1.55;
+  }
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--s4) var(--s6);
+    margin-top: var(--s7);
+  }
+  .cta {
+    appearance: none;
+    border: 0;
+    background: var(--signal);
+    color: var(--signal-ink);
+    padding: 15px 22px;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    line-height: 1;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+  }
+  .cta:hover { background: #f0d078; }
+  .quiet {
+    text-underline-offset: 0.28em;
+    text-decoration-thickness: 1px;
+    color: var(--ink);
+  }
+  .note {
+    margin-top: var(--s6);
+    font-size: 15px;
+    letter-spacing: 0.01em;
+    color: var(--ink);
+  }
+
+  /* hero visual — readings lock to one figure */
+  .readout { width: 100%; }
+  .readout-k {
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+  }
+  .conflict {
+    position: relative;
+    height: 168px;
+    margin-top: var(--s5);
+  }
+  .conflict span {
+    position: absolute;
+    font-family: var(--serif);
+    font-size: 40px;
+    line-height: 1;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+  .conflict span:nth-child(1) { left: 0; top: 0; }
+  .conflict span:nth-child(2) { left: 42%; top: 58px; }
+  .conflict span:nth-child(3) { left: 12%; top: 118px; }
+  .trace {
+    position: absolute;
+    top: 6px;
+    bottom: -36px;
+    right: 8px;
+    width: 1px;
+    background: var(--signal);
+  }
+  .lock {
+    position: relative;
+    height: 1px;
+    margin: 28px 8px 0 0;
+    background: var(--signal);
+  }
+  .lock::after {
+    content: "";
+    position: absolute;
+    right: -3px;
+    top: -3px;
+    width: 7px;
+    height: 7px;
+    background: var(--signal);
+  }
+  .figure {
+    margin-top: var(--s4);
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 108px;
+    line-height: 0.86;
+    letter-spacing: -0.03em;
+    color: var(--signal);
+  }
+  .figure-c {
+    margin-top: var(--s3);
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  /* where this goes */
+  #where {
+    padding: var(--s9) 72px var(--s10);
+    border-top: 1px solid var(--line);
+  }
+  .where-head { max-width: 36ch; margin-bottom: var(--s8); }
+  h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(40px, 4vw, 56px);
+    line-height: 1;
+    letter-spacing: -0.025em;
+  }
+  .dek {
+    margin-top: var(--s4);
+    color: var(--body);
+    font-size: 18px;
+    max-width: 46ch;
+  }
+  .stage {
+    display: grid;
+    grid-template-columns: 120px minmax(0, 1fr);
+    gap: var(--s7);
+    padding: 36px 0;
+    border-top: 1px solid var(--line);
+    position: relative;
+  }
+  .stage:last-child { border-bottom: 1px solid var(--line); }
+  .stage-index { padding-top: var(--s1); }
+  .num {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    color: var(--signal);
+    font-variant-numeric: tabular-nums;
+  }
+  .icon {
+    width: 26px;
+    height: 26px;
+    margin-top: var(--s4);
+    color: var(--signal);
+    display: block;
+  }
+  .icon path, .icon rect, .icon circle {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.25;
+    stroke-linecap: square;
+    stroke-linejoin: miter;
+  }
+  .icon .solid { fill: currentColor; stroke: none; }
+  .tag {
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+  }
+  .stage h3 {
+    margin-top: var(--s2);
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+  .stage p.copy {
+    margin-top: var(--s3);
+    max-width: 62ch;
+    color: var(--body);
+    font-size: 16.5px;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 900px) {
+    #hero, #where { padding-left: var(--s5); padding-right: var(--s5); }
+    #hero { padding-top: var(--s5); padding-bottom: var(--s8); }
+    .bar { align-items: flex-start; flex-direction: column; gap: var(--s3); }
+    .hero-grid { grid-template-columns: 1fr; gap: var(--s7); padding-top: var(--s7); }
+    h1 { font-size: 44px; }
+    .figure { font-size: 88px; }
+    .conflict { height: 150px; }
+    .stage { grid-template-columns: 72px minmax(0, 1fr); gap: var(--s5); }
+    .stage h3 { font-size: 30px; }
+    #where { padding-top: var(--s8); padding-bottom: var(--s9); }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div id="hero">
+    <header class="bar">
+      <a class="wordmark" href="#top">
+        <span class="pip" aria-hidden="true"></span>
+        Buoy
+      </a>
+      <p class="kicker">For revenue leaders on HubSpot</p>
+    </header>
+    <div class="hero-grid">
+      <div>
+        <h1>Trust the numbers<br>you take to the board.</h1>
+        <p class="lede">Buoy is a hands-on GTM and HubSpot team. We work with you to clean up your CRM, fill it with what's true about your business, and keep it that way, so you can lead from numbers you trust.</p>
+        <div class="actions">
+          <button class="cta" type="button">Book an audit call</button>
+          <a class="quiet" href="#where">See how it works</a>
+        </div>
+        <p class="note">Expert-led. Done with you. A small number of clients at a time.</p>
+      </div>
+      <figure class="readout">
+        <p class="readout-k">Forecast</p>
+        <div class="conflict">
+          <span>4.2</span>
+          <span>3.8</span>
+          <span>5.1</span>
+          <i class="trace" aria-hidden="true"></i>
+        </div>
+        <div class="lock" aria-hidden="true"></div>
+        <p class="figure">4.4</p>
+        <p class="figure-c">One figure</p>
+        <figcaption class="sr-only">Three conflicting forecast readings, 4.2, 3.8 and 5.1, resolve to one figure, 4.4.</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <section id="where" aria-labelledby="where-title">
+    <header class="where-head">
+      <h2 id="where-title">Where this goes</h2>
+      <p class="dek">Buoy is the guide: GTM process and HubSpot architecture expertise, working from both ends.</p>
+    </header>
+    <ol>
+      <li class="stage">
+        <div class="stage-index">
+          <span class="num">01</span>
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M9 3H3v6M15 3h6v6M21 15v6h-6M3 15v6h6"/>
+          </svg>
+        </div>
+        <div>
+          <p class="tag">Clean</p>
+          <h3>The Audit</h3>
+          <p class="copy">Two halves, equal weight. Top-down, we start from the numbers you report and map the process behind them. Bottom-up, we go through what's in HubSpot and mark what to keep, delete, or turn into a rule. You keep the model whether or not you buy software.</p>
+        </div>
+      </li>
+      <li class="stage">
+        <div class="stage-index">
+          <span class="num">02</span>
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="4" y="4" width="16" height="16"/>
+            <path d="M4 12h16"/>
+          </svg>
+        </div>
+        <div>
+          <p class="tag">Protected</p>
+          <h3>Validation</h3>
+          <p class="copy">Validation checks stop decay and drift on the record.</p>
+        </div>
+      </li>
+      <li class="stage">
+        <div class="stage-index">
+          <span class="num">03</span>
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="4" y="4" width="16" height="16"/>
+            <rect class="solid" x="8" y="8" width="8" height="8"/>
+          </svg>
+        </div>
+        <div>
+          <p class="tag">Service</p>
+          <h3>Filled in</h3>
+          <p class="copy">Our team fills in your CRM from your own business: call transcripts, your other systems, and integrations. Set up for how you work, never generic AI-filled fields.</p>
+        </div>
+      </li>
+      <li class="stage">
+        <div class="stage-index">
+          <span class="num">04</span>
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <circle class="solid" cx="12" cy="12" r="1.6"/>
+            <path d="M12 3v4M12 17v4M3 12h4M17 12h4"/>
+          </svg>
+        </div>
+        <div>
+          <p class="tag">On the roadmap</p>
+          <h3>Intelligence</h3>
+          <p class="copy">Sonar will turn the CRM into your revenue leader's second brain, with proactive insight from data you already trust. It isn't available yet.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+</div>
+</body>
+</html>

@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Buoy — Trust the numbers you take to the board</title>
+<meta name="description" content="Buoy is a hands-on GTM and HubSpot team. We work with you to clean up your CRM, fill it with what's true about your business, and keep it that way, so you can lead from numbers you trust.">
+<meta property="og:title" content="Buoy — Trust the numbers you take to the board">
+<meta property="og:description" content="Expert-led. Done with you. A small number of clients at a time.">
+<meta property="og:image" content="B_og.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,500;0,600;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+<style>
+  /* Direction B — Board Paper
+     Palette:  #E3DCD0 desk, #F4F0E6 paper, #161513 ink, #3E3934 soft, #5C564E muted, #8F877C rule, #8C3B32 accent
+     Type:     Newsreader (display) + Libre Franklin (text)
+     Space:    6, 12, 18, 24, 36, 48, 72, 96, 144
+     Icons:    small letterpress index marks
+     Hero:     a board-report figure, three readings to one */
+  :root {
+    --desk: #E3DCD0;
+    --paper: #F4F0E6;
+    --ink: #161513;
+    --soft: #3E3934;
+    --muted: #5C564E;
+    --rule: #8F877C;
+    --accent: #8C3B32;
+    --s1: 6px;
+    --s2: 12px;
+    --s3: 18px;
+    --s4: 24px;
+    --s5: 36px;
+    --s6: 48px;
+    --s7: 72px;
+    --s8: 96px;
+    --s9: 144px;
+    --serif: "Newsreader", "Iowan Old Style", Georgia, serif;
+    --sans: "Libre Franklin", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scrollbar-width: none; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--desk);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.5;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    color-scheme: light;
+  }
+  h1, h2, h3, p, figure, ol, figcaption { margin: 0; padding: 0; }
+  ol { list-style: none; }
+  button, a { font: inherit; }
+  button { cursor: pointer; }
+  a { color: inherit; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+  .page { max-width: 1440px; margin: 0 auto; }
+  #hero, #where { background: var(--desk); padding: 18px; }
+  .sheet {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    padding: 48px 60px 44px;
+  }
+
+  .mast {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: var(--s4);
+  }
+  .wordmark {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 22px;
+    letter-spacing: 0.34em;
+    text-transform: uppercase;
+    text-decoration: none;
+    line-height: 1;
+  }
+  .kicker {
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+  }
+  .double {
+    margin-top: 14px;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    height: 5px;
+  }
+  h1 {
+    margin-top: var(--s6);
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(56px, 6vw, 88px);
+    line-height: 0.92;
+    letter-spacing: -0.02em;
+    font-optical-sizing: auto;
+    max-width: 14ch;
+  }
+  .split {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 460px);
+    gap: var(--s7);
+    margin-top: var(--s6);
+    align-items: end;
+  }
+  .lede {
+    max-width: 38ch;
+    font-size: 18px;
+    line-height: 1.55;
+    color: var(--soft);
+  }
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--s2) var(--s5);
+    margin-top: var(--s5);
+  }
+  .cta {
+    appearance: none;
+    border: 0;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 14px 18px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    line-height: 1;
+    text-decoration: none;
+    display: inline-flex;
+  }
+  .cta:hover { background: #2a2623; }
+  .quiet {
+    font-size: 15px;
+    text-underline-offset: 0.28em;
+    text-decoration-thickness: 1px;
+  }
+  .note {
+    margin-top: var(--s6);
+    padding-top: var(--s4);
+    border-top: 1px solid var(--rule);
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+
+  /* board-report figure */
+  .fig { color: var(--ink); }
+  .fig-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: var(--s3);
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .fig-no { color: var(--accent); letter-spacing: 0.16em; }
+  .hair { height: 1px; background: var(--ink); margin: 12px 0 18px; border: 0; }
+  .readings {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--s2);
+  }
+  .readings strong {
+    display: block;
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 42px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    font-variant-numeric: lining-nums tabular-nums;
+  }
+  .held span {
+    display: block;
+    margin-top: 8px;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+  }
+  .held { margin-top: 8px; }
+  .held strong {
+    display: block;
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 72px;
+    line-height: 0.9;
+    letter-spacing: -0.03em;
+    color: var(--accent);
+  }
+  figcaption {
+    margin-top: var(--s3);
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 16px;
+    color: var(--soft);
+  }
+
+  /* section page */
+  .run {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--ink);
+    margin-bottom: var(--s6);
+  }
+  .run .wordmark { font-size: 16px; letter-spacing: 0.32em; }
+  .run span {
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+  }
+  h2 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(44px, 5vw, 64px);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+  }
+  .dek {
+    margin-top: var(--s3);
+    max-width: 48ch;
+    font-size: 17px;
+    color: var(--soft);
+  }
+  .stages { margin-top: var(--s6); }
+  .stage {
+    display: grid;
+    grid-template-columns: 92px minmax(0, 1fr);
+    gap: var(--s5);
+    padding: 26px 0 28px;
+    border-top: 1px solid var(--rule);
+  }
+  .stage:last-child { border-bottom: 1px solid var(--rule); }
+  .stage-index {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding-top: 4px;
+  }
+  .num {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 1;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+  }
+  .mark { width: 14px; height: 14px; margin-top: 4px; color: var(--ink); display: block; flex: none; }
+  .mark rect, .mark circle, .mark path { fill: none; stroke: currentColor; stroke-width: 1.25; }
+  .mark .solid { fill: currentColor; stroke: none; }
+  .tag {
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+  }
+  .stage h3 {
+    margin-top: 4px;
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+  .copy {
+    margin-top: 10px;
+    max-width: 62ch;
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--soft);
+  }
+
+  @media (max-width: 900px) {
+    #hero, #where { padding: 12px; }
+    .sheet { padding: 28px 22px 32px; }
+    .mast { flex-direction: column; align-items: flex-start; gap: 8px; }
+    h1 { font-size: 46px; max-width: none; }
+    .split { grid-template-columns: 1fr; gap: 36px; }
+    .readings strong { font-size: 32px; }
+    .held strong { font-size: 60px; }
+    .stage { grid-template-columns: 72px minmax(0, 1fr); gap: 16px; }
+    .stage h3 { font-size: 28px; }
+    .note { font-size: 18px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div id="hero">
+    <article class="sheet">
+      <header class="mast">
+        <a class="wordmark" href="#top">Buoy</a>
+        <p class="kicker">For revenue leaders on HubSpot</p>
+      </header>
+      <div class="double" aria-hidden="true"></div>
+      <h1>Trust the numbers<br>you take to the board.</h1>
+      <div class="split">
+        <div>
+          <p class="lede">Buoy is a hands-on GTM and HubSpot team. We work with you to clean up your CRM, fill it with what's true about your business, and keep it that way, so you can lead from numbers you trust.</p>
+          <div class="actions">
+            <button class="cta" type="button">Book an audit call</button>
+            <a class="quiet" href="#where">See how it works</a>
+          </div>
+        </div>
+        <figure class="fig">
+          <div class="fig-head">
+            <span class="fig-no">Fig. I</span>
+            <span>Forecast</span>
+          </div>
+          <div class="hair"></div>
+          <div class="readings">
+            <strong>4.2</strong>
+            <strong>3.8</strong>
+            <strong>5.1</strong>
+          </div>
+          <div class="hair" style="margin-top:22px"></div>
+          <div class="held">
+            <strong>4.4</strong>
+            <span>The figure</span>
+          </div>
+          <figcaption>Three readings, carried to the board as one figure.</figcaption>
+        </figure>
+      </div>
+      <p class="note">Expert-led. Done with you. A small number of clients at a time.</p>
+    </article>
+  </div>
+
+  <section id="where" aria-labelledby="where-title">
+    <div class="sheet">
+      <div class="run">
+        <a class="wordmark" href="#top">Buoy</a>
+      </div>
+      <h2 id="where-title">Where this goes</h2>
+      <p class="dek">Buoy is the guide: GTM process and HubSpot architecture expertise, working from both ends.</p>
+      <ol class="stages">
+        <li class="stage">
+          <div class="stage-index">
+            <span class="num">01</span>
+            <svg class="mark" viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="1.5" width="13" height="13"/></svg>
+          </div>
+          <div>
+            <p class="tag">Clean</p>
+            <h3>The Audit</h3>
+            <p class="copy">Two halves, equal weight. Top-down, we start from the numbers you report and map the process behind them. Bottom-up, we go through what's in HubSpot and mark what to keep, delete, or turn into a rule. You keep the model whether or not you buy software.</p>
+          </div>
+        </li>
+        <li class="stage">
+          <div class="stage-index">
+            <span class="num">02</span>
+            <svg class="mark" viewBox="0 0 16 16" aria-hidden="true">
+              <rect x="1.5" y="1.5" width="13" height="13"/>
+              <path d="M1.5 8h13"/>
+            </svg>
+          </div>
+          <div>
+            <p class="tag">Protected</p>
+            <h3>Validation</h3>
+            <p class="copy">Validation checks stop decay and drift on the record.</p>
+          </div>
+        </li>
+        <li class="stage">
+          <div class="stage-index">
+            <span class="num">03</span>
+            <svg class="mark" viewBox="0 0 16 16" aria-hidden="true"><rect class="solid" x="1.5" y="1.5" width="13" height="13"/></svg>
+          </div>
+          <div>
+            <p class="tag">Service</p>
+            <h3>Filled in</h3>
+            <p class="copy">Our team fills in your CRM from your own business: call transcripts, your other systems, and integrations. Set up for how you work, never generic AI-filled fields.</p>
+          </div>
+        </li>
+        <li class="stage">
+          <div class="stage-index">
+            <span class="num">04</span>
+            <svg class="mark" viewBox="0 0 16 16" aria-hidden="true">
+              <circle cx="8" cy="8" r="6"/>
+              <circle class="solid" cx="8" cy="8" r="1.5"/>
+            </svg>
+          </div>
+          <div>
+            <p class="tag">On the roadmap</p>
+            <h3>Intelligence</h3>
+            <p class="copy">Sonar will turn the CRM into your revenue leader's second brain, with proactive insight from data you already trust. It isn't available yet.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+</div>
+</body>
+</html>

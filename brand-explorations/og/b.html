@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200, initial-scale=1">
+<title>Buoy — Board Paper</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@500&family=Newsreader:ital,opsz,wght@0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
+  body { background: #E3DCD0; }
+  .sheet {
+    box-sizing: border-box;
+    margin: 22px;
+    height: 586px;
+    background: #F4F0E6;
+    border: 1px solid #8F877C;
+    padding: 36px 48px 32px;
+    color: #161513;
+    font-family: "Libre Franklin", sans-serif;
+    display: flex;
+    flex-direction: column;
+  }
+  .mast { display: flex; justify-content: space-between; align-items: baseline; }
+  .wordmark {
+    font-family: "Newsreader", serif;
+    font-weight: 500;
+    font-size: 22px;
+    letter-spacing: 0.34em;
+    text-transform: uppercase;
+  }
+  .kicker { font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #5C564E; font-weight: 500; }
+  .double { margin-top: 12px; border-top: 1px solid #161513; border-bottom: 1px solid #161513; height: 5px; }
+  .split { display: grid; grid-template-columns: 1fr 420px; gap: 48px; align-items: end; flex: 1; }
+  h1 {
+    margin: 0;
+    font-family: "Newsreader", serif;
+    font-weight: 500;
+    font-size: 62px;
+    line-height: 0.92;
+    letter-spacing: -0.02em;
+    max-width: 11em;
+  }
+  .fig-head { display: flex; justify-content: space-between; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 500; }
+  .fig-no { color: #8C3B32; }
+  .hair { height: 1px; background: #161513; margin: 10px 0 14px; }
+  .readings { display: grid; grid-template-columns: repeat(3, 1fr); }
+  .readings strong { display: block; font-family: "Newsreader", serif; font-weight: 500; font-size: 36px; line-height: 1; }
+  .held span { display: block; margin-top: 6px; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #5C564E; font-weight: 500; }
+  .held strong { display: block; font-family: "Newsreader", serif; font-weight: 500; font-size: 64px; line-height: 0.9; color: #8C3B32; }
+  .note {
+    margin: 8px 0 0;
+    padding-top: 16px;
+    border-top: 1px solid #8F877C;
+    font-family: "Newsreader", serif;
+    font-style: italic;
+    font-size: 22px;
+  }
+</style>
+</head>
+<body>
+  <div class="sheet">
+    <header class="mast">
+      <div class="wordmark">Buoy</div>
+      <div class="kicker">For revenue leaders on HubSpot</div>
+    </header>
+    <div class="double"></div>
+    <div class="split">
+      <h1>Trust the numbers<br>you take to the board.</h1>
+      <div>
+        <div class="fig-head"><span class="fig-no">Fig. I</span><span>Forecast</span></div>
+        <div class="hair"></div>
+        <div class="readings">
+          <strong>4.2</strong>
+          <strong>3.8</strong>
+          <strong>5.1</strong>
+        </div>
+        <div class="hair" style="margin-top:16px"></div>
+        <div class="held"><strong>4.4</strong><span>The figure</span></div>
+      </div>
+    </div>
+    <p class="note">Expert-led. Done with you. A small number of clients at a time.</p>
+  </div>
+</body>
+</html>
