@@ -21,10 +21,10 @@
   {
     "slug": "what-happens-in-a-crm-audit",
     "title": "What Actually Happens in a CRM Audit? A Property-by-Property Walkthrough",
-    "description": "A CRM audit isn't a health score or a report \u2014 it's a structured, property-by-property review of what your CRM actually does, compared with what your process says it should. Here's the real method.",
+    "description": "The Audit is two equal halves: the top-down process, and a bottom-up property cleanup. This post walks the property half.",
     "date": "2026-09-21",
     "date_display": "September 21, 2026",
-    "excerpt": "A CRM audit isn't a report you read once. It's a field-by-field decision process \u2014 and the decisions it produces are more specific than \"keep\" or \"delete.\"",
+    "excerpt": "The Audit is two equal halves: the top-down process, and bottom-up property cleanup. The decisions are more specific than keep or delete.",
     "source": "legacy",
     "note": "Live since 2026-09-21 per buildwithbuoy.com; added to registry 2026-09-29 (HTML not in ship working copy)."
   },
