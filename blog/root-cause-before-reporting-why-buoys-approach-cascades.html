@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Root Cause Before Reporting: What to Fix Before You Buy Another Dashboard | Buoy</title>
+<meta name="description" content="Before you buy another dashboard, decide where the problem starts. How CEOs, COOs, and CROs fix process truth in HubSpot first, so reporting and board decisions follow." />
+<link rel="canonical" href="https://buildwithbuoy.com/blog/root-cause-before-reporting-why-buoys-approach-cascades.html" />
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="64x64" href="/favicon-64.png">
+<link rel="icon" type="image/png" sizes="128x128" href="/favicon-128.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Root Cause Before Reporting: What to Fix Before You Buy Another Dashboard | Buoy" />
+<meta property="og:description" content="Before you buy another dashboard, decide where the problem starts. How CEOs, COOs, and CROs fix process truth in HubSpot first, so reporting and board decisions follow." />
+<meta property="og:url" content="https://buildwithbuoy.com/blog/root-cause-before-reporting-why-buoys-approach-cascades.html" />
+<meta property="og:image" content="https://buildwithbuoy.com/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Buoy — Trust the numbers you take to the board." />
+<meta property="og:site_name" content="Buoy" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Root Cause Before Reporting: What to Fix Before You Buy Another Dashboard | Buoy" />
+<meta name="twitter:description" content="Before you buy another dashboard, decide where the problem starts. How CEOs, COOs, and CROs fix process truth in HubSpot first, so reporting and board decisions follow." />
+<meta name="twitter:image" content="https://buildwithbuoy.com/assets/og-image.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#161513; --navy:#0F1F33; --paper:#F4F0E6; --slate:#4A5768; --oxblood:#8C3B32;
+  --line:rgba(22,21,19,0.18); --max:760px;
+}
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:Inter, sans-serif; font-size:17px; line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,.serif{
+  font-family:Newsreader, serif; font-optical-sizing:auto; font-weight:500;
+  letter-spacing:-0.02em; margin:0; color:var(--ink);
+}
+a{ color:inherit; }
+.wrap{ max-width:var(--max); margin:0 auto; padding:0 32px; }
+img{ max-width:100%; display:block; }
+:focus-visible{ outline:2px solid var(--navy); outline-offset:3px; }
+
+header{
+  position:sticky; top:0; z-index:20;
+  background:rgba(244,240,230,0.94);
+  border-bottom:1px solid var(--line);
+}
+nav.wrap{ display:flex; align-items:center; justify-content:space-between; height:72px; max-width:1120px; }
+.brand{ display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--ink); }
+.sq{ width:14px; height:14px; border:1.25px solid var(--ink); flex:none; }
+.word{ font-family:Newsreader, serif; font-weight:500; font-size:26px; letter-spacing:-0.03em; line-height:1; text-transform:lowercase; }
+.dot{ display:inline-block; width:5px; height:5px; margin:0 0 11px 3px; border-radius:50%; background:var(--oxblood); vertical-align:middle; }
+.navlinks{ display:flex; align-items:center; gap:28px; }
+.navlinks a{ text-decoration:none; color:var(--ink); font-size:14px; }
+.navlinks a:hover{ color:var(--navy); }
+.nav-menu{
+  display:none; width:44px; height:44px; flex:none; padding:0;
+  border:1px solid var(--ink); background:transparent; color:var(--ink); cursor:pointer;
+  align-items:center; justify-content:center;
+}
+.nav-menu-bars, .nav-menu-bars::before, .nav-menu-bars::after{
+  display:block; width:16px; height:1.5px; background:currentColor; position:relative;
+}
+.nav-menu-bars::before, .nav-menu-bars::after{ content:""; position:absolute; left:0; }
+.nav-menu-bars::before{ top:-5px; }
+.nav-menu-bars::after{ top:5px; }
+.nav-menu[aria-expanded="true"] .nav-menu-bars{ background:transparent; }
+.nav-menu[aria-expanded="true"] .nav-menu-bars::before{ top:0; transform:rotate(45deg); }
+.nav-menu[aria-expanded="true"] .nav-menu-bars::after{ top:0; transform:rotate(-45deg); }
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  min-height:44px; padding:12px 18px; border-radius:0;
+  font-family:Inter, sans-serif; font-size:14px; font-weight:500;
+  white-space:nowrap; text-decoration:none; border:1px solid transparent; cursor:pointer;
+}
+.btn-primary{ background:var(--navy); color:var(--paper); }
+.btn-primary:hover{ background:#183049; }
+.navcta{ display:flex; gap:14px; align-items:center; }
+
+main{ padding:96px 0 96px; }
+.eyebrow{
+  font-family:"JetBrains Mono", ui-monospace, monospace;
+  font-size:12px; letter-spacing:0.14em; text-transform:uppercase;
+  color:var(--slate); margin:0 0 12px;
+}
+.post-title{ font-size:48px; line-height:1.08; margin-bottom:14px; }
+.post-meta{
+  font-family:"JetBrains Mono", ui-monospace, monospace;
+  font-size:12px; letter-spacing:0.04em; color:var(--slate); margin-bottom:40px;
+}
+article.post-body{ max-width:620px; }
+article.post-body h2{ font-size:28px; margin:48px 0 14px; line-height:1.2; }
+article.post-body h3{ font-size:22px; margin:32px 0 10px; line-height:1.25; }
+article.post-body p{ margin:0 0 18px; }
+article.post-body a{ text-underline-offset:3px; }
+article.post-body ul, article.post-body ol{ margin:0 0 18px; padding-left:22px; }
+article.post-body li{ margin-bottom:8px; }
+article.post-body strong{ font-weight:600; }
+article.post-body blockquote{ margin:28px 0; padding:0 0 0 18px; border-left:2px solid var(--ink); color:var(--ink); font-family:Newsreader, serif; font-size:22px; line-height:1.35; font-weight:500; }
+article.post-body table{ width:100%; border-collapse:collapse; margin:0 0 22px; font-size:15px; }
+article.post-body th, article.post-body td{ border-bottom:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top; }
+article.post-body th{ font-family:"JetBrains Mono", ui-monospace, monospace; font-size:12px; letter-spacing:0.06em; text-transform:uppercase; font-weight:500; color:var(--slate); }
+article.post-body td{ font-variant-numeric:tabular-nums; }
+article.post-body code{ font-family:"JetBrains Mono", ui-monospace, monospace; font-size:0.9em; background:#EBE6DA; padding:1px 5px; }
+article.post-body hr{ border:none; border-top:1px solid var(--line); margin:40px 0; }
+.table-wrap{ overflow-x:auto; margin:0 0 22px; }
+.table-wrap table{ width:100%; border-collapse:collapse; font-size:15px; }
+.table-wrap th, .table-wrap td{ text-align:left; padding:10px 14px; border-bottom:1px solid var(--line); vertical-align:top; }
+.table-wrap th{ font-family:"JetBrains Mono", ui-monospace, monospace; font-size:12px; letter-spacing:0.06em; text-transform:uppercase; font-weight:500; color:var(--slate); }
+.table-wrap td{ font-variant-numeric:tabular-nums; }
+.post-cta{ background:var(--navy); color:var(--paper); padding:36px 32px; margin:56px 0 48px; }
+.post-cta h3,
+article.post-body .post-cta h3{ font-size:32px; line-height:1.15; color:var(--paper); margin:0 0 10px; max-width:22ch; font-weight:500; }
+.post-cta p{ color:var(--paper); margin:0 0 18px; }
+.post-cta .btn-primary{ background:var(--paper); color:var(--navy); }
+.post-cta .btn-primary:hover{ background:#fff; }
+.post-cta :focus-visible{ outline-color:var(--paper); }
+
+.post-list-item{ padding:28px 0; border-top:1px solid var(--line); }
+.post-list-item:first-of-type{ border-top:1px solid var(--line); }
+.post-list-item h2{ font-size:28px; line-height:1.2; margin-bottom:8px; }
+.post-list-item h2 a{ text-decoration:none; }
+.post-list-item h2 a:hover{ text-decoration:underline; text-underline-offset:3px; }
+.post-list-item p{ color:var(--slate); margin:0; }
+
+footer{ border-top:1px solid var(--line); padding:48px 0 28px; }
+footer .wrap{ display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:28px; max-width:1120px; }
+footer .word{ font-size:22px; }
+footer .fnote{ font-size:14px; color:var(--slate); margin-top:12px; max-width:46ch; line-height:1.5; }
+footer .fnav{ display:flex; gap:22px; flex-wrap:wrap; }
+footer .fnav a{ text-decoration:none; font-size:14px; color:var(--slate); }
+footer .fnav a:hover{ color:var(--ink); }
+.copyright{ font-size:12px; letter-spacing:0.04em; color:var(--slate); margin-top:28px; max-width:1120px; margin-left:auto; margin-right:auto; padding:0 32px; font-family:"JetBrains Mono", ui-monospace, monospace; }
+
+.hs-modal-overlay{ display:none; position:fixed; inset:0; z-index:1000; background:rgba(15,31,51,0.72); align-items:center; justify-content:center; padding:24px; }
+.hs-modal-overlay.open{ display:flex; }
+.hs-modal{ background:var(--paper); border-radius:0; width:100%; max-width:500px; max-height:88vh; overflow-y:auto; padding:36px 28px 28px; position:relative; border:1px solid var(--line); }
+.hs-modal-close{ position:absolute; top:8px; right:8px; width:44px; height:44px; background:none; border:none; font-size:26px; line-height:1; cursor:pointer; color:var(--ink); }
+.hs-modal h3{ font-size:28px; margin:0 0 8px; }
+.hs-modal p.sub{ color:var(--slate); font-size:15px; margin:0 0 20px; }
+
+@media (max-width: 720px){
+  nav.wrap{ flex-wrap:wrap; height:auto; padding-top:8px; padding-bottom:8px; row-gap:0; }
+  .nav-menu{ display:inline-flex; }
+  .navlinks{ display:none; order:3; width:100%; flex-direction:column; align-items:stretch; gap:0; padding:4px 0 8px; }
+  .navlinks.is-open{ display:flex; }
+  .navlinks a{ white-space:nowrap; min-height:44px; display:flex; align-items:center; padding:0 4px; }
+  footer .fnav{ width:100%; flex-wrap:wrap; overflow:visible; }
+  footer .fnav a{ white-space:nowrap; min-height:44px; display:inline-flex; align-items:center; padding:0 10px; }
+  .post-title{ font-size:36px; }
+  .wrap{ padding:0 20px; }
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Root Cause Before Reporting: What to Fix Before You Buy Another Dashboard",
+  "description": "Before you buy another dashboard, decide where the problem starts. How CEOs, COOs, and CROs fix process truth in HubSpot first, so reporting and board decisions follow.",
+  "datePublished": "2026-10-13",
+  "dateModified": "2026-10-13",
+  "author": {"@type": "Organization", "name": "Buoy"},
+  "publisher": {
+    "@type": "Organization",
+    "name": "Buoy",
+    "logo": {"@type": "ImageObject", "url": "https://buildwithbuoy.com/logo-512.png"}
+  },
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://buildwithbuoy.com/blog/root-cause-before-reporting-why-buoys-approach-cascades.html"}
+}
+</script>
+</head>
+<body>
+<header>
+  <nav class="wrap">
+    <a class="brand" href="/">
+      <span class="sq" aria-hidden="true"></span>
+      <span class="word">buoy<span class="dot" aria-hidden="true"></span></span>
+    </a>
+    <div class="navlinks" id="site-nav">
+      <a href="/#how-it-works">How it works</a>
+      <a href="/#product">Product</a>
+      <a href="/#story">Why Buoy</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/blog/">Blog</a>
+    </div>
+    <div class="navcta">
+      <button class="nav-menu" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><span class="nav-menu-bars" aria-hidden="true"></span></button>
+      <button class="btn btn-primary" onclick="openAuditModal(event)">Book an audit call</button>
+    </div>
+  </nav>
+</header>
+<main>
+<div class="wrap">
+<p class="eyebrow">Published October 13, 2026</p>
+<h1 class="post-title">Root Cause Before Reporting: What to Fix Before You Buy Another Dashboard</h1>
+<p class="post-meta">By the Buoy team &middot; 5 min read</p>
+
+<article class="post-body">
+<p>You want to trust the numbers you take to the board. Then the forecast says one thing, Finance says another, and CS tells a third story. Now you have a choice. Buy another report, or fix what sits underneath?</p>
+<p>Most teams buy. A new dashboard. Another cleanup pass. Another AI tool that writes prettier next steps. Those tools can help. They can&rsquo;t invent a process that was never written down.</p>
+<p>AI makes generic advice cheap. What it can&rsquo;t hand you is your own company&rsquo;s process truth. Buoy&rsquo;s Audit gets that truth written down and your HubSpot records cleaned up to match it.</p>
+<p>You don&rsquo;t have a dashboard problem. You have a foundation problem.</p>
+<p><strong>Buoy&rsquo;s Audit documents how your GTM process is supposed to work and cleans up your HubSpot records to match it, so you fix problems now, not in next quarter’s board deck.</strong></p>
+<p>Fix the root and the rest follows: a solid foundation, then sound reporting, then decisions you can defend.</p>
+<h2>The decision: where do you start?</h2>
+<p>Think in layers, not features:</p>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Question it answers</th>
+<th>If this layer is false…</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. Process truth</strong></td>
+<td>How is GTM <em>supposed</em> to run?</td>
+<td>Every dashboard becomes theater</td>
+</tr>
+<tr>
+<td><strong>2. Foundation in HubSpot</strong></td>
+<td>Do records match that process?</td>
+<td>Cleanup and fill rates optimize the wrong thing</td>
+</tr>
+<tr>
+<td><strong>3. Reporting</strong></td>
+<td>Can you roll true records into metrics?</td>
+<td>Board packs argue definitions, not performance</td>
+</tr>
+<tr>
+<td><strong>4. Decisions</strong></td>
+<td>Can you commit capital, quota, and coaching?</td>
+<td>Forecast meetings become negotiations</td>
+</tr>
+</tbody>
+</table>
+<p>Start at layer 1. Layers 3 and 4 only get honest when 1 and 2 hold.</p>
+<p>Most tools start at layer 3, or with surface cleanup on layer 2, and hope you feel better. Buoy starts at the root.</p>
+<hr>
+<h2>What you&rsquo;re usually offered (and what it actually does)</h2>
+<p>Categories, not brands.</p>
+<h3>CRM cleanup and dedupe tools</h3>
+<p><strong>Job:</strong> Merge duplicates, normalize fields, bulk-fix junk.<br>
+<strong>Useful when:</strong> You have merge debt and format mess.<br>
+<strong>Falls short when:</strong> The record is &ldquo;clean&rdquo; but still wrong. &ldquo;Follow up Friday.&rdquo; Fantasy close dates. Closed-lost &ldquo;Other.&rdquo; Cleanup can&rsquo;t define your sales process.</p>
+<h3>Native HubSpot rules and required fields</h3>
+<p><strong>Job:</strong> Stop blanks, block stage skips, basic field checks.<br>
+<strong>Useful when:</strong> You&rsquo;re early and need simple gates.<br>
+<strong>Falls short when:</strong> Any text passes. Freeform fields stay theater. Your real process still lives in a doc nobody opens.</p>
+<h3>Forecast and revenue intelligence platforms</h3>
+<p><strong>Job:</strong> Rollups, inspection, pipeline analytics, sometimes call recording.<br>
+<strong>Useful when:</strong> The deal records underneath are already true.<br>
+<strong>Falls short when:</strong> They amplify whatever HubSpot says. Garbage in, confident garbage out, in front of your board.</p>
+<h3>Capture and auto-update agents</h3>
+<p><strong>Job:</strong> Write notes, suggest field values, cut down on blanks.<br>
+<strong>Useful when:</strong> Logging is the bottleneck.<br>
+<strong>Falls short when:</strong> Faster entry isn&rsquo;t truer process. Faster fiction is still fiction.</p>
+<h3>One-time cleanup projects</h3>
+<p><strong>Job:</strong> Rebuilds, property cleanup, playbook PDFs.<br>
+<strong>Useful when:</strong> You need a reset.<br>
+<strong>Falls short when:</strong> The PDF ages out and nothing flags drift <em>in the record</em> next quarter.</p>
+<p>Buoy&rsquo;s approach: the <strong>Audit</strong> agrees on the process and cleans up the records. Reporting tools get more useful after that, not instead of it.</p>
+<hr>
+<h2>Fixing the root: how Buoy guides you</h2>
+<h3>1) Agree on how GTM should run (top-down)</h3>
+<p>Not a vibes workshop. Your leadership team agrees on the numbers that matter and the process behind them: stages, exit criteria, owners, and the fields that feed forecast, customer-journey metrics, and the quote-to-renewal loop (CPQ → Product → CS).</p>
+<h3>2) Clean up what&rsquo;s in HubSpot (bottom-up)</h3>
+<p>This is half of the Audit, not an afterthought. Every field that matters gets one decision: <strong>Keep / Delete / Turn into a rule / Pending on a person / Blocked on a process decision.</strong> That&rsquo;s the difference between &ldquo;we cleaned HubSpot&rdquo; and &ldquo;we know what good means.&rdquo;</p>
+<h3>3) Keep the records honest (on the roadmap)</h3>
+<p>Flagging records that drift from the process, right in the record, is on the roadmap. Today, the Audit gives you the agreed process and clean records to hold your team to.</p>
+<h3>4) Then trust what sits on top</h3>
+<ul>
+<li>Customer-journey metrics share one language</li>
+<li>Forecast reviews have something real to inspect</li>
+<li>CPQ, Product, and CS stop inventing a second source of truth</li>
+</ul>
+<p>The metrics follow from the foundation. They aren&rsquo;t the starting point.</p>
+<hr>
+<h2>Four questions to ask any vendor in your stack</h2>
+<p>Ask them in order:</p>
+<ol>
+<li><strong>Do they make you write down how GTM is supposed to run?</strong></li>
+<li><strong>Do they tell you which fields your decisions depend on, and what to do with the rest?</strong></li>
+<li><strong>Do they catch bad records while there&rsquo;s still time to act, or only after the board pack is wrong?</strong></li>
+<li><strong>Do their reports assume the truth, or help create it?</strong></li>
+</ol>
+<p>If the answers are no, no, after, and assume, you&rsquo;re buying reports without a foundation.</p>
+<hr>
+<h2>What this is not</h2>
+<ul>
+<li>Not &ldquo;dashboards are bad.&rdquo; You need them, once the process is true. Buoy doesn&rsquo;t replace your dashboards, it makes them true.</li>
+<li>Not &ldquo;cleanup is useless.&rdquo; Deduping still matters. It just isn&rsquo;t your process.</li>
+<li>Not &ldquo;HubSpot is broken.&rdquo; HubSpot is your system of record. Buoy makes your process visible inside it.</li>
+<li>Not insights on day one. Insight tools earn their keep once the foundation is trustworthy.</li>
+</ul>
+<hr>
+<h2>The bottom line</h2>
+<p>Build reporting on a crooked foundation and you get prettier arguments.</p>
+<p>Fix the root instead. Write down how GTM should run. Clean up HubSpot to match it. Your reports and decisions start to match what you already expect from them.</p>
+<p>Root cause first. Foundation next. Then numbers you can take to the board.</p>
+<hr>
+<h2>Next step</h2>
+<p>Start with the Audit from Buoy (buildwithbuoy.com). Agree on your numbers and the process behind them. Clean up the HubSpot records that feed them. You keep the documentation.</p>
+<p><a href="https://buildwithbuoy.com/">Book an audit call</a></p>
+
+<div class="post-cta">
+  <h3>Can you trust the numbers you take to the board?</h3>
+  <p>Book an audit call. We&rsquo;ll start from the numbers your board sees, agree on what each one means, then clean up the HubSpot properties behind them.</p>
+  <button class="btn btn-primary" onclick="openAuditModal(event)">Book an audit call</button>
+</div>
+</article>
+
+</div>
+</main>
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="brand" href="/">
+        <span class="sq" aria-hidden="true"></span>
+        <span class="word">buoy<span class="dot" aria-hidden="true"></span></span>
+      </a>
+      <p class="fnote">Done with you, a small number of clients at a time: the Audit (Clean), Validation (Protected), and Filled in from your own business. Sonar, on the roadmap, will add Intelligence.</p>
+    </div>
+    <div class="fnav">
+      <a href="/#how-it-works">How it works</a>
+      <a href="/#product">Product</a>
+      <a href="/#story">Why Buoy</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/blog/">Blog</a>
+      <a href="mailto:alex@buildwithbuoy.com">alex@buildwithbuoy.com</a>
+    </div>
+  </div>
+  <p class="copyright">&copy; 2026 Buoy.</p>
+</footer>
+
+<div class="hs-modal-overlay" id="hs-modal-overlay">
+  <div class="hs-modal" role="dialog" aria-modal="true" aria-labelledby="hs-modal-title">
+    <button class="hs-modal-close" onclick="closeAuditModal()" aria-label="Close">&times;</button>
+    <h3 id="hs-modal-title">Book an audit call</h3>
+    <p class="sub">Tell us a bit about your business and we'll follow up to schedule a time.</p>
+    <div class="hs-form-frame" data-region="na2" data-form-id="8dd9daaf-2e19-460c-90ba-590573d0a90c" data-portal-id="247350596"></div>
+  </div>
+</div>
+<script src="https://js-na2.hsforms.net/forms/embed/247350596.js" defer></script>
+<script>
+  function openAuditModal(e){
+    if (e) e.preventDefault();
+    document.getElementById('hs-modal-overlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeAuditModal(){
+    document.getElementById('hs-modal-overlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('hs-modal-overlay').addEventListener('click', function(e){
+    if (e.target === this) closeAuditModal();
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key !== 'Escape') return;
+    var menu = document.querySelector('.nav-menu');
+    if (menu && menu.getAttribute('aria-expanded') === 'true'){
+      setNavOpen(false);
+      menu.focus();
+      return;
+    }
+    closeAuditModal();
+  });
+  function setNavOpen(open){
+    var menu = document.querySelector('.nav-menu');
+    var nav = document.getElementById('site-nav');
+    if (!menu || !nav) return;
+    menu.setAttribute('aria-expanded', open ? 'true' : 'false');
+    menu.setAttribute('aria-label', open ? 'Close menu' : 'Menu');
+    nav.classList.toggle('is-open', open);
+  }
+  var navMenu = document.querySelector('.nav-menu');
+  if (navMenu){
+    navMenu.addEventListener('click', function(){
+      var open = navMenu.getAttribute('aria-expanded') !== 'true';
+      setNavOpen(open);
+      if (open){
+        var first = document.querySelector('#site-nav a');
+        if (first) first.focus();
+      }
+    });
+  }
+</script>
+
+<!-- HubSpot tracking code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/247350596.js"></script>
+</body>
+</html>
