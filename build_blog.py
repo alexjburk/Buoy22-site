@@ -70,6 +70,15 @@ POSTS = [
         "excerpt": "You want to trust the numbers you take to the board. Reports add up records. If the truth only shows up after someone fixes the report, it shows up too late. Agree on the process, flag drift in the record, then trust the rollup.",
         "body_file": "blog_sources/live-in-the-record-vs-live-in-the-report-where-decision-foundations-hold.html",
     },
+    {
+        "slug": "root-cause-before-reporting-why-buoys-approach-cascades",
+        "title": "Root Cause Before Reporting: What to Fix Before You Buy Another Dashboard",
+        "description": "Before you buy another dashboard, decide where the problem starts. How CEOs, COOs, and CROs fix process truth in HubSpot first, so reporting and board decisions follow.",
+        "date": "2026-10-13",
+        "date_display": "October 13, 2026",
+        "excerpt": "You want to trust the numbers you take to the board. Another dashboard won't get you there. Fix the root, process truth in HubSpot, and reporting and decisions follow.",
+        "body_file": "blog_sources/root-cause-before-reporting-why-buoys-approach-cascades.html",
+    },
 ]
 
 
@@ -134,7 +143,7 @@ post_body = f"""
 
 <div class="post-cta">
   <h3>Can you trust the numbers you take to the board?</h3>
-  <p>Book an audit call.</p>
+  <p>Book an audit call and we&rsquo;ll start from those numbers, then clean up what&rsquo;s behind them in HubSpot.</p>
   <button class="btn btn-primary" onclick="openAuditModal(event)">Book an audit call</button>
 </div>
 </article>
@@ -741,7 +750,7 @@ post_body = f"""
 
 <div class="post-cta">
   <h3>Can you trust the numbers you take to the board?</h3>
-  <p>Book an audit call.</p>
+  <p>Book an audit call and we&rsquo;ll start from those numbers, then clean up what&rsquo;s behind them in HubSpot.</p>
   <button class="btn btn-primary" onclick="openAuditModal(event)">Book an audit call</button>
 </div>
 </article>
@@ -818,7 +827,7 @@ post_body = f"""
 
 <div class="post-cta">
   <h3>Can you trust the numbers you take to the board?</h3>
-  <p>Book an audit call.</p>
+  <p>Book an audit call and we&rsquo;ll start from those numbers, then clean up what&rsquo;s behind them in HubSpot.</p>
   <button class="btn btn-primary" onclick="openAuditModal(event)">Book an audit call</button>
 </div>
 </article>
@@ -898,7 +907,7 @@ for p in sorted(POSTS, key=lambda x: x["date"], reverse=True):
 
 index_body = f"""
 <p class="eyebrow">Buoy</p>
-<h1 class="post-title" style="font-size:32px;">Notes on trusting the numbers you take to the board</h1>
+<h1 class="post-title">Notes on trusting the numbers you take to the board</h1>
 {list_items}
 """
 
@@ -936,7 +945,7 @@ template_body = """
 
 <div class="post-cta">
   <h3>Can you trust the numbers you take to the board?</h3>
-  <p>Book an audit call.</p>
+  <p>Book an audit call and we&rsquo;ll start from those numbers, then clean up what&rsquo;s behind them in HubSpot.</p>
   <button class="btn btn-primary" onclick="openAuditModal(event)">Book an audit call</button>
 </div>
 </article>

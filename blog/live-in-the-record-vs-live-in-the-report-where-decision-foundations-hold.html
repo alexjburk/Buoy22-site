@@ -16,99 +16,149 @@
 <meta property="og:title" content="Live in the Record vs Live in the Report: Which Numbers Can You Take to the Board? | Buoy" />
 <meta property="og:description" content="Your board deck is only as true as the HubSpot records under it. How CEOs, COOs, and CROs decide which numbers to trust, and why the truth has to live in the record, not the report." />
 <meta property="og:url" content="https://buildwithbuoy.com/blog/live-in-the-record-vs-live-in-the-report-where-decision-foundations-hold.html" />
+<meta property="og:image" content="https://buildwithbuoy.com/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Buoy — Trust the numbers you take to the board." />
 <meta property="og:site_name" content="Buoy" />
-<meta name="twitter:card" content="summary" />
+<meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Live in the Record vs Live in the Report: Which Numbers Can You Take to the Board? | Buoy" />
 <meta name="twitter:description" content="Your board deck is only as true as the HubSpot records under it. How CEOs, COOs, and CROs decide which numbers to trust, and why the truth has to live in the record, not the report." />
+<meta name="twitter:image" content="https://buildwithbuoy.com/assets/og-image.png" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --navy:#293A4D; --navy-deep:#1C2938; --cream:#FCF8E6; --white:#FFFFFF; --mist:#EFF3F6;
-  --coral:#CD5245; --sage:#93BC8E; --sage-text:#51674E; --harbor:#3B6E8F; --slate:#5B6B70;
-  --line: rgba(41,58,77,0.14); --max: 880px;
+  --ink:#161513; --navy:#0F1F33; --paper:#F4F0E6; --slate:#4A5768; --oxblood:#8C3B32;
+  --line:rgba(22,21,19,0.18); --max:760px;
 }
 *{ box-sizing:border-box; }
 html{ scroll-behavior:smooth; }
-body{ margin:0; background:var(--white); color:var(--navy); font-family:'Archivo',sans-serif; font-size:17px; line-height:1.6; -webkit-font-smoothing:antialiased; }
-h1,h2,h3,.serif{ font-family:'Fraunces',serif; font-weight:500; letter-spacing:-0.01em; margin:0; }
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:Inter, sans-serif; font-size:17px; line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,.serif{
+  font-family:Newsreader, serif; font-optical-sizing:auto; font-weight:500;
+  letter-spacing:-0.02em; margin:0; color:var(--ink);
+}
 a{ color:inherit; }
 .wrap{ max-width:var(--max); margin:0 auto; padding:0 32px; }
 img{ max-width:100%; display:block; }
+:focus-visible{ outline:2px solid var(--navy); outline-offset:3px; }
 
-header{ position:sticky; top:0; z-index:20; background:rgba(255,255,255,0.92); backdrop-filter:blur(6px); border-bottom:1px solid var(--line); }
-nav.wrap{ display:flex; align-items:center; justify-content:space-between; height:76px; max-width:1100px; }
-.brand{ display:flex; align-items:center; gap:10px; text-decoration:none; }
-.brand img{ width:34px; height:34px; object-fit:contain; }
-.brand span{ font-family:'Fraunces',serif; font-size:22px; font-weight:600; color:var(--navy); }
-.navlinks{ display:flex; align-items:center; gap:36px; }
-.navlinks a{ text-decoration:none; color:var(--navy); font-size:15px; }
-.navlinks a:hover{ color:var(--coral); }
-.btn{ display:inline-block; padding:11px 22px; border-radius:3px; font-size:15px; font-family:inherit; text-decoration:none; border:1px solid transparent; cursor:pointer; }
-.btn-primary{ background:var(--coral); color:#fff; }
-.btn-primary:hover{ background:#c13c2f; }
+header{
+  position:sticky; top:0; z-index:20;
+  background:rgba(244,240,230,0.94);
+  border-bottom:1px solid var(--line);
+}
+nav.wrap{ display:flex; align-items:center; justify-content:space-between; height:72px; max-width:1120px; }
+.brand{ display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--ink); }
+.sq{ width:14px; height:14px; border:1.25px solid var(--ink); flex:none; }
+.word{ font-family:Newsreader, serif; font-weight:500; font-size:26px; letter-spacing:-0.03em; line-height:1; text-transform:lowercase; }
+.dot{ display:inline-block; width:5px; height:5px; margin:0 0 11px 3px; border-radius:50%; background:var(--oxblood); vertical-align:middle; }
+.navlinks{ display:flex; align-items:center; gap:28px; }
+.navlinks a{ text-decoration:none; color:var(--ink); font-size:14px; }
+.navlinks a:hover{ color:var(--navy); }
+.nav-menu{
+  display:none; width:44px; height:44px; flex:none; padding:0;
+  border:1px solid var(--ink); background:transparent; color:var(--ink); cursor:pointer;
+  align-items:center; justify-content:center;
+}
+.nav-menu-bars, .nav-menu-bars::before, .nav-menu-bars::after{
+  display:block; width:16px; height:1.5px; background:currentColor; position:relative;
+}
+.nav-menu-bars::before, .nav-menu-bars::after{ content:""; position:absolute; left:0; }
+.nav-menu-bars::before{ top:-5px; }
+.nav-menu-bars::after{ top:5px; }
+.nav-menu[aria-expanded="true"] .nav-menu-bars{ background:transparent; }
+.nav-menu[aria-expanded="true"] .nav-menu-bars::before{ top:0; transform:rotate(45deg); }
+.nav-menu[aria-expanded="true"] .nav-menu-bars::after{ top:0; transform:rotate(-45deg); }
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  min-height:44px; padding:12px 18px; border-radius:0;
+  font-family:Inter, sans-serif; font-size:14px; font-weight:500;
+  white-space:nowrap; text-decoration:none; border:1px solid transparent; cursor:pointer;
+}
+.btn-primary{ background:var(--navy); color:var(--paper); }
+.btn-primary:hover{ background:#183049; }
 .navcta{ display:flex; gap:14px; align-items:center; }
-.nav-login{ font-size:15px; color:var(--navy); text-decoration:none; }
-.nav-login:hover{ color:var(--coral); }
 
-main{ padding:56px 0 88px; }
-
-.eyebrow{ font-family:'Fraunces',serif; font-style:italic; font-size:14px; color:var(--slate); margin-bottom:10px; }
-.post-title{ font-size:38px; color:var(--navy); line-height:1.15; margin-bottom:16px; }
-.post-meta{ font-size:14px; color:var(--slate); margin-bottom:36px; }
-article.post-body h2{ font-size:24px; color:var(--navy); margin:40px 0 14px; }
-article.post-body h3{ font-size:19px; color:var(--navy); margin:28px 0 10px; }
-article.post-body p{ color:var(--navy); margin:0 0 18px; }
-article.post-body ul, article.post-body ol{ margin:0 0 18px; padding-left:22px; color:var(--navy); }
+main{ padding:96px 0 96px; }
+.eyebrow{
+  font-family:"JetBrains Mono", ui-monospace, monospace;
+  font-size:12px; letter-spacing:0.14em; text-transform:uppercase;
+  color:var(--slate); margin:0 0 12px;
+}
+.post-title{ font-size:48px; line-height:1.08; margin-bottom:14px; }
+.post-meta{
+  font-family:"JetBrains Mono", ui-monospace, monospace;
+  font-size:12px; letter-spacing:0.04em; color:var(--slate); margin-bottom:40px;
+}
+article.post-body{ max-width:620px; }
+article.post-body h2{ font-size:28px; margin:48px 0 14px; line-height:1.2; }
+article.post-body h3{ font-size:22px; margin:32px 0 10px; line-height:1.25; }
+article.post-body p{ margin:0 0 18px; }
+article.post-body a{ text-underline-offset:3px; }
+article.post-body ul, article.post-body ol{ margin:0 0 18px; padding-left:22px; }
 article.post-body li{ margin-bottom:8px; }
-article.post-body strong{ color:var(--navy); }
-article.post-body blockquote{ margin:24px 0; padding:4px 0 4px 20px; border-left:3px solid var(--coral); color:var(--slate); font-style:italic; }
+article.post-body strong{ font-weight:600; }
+article.post-body blockquote{ margin:28px 0; padding:0 0 0 18px; border-left:2px solid var(--ink); color:var(--ink); font-family:Newsreader, serif; font-size:22px; line-height:1.35; font-weight:500; }
 article.post-body table{ width:100%; border-collapse:collapse; margin:0 0 22px; font-size:15px; }
-article.post-body th, article.post-body td{ border:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top; }
-article.post-body th{ background:var(--mist); font-weight:600; }
-article.post-body code{ font-size:0.92em; background:var(--mist); padding:1px 5px; border-radius:3px; }
+article.post-body th, article.post-body td{ border-bottom:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top; }
+article.post-body th{ font-family:"JetBrains Mono", ui-monospace, monospace; font-size:12px; letter-spacing:0.06em; text-transform:uppercase; font-weight:500; color:var(--slate); }
+article.post-body td{ font-variant-numeric:tabular-nums; }
+article.post-body code{ font-family:"JetBrains Mono", ui-monospace, monospace; font-size:0.9em; background:#EBE6DA; padding:1px 5px; }
 article.post-body hr{ border:none; border-top:1px solid var(--line); margin:40px 0; }
 .table-wrap{ overflow-x:auto; margin:0 0 22px; }
 .table-wrap table{ width:100%; border-collapse:collapse; font-size:15px; }
 .table-wrap th, .table-wrap td{ text-align:left; padding:10px 14px; border-bottom:1px solid var(--line); vertical-align:top; }
-.table-wrap th{ background:var(--mist); color:var(--navy); font-family:'Fraunces',serif; font-weight:500; white-space:nowrap; }
-.table-wrap tr:last-child td{ border-bottom:none; }
-.post-cta{ background:var(--mist); border-radius:10px; padding:28px 30px; margin-top:44px; }
-.post-cta h3{ font-size:20px; margin-bottom:8px; }
-.post-cta p{ color:var(--slate); margin-bottom:16px; }
+.table-wrap th{ font-family:"JetBrains Mono", ui-monospace, monospace; font-size:12px; letter-spacing:0.06em; text-transform:uppercase; font-weight:500; color:var(--slate); }
+.table-wrap td{ font-variant-numeric:tabular-nums; }
+.post-cta{ background:var(--navy); color:var(--paper); padding:36px 32px; margin:56px 0 48px; }
+.post-cta h3,
+article.post-body .post-cta h3{ font-size:32px; line-height:1.15; color:var(--paper); margin:0 0 10px; max-width:22ch; font-weight:500; }
+.post-cta p{ color:var(--paper); margin:0 0 18px; }
+.post-cta .btn-primary{ background:var(--paper); color:var(--navy); }
+.post-cta .btn-primary:hover{ background:#fff; }
+.post-cta :focus-visible{ outline-color:var(--paper); }
 
 .post-list-item{ padding:28px 0; border-top:1px solid var(--line); }
-.post-list-item:first-child{ border-top:none; }
-.post-list-item .eyebrow{ margin-bottom:6px; }
-.post-list-item h2{ font-size:24px; margin-bottom:8px; }
-.post-list-item h2 a{ text-decoration:none; color:var(--navy); }
-.post-list-item h2 a:hover{ color:var(--coral); }
+.post-list-item:first-of-type{ border-top:1px solid var(--line); }
+.post-list-item h2{ font-size:28px; line-height:1.2; margin-bottom:8px; }
+.post-list-item h2 a{ text-decoration:none; }
+.post-list-item h2 a:hover{ text-decoration:underline; text-underline-offset:3px; }
 .post-list-item p{ color:var(--slate); margin:0; }
 
-footer{ border-top:1px solid var(--line); padding:48px 0; }
-footer .wrap{ display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:24px; max-width:1100px; }
-footer .brand span{ font-size:18px; }
-footer .fnote{ font-size:14px; color:var(--slate); margin-top:10px; max-width:44ch; line-height:1.5; }
-footer .fnav{ display:flex; gap:28px; flex-wrap:wrap; }
+footer{ border-top:1px solid var(--line); padding:48px 0 28px; }
+footer .wrap{ display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:28px; max-width:1120px; }
+footer .word{ font-size:22px; }
+footer .fnote{ font-size:14px; color:var(--slate); margin-top:12px; max-width:46ch; line-height:1.5; }
+footer .fnav{ display:flex; gap:22px; flex-wrap:wrap; }
 footer .fnav a{ text-decoration:none; font-size:14px; color:var(--slate); }
-footer .fnav a:hover{ color:var(--coral); }
-.copyright{ font-size:13px; color:var(--slate); margin-top:36px; max-width:1100px; margin-left:auto; margin-right:auto; padding:0 32px; }
+footer .fnav a:hover{ color:var(--ink); }
+.copyright{ font-size:12px; letter-spacing:0.04em; color:var(--slate); margin-top:28px; max-width:1120px; margin-left:auto; margin-right:auto; padding:0 32px; font-family:"JetBrains Mono", ui-monospace, monospace; }
 
-.hs-modal-overlay{ display:none; position:fixed; inset:0; z-index:1000; background:rgba(28,41,56,0.6); align-items:center; justify-content:center; padding:24px; }
+.hs-modal-overlay{ display:none; position:fixed; inset:0; z-index:1000; background:rgba(15,31,51,0.72); align-items:center; justify-content:center; padding:24px; }
 .hs-modal-overlay.open{ display:flex; }
-.hs-modal{ background:#fff; border-radius:8px; width:100%; max-width:500px; max-height:88vh; overflow-y:auto; padding:40px 30px 30px; position:relative; box-shadow:0 30px 80px rgba(0,0,0,0.28); }
-.hs-modal-close{ position:absolute; top:12px; right:14px; background:none; border:none; font-size:26px; line-height:1; cursor:pointer; color:var(--slate); padding:6px; }
-.hs-modal-close:hover{ color:var(--coral); }
-.hs-modal h3{ font-family:'Fraunces',serif; font-size:22px; color:var(--navy); margin:0 0 6px; }
-.hs-modal p.sub{ color:var(--slate); font-size:14.5px; margin:0 0 20px; }
+.hs-modal{ background:var(--paper); border-radius:0; width:100%; max-width:500px; max-height:88vh; overflow-y:auto; padding:36px 28px 28px; position:relative; border:1px solid var(--line); }
+.hs-modal-close{ position:absolute; top:8px; right:8px; width:44px; height:44px; background:none; border:none; font-size:26px; line-height:1; cursor:pointer; color:var(--ink); }
+.hs-modal h3{ font-size:28px; margin:0 0 8px; }
+.hs-modal p.sub{ color:var(--slate); font-size:15px; margin:0 0 20px; }
 
-@media (max-width: 700px){
-  nav.wrap{ flex-wrap:wrap; height:auto; padding-top:16px; padding-bottom:16px; row-gap:12px; }
-  .navlinks{ order:3; width:100%; gap:20px; flex-wrap:wrap; }
-  .post-title{ font-size:28px; }
-  .table-wrap th, .table-wrap td{ font-size:14px; padding:8px 10px; }
+@media (max-width: 720px){
+  nav.wrap{ flex-wrap:wrap; height:auto; padding-top:8px; padding-bottom:8px; row-gap:0; }
+  .nav-menu{ display:inline-flex; }
+  .navlinks{ display:none; order:3; width:100%; flex-direction:column; align-items:stretch; gap:0; padding:4px 0 8px; }
+  .navlinks.is-open{ display:flex; }
+  .navlinks a{ white-space:nowrap; min-height:44px; display:flex; align-items:center; padding:0 4px; }
+  footer .fnav{ width:100%; flex-wrap:wrap; overflow:visible; }
+  footer .fnav a{ white-space:nowrap; min-height:44px; display:inline-flex; align-items:center; padding:0 10px; }
+  .post-title{ font-size:36px; }
+  .wrap{ padding:0 20px; }
 }
 </style>
 <script type="application/ld+json">
@@ -133,10 +183,10 @@ footer .fnav a:hover{ color:var(--coral); }
 <header>
   <nav class="wrap">
     <a class="brand" href="/">
-      <img src="/logo.png" alt="Buoy mark" />
-      <span>Buoy</span>
+      <span class="sq" aria-hidden="true"></span>
+      <span class="word">buoy<span class="dot" aria-hidden="true"></span></span>
     </a>
-    <div class="navlinks">
+    <div class="navlinks" id="site-nav">
       <a href="/#how-it-works">How it works</a>
       <a href="/#product">Product</a>
       <a href="/#story">Why Buoy</a>
@@ -144,11 +194,13 @@ footer .fnav a:hover{ color:var(--coral); }
       <a href="/blog/">Blog</a>
     </div>
     <div class="navcta">
+      <button class="nav-menu" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><span class="nav-menu-bars" aria-hidden="true"></span></button>
       <button class="btn btn-primary" onclick="openAuditModal(event)">Book an audit call</button>
     </div>
   </nav>
 </header>
-<main class="wrap">
+<main>
+<div class="wrap">
 <p class="eyebrow">Published October 8, 2026</p>
 <h1 class="post-title">Live in the Record vs Live in the Report: Which Numbers Can You Take to the Board?</h1>
 <p class="post-meta">By the Buoy team &middot; 8 min read</p>
@@ -320,18 +372,19 @@ footer .fnav a:hover{ color:var(--coral); }
 
 <div class="post-cta">
   <h3>Can you trust the numbers you take to the board?</h3>
-  <p>Book an audit call.</p>
+  <p>Book an audit call and we&rsquo;ll start from those numbers, then clean up what&rsquo;s behind them in HubSpot.</p>
   <button class="btn btn-primary" onclick="openAuditModal(event)">Book an audit call</button>
 </div>
 </article>
 
+</div>
 </main>
 <footer>
   <div class="wrap">
     <div>
       <a class="brand" href="/">
-        <img src="/logo.png" alt="Buoy mark" style="width:28px;height:28px;" />
-        <span>Buoy</span>
+        <span class="sq" aria-hidden="true"></span>
+        <span class="word">buoy<span class="dot" aria-hidden="true"></span></span>
       </a>
       <p class="fnote">Done with you, a small number of clients at a time: the Audit (Clean), Validation (Protected), and Filled in from your own business. Sonar, on the roadmap, will add Intelligence.</p>
     </div>
@@ -370,8 +423,34 @@ footer .fnav a:hover{ color:var(--coral); }
     if (e.target === this) closeAuditModal();
   });
   document.addEventListener('keydown', function(e){
-    if (e.key === 'Escape') closeAuditModal();
+    if (e.key !== 'Escape') return;
+    var menu = document.querySelector('.nav-menu');
+    if (menu && menu.getAttribute('aria-expanded') === 'true'){
+      setNavOpen(false);
+      menu.focus();
+      return;
+    }
+    closeAuditModal();
   });
+  function setNavOpen(open){
+    var menu = document.querySelector('.nav-menu');
+    var nav = document.getElementById('site-nav');
+    if (!menu || !nav) return;
+    menu.setAttribute('aria-expanded', open ? 'true' : 'false');
+    menu.setAttribute('aria-label', open ? 'Close menu' : 'Menu');
+    nav.classList.toggle('is-open', open);
+  }
+  var navMenu = document.querySelector('.nav-menu');
+  if (navMenu){
+    navMenu.addEventListener('click', function(){
+      var open = navMenu.getAttribute('aria-expanded') !== 'true';
+      setNavOpen(open);
+      if (open){
+        var first = document.querySelector('#site-nav a');
+        if (first) first.focus();
+      }
+    });
+  }
 </script>
 
 <!-- HubSpot tracking code -->
