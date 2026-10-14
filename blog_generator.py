@@ -1,4 +1,4 @@
-# Shared CSS for every blog page. Direction E: paper, Newsreader, Inter,
+# Shared CSS for every blog page. White base, paper footer, Newsreader, Inter,
 # JetBrains Mono. Duplicated into each page so a file still renders alone.
 SHARED_CSS = """
 :root{
@@ -8,7 +8,7 @@ SHARED_CSS = """
 *{ box-sizing:border-box; }
 html{ scroll-behavior:smooth; }
 body{
-  margin:0; background:var(--paper); color:var(--ink);
+  margin:0; background:#fff; color:var(--ink);
   font-family:Inter, sans-serif; font-size:17px; line-height:1.65;
   -webkit-font-smoothing:antialiased;
 }
@@ -23,8 +23,8 @@ img{ max-width:100%; display:block; }
 
 header{
   position:sticky; top:0; z-index:20;
-  background:rgba(244,240,230,0.94);
-  border-bottom:1px solid var(--line);
+  background:#fff;
+  border-bottom:1px solid #E4DED0;
 }
 nav.wrap{ display:flex; align-items:center; justify-content:space-between; height:72px; max-width:1120px; }
 .brand{ display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--ink); }
@@ -104,7 +104,7 @@ article.post-body .post-cta h3{ font-size:32px; line-height:1.15; color:var(--pa
 .post-list-item h2 a:hover{ text-decoration:underline; text-underline-offset:3px; }
 .post-list-item p{ color:var(--slate); margin:0; }
 
-footer{ border-top:1px solid var(--line); padding:48px 0 28px; }
+footer{ background:var(--paper); border-top:1px solid var(--line); padding:48px 0 28px; }
 footer .wrap{ display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:28px; max-width:1120px; }
 footer .word{ font-size:22px; }
 footer .fnote{ font-size:14px; color:var(--slate); margin-top:12px; max-width:46ch; line-height:1.5; }
