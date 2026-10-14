@@ -57,7 +57,7 @@ header{
 }
 nav.wrap{ display:flex; align-items:center; justify-content:space-between; height:72px; max-width:1120px; }
 .brand{ display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--ink); }
-.sq{ width:14px; height:14px; border:1.25px solid var(--ink); flex:none; }
+.brand img{ height:32px; width:auto; flex:none; display:block; }
 .word{ font-family:Newsreader, serif; font-weight:500; font-size:26px; letter-spacing:-0.03em; line-height:1; text-transform:lowercase; }
 .dot{ display:inline-block; width:5px; height:5px; margin:0 0 11px 3px; border-radius:50%; background:var(--oxblood); vertical-align:middle; }
 .navlinks{ display:flex; align-items:center; gap:28px; }
@@ -136,6 +136,7 @@ article.post-body .post-cta h3{ font-size:32px; line-height:1.15; color:var(--pa
 footer{ border-top:1px solid var(--line); padding:48px 0 28px; }
 footer .wrap{ display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:28px; max-width:1120px; }
 footer .word{ font-size:22px; }
+footer .brand img{ height:28px; }
 footer .fnote{ font-size:14px; color:var(--slate); margin-top:12px; max-width:46ch; line-height:1.5; }
 footer .fnav{ display:flex; gap:22px; flex-wrap:wrap; }
 footer .fnav a{ text-decoration:none; font-size:14px; color:var(--slate); }
@@ -167,7 +168,7 @@ footer .fnav a:hover{ color:var(--ink); }
 <header>
   <nav class="wrap">
     <a class="brand" href="/">
-      <span class="sq" aria-hidden="true"></span>
+      <img src="/logo.png" alt="Buoy">
       <span class="word">buoy<span class="dot" aria-hidden="true"></span></span>
     </a>
     <div class="navlinks" id="site-nav">
@@ -214,7 +215,7 @@ footer .fnav a:hover{ color:var(--ink); }
   <div class="wrap">
     <div>
       <a class="brand" href="/">
-        <span class="sq" aria-hidden="true"></span>
+        <img src="/logo.png" alt="Buoy">
         <span class="word">buoy<span class="dot" aria-hidden="true"></span></span>
       </a>
       <p class="fnote">Done with you, a small number of clients at a time: the Audit (Clean), Validation (Protected), and Filled in from your own business. Sonar, on the roadmap, will add Intelligence.</p>
