@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Decision Foundation Audit: Agree on the Numbers, Then Clean Up What Feeds Them | Buoy</title>
+<meta name="description" content="Before you add another required field or stage gate, decide which board numbers you need to trust. The Decision Foundation Audit agrees on their definitions, then cleans up the HubSpot properties behind them." />
+<link rel="canonical" href="https://buildwithbuoy.com/blog/the-decision-foundation-audit-disposition-before-you-enforce-anything.html" />
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="64x64" href="/favicon-64.png">
+<link rel="icon" type="image/png" sizes="128x128" href="/favicon-128.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="The Decision Foundation Audit: Agree on the Numbers, Then Clean Up What Feeds Them | Buoy" />
+<meta property="og:description" content="Before you add another required field or stage gate, decide which board numbers you need to trust. The Decision Foundation Audit agrees on their definitions, then cleans up the HubSpot properties behind them." />
+<meta property="og:url" content="https://buildwithbuoy.com/blog/the-decision-foundation-audit-disposition-before-you-enforce-anything.html" />
+<meta property="og:image" content="https://buildwithbuoy.com/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Buoy — Trust the numbers you take to the board." />
+<meta property="og:site_name" content="Buoy" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="The Decision Foundation Audit: Agree on the Numbers, Then Clean Up What Feeds Them | Buoy" />
+<meta name="twitter:description" content="Before you add another required field or stage gate, decide which board numbers you need to trust. The Decision Foundation Audit agrees on their definitions, then cleans up the HubSpot properties behind them." />
+<meta name="twitter:image" content="https://buildwithbuoy.com/assets/og-image.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#161513; --navy:#0F1F33; --paper:#F4F0E6; --slate:#4A5768; --oxblood:#8C3B32;
+  --line:rgba(22,21,19,0.18); --max:760px;
+}
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  margin:0; background:#fff; color:var(--ink);
+  font-family:Inter, sans-serif; font-size:17px; line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,.serif{
+  font-family:Newsreader, serif; font-optical-sizing:auto; font-weight:500;
+  letter-spacing:-0.02em; margin:0; color:var(--ink);
+}
+a{ color:inherit; }
+.wrap{ max-width:var(--max); margin:0 auto; padding:0 32px; }
+img{ max-width:100%; display:block; }
+:focus-visible{ outline:2px solid var(--navy); outline-offset:3px; }
+
+header{
+  position:sticky; top:0; z-index:20;
+  background:#fff;
+  border-bottom:1px solid #E4DED0;
+}
+nav.wrap{ display:flex; align-items:center; justify-content:space-between; height:72px; max-width:1120px; }
+.brand{ display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--ink); }
+.brand img{ height:32px; width:32px; flex:none; display:block; }
+.word{ font-family:Newsreader, serif; font-weight:500; font-size:26px; letter-spacing:-0.03em; line-height:1; text-transform:lowercase; }
+.dot{ display:inline-block; width:5px; height:5px; margin:0 0 11px 3px; border-radius:50%; background:var(--oxblood); vertical-align:middle; }
+.navlinks{ display:flex; align-items:center; gap:28px; }
+.navlinks a{ text-decoration:none; color:var(--ink); font-size:14px; }
+.navlinks a:hover{ color:var(--navy); }
+.nav-menu{
+  display:none; width:44px; height:44px; flex:none; padding:0;
+  border:1px solid var(--ink); background:transparent; color:var(--ink); cursor:pointer;
+  align-items:center; justify-content:center;
+}
+.nav-menu-bars, .nav-menu-bars::before, .nav-menu-bars::after{
+  display:block; width:16px; height:1.5px; background:currentColor; position:relative;
+}
+.nav-menu-bars::before, .nav-menu-bars::after{ content:""; position:absolute; left:0; }
+.nav-menu-bars::before{ top:-5px; }
+.nav-menu-bars::after{ top:5px; }
+.nav-menu[aria-expanded="true"] .nav-menu-bars{ background:transparent; }
+.nav-menu[aria-expanded="true"] .nav-menu-bars::before{ top:0; transform:rotate(45deg); }
+.nav-menu[aria-expanded="true"] .nav-menu-bars::after{ top:0; transform:rotate(-45deg); }
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  min-height:44px; padding:12px 18px; border-radius:0;
+  font-family:Inter, sans-serif; font-size:14px; font-weight:500;
+  white-space:nowrap; text-decoration:none; border:1px solid transparent; cursor:pointer;
+}
+.btn-primary{ background:var(--navy); color:var(--paper); }
+.btn-primary:hover{ background:#183049; }
+.navcta{ display:flex; gap:14px; align-items:center; }
+
+main{ padding:96px 0 96px; }
+.eyebrow{
+  font-family:"JetBrains Mono", ui-monospace, monospace;
+  font-size:12px; letter-spacing:0.14em; text-transform:uppercase;
+  color:var(--slate); margin:0 0 12px;
+}
+.post-title{ font-size:48px; line-height:1.08; margin-bottom:14px; }
+.post-meta{
+  font-family:"JetBrains Mono", ui-monospace, monospace;
+  font-size:12px; letter-spacing:0.04em; color:var(--slate); margin-bottom:40px;
+}
+article.post-body{ max-width:620px; }
+article.post-body h2{ font-size:28px; margin:48px 0 14px; line-height:1.2; }
+article.post-body h3{ font-size:22px; margin:32px 0 10px; line-height:1.25; }
+article.post-body p{ margin:0 0 18px; }
+article.post-body a{ text-underline-offset:3px; }
+article.post-body ul, article.post-body ol{ margin:0 0 18px; padding-left:22px; }
+article.post-body li{ margin-bottom:8px; }
+article.post-body strong{ font-weight:600; }
+article.post-body blockquote{ margin:28px 0; padding:0 0 0 18px; border-left:2px solid var(--ink); color:var(--ink); font-family:Newsreader, serif; font-size:22px; line-height:1.35; font-weight:500; }
+article.post-body table{ width:100%; border-collapse:collapse; margin:0 0 22px; font-size:15px; }
+article.post-body th, article.post-body td{ border-bottom:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top; }
+article.post-body th{ font-family:"JetBrains Mono", ui-monospace, monospace; font-size:12px; letter-spacing:0.06em; text-transform:uppercase; font-weight:500; color:var(--slate); }
+article.post-body td{ font-variant-numeric:tabular-nums; }
+article.post-body code{ font-family:"JetBrains Mono", ui-monospace, monospace; font-size:0.9em; background:#EBE6DA; padding:1px 5px; }
+article.post-body hr{ border:none; border-top:1px solid var(--line); margin:40px 0; }
+.table-wrap{ overflow-x:auto; margin:0 0 22px; }
+.table-wrap table{ width:100%; border-collapse:collapse; font-size:15px; }
+.table-wrap th, .table-wrap td{ text-align:left; padding:10px 14px; border-bottom:1px solid var(--line); vertical-align:top; }
+.table-wrap th{ font-family:"JetBrains Mono", ui-monospace, monospace; font-size:12px; letter-spacing:0.06em; text-transform:uppercase; font-weight:500; color:var(--slate); }
+.table-wrap td{ font-variant-numeric:tabular-nums; }
+.post-cta{ background:var(--navy); color:var(--paper); padding:36px 32px; margin:56px 0 48px; }
+.post-cta h3,
+article.post-body .post-cta h3{ font-size:32px; line-height:1.15; color:var(--paper); margin:0 0 10px; max-width:22ch; font-weight:500; }
+.post-cta p{ color:var(--paper); margin:0 0 18px; }
+.post-cta .btn-primary{ background:var(--paper); color:var(--navy); }
+.post-cta .btn-primary:hover{ background:#fff; }
+.post-cta :focus-visible{ outline-color:var(--paper); }
+
+.post-list-item{ padding:28px 0; border-top:1px solid var(--line); }
+.post-list-item:first-of-type{ border-top:1px solid var(--line); }
+.post-list-item h2{ font-size:28px; line-height:1.2; margin-bottom:8px; }
+.post-list-item h2 a{ text-decoration:none; }
+.post-list-item h2 a:hover{ text-decoration:underline; text-underline-offset:3px; }
+.post-list-item p{ color:var(--slate); margin:0; }
+
+footer{ background:var(--paper); border-top:1px solid var(--line); padding:48px 0 28px; }
+footer .wrap{ display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:28px; max-width:1120px; }
+footer .word{ font-size:22px; }
+footer .fnote{ font-size:14px; color:var(--slate); margin-top:12px; max-width:46ch; line-height:1.5; }
+footer .fnav{ display:flex; gap:22px; flex-wrap:wrap; }
+footer .fnav a{ text-decoration:none; font-size:14px; color:var(--slate); }
+footer .fnav a:hover{ color:var(--ink); }
+.copyright{ font-size:12px; letter-spacing:0.04em; color:var(--slate); margin-top:28px; max-width:1120px; margin-left:auto; margin-right:auto; padding:0 32px; font-family:"JetBrains Mono", ui-monospace, monospace; }
+
+.hs-modal-overlay{ display:none; position:fixed; inset:0; z-index:1000; background:rgba(15,31,51,0.72); align-items:center; justify-content:center; padding:24px; }
+.hs-modal-overlay.open{ display:flex; }
+.hs-modal{ background:var(--paper); border-radius:0; width:100%; max-width:500px; max-height:88vh; overflow-y:auto; padding:36px 28px 28px; position:relative; border:1px solid var(--line); }
+.hs-modal-close{ position:absolute; top:8px; right:8px; width:44px; height:44px; background:none; border:none; font-size:26px; line-height:1; cursor:pointer; color:var(--ink); }
+.hs-modal h3{ font-size:28px; margin:0 0 8px; }
+.hs-modal p.sub{ color:var(--slate); font-size:15px; margin:0 0 20px; }
+
+@media (max-width: 720px){
+  nav.wrap{ flex-wrap:wrap; height:auto; padding-top:8px; padding-bottom:8px; row-gap:0; }
+  .nav-menu{ display:inline-flex; }
+  .navlinks{ display:none; order:3; width:100%; flex-direction:column; align-items:stretch; gap:0; padding:4px 0 8px; }
+  .navlinks.is-open{ display:flex; }
+  .navlinks a{ white-space:nowrap; min-height:44px; display:flex; align-items:center; padding:0 4px; }
+  footer .fnav{ width:100%; flex-wrap:wrap; overflow:visible; }
+  footer .fnav a{ white-space:nowrap; min-height:44px; display:inline-flex; align-items:center; padding:0 10px; }
+  .post-title{ font-size:36px; }
+  .wrap{ padding:0 20px; }
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "The Decision Foundation Audit: Agree on the Numbers, Then Clean Up What Feeds Them",
+  "description": "Before you add another required field or stage gate, decide which board numbers you need to trust. The Decision Foundation Audit agrees on their definitions, then cleans up the HubSpot properties behind them.",
+  "datePublished": "2026-10-15",
+  "dateModified": "2026-10-15",
+  "author": {"@type": "Organization", "name": "Buoy"},
+  "publisher": {
+    "@type": "Organization",
+    "name": "Buoy",
+    "logo": {"@type": "ImageObject", "url": "https://buildwithbuoy.com/logo-512.png"}
+  },
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://buildwithbuoy.com/blog/the-decision-foundation-audit-disposition-before-you-enforce-anything.html"}
+}
+</script>
+</head>
+<body>
+<header>
+  <nav class="wrap">
+    <a class="brand" href="/">
+      <img src="/assets/buoy-mark.svg" alt="Buoy">
+      <span class="word">buoy<span class="dot" aria-hidden="true"></span></span>
+    </a>
+    <div class="navlinks" id="site-nav">
+      <a href="/#how-it-works">How it works</a>
+      <a href="/#product">Product</a>
+      <a href="/#story">Why Buoy</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/blog/">Blog</a>
+    </div>
+    <div class="navcta">
+      <button class="nav-menu" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><span class="nav-menu-bars" aria-hidden="true"></span></button>
+      <button class="btn btn-primary" onclick="openAuditModal(event)">Book an audit call</button>
+    </div>
+  </nav>
+</header>
+<main>
+<div class="wrap">
+<p class="eyebrow">Published October 15, 2026</p>
+<h1 class="post-title">The Decision Foundation Audit: Agree on the Numbers, Then Clean Up What Feeds Them</h1>
+<p class="post-meta">By the Buoy team &middot; 7 min read</p>
+
+<article class="post-body">
+<p><strong>Decision first: don&rsquo;t add another required field, stage gate, or dashboard until you&rsquo;ve agreed what your board numbers mean and cleaned up the HubSpot properties that feed them.</strong> That&rsquo;s what a Decision Foundation Audit does. It has two equal halves. Top-down, your leadership team agrees on the definitions and the process. Bottom-up, every material HubSpot property gets an honest outcome. Skip either half and you lock today&rsquo;s confusion into tomorrow&rsquo;s process.</p>
+<h2>The problem: numbers that disagree</h2>
+<p>You walk into the board meeting with a pipeline number. Finance has a different one. CS has its own view of renewals. Nobody is lying. Each team is reading the same CRM through a different definition, and the records have slowly drifted away from how your process is supposed to run.</p>
+<p>That&rsquo;s CRM drift. It&rsquo;s why you can&rsquo;t fully trust the numbers you take to the board.</p>
+<p>The usual reflex is to tighten: more required fields, harder stage gates, a new dashboard. Those feel decisive. But they enforce definitions nobody agreed on. You get green fill rates and the same argument on Friday.</p>
+<p>Filled isn&rsquo;t the same as true.</p>
+<hr>
+<h2>Half one: agree on the definitions (top-down)</h2>
+<p>Start with the decisions, not the fields.</p>
+<ol>
+<li><strong>Name the numbers you defend.</strong> Usually new pipeline, conversion by stage, forecast commit, renewal or churn rate, and expansion. Keep the list short.</li>
+<li><strong>Write down what each one means.</strong> What counts, what doesn&rsquo;t, and which date it uses. Who owns the definition when teams disagree?</li>
+<li><strong>Write down the process behind it.</strong> What has to be true for a deal to move stages? What has to happen before a customer is &ldquo;onboarded&rdquo;? Sales often has written exit criteria. Post-sales onboarding rarely does.</li>
+</ol>
+<p>This is a leadership job. Your CEO, COO, and CRO own the meaning. RevOps runs the system but shouldn&rsquo;t have to invent definitions alone.</p>
+<hr>
+<h2>Half two: clean up the properties (bottom-up)</h2>
+<p>This half is not an afterthought. Definitions on a slide do nothing if the properties underneath still say something else.</p>
+<p>For every property that feeds one of your board numbers, pick one outcome:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Outcome</th>
+<th>What it means</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Keep</strong></td>
+<td>Needed, defined, and owned</td>
+</tr>
+<tr>
+<td><strong>Delete</strong></td>
+<td>Noise that fakes a signal</td>
+</tr>
+<tr>
+<td><strong>Turn into a rule</strong></td>
+<td>Its meaning should be enforced or calculated, not typed freehand</td>
+</tr>
+<tr>
+<td><strong>Pending</strong></td>
+<td>Waiting on a named person, with a date</td>
+</tr>
+<tr>
+<td><strong>Blocked</strong></td>
+<td>Can&rsquo;t be honest until leadership makes a process decision</td>
+</tr>
+</tbody>
+</table></div>
+<p>Two patterns show up often. A &ldquo;renewal date&rdquo; property that really holds the next billing date. And a nurture stage that becomes a parking lot. Nurture works better as closed-lost with a required date and note, so it stays visible without inflating pipeline.</p>
+<p>Material means &ldquo;if this field is wrong, a leadership decision gets worse.&rdquo; Usage isn&rsquo;t the test. A rarely filled field can matter more than a busy one.</p>
+<hr>
+<h2>Then, and only then, enforce</h2>
+<p>Once both halves are done, gates and required fields protect something real. Before that, they protect confusion.</p>
+<p>A simple order:</p>
+<ul>
+<li>Agree on the numbers and their definitions.</li>
+<li>Clean up every property that feeds them.</li>
+<li>Add enforcement where leadership will stand behind the rule.</li>
+<li>Keep watching for drift, because process and records separate again over time.</li>
+</ul>
+<hr>
+<h2>What you have when it&rsquo;s done</h2>
+<ul>
+<li>A short, written list of board numbers with agreed definitions and owners</li>
+<li>Written process steps, including post-sales exit criteria</li>
+<li>An outcome for every material property, with Pending items named to people and Blocked items named to decisions</li>
+<li>A clear line between what must be true in the record and what a report can calculate</li>
+</ul>
+<p>Buoy&rsquo;s team doesn&rsquo;t replace your dashboards. We work with you to make them true.</p>
+<hr>
+<h2>How Buoy helps</h2>
+<p>The Buoy Audit is available today, and it&rsquo;s done with you, not handed to you. Buoy&rsquo;s team works with your leaders: we start from the numbers you take to the board, agree on how each is defined, then clean up the HubSpot properties behind them. You keep the documentation. Ongoing drift monitoring is on the roadmap.</p>
+<p><a href="https://buildwithbuoy.com/">Book an audit call</a> and we&rsquo;ll start from your board numbers.</p>
+<hr>
+<h2>FAQ</h2>
+<h3>What is a Decision Foundation Audit?</h3>
+<p>A two-part audit. Top-down, leadership agrees on what each board number means and the process behind it. Bottom-up, every HubSpot property feeding those numbers is kept, deleted, turned into a rule, marked pending, or marked blocked.</p>
+<h3>Why not just add required fields?</h3>
+<p>Required fields raise fill rates, not truth. If nobody agreed what a field means, enforcing it just locks in placeholders.</p>
+<h3>Is this a data-quality cleanup?</h3>
+<p>It includes cleanup, as one of two equal halves. But it starts from the decisions you defend, not from unused-property counts.</p>
+<h3>Who owns it?</h3>
+<p>Leadership owns the definitions. Team heads defend their parts of the process. RevOps implements the property outcomes.</p>
+
+<div class="post-cta">
+  <h3>Can you trust the numbers you take to the board?</h3>
+  <p>Book an audit call. We&rsquo;ll start from the numbers your board sees, agree on what each one means, then clean up the HubSpot properties behind them.</p>
+  <button class="btn btn-primary" onclick="openAuditModal(event)">Book an audit call</button>
+</div>
+</article>
+
+</div>
+</main>
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="brand" href="/">
+        <img src="/assets/buoy-mark.svg" alt="Buoy">
+        <span class="word">buoy<span class="dot" aria-hidden="true"></span></span>
+      </a>
+      <p class="fnote">Done with you, a small number of clients at a time: the Audit (Clean), Validation (Protected), and Filled in from your own business. Sonar, on the roadmap, will add Intelligence.</p>
+    </div>
+    <div class="fnav">
+      <a href="/#how-it-works">How it works</a>
+      <a href="/#product">Product</a>
+      <a href="/#story">Why Buoy</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/blog/">Blog</a>
+      <a href="mailto:alex@buildwithbuoy.com">alex@buildwithbuoy.com</a>
+    </div>
+  </div>
+  <p class="copyright">&copy; 2026 Buoy.</p>
+</footer>
+
+<div class="hs-modal-overlay" id="hs-modal-overlay">
+  <div class="hs-modal" role="dialog" aria-modal="true" aria-labelledby="hs-modal-title">
+    <button class="hs-modal-close" onclick="closeAuditModal()" aria-label="Close">&times;</button>
+    <h3 id="hs-modal-title">Book an audit call</h3>
+    <p class="sub">Tell us a bit about your business and we'll follow up to schedule a time.</p>
+    <div class="hs-form-frame" data-region="na2" data-form-id="8dd9daaf-2e19-460c-90ba-590573d0a90c" data-portal-id="247350596"></div>
+  </div>
+</div>
+<script src="https://js-na2.hsforms.net/forms/embed/247350596.js" defer></script>
+<script>
+  function openAuditModal(e){
+    if (e) e.preventDefault();
+    document.getElementById('hs-modal-overlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeAuditModal(){
+    document.getElementById('hs-modal-overlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('hs-modal-overlay').addEventListener('click', function(e){
+    if (e.target === this) closeAuditModal();
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key !== 'Escape') return;
+    var menu = document.querySelector('.nav-menu');
+    if (menu && menu.getAttribute('aria-expanded') === 'true'){
+      setNavOpen(false);
+      menu.focus();
+      return;
+    }
+    closeAuditModal();
+  });
+  function setNavOpen(open){
+    var menu = document.querySelector('.nav-menu');
+    var nav = document.getElementById('site-nav');
+    if (!menu || !nav) return;
+    menu.setAttribute('aria-expanded', open ? 'true' : 'false');
+    menu.setAttribute('aria-label', open ? 'Close menu' : 'Menu');
+    nav.classList.toggle('is-open', open);
+  }
+  var navMenu = document.querySelector('.nav-menu');
+  if (navMenu){
+    navMenu.addEventListener('click', function(){
+      var open = navMenu.getAttribute('aria-expanded') !== 'true';
+      setNavOpen(open);
+      if (open){
+        var first = document.querySelector('#site-nav a');
+        if (first) first.focus();
+      }
+    });
+  }
+</script>
+
+<!-- HubSpot tracking code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/247350596.js"></script>
+</body>
+</html>
