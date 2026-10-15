@@ -40,4 +40,8 @@
     <loc>https://buildwithbuoy.com/blog/root-cause-before-reporting-why-buoys-approach-cascades.html</loc>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://buildwithbuoy.com/blog/the-decision-foundation-audit-disposition-before-you-enforce-anything.html</loc>
+    <priority>0.7</priority>
+  </url>
 </urlset>
