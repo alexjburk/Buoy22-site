@@ -143,8 +143,8 @@ post_body = f"""
 
 <div class="post-cta">
   <h3>Can your leadership team trust the numbers?</h3>
-  <p>Book an audit call and we&rsquo;ll start from those numbers, then clean up what&rsquo;s behind them in HubSpot.</p>
-  <button class="btn btn-primary" onclick="openAuditModal(event)">Book an audit call</button>
+  <p>Let's chat and we&rsquo;ll start from those numbers, then clean up what&rsquo;s behind them in HubSpot.</p>
+  <button class="btn btn-primary" onclick="openAuditModal(event)">Let's chat</button>
 </div>
 </article>
 """
@@ -377,7 +377,7 @@ post2_article_html = """
 <p>If metrics 1–2 look fine but 5–6 look terrible, you have already found the gap: <strong>complete ≠ true</strong>. Hygiene tools will congratulate you. Process quality will not.</p>
 <hr />
 <h2>A 10-day DIY pass, and when to book the Audit</h2>
-<p>This outline is a DIY sketch. The <strong>Audit</strong> is $20,000, done with you: top-down process and bottom-up property cleanup, as equal halves. <a href="/#contact" onclick="openAuditModal(event)">Book an audit call</a> when the portal is too tangled to sort in ten days.</p>
+<p>This outline is a DIY sketch. The <strong>Audit</strong> is a one-time engagement, done with you: top-down process and bottom-up property cleanup, as equal halves. <a href="/#contact" onclick="openAuditModal(event)">Let's chat</a> when the portal is too tangled to sort in ten days.</p>
 <h3>Day 1–2: Inventory and owners</h3>
 <ul>
 <li>Export custom properties for Deals, Contacts, Companies, Tickets (and any critical custom objects).</li>
@@ -566,8 +566,8 @@ post2_article_html = """
 </ol>
 <p>Three or four points = pass. Zero to two = fail. Track pass rate on the scorecard.</p>
 <h3>Where Buoy fits</h3>
-<p><strong>Buoy</strong> is a three-step managed service, not another cleanup tool. The <strong>Audit</strong> ($20,000) is a one-time engagement: we audit your process and your CRM with you, clean it up, and you keep Included Access to the workspace. <strong>Validation</strong> flags drift on every record, and our team fills in the fields your business needs from call transcripts, other systems, and integrations, built to your requirements, never generic AI fields. <strong>Sonar</strong> and Ask Buoy turn trusted data into answers for your leadership team.</p>
-<p>If your scorecard shows strong completion and weak freeform pass rates, you are past another cleanup tool. <a href="/#contact" onclick="openAuditModal(event)">Book an audit call</a>.</p>
+<p><strong>Buoy</strong> is a three-step managed service, not another cleanup tool. The <strong>Audit</strong> is a one-time engagement: we audit your process and your CRM with you, clean it up, and you keep Included Access to the workspace. <strong>Validation</strong> flags drift on every record, and our team fills in the fields your business needs from call transcripts, other systems, and integrations, built to your requirements, never generic AI fields. <strong>Sonar</strong> and Ask Buoy turn trusted data into answers for your leadership team.</p>
+<p>If your scorecard shows strong completion and weak freeform pass rates, you are past another cleanup tool. <a href="/#contact" onclick="openAuditModal(event)">Let's chat</a>.</p>
 <hr />
 <h2>Governance: owners, cadence, and SLAs</h2>
 <p>Tools without governance recreate the same mess in six months. Keep governance lightweight enough that people follow it.</p>
@@ -719,7 +719,7 @@ post2_article_html = """
 <ul>
 <li>☐ Exit criteria drafted per stage (buyer evidence, not opinion)</li>
 <li>☐ Freeform fail themes shared with managers (not only admins)</li>
-<li>☐ <a href="/#contact" onclick="openAuditModal(event)">Book an audit call</a></li>
+<li>☐ <a href="/#contact" onclick="openAuditModal(event)">Let's chat</a></li>
 </ul>
 <hr />
 <h2>FAQ: HubSpot CRM data quality</h2>
@@ -734,11 +734,11 @@ post2_article_html = """
 <h3>Can HubSpot require high-quality freeform fields like “Next step”?</h3>
 <p>HubSpot can require the field to be non-blank and can apply some validation patterns. It cannot natively and reliably enforce semantic criteria (buyer action + date + owner) the way a process-aware layer can. That gap is why filled portals still produce weak forecasts and weak coaching.</p>
 <h3>How often should we run a HubSpot CRM data quality audit?</h3>
-<p>Run a lightweight scorecard monthly and a deeper property and process review at least annually—or after major org changes, CRM migrations, or a painful forecast miss. Teams with heavy sprawl often need a structured reset — a DIY pass, or the Audit at $20,000 — before Validation will stick.</p>
+<p>Run a lightweight scorecard monthly and a deeper property and process review at least annually—or after major org changes, CRM migrations, or a painful forecast miss. Teams with heavy sprawl often need a structured reset — a DIY pass, or a one-time Audit — before Validation will stick.</p>
 <h3>When are native HubSpot tools not enough?</h3>
 <p>When completion rates look healthy but freeform fields fail process criteria; when gates are bypassed by workflows, API, or Super Admins; when drift happens between stage moves; or when you need the same process truth across deals, tickets, and onboarding—not just blank checks on one pipeline.</p>
 <hr />
-<p>If you only do one thing after reading this playbook, baseline the scorecard on a single pipeline and score twenty next steps with a manager. Use the checklist above. When the portal is past a DIY pass, <a href="/#contact" onclick="openAuditModal(event)">book an audit call</a>. The Audit is $20,000. Validation + AI fields and Sonar are subscriptions.</p>"""
+<p>If you only do one thing after reading this playbook, baseline the scorecard on a single pipeline and score twenty next steps with a manager. Use the checklist above. When the portal is past a DIY pass, <a href="/#contact" onclick="openAuditModal(event)">Let's chat</a>. The Audit is a one-time engagement. Validation + AI fields and Sonar are subscriptions.</p>"""
 
 post_body = f"""
 <p class="eyebrow">Published {post['date_display']}</p>
@@ -750,8 +750,8 @@ post_body = f"""
 
 <div class="post-cta">
   <h3>Can your leadership team trust the numbers?</h3>
-  <p>Book an audit call and we&rsquo;ll start from those numbers, then clean up what&rsquo;s behind them in HubSpot.</p>
-  <button class="btn btn-primary" onclick="openAuditModal(event)">Book an audit call</button>
+  <p>Let's chat and we&rsquo;ll start from those numbers, then clean up what&rsquo;s behind them in HubSpot.</p>
+  <button class="btn btn-primary" onclick="openAuditModal(event)">Let's chat</button>
 </div>
 </article>
 """
@@ -827,8 +827,8 @@ post_body = f"""
 
 <div class="post-cta">
   <h3>Can your leadership team trust the numbers?</h3>
-  <p>Book an audit call and we&rsquo;ll start from those numbers, then clean up what&rsquo;s behind them in HubSpot.</p>
-  <button class="btn btn-primary" onclick="openAuditModal(event)">Book an audit call</button>
+  <p>Let's chat and we&rsquo;ll start from those numbers, then clean up what&rsquo;s behind them in HubSpot.</p>
+  <button class="btn btn-primary" onclick="openAuditModal(event)">Let's chat</button>
 </div>
 </article>
 """
@@ -945,8 +945,8 @@ template_body = """
 
 <div class="post-cta">
   <h3>Can your leadership team trust the numbers?</h3>
-  <p>Book an audit call and we&rsquo;ll start from those numbers, then clean up what&rsquo;s behind them in HubSpot.</p>
-  <button class="btn btn-primary" onclick="openAuditModal(event)">Book an audit call</button>
+  <p>Let's chat and we&rsquo;ll start from those numbers, then clean up what&rsquo;s behind them in HubSpot.</p>
+  <button class="btn btn-primary" onclick="openAuditModal(event)">Let's chat</button>
 </div>
 </article>
 """
