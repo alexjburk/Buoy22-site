@@ -46,10 +46,10 @@ POSTS = [
     {
         "slug": "why-forecasts-miss-when-crm-drift-becomes-a-board-problem",
         "title": "When CRM Drift Becomes a Board Problem (and Why Forecasts Miss)",
-        "description": "CRM drift is the gap between how GTM is supposed to run and what HubSpot records say. How CEOs, COOs, and CROs catch it today—not in next quarter's board deck.",
+        "description": "CRM drift is the gap between how GTM is supposed to run and what HubSpot records say. How CEOs, COOs, and CROs catch it today—not in next quarter's forecast review.",
         "date": "2026-10-01",
         "date_display": "October 1, 2026",
-        "excerpt": "Board surprises rarely start in the forecast. They start when HubSpot records quietly drift from how your GTM process is supposed to work. Document the process, flag the drift in-record, and the miss stops being a surprise.",
+        "excerpt": "Forecast surprises rarely start in the meeting. They start when HubSpot records quietly drift from how your GTM process is supposed to work. Document the process, flag the drift in-record, and the miss stops being a surprise.",
         "body_file": "blog_sources/why-forecasts-miss-when-crm-drift-becomes-a-board-problem.html",
     },
     {
@@ -63,20 +63,20 @@ POSTS = [
     },
     {
         "slug": "live-in-the-record-vs-live-in-the-report-where-decision-foundations-hold",
-        "title": "Live in the Record vs Live in the Report: Which Numbers Can You Take to the Board?",
-        "description": "Your board deck is only as true as the HubSpot records under it. How CEOs, COOs, and CROs decide which numbers to trust, and why the truth has to live in the record, not the report.",
+        "title": "Live in the Record vs Live in the Report: Which Numbers Can Your Leadership Team Trust?",
+        "description": "The numbers your leadership team uses are only as true as the HubSpot records under them. How CEOs, COOs, and CROs decide which numbers to trust, and why the truth has to live in the record, not the report.",
         "date": "2026-10-08",
         "date_display": "October 8, 2026",
-        "excerpt": "You want to trust the numbers you take to the board. Reports add up records. If the truth only shows up after someone fixes the report, it shows up too late. Agree on the process, flag drift in the record, then trust the rollup.",
+        "excerpt": "You want your leadership team to trust the numbers. Reports add up records. If the truth only shows up after someone fixes the report, it shows up too late. Agree on the process, flag drift in the record, then trust the rollup.",
         "body_file": "blog_sources/live-in-the-record-vs-live-in-the-report-where-decision-foundations-hold.html",
     },
     {
         "slug": "root-cause-before-reporting-why-buoys-approach-cascades",
         "title": "Root Cause Before Reporting: What to Fix Before You Buy Another Dashboard",
-        "description": "Before you buy another dashboard, decide where the problem starts. How CEOs, COOs, and CROs fix process truth in HubSpot first, so reporting and board decisions follow.",
+        "description": "Before you buy another dashboard, decide where the problem starts. How CEOs, COOs, and CROs fix process truth in HubSpot first, so reporting and leadership decisions follow.",
         "date": "2026-10-13",
         "date_display": "October 13, 2026",
-        "excerpt": "You want to trust the numbers you take to the board. Another dashboard won't get you there. Fix the root, process truth in HubSpot, and reporting and decisions follow.",
+        "excerpt": "You want your leadership team to trust the numbers. Another dashboard won't get you there. Fix the root, process truth in HubSpot, and reporting and decisions follow.",
         "body_file": "blog_sources/root-cause-before-reporting-why-buoys-approach-cascades.html",
     },
 ]
@@ -142,9 +142,9 @@ post_body = f"""
 <blockquote>Drift isn't a data problem you fix once. It's a gap you have to keep watching, because it never stops trying to reopen.</blockquote>
 
 <div class="post-cta">
-  <h3>Can you trust the numbers you take to the board?</h3>
-  <p>Book an audit call and we&rsquo;ll start from those numbers, then clean up what&rsquo;s behind them in HubSpot.</p>
-  <button class="btn btn-primary" onclick="openAuditModal(event)">Book an audit call</button>
+  <h3>Can your leadership team trust the numbers?</h3>
+  <p>Let's chat and we&rsquo;ll start from those numbers, then clean up what&rsquo;s behind them in HubSpot.</p>
+  <button class="btn btn-primary" onclick="openAuditModal(event)">Let's chat</button>
 </div>
 </article>
 """
@@ -377,7 +377,7 @@ post2_article_html = """
 <p>If metrics 1–2 look fine but 5–6 look terrible, you have already found the gap: <strong>complete ≠ true</strong>. Hygiene tools will congratulate you. Process quality will not.</p>
 <hr />
 <h2>A 10-day DIY pass, and when to book the Audit</h2>
-<p>This outline is a DIY sketch. The <strong>Audit</strong> is $20,000, done with you: top-down process and bottom-up property cleanup, as equal halves. <a href="/#contact" onclick="openAuditModal(event)">Book an audit call</a> when the portal is too tangled to sort in ten days.</p>
+<p>This outline is a DIY sketch. The <strong>Audit</strong> is a one-time engagement, done with you: top-down process and bottom-up property cleanup, as equal halves. <a href="/#contact" onclick="openAuditModal(event)">Let's chat</a> when the portal is too tangled to sort in ten days.</p>
 <h3>Day 1–2: Inventory and owners</h3>
 <ul>
 <li>Export custom properties for Deals, Contacts, Companies, Tickets (and any critical custom objects).</li>
@@ -566,8 +566,8 @@ post2_article_html = """
 </ol>
 <p>Three or four points = pass. Zero to two = fail. Track pass rate on the scorecard.</p>
 <h3>Where Buoy fits</h3>
-<p><strong>Buoy</strong> is a done-with-you managed service, not another cleanup tool. The <strong>Audit</strong> ($20,000) is Clean: top-down process and bottom-up property cleanup, as equal halves. <strong>Validation</strong> is Protected: checks against decay and drift on the record. <strong>Filled in</strong> is our team filling the CRM from your own business, never generic AI-filled fields. <strong>Sonar</strong> (Intelligence) is on the roadmap. It will be the revenue leader's second brain, with proactive insight. It isn't available yet.</p>
-<p>If your scorecard shows strong completion and weak freeform pass rates, you are past another cleanup tool. <a href="/#contact" onclick="openAuditModal(event)">Book an audit call</a>.</p>
+<p><strong>Buoy</strong> is a three-step managed service, not another cleanup tool. The <strong>Audit</strong> is a one-time engagement: we audit your process and your CRM with you, clean it up, and you keep Included Access to the workspace. <strong>Validation</strong> flags drift on every record, and our team fills in the fields your business needs from call transcripts, other systems, and integrations, built to your requirements, never generic AI fields. <strong>Sonar</strong> and Ask Buoy turn trusted data into answers for your leadership team.</p>
+<p>If your scorecard shows strong completion and weak freeform pass rates, you are past another cleanup tool. <a href="/#contact" onclick="openAuditModal(event)">Let's chat</a>.</p>
 <hr />
 <h2>Governance: owners, cadence, and SLAs</h2>
 <p>Tools without governance recreate the same mess in six months. Keep governance lightweight enough that people follow it.</p>
@@ -719,7 +719,7 @@ post2_article_html = """
 <ul>
 <li>☐ Exit criteria drafted per stage (buyer evidence, not opinion)</li>
 <li>☐ Freeform fail themes shared with managers (not only admins)</li>
-<li>☐ <a href="/#contact" onclick="openAuditModal(event)">Book an audit call</a></li>
+<li>☐ <a href="/#contact" onclick="openAuditModal(event)">Let's chat</a></li>
 </ul>
 <hr />
 <h2>FAQ: HubSpot CRM data quality</h2>
@@ -734,11 +734,11 @@ post2_article_html = """
 <h3>Can HubSpot require high-quality freeform fields like “Next step”?</h3>
 <p>HubSpot can require the field to be non-blank and can apply some validation patterns. It cannot natively and reliably enforce semantic criteria (buyer action + date + owner) the way a process-aware layer can. That gap is why filled portals still produce weak forecasts and weak coaching.</p>
 <h3>How often should we run a HubSpot CRM data quality audit?</h3>
-<p>Run a lightweight scorecard monthly and a deeper property and process review at least annually—or after major org changes, CRM migrations, or a painful forecast miss. Teams with heavy sprawl often need a structured reset — a DIY pass, or the Audit at $20,000 — before Validation will stick.</p>
+<p>Run a lightweight scorecard monthly and a deeper property and process review at least annually—or after major org changes, CRM migrations, or a painful forecast miss. Teams with heavy sprawl often need a structured reset — a DIY pass, or a one-time Audit — before Validation will stick.</p>
 <h3>When are native HubSpot tools not enough?</h3>
 <p>When completion rates look healthy but freeform fields fail process criteria; when gates are bypassed by workflows, API, or Super Admins; when drift happens between stage moves; or when you need the same process truth across deals, tickets, and onboarding—not just blank checks on one pipeline.</p>
 <hr />
-<p>If you only do one thing after reading this playbook, baseline the scorecard on a single pipeline and score twenty next steps with a manager. Use the checklist above. When the portal is past a DIY pass, <a href="/#contact" onclick="openAuditModal(event)">book an audit call</a>. The Audit is $20,000. Validation (Protected) and Filled in are scoped after it. Sonar is on the roadmap.</p>"""
+<p>If you only do one thing after reading this playbook, baseline the scorecard on a single pipeline and score twenty next steps with a manager. Use the checklist above. When the portal is past a DIY pass, <a href="/#contact" onclick="openAuditModal(event)">Let's chat</a>. The Audit is a one-time engagement. Validation + AI fields and Sonar are subscriptions.</p>"""
 
 post_body = f"""
 <p class="eyebrow">Published {post['date_display']}</p>
@@ -749,9 +749,9 @@ post_body = f"""
 {post2_article_html}
 
 <div class="post-cta">
-  <h3>Can you trust the numbers you take to the board?</h3>
-  <p>Book an audit call and we&rsquo;ll start from those numbers, then clean up what&rsquo;s behind them in HubSpot.</p>
-  <button class="btn btn-primary" onclick="openAuditModal(event)">Book an audit call</button>
+  <h3>Can your leadership team trust the numbers?</h3>
+  <p>Let's chat and we&rsquo;ll start from those numbers, then clean up what&rsquo;s behind them in HubSpot.</p>
+  <button class="btn btn-primary" onclick="openAuditModal(event)">Let's chat</button>
 </div>
 </article>
 """
@@ -826,9 +826,9 @@ post_body = f"""
 <p>It gets marked pending rather than forced into a decision on the spot. A good audit process explicitly tracks which fields are waiting on a specific person's input, so nothing gets deleted or kept just to close out the list.</p>
 
 <div class="post-cta">
-  <h3>Can you trust the numbers you take to the board?</h3>
-  <p>Book an audit call and we&rsquo;ll start from those numbers, then clean up what&rsquo;s behind them in HubSpot.</p>
-  <button class="btn btn-primary" onclick="openAuditModal(event)">Book an audit call</button>
+  <h3>Can your leadership team trust the numbers?</h3>
+  <p>Let's chat and we&rsquo;ll start from those numbers, then clean up what&rsquo;s behind them in HubSpot.</p>
+  <button class="btn btn-primary" onclick="openAuditModal(event)">Let's chat</button>
 </div>
 </article>
 """
@@ -907,13 +907,13 @@ for p in sorted(POSTS, key=lambda x: x["date"], reverse=True):
 
 index_body = f"""
 <p class="eyebrow">Buoy</p>
-<h1 class="post-title">Notes on trusting the numbers you take to the board</h1>
+<h1 class="post-title">Notes on trusting the numbers your leadership team uses</h1>
 {list_items}
 """
 
 index_html = build_page(
     title="Blog | Buoy",
-    description="How a revenue leader gets one set of numbers: Clean, Protected, and Filled in. Sonar is on the roadmap.",
+    description="How a leadership team gets one set of numbers: the Audit, Validation and AI fields, and Sonar.",
     canonical=f"{SITE_URL}/blog/",
     body_html=index_body
 )
@@ -944,9 +944,9 @@ template_body = """
 <blockquote>[Optional pull quote — one sharp sentence, not a summary.]</blockquote>
 
 <div class="post-cta">
-  <h3>Can you trust the numbers you take to the board?</h3>
-  <p>Book an audit call and we&rsquo;ll start from those numbers, then clean up what&rsquo;s behind them in HubSpot.</p>
-  <button class="btn btn-primary" onclick="openAuditModal(event)">Book an audit call</button>
+  <h3>Can your leadership team trust the numbers?</h3>
+  <p>Let's chat and we&rsquo;ll start from those numbers, then clean up what&rsquo;s behind them in HubSpot.</p>
+  <button class="btn btn-primary" onclick="openAuditModal(event)">Let's chat</button>
 </div>
 </article>
 """

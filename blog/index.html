@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Blog | Buoy</title>
-<meta name="description" content="How a revenue leader gets one set of numbers: Clean, Protected, and Filled in. Sonar is on the roadmap." />
+<meta name="description" content="How a leadership team gets one set of numbers: the Audit, Validation and AI fields, and Sonar." />
 <link rel="canonical" href="https://buildwithbuoy.com/blog/" />
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
@@ -14,16 +14,16 @@
 
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Blog | Buoy" />
-<meta property="og:description" content="How a revenue leader gets one set of numbers: Clean, Protected, and Filled in. Sonar is on the roadmap." />
+<meta property="og:description" content="How a leadership team gets one set of numbers: the Audit, Validation and AI fields, and Sonar." />
 <meta property="og:url" content="https://buildwithbuoy.com/blog/" />
 <meta property="og:image" content="https://buildwithbuoy.com/assets/og-image.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="Buoy — Trust the numbers you take to the board." />
+<meta property="og:image:alt" content="Buoy — Trust the numbers that drive your business." />
 <meta property="og:site_name" content="Buoy" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Blog | Buoy" />
-<meta name="twitter:description" content="How a revenue leader gets one set of numbers: Clean, Protected, and Filled in. Sonar is on the roadmap." />
+<meta name="twitter:description" content="How a leadership team gets one set of numbers: the Audit, Validation and AI fields, and Sonar." />
 <meta name="twitter:image" content="https://buildwithbuoy.com/assets/og-image.png" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -86,6 +86,9 @@ nav.wrap{ display:flex; align-items:center; justify-content:space-between; heigh
 .btn-primary{ background:var(--navy); color:var(--paper); }
 .btn-primary:hover{ background:#183049; }
 .navcta{ display:flex; gap:14px; align-items:center; }
+.nav-login{ text-decoration:none; color:var(--ink); font-size:14px; white-space:nowrap; }
+.nav-login:hover{ color:var(--navy); }
+.navlinks .nav-login{ display:none; }
 
 main{ padding:96px 0 96px; }
 .eyebrow{
@@ -155,6 +158,8 @@ footer .fnav a:hover{ color:var(--ink); }
   .navlinks{ display:none; order:3; width:100%; flex-direction:column; align-items:stretch; gap:0; padding:4px 0 8px; }
   .navlinks.is-open{ display:flex; }
   .navlinks a{ white-space:nowrap; min-height:44px; display:flex; align-items:center; padding:0 4px; }
+  .navcta .nav-login{ display:none; }
+  .navlinks.is-open .nav-login{ display:flex; }
   footer .fnav{ width:100%; flex-wrap:wrap; overflow:visible; }
   footer .fnav a{ white-space:nowrap; min-height:44px; display:inline-flex; align-items:center; padding:0 10px; }
   .post-title{ font-size:36px; }
@@ -176,10 +181,12 @@ footer .fnav a:hover{ color:var(--ink); }
       <a href="/#story">Why Buoy</a>
       <a href="/#pricing">Pricing</a>
       <a href="/blog/">Blog</a>
+      <a class="nav-login" href="https://admin.buildwithbuoy.com/admin/login">Log in</a>
     </div>
     <div class="navcta">
       <button class="nav-menu" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><span class="nav-menu-bars" aria-hidden="true"></span></button>
-      <button class="btn btn-primary" onclick="openAuditModal(event)">Book an audit call</button>
+      <a class="nav-login" href="https://admin.buildwithbuoy.com/admin/login">Log in</a>
+      <button class="btn btn-primary" onclick="openAuditModal(event)">Let's chat</button>
     </div>
   </nav>
 </header>
@@ -187,21 +194,21 @@ footer .fnav a:hover{ color:var(--ink); }
 <div class="wrap">
 
 <p class="eyebrow">Buoy</p>
-<h1 class="post-title">Notes on trusting the numbers you take to the board</h1>
+<h1 class="post-title">Notes on trusting the numbers your leadership team uses</h1>
 <div class="post-list-item">
   <p class="eyebrow">October 15, 2026</p>
   <h2><a href="/blog/the-decision-foundation-audit-disposition-before-you-enforce-anything.html">The Decision Foundation Audit: Agree on the Numbers, Then Clean Up What Feeds Them</a></h2>
-  <p>Decide which numbers you take to the board, agree on what they mean, then clean up every HubSpot property behind them. Enforce nothing until both halves are done.</p>
+  <p>Decide which numbers your leadership team uses, agree on what they mean, then clean up every HubSpot property behind them. Enforce nothing until both halves are done.</p>
 </div>
 <div class="post-list-item">
   <p class="eyebrow">October 13, 2026</p>
   <h2><a href="/blog/root-cause-before-reporting-why-buoys-approach-cascades.html">Root Cause Before Reporting: What to Fix Before You Buy Another Dashboard</a></h2>
-  <p>You want to trust the numbers you take to the board. Another dashboard won't get you there. Fix the root, process truth in HubSpot, and reporting and decisions follow.</p>
+  <p>You want your leadership team to trust the numbers. Another dashboard won't get you there. Fix the root, process truth in HubSpot, and reporting and decisions follow.</p>
 </div>
 <div class="post-list-item">
   <p class="eyebrow">October 8, 2026</p>
-  <h2><a href="/blog/live-in-the-record-vs-live-in-the-report-where-decision-foundations-hold.html">Live in the Record vs Live in the Report: Which Numbers Can You Take to the Board?</a></h2>
-  <p>You want to trust the numbers you take to the board. Reports add up records. If the truth only shows up after someone fixes the report, it shows up too late. Agree on the process, flag drift in the record, then trust the rollup.</p>
+  <h2><a href="/blog/live-in-the-record-vs-live-in-the-report-where-decision-foundations-hold.html">Live in the Record vs Live in the Report: Which Numbers Can Your Leadership Team Trust?</a></h2>
+  <p>You want your leadership team to trust the numbers. Reports add up records. If the truth only shows up after someone fixes the report, it shows up too late. Agree on the process, flag drift in the record, then trust the rollup.</p>
 </div>
 <div class="post-list-item">
   <p class="eyebrow">October 6, 2026</p>
@@ -211,7 +218,7 @@ footer .fnav a:hover{ color:var(--ink); }
 <div class="post-list-item">
   <p class="eyebrow">October 1, 2026</p>
   <h2><a href="/blog/why-forecasts-miss-when-crm-drift-becomes-a-board-problem.html">When CRM Drift Becomes a Board Problem (and Why Forecasts Miss)</a></h2>
-  <p>Board surprises rarely start in the forecast. They start when HubSpot records quietly drift from how your GTM process is supposed to work. Document the process, flag the drift in-record, and the miss stops being a surprise.</p>
+  <p>Forecast surprises rarely start in the meeting. They start when HubSpot records quietly drift from how your GTM process is supposed to work. Document the process, flag the drift in-record, and the miss stops being a surprise.</p>
 </div>
 <div class="post-list-item">
   <p class="eyebrow">September 22, 2026</p>
@@ -244,7 +251,7 @@ footer .fnav a:hover{ color:var(--ink); }
         <img src="/assets/buoy-mark.svg" alt="Buoy">
         <span class="word">buoy<span class="dot" aria-hidden="true"></span></span>
       </a>
-      <p class="fnote">Done with you, a small number of clients at a time: the Audit (Clean), Validation (Protected), and Filled in from your own business. Sonar, on the roadmap, will add Intelligence.</p>
+      <p class="fnote">Done with you, a small number of clients at a time: the Audit, with Included Access to the workspace; Validation and AI fields; and Sonar and Ask Buoy for your leadership team.</p>
     </div>
     <div class="fnav">
       <a href="/#how-it-works">How it works</a>
@@ -252,6 +259,7 @@ footer .fnav a:hover{ color:var(--ink); }
       <a href="/#story">Why Buoy</a>
       <a href="/#pricing">Pricing</a>
       <a href="/blog/">Blog</a>
+      <a href="https://admin.buildwithbuoy.com/admin/login">Log in</a>
       <a href="mailto:alex@buildwithbuoy.com">alex@buildwithbuoy.com</a>
     </div>
   </div>
@@ -261,7 +269,7 @@ footer .fnav a:hover{ color:var(--ink); }
 <div class="hs-modal-overlay" id="hs-modal-overlay">
   <div class="hs-modal" role="dialog" aria-modal="true" aria-labelledby="hs-modal-title">
     <button class="hs-modal-close" onclick="closeAuditModal()" aria-label="Close">&times;</button>
-    <h3 id="hs-modal-title">Book an audit call</h3>
+    <h3 id="hs-modal-title">Let's chat</h3>
     <p class="sub">Tell us a bit about your business and we'll follow up to schedule a time.</p>
     <div class="hs-form-frame" data-region="na2" data-form-id="8dd9daaf-2e19-460c-90ba-590573d0a90c" data-portal-id="247350596"></div>
   </div>

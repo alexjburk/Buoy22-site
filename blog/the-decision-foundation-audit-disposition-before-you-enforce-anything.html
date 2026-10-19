@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>The Decision Foundation Audit: Agree on the Numbers, Then Clean Up What Feeds Them | Buoy</title>
-<meta name="description" content="Before you add another required field or stage gate, decide which board numbers you need to trust. The Decision Foundation Audit agrees on their definitions, then cleans up the HubSpot properties behind them." />
+<meta name="description" content="Before you add another required field or stage gate, decide which numbers your leadership team needs to trust. The Decision Foundation Audit agrees on their definitions, then cleans up the HubSpot properties behind them." />
 <link rel="canonical" href="https://buildwithbuoy.com/blog/the-decision-foundation-audit-disposition-before-you-enforce-anything.html" />
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
@@ -14,16 +14,16 @@
 
 <meta property="og:type" content="article" />
 <meta property="og:title" content="The Decision Foundation Audit: Agree on the Numbers, Then Clean Up What Feeds Them | Buoy" />
-<meta property="og:description" content="Before you add another required field or stage gate, decide which board numbers you need to trust. The Decision Foundation Audit agrees on their definitions, then cleans up the HubSpot properties behind them." />
+<meta property="og:description" content="Before you add another required field or stage gate, decide which numbers your leadership team needs to trust. The Decision Foundation Audit agrees on their definitions, then cleans up the HubSpot properties behind them." />
 <meta property="og:url" content="https://buildwithbuoy.com/blog/the-decision-foundation-audit-disposition-before-you-enforce-anything.html" />
 <meta property="og:image" content="https://buildwithbuoy.com/assets/og-image.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="Buoy — Trust the numbers you take to the board." />
+<meta property="og:image:alt" content="Buoy — Trust the numbers that drive your business." />
 <meta property="og:site_name" content="Buoy" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="The Decision Foundation Audit: Agree on the Numbers, Then Clean Up What Feeds Them | Buoy" />
-<meta name="twitter:description" content="Before you add another required field or stage gate, decide which board numbers you need to trust. The Decision Foundation Audit agrees on their definitions, then cleans up the HubSpot properties behind them." />
+<meta name="twitter:description" content="Before you add another required field or stage gate, decide which numbers your leadership team needs to trust. The Decision Foundation Audit agrees on their definitions, then cleans up the HubSpot properties behind them." />
 <meta name="twitter:image" content="https://buildwithbuoy.com/assets/og-image.png" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -86,6 +86,9 @@ nav.wrap{ display:flex; align-items:center; justify-content:space-between; heigh
 .btn-primary{ background:var(--navy); color:var(--paper); }
 .btn-primary:hover{ background:#183049; }
 .navcta{ display:flex; gap:14px; align-items:center; }
+.nav-login{ text-decoration:none; color:var(--ink); font-size:14px; white-space:nowrap; }
+.nav-login:hover{ color:var(--navy); }
+.navlinks .nav-login{ display:none; }
 
 main{ padding:96px 0 96px; }
 .eyebrow{
@@ -155,6 +158,8 @@ footer .fnav a:hover{ color:var(--ink); }
   .navlinks{ display:none; order:3; width:100%; flex-direction:column; align-items:stretch; gap:0; padding:4px 0 8px; }
   .navlinks.is-open{ display:flex; }
   .navlinks a{ white-space:nowrap; min-height:44px; display:flex; align-items:center; padding:0 4px; }
+  .navcta .nav-login{ display:none; }
+  .navlinks.is-open .nav-login{ display:flex; }
   footer .fnav{ width:100%; flex-wrap:wrap; overflow:visible; }
   footer .fnav a{ white-space:nowrap; min-height:44px; display:inline-flex; align-items:center; padding:0 10px; }
   .post-title{ font-size:36px; }
@@ -166,7 +171,7 @@ footer .fnav a:hover{ color:var(--ink); }
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "The Decision Foundation Audit: Agree on the Numbers, Then Clean Up What Feeds Them",
-  "description": "Before you add another required field or stage gate, decide which board numbers you need to trust. The Decision Foundation Audit agrees on their definitions, then cleans up the HubSpot properties behind them.",
+  "description": "Before you add another required field or stage gate, decide which numbers your leadership team needs to trust. The Decision Foundation Audit agrees on their definitions, then cleans up the HubSpot properties behind them.",
   "datePublished": "2026-10-15",
   "dateModified": "2026-10-15",
   "author": {"@type": "Organization", "name": "Buoy"},
@@ -192,10 +197,12 @@ footer .fnav a:hover{ color:var(--ink); }
       <a href="/#story">Why Buoy</a>
       <a href="/#pricing">Pricing</a>
       <a href="/blog/">Blog</a>
+      <a class="nav-login" href="https://admin.buildwithbuoy.com/admin/login">Log in</a>
     </div>
     <div class="navcta">
       <button class="nav-menu" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><span class="nav-menu-bars" aria-hidden="true"></span></button>
-      <button class="btn btn-primary" onclick="openAuditModal(event)">Book an audit call</button>
+      <a class="nav-login" href="https://admin.buildwithbuoy.com/admin/login">Log in</a>
+      <button class="btn btn-primary" onclick="openAuditModal(event)">Let's chat</button>
     </div>
   </nav>
 </header>
@@ -206,10 +213,10 @@ footer .fnav a:hover{ color:var(--ink); }
 <p class="post-meta">By the Buoy team &middot; 7 min read</p>
 
 <article class="post-body">
-<p><strong>Decision first: don&rsquo;t add another required field, stage gate, or dashboard until you&rsquo;ve agreed what your board numbers mean and cleaned up the HubSpot properties that feed them.</strong> That&rsquo;s what a Decision Foundation Audit does. It has two equal halves. Top-down, your leadership team agrees on the definitions and the process. Bottom-up, every material HubSpot property gets an honest outcome. Skip either half and you lock today&rsquo;s confusion into tomorrow&rsquo;s process.</p>
+<p><strong>Decision first: don&rsquo;t add another required field, stage gate, or dashboard until you&rsquo;ve agreed what the numbers mean and cleaned up the HubSpot properties that feed them.</strong> That&rsquo;s what a Decision Foundation Audit does. It has two equal halves. Top-down, your leadership team agrees on the definitions and the process. Bottom-up, every material HubSpot property gets an honest outcome. Skip either half and you lock today&rsquo;s confusion into tomorrow&rsquo;s process.</p>
 <h2>The problem: numbers that disagree</h2>
-<p>You walk into the board meeting with a pipeline number. Finance has a different one. CS has its own view of renewals. Nobody is lying. Each team is reading the same CRM through a different definition, and the records have slowly drifted away from how your process is supposed to run.</p>
-<p>That&rsquo;s CRM drift. It&rsquo;s why you can&rsquo;t fully trust the numbers you take to the board.</p>
+<p>You walk into the leadership meeting with a pipeline number. Finance has a different one. CS has its own view of renewals. Nobody is lying. Each team is reading the same CRM through a different definition, and the records have slowly drifted away from how your process is supposed to run.</p>
+<p>That&rsquo;s CRM drift. It&rsquo;s why your leadership team can&rsquo;t fully trust the numbers.</p>
 <p>The usual reflex is to tighten: more required fields, harder stage gates, a new dashboard. Those feel decisive. But they enforce definitions nobody agreed on. You get green fill rates and the same argument on Friday.</p>
 <p>Filled isn&rsquo;t the same as true.</p>
 <hr>
@@ -224,7 +231,7 @@ footer .fnav a:hover{ color:var(--ink); }
 <hr>
 <h2>Half two: clean up the properties (bottom-up)</h2>
 <p>This half is not an afterthought. Definitions on a slide do nothing if the properties underneath still say something else.</p>
-<p>For every property that feeds one of your board numbers, pick one outcome:</p>
+<p>For every property that feeds one of those numbers, pick one outcome:</p>
 <div class="table-wrap"><table>
 <thead>
 <tr>
@@ -270,20 +277,20 @@ footer .fnav a:hover{ color:var(--ink); }
 <hr>
 <h2>What you have when it&rsquo;s done</h2>
 <ul>
-<li>A short, written list of board numbers with agreed definitions and owners</li>
+<li>A short, written list of the numbers your leadership team uses, with agreed definitions and owners</li>
 <li>Written process steps, including post-sales exit criteria</li>
 <li>An outcome for every material property, with Pending items named to people and Blocked items named to decisions</li>
 <li>A clear line between what must be true in the record and what a report can calculate</li>
 </ul>
-<p>Buoy&rsquo;s team doesn&rsquo;t replace your dashboards. We work with you to make them true.</p>
+<p>Buoy does not build your reports. Your team uses the trusted data in the tools you already have.</p>
 <hr>
 <h2>How Buoy helps</h2>
-<p>The Buoy Audit is available today, and it&rsquo;s done with you, not handed to you. Buoy&rsquo;s team works with your leaders: we start from the numbers you take to the board, agree on how each is defined, then clean up the HubSpot properties behind them. You keep the documentation. Ongoing drift monitoring is on the roadmap.</p>
-<p><a href="https://buildwithbuoy.com/">Book an audit call</a> and we&rsquo;ll start from your board numbers.</p>
+<p>The Buoy Audit is a one-time engagement, done with you, not handed to you. Buoy&rsquo;s team works with your leaders: we start from the numbers your leadership team uses, agree on how each is defined, then clean up the HubSpot properties behind them. You keep the documentation and Included Access to the workspace. Validation flags drift on the record.</p>
+<p><a href="https://buildwithbuoy.com/">Let's chat</a> and we&rsquo;ll start from the numbers your leadership team uses.</p>
 <hr>
 <h2>FAQ</h2>
 <h3>What is a Decision Foundation Audit?</h3>
-<p>A two-part audit. Top-down, leadership agrees on what each board number means and the process behind it. Bottom-up, every HubSpot property feeding those numbers is kept, deleted, turned into a rule, marked pending, or marked blocked.</p>
+<p>A two-part audit. Top-down, leadership agrees on what each number means and the process behind it. Bottom-up, every HubSpot property feeding those numbers is kept, deleted, turned into a rule, marked pending, or marked blocked.</p>
 <h3>Why not just add required fields?</h3>
 <p>Required fields raise fill rates, not truth. If nobody agreed what a field means, enforcing it just locks in placeholders.</p>
 <h3>Is this a data-quality cleanup?</h3>
@@ -292,9 +299,9 @@ footer .fnav a:hover{ color:var(--ink); }
 <p>Leadership owns the definitions. Team heads defend their parts of the process. RevOps implements the property outcomes.</p>
 
 <div class="post-cta">
-  <h3>Can you trust the numbers you take to the board?</h3>
-  <p>Book an audit call. We&rsquo;ll start from the numbers your board sees, agree on what each one means, then clean up the HubSpot properties behind them.</p>
-  <button class="btn btn-primary" onclick="openAuditModal(event)">Book an audit call</button>
+  <h3>Can your leadership team trust the numbers?</h3>
+  <p>Let's chat. We&rsquo;ll start from the numbers your leadership team uses, agree on what each one means, then clean up the HubSpot properties behind them.</p>
+  <button class="btn btn-primary" onclick="openAuditModal(event)">Let's chat</button>
 </div>
 </article>
 
@@ -307,7 +314,7 @@ footer .fnav a:hover{ color:var(--ink); }
         <img src="/assets/buoy-mark.svg" alt="Buoy">
         <span class="word">buoy<span class="dot" aria-hidden="true"></span></span>
       </a>
-      <p class="fnote">Done with you, a small number of clients at a time: the Audit (Clean), Validation (Protected), and Filled in from your own business. Sonar, on the roadmap, will add Intelligence.</p>
+      <p class="fnote">Done with you, a small number of clients at a time: the Audit, with Included Access to the workspace; Validation and AI fields; and Sonar and Ask Buoy for your leadership team.</p>
     </div>
     <div class="fnav">
       <a href="/#how-it-works">How it works</a>
@@ -315,6 +322,7 @@ footer .fnav a:hover{ color:var(--ink); }
       <a href="/#story">Why Buoy</a>
       <a href="/#pricing">Pricing</a>
       <a href="/blog/">Blog</a>
+      <a href="https://admin.buildwithbuoy.com/admin/login">Log in</a>
       <a href="mailto:alex@buildwithbuoy.com">alex@buildwithbuoy.com</a>
     </div>
   </div>
@@ -324,7 +332,7 @@ footer .fnav a:hover{ color:var(--ink); }
 <div class="hs-modal-overlay" id="hs-modal-overlay">
   <div class="hs-modal" role="dialog" aria-modal="true" aria-labelledby="hs-modal-title">
     <button class="hs-modal-close" onclick="closeAuditModal()" aria-label="Close">&times;</button>
-    <h3 id="hs-modal-title">Book an audit call</h3>
+    <h3 id="hs-modal-title">Let's chat</h3>
     <p class="sub">Tell us a bit about your business and we'll follow up to schedule a time.</p>
     <div class="hs-form-frame" data-region="na2" data-form-id="8dd9daaf-2e19-460c-90ba-590573d0a90c" data-portal-id="247350596"></div>
   </div>

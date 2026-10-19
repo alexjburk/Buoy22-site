@@ -36,7 +36,7 @@ add it to the `POSTS` list, and regenerate the index for you.
   engine has to stumble onto pages via links alone.
 - **Every page shares the same nav, footer, audit-call modal, and HubSpot
   tracking script** as the main site, so a blog reader gets the exact same
-  brand experience and can book an audit call without leaving the post.
+  brand experience, including the Let's chat button, without leaving the post.
 
 ## What's NOT done here, worth knowing
 

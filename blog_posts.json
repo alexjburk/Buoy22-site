@@ -40,10 +40,10 @@
   {
     "slug": "why-forecasts-miss-when-crm-drift-becomes-a-board-problem",
     "title": "When CRM Drift Becomes a Board Problem (and Why Forecasts Miss)",
-    "description": "CRM drift is the gap between how GTM is supposed to run and what HubSpot records say. How CEOs, COOs, and CROs catch it today\u2014not in next quarter's board deck.",
+    "description": "CRM drift is the gap between how GTM is supposed to run and what HubSpot records say. How CEOs, COOs, and CROs catch it today\u2014not in next quarter's forecast review.",
     "date": "2026-10-01",
     "date_display": "October 1, 2026",
-    "excerpt": "Board surprises rarely start in the forecast. They start when HubSpot records quietly drift from how your GTM process is supposed to work. Document the process, flag the drift in-record, and the miss stops being a surprise.",
+    "excerpt": "Forecast surprises rarely start in the meeting. They start when HubSpot records quietly drift from how your GTM process is supposed to work. Document the process, flag the drift in-record, and the miss stops being a surprise.",
     "source": "calendar"
   },
   {
@@ -57,20 +57,20 @@
   },
   {
     "slug": "live-in-the-record-vs-live-in-the-report-where-decision-foundations-hold",
-    "title": "Live in the Record vs Live in the Report: Which Numbers Can You Take to the Board?",
-    "description": "Your board deck is only as true as the HubSpot records under it. How CEOs, COOs, and CROs decide which numbers to trust, and why the truth has to live in the record, not the report.",
+    "title": "Live in the Record vs Live in the Report: Which Numbers Can Your Leadership Team Trust?",
+    "description": "The numbers your leadership team uses are only as true as the HubSpot records under them. How CEOs, COOs, and CROs decide which numbers to trust, and why the truth has to live in the record, not the report.",
     "date": "2026-10-08",
     "date_display": "October 8, 2026",
-    "excerpt": "You want to trust the numbers you take to the board. Reports add up records. If the truth only shows up after someone fixes the report, it shows up too late. Agree on the process, flag drift in the record, then trust the rollup.",
+    "excerpt": "You want your leadership team to trust the numbers. Reports add up records. If the truth only shows up after someone fixes the report, it shows up too late. Agree on the process, flag drift in the record, then trust the rollup.",
     "source": "calendar"
   },
   {
     "slug": "root-cause-before-reporting-why-buoys-approach-cascades",
     "title": "Root Cause Before Reporting: What to Fix Before You Buy Another Dashboard",
-    "description": "Before you buy another dashboard, decide where the problem starts. How CEOs, COOs, and CROs fix process truth in HubSpot first, so reporting and board decisions follow.",
+    "description": "Before you buy another dashboard, decide where the problem starts. How CEOs, COOs, and CROs fix process truth in HubSpot first, so reporting and leadership decisions follow.",
     "date": "2026-10-13",
     "date_display": "October 13, 2026",
-    "excerpt": "You want to trust the numbers you take to the board. Another dashboard won't get you there. Fix the root, process truth in HubSpot, and reporting and decisions follow.",
+    "excerpt": "You want your leadership team to trust the numbers. Another dashboard won't get you there. Fix the root, process truth in HubSpot, and reporting and decisions follow.",
     "source": "calendar"
   }
 ]

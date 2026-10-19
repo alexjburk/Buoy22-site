@@ -57,6 +57,9 @@ nav.wrap{ display:flex; align-items:center; justify-content:space-between; heigh
 .btn-primary{ background:var(--navy); color:var(--paper); }
 .btn-primary:hover{ background:#183049; }
 .navcta{ display:flex; gap:14px; align-items:center; }
+.nav-login{ text-decoration:none; color:var(--ink); font-size:14px; white-space:nowrap; }
+.nav-login:hover{ color:var(--navy); }
+.navlinks .nav-login{ display:none; }
 
 main{ padding:96px 0 96px; }
 .eyebrow{
@@ -126,6 +129,8 @@ footer .fnav a:hover{ color:var(--ink); }
   .navlinks{ display:none; order:3; width:100%; flex-direction:column; align-items:stretch; gap:0; padding:4px 0 8px; }
   .navlinks.is-open{ display:flex; }
   .navlinks a{ white-space:nowrap; min-height:44px; display:flex; align-items:center; padding:0 4px; }
+  .navcta .nav-login{ display:none; }
+  .navlinks.is-open .nav-login{ display:flex; }
   footer .fnav{ width:100%; flex-wrap:wrap; overflow:visible; }
   footer .fnav a{ white-space:nowrap; min-height:44px; display:inline-flex; align-items:center; padding:0 10px; }
   .post-title{ font-size:36px; }
@@ -151,7 +156,7 @@ HEAD = """<meta charset="UTF-8" />
 <meta property="og:image" content="https://buildwithbuoy.com/assets/og-image.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="Buoy — Trust the numbers you take to the board." />
+<meta property="og:image:alt" content="Buoy — Trust the numbers that drive your business." />
 <meta property="og:site_name" content="Buoy" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="{title}" />
@@ -176,10 +181,12 @@ NAV = """<header>
       <a href="/#story">Why Buoy</a>
       <a href="/#pricing">Pricing</a>
       <a href="/blog/">Blog</a>
+      <a class="nav-login" href="https://admin.buildwithbuoy.com/admin/login">Log in</a>
     </div>
     <div class="navcta">
       <button class="nav-menu" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><span class="nav-menu-bars" aria-hidden="true"></span></button>
-      <button class="btn btn-primary" onclick="openAuditModal(event)">Book an audit call</button>
+      <a class="nav-login" href="https://admin.buildwithbuoy.com/admin/login">Log in</a>
+      <button class="btn btn-primary" onclick="openAuditModal(event)">Let's chat</button>
     </div>
   </nav>
 </header>"""
@@ -191,7 +198,7 @@ FOOTER_AND_MODAL = """<footer>
         <img src="/assets/buoy-mark.svg" alt="Buoy">
         <span class="word">buoy<span class="dot" aria-hidden="true"></span></span>
       </a>
-      <p class="fnote">Done with you, a small number of clients at a time: the Audit (Clean), Validation (Protected), and Filled in from your own business. Sonar, on the roadmap, will add Intelligence.</p>
+      <p class="fnote">Done with you, a small number of clients at a time: the Audit, with Included Access to the workspace; Validation and AI fields; and Sonar and Ask Buoy for your leadership team.</p>
     </div>
     <div class="fnav">
       <a href="/#how-it-works">How it works</a>
@@ -199,6 +206,7 @@ FOOTER_AND_MODAL = """<footer>
       <a href="/#story">Why Buoy</a>
       <a href="/#pricing">Pricing</a>
       <a href="/blog/">Blog</a>
+      <a href="https://admin.buildwithbuoy.com/admin/login">Log in</a>
       <a href="mailto:alex@buildwithbuoy.com">alex@buildwithbuoy.com</a>
     </div>
   </div>
@@ -208,7 +216,7 @@ FOOTER_AND_MODAL = """<footer>
 <div class="hs-modal-overlay" id="hs-modal-overlay">
   <div class="hs-modal" role="dialog" aria-modal="true" aria-labelledby="hs-modal-title">
     <button class="hs-modal-close" onclick="closeAuditModal()" aria-label="Close">&times;</button>
-    <h3 id="hs-modal-title">Book an audit call</h3>
+    <h3 id="hs-modal-title">Let's chat</h3>
     <p class="sub">Tell us a bit about your business and we'll follow up to schedule a time.</p>
     <div class="hs-form-frame" data-region="na2" data-form-id="8dd9daaf-2e19-460c-90ba-590573d0a90c" data-portal-id="247350596"></div>
   </div>

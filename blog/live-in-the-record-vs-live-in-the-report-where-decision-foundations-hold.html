@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Live in the Record vs Live in the Report: Which Numbers Can You Take to the Board? | Buoy</title>
-<meta name="description" content="Your board deck is only as true as the HubSpot records under it. How CEOs, COOs, and CROs decide which numbers to trust, and why the truth has to live in the record, not the report." />
+<title>Live in the Record vs Live in the Report: Which Numbers Can Your Leadership Team Trust? | Buoy</title>
+<meta name="description" content="The numbers your leadership team uses are only as true as the HubSpot records under them. How CEOs, COOs, and CROs decide which numbers to trust, and why the truth has to live in the record, not the report." />
 <link rel="canonical" href="https://buildwithbuoy.com/blog/live-in-the-record-vs-live-in-the-report-where-decision-foundations-hold.html" />
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
@@ -13,17 +13,17 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
 <meta property="og:type" content="article" />
-<meta property="og:title" content="Live in the Record vs Live in the Report: Which Numbers Can You Take to the Board? | Buoy" />
-<meta property="og:description" content="Your board deck is only as true as the HubSpot records under it. How CEOs, COOs, and CROs decide which numbers to trust, and why the truth has to live in the record, not the report." />
+<meta property="og:title" content="Live in the Record vs Live in the Report: Which Numbers Can Your Leadership Team Trust? | Buoy" />
+<meta property="og:description" content="The numbers your leadership team uses are only as true as the HubSpot records under them. How CEOs, COOs, and CROs decide which numbers to trust, and why the truth has to live in the record, not the report." />
 <meta property="og:url" content="https://buildwithbuoy.com/blog/live-in-the-record-vs-live-in-the-report-where-decision-foundations-hold.html" />
 <meta property="og:image" content="https://buildwithbuoy.com/assets/og-image.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="Buoy — Trust the numbers you take to the board." />
+<meta property="og:image:alt" content="Buoy — Trust the numbers that drive your business." />
 <meta property="og:site_name" content="Buoy" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Live in the Record vs Live in the Report: Which Numbers Can You Take to the Board? | Buoy" />
-<meta name="twitter:description" content="Your board deck is only as true as the HubSpot records under it. How CEOs, COOs, and CROs decide which numbers to trust, and why the truth has to live in the record, not the report." />
+<meta name="twitter:title" content="Live in the Record vs Live in the Report: Which Numbers Can Your Leadership Team Trust? | Buoy" />
+<meta name="twitter:description" content="The numbers your leadership team uses are only as true as the HubSpot records under them. How CEOs, COOs, and CROs decide which numbers to trust, and why the truth has to live in the record, not the report." />
 <meta name="twitter:image" content="https://buildwithbuoy.com/assets/og-image.png" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -86,6 +86,9 @@ nav.wrap{ display:flex; align-items:center; justify-content:space-between; heigh
 .btn-primary{ background:var(--navy); color:var(--paper); }
 .btn-primary:hover{ background:#183049; }
 .navcta{ display:flex; gap:14px; align-items:center; }
+.nav-login{ text-decoration:none; color:var(--ink); font-size:14px; white-space:nowrap; }
+.nav-login:hover{ color:var(--navy); }
+.navlinks .nav-login{ display:none; }
 
 main{ padding:96px 0 96px; }
 .eyebrow{
@@ -155,6 +158,8 @@ footer .fnav a:hover{ color:var(--ink); }
   .navlinks{ display:none; order:3; width:100%; flex-direction:column; align-items:stretch; gap:0; padding:4px 0 8px; }
   .navlinks.is-open{ display:flex; }
   .navlinks a{ white-space:nowrap; min-height:44px; display:flex; align-items:center; padding:0 4px; }
+  .navcta .nav-login{ display:none; }
+  .navlinks.is-open .nav-login{ display:flex; }
   footer .fnav{ width:100%; flex-wrap:wrap; overflow:visible; }
   footer .fnav a{ white-space:nowrap; min-height:44px; display:inline-flex; align-items:center; padding:0 10px; }
   .post-title{ font-size:36px; }
@@ -165,8 +170,8 @@ footer .fnav a:hover{ color:var(--ink); }
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "Live in the Record vs Live in the Report: Which Numbers Can You Take to the Board?",
-  "description": "Your board deck is only as true as the HubSpot records under it. How CEOs, COOs, and CROs decide which numbers to trust, and why the truth has to live in the record, not the report.",
+  "headline": "Live in the Record vs Live in the Report: Which Numbers Can Your Leadership Team Trust?",
+  "description": "The numbers your leadership team uses are only as true as the HubSpot records under them. How CEOs, COOs, and CROs decide which numbers to trust, and why the truth has to live in the record, not the report.",
   "datePublished": "2026-10-08",
   "dateModified": "2026-10-08",
   "author": {"@type": "Organization", "name": "Buoy"},
@@ -192,24 +197,26 @@ footer .fnav a:hover{ color:var(--ink); }
       <a href="/#story">Why Buoy</a>
       <a href="/#pricing">Pricing</a>
       <a href="/blog/">Blog</a>
+      <a class="nav-login" href="https://admin.buildwithbuoy.com/admin/login">Log in</a>
     </div>
     <div class="navcta">
       <button class="nav-menu" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><span class="nav-menu-bars" aria-hidden="true"></span></button>
-      <button class="btn btn-primary" onclick="openAuditModal(event)">Book an audit call</button>
+      <a class="nav-login" href="https://admin.buildwithbuoy.com/admin/login">Log in</a>
+      <button class="btn btn-primary" onclick="openAuditModal(event)">Let's chat</button>
     </div>
   </nav>
 </header>
 <main>
 <div class="wrap">
 <p class="eyebrow">Published October 8, 2026</p>
-<h1 class="post-title">Live in the Record vs Live in the Report: Which Numbers Can You Take to the Board?</h1>
+<h1 class="post-title">Live in the Record vs Live in the Report: Which Numbers Can Your Leadership Team Trust?</h1>
 <p class="post-meta">By the Buoy team &middot; 8 min read</p>
 
 <article class="post-body">
-<p>You want to trust the numbers you take to the board. Some quarters you can&rsquo;t. Sales has one number. Finance has another. CS has a third. The night before the meeting, someone picks a winner in a spreadsheet.</p>
+<p>You want your leadership team to trust the numbers. Some quarters you can&rsquo;t. Sales has one number. Finance has another. CS has a third. The night before the meeting, someone picks a winner in a spreadsheet.</p>
 <p>So here is the question you face: when the numbers conflict, where do you go to find out which one is true? The record or the report?</p>
 <p>Reports add things up. Records hold the facts. If the truth only appears after a BI join, a cleanup pass, or a late-night reconcile, your HubSpot foundation is already soft. Fix the record first. Then the dashboard earns your trust.</p>
-<p><strong>Buoy is the guide: a done-with-you managed service that gets the record Clean, Protected, and Filled in. Sonar, on the roadmap, will add Intelligence.</strong> Buoy does not ship a dashboard. It gets the record to one definition.</p>
+<p><strong>Buoy is a three-step managed service: the Audit, with Included Access to the workspace; Validation and AI fields; and Sonar and Ask Buoy for your leadership team.</strong> Buoy does not ship a dashboard. It gets the record to one definition.</p>
 <h2>The decision in front of you</h2>
 <p>Every quarter you make the same call: do you trust the number on the slide?</p>
 <p>Two places can hold the answer.</p>
@@ -353,8 +360,8 @@ footer .fnav a:hover{ color:var(--ink); }
 <h2>How Buoy helps</h2>
 <p>You own the numbers. Buoy (buildwithbuoy.com) is the guide that helps you make them true where they start: in the record.</p>
 <p>The <strong>Audit</strong> (Clean) has two equal parts. <strong>Top-down</strong>, your leadership team agrees on the numbers and the process behind them. <strong>Bottom-up</strong>, you and Buoy clean up what&rsquo;s in HubSpot: every field that feeds those numbers gets a decision. Keep, Delete, Turn into a rule, Pending, or Blocked. You keep the docs.</p>
-<p><strong>Validation</strong> (Protected) comes next. It flags drift in the record, where your reps and managers work, while there&rsquo;s still time to act. Not in a Friday digest. Not in the board deck.</p>
-<p><strong>Filled in</strong> is our team filling the CRM from your own business: call transcripts, other systems, integrations. Never generic AI-filled fields. <strong>Sonar</strong> (Intelligence) is on the roadmap. It will be the revenue leader's second brain, with proactive insight. It isn't available yet.</p>
+<p><strong>Validation</strong> (Protected) comes next. It flags drift in the record, where your reps and managers work, while there&rsquo;s still time to act. Not in a Friday digest. Not in a deck the night before.</p>
+<p>Our team fills in the fields your business needs from call transcripts, other systems, and integrations, built to your requirements, never generic AI fields. <strong>Sonar</strong> and Ask Buoy turn trusted data into answers for your leadership team.</p>
 <p>Then your reports on pipeline, customer journey, and renewals add up records that already mean what your process says. Buoy does not ship a dashboard. It gets the record to one definition.</p>
 <p>If your dashboards look board-ready but your deal samples still need a translator, you&rsquo;re living in the report. Move the truth back into the record.</p>
 <hr>
@@ -371,9 +378,9 @@ footer .fnav a:hover{ color:var(--ink); }
 <p>Ask three questions. Which fields feed forecast, customer journey, and renewals? Who owns what they mean? How will drift get flagged in the record? Answer those before you ask a report for trust.</p>
 
 <div class="post-cta">
-  <h3>Can you trust the numbers you take to the board?</h3>
-  <p>Book an audit call and we&rsquo;ll start from those numbers, then clean up what&rsquo;s behind them in HubSpot.</p>
-  <button class="btn btn-primary" onclick="openAuditModal(event)">Book an audit call</button>
+  <h3>Can your leadership team trust the numbers?</h3>
+  <p>Let's chat and we&rsquo;ll start from those numbers, then clean up what&rsquo;s behind them in HubSpot.</p>
+  <button class="btn btn-primary" onclick="openAuditModal(event)">Let's chat</button>
 </div>
 </article>
 
@@ -386,7 +393,7 @@ footer .fnav a:hover{ color:var(--ink); }
         <img src="/assets/buoy-mark.svg" alt="Buoy">
         <span class="word">buoy<span class="dot" aria-hidden="true"></span></span>
       </a>
-      <p class="fnote">Done with you, a small number of clients at a time: the Audit (Clean), Validation (Protected), and Filled in from your own business. Sonar, on the roadmap, will add Intelligence.</p>
+      <p class="fnote">Done with you, a small number of clients at a time: the Audit, with Included Access to the workspace; Validation and AI fields; and Sonar and Ask Buoy for your leadership team.</p>
     </div>
     <div class="fnav">
       <a href="/#how-it-works">How it works</a>
@@ -394,6 +401,7 @@ footer .fnav a:hover{ color:var(--ink); }
       <a href="/#story">Why Buoy</a>
       <a href="/#pricing">Pricing</a>
       <a href="/blog/">Blog</a>
+      <a href="https://admin.buildwithbuoy.com/admin/login">Log in</a>
       <a href="mailto:alex@buildwithbuoy.com">alex@buildwithbuoy.com</a>
     </div>
   </div>
@@ -403,7 +411,7 @@ footer .fnav a:hover{ color:var(--ink); }
 <div class="hs-modal-overlay" id="hs-modal-overlay">
   <div class="hs-modal" role="dialog" aria-modal="true" aria-labelledby="hs-modal-title">
     <button class="hs-modal-close" onclick="closeAuditModal()" aria-label="Close">&times;</button>
-    <h3 id="hs-modal-title">Book an audit call</h3>
+    <h3 id="hs-modal-title">Let's chat</h3>
     <p class="sub">Tell us a bit about your business and we'll follow up to schedule a time.</p>
     <div class="hs-form-frame" data-region="na2" data-form-id="8dd9daaf-2e19-460c-90ba-590573d0a90c" data-portal-id="247350596"></div>
   </div>

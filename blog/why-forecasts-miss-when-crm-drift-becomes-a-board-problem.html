@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>When CRM Drift Becomes a Board Problem (and Why Forecasts Miss) | Buoy</title>
-<meta name="description" content="CRM drift is the gap between how GTM is supposed to run and what HubSpot records say. How CEOs, COOs, and CROs catch it today—not in next quarter's board deck." />
+<meta name="description" content="CRM drift is the gap between how GTM is supposed to run and what HubSpot records say. How CEOs, COOs, and CROs catch it today—not in next quarter's forecast review." />
 <link rel="canonical" href="https://buildwithbuoy.com/blog/why-forecasts-miss-when-crm-drift-becomes-a-board-problem.html" />
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
@@ -14,16 +14,16 @@
 
 <meta property="og:type" content="article" />
 <meta property="og:title" content="When CRM Drift Becomes a Board Problem (and Why Forecasts Miss) | Buoy" />
-<meta property="og:description" content="CRM drift is the gap between how GTM is supposed to run and what HubSpot records say. How CEOs, COOs, and CROs catch it today—not in next quarter's board deck." />
+<meta property="og:description" content="CRM drift is the gap between how GTM is supposed to run and what HubSpot records say. How CEOs, COOs, and CROs catch it today—not in next quarter's forecast review." />
 <meta property="og:url" content="https://buildwithbuoy.com/blog/why-forecasts-miss-when-crm-drift-becomes-a-board-problem.html" />
 <meta property="og:image" content="https://buildwithbuoy.com/assets/og-image.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="Buoy — Trust the numbers you take to the board." />
+<meta property="og:image:alt" content="Buoy — Trust the numbers that drive your business." />
 <meta property="og:site_name" content="Buoy" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="When CRM Drift Becomes a Board Problem (and Why Forecasts Miss) | Buoy" />
-<meta name="twitter:description" content="CRM drift is the gap between how GTM is supposed to run and what HubSpot records say. How CEOs, COOs, and CROs catch it today—not in next quarter's board deck." />
+<meta name="twitter:description" content="CRM drift is the gap between how GTM is supposed to run and what HubSpot records say. How CEOs, COOs, and CROs catch it today—not in next quarter's forecast review." />
 <meta name="twitter:image" content="https://buildwithbuoy.com/assets/og-image.png" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -86,6 +86,9 @@ nav.wrap{ display:flex; align-items:center; justify-content:space-between; heigh
 .btn-primary{ background:var(--navy); color:var(--paper); }
 .btn-primary:hover{ background:#183049; }
 .navcta{ display:flex; gap:14px; align-items:center; }
+.nav-login{ text-decoration:none; color:var(--ink); font-size:14px; white-space:nowrap; }
+.nav-login:hover{ color:var(--navy); }
+.navlinks .nav-login{ display:none; }
 
 main{ padding:96px 0 96px; }
 .eyebrow{
@@ -155,6 +158,8 @@ footer .fnav a:hover{ color:var(--ink); }
   .navlinks{ display:none; order:3; width:100%; flex-direction:column; align-items:stretch; gap:0; padding:4px 0 8px; }
   .navlinks.is-open{ display:flex; }
   .navlinks a{ white-space:nowrap; min-height:44px; display:flex; align-items:center; padding:0 4px; }
+  .navcta .nav-login{ display:none; }
+  .navlinks.is-open .nav-login{ display:flex; }
   footer .fnav{ width:100%; flex-wrap:wrap; overflow:visible; }
   footer .fnav a{ white-space:nowrap; min-height:44px; display:inline-flex; align-items:center; padding:0 10px; }
   .post-title{ font-size:36px; }
@@ -166,7 +171,7 @@ footer .fnav a:hover{ color:var(--ink); }
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "When CRM Drift Becomes a Board Problem (and Why Forecasts Miss)",
-  "description": "CRM drift is the gap between how GTM is supposed to run and what HubSpot records say. How CEOs, COOs, and CROs catch it today\u2014not in next quarter's board deck.",
+  "description": "CRM drift is the gap between how GTM is supposed to run and what HubSpot records say. How CEOs, COOs, and CROs catch it today\u2014not in next quarter's forecast review.",
   "datePublished": "2026-10-01",
   "dateModified": "2026-10-01",
   "author": {"@type": "Organization", "name": "Buoy"},
@@ -192,10 +197,12 @@ footer .fnav a:hover{ color:var(--ink); }
       <a href="/#story">Why Buoy</a>
       <a href="/#pricing">Pricing</a>
       <a href="/blog/">Blog</a>
+      <a class="nav-login" href="https://admin.buildwithbuoy.com/admin/login">Log in</a>
     </div>
     <div class="navcta">
       <button class="nav-menu" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><span class="nav-menu-bars" aria-hidden="true"></span></button>
-      <button class="btn btn-primary" onclick="openAuditModal(event)">Book an audit call</button>
+      <a class="nav-login" href="https://admin.buildwithbuoy.com/admin/login">Log in</a>
+      <button class="btn btn-primary" onclick="openAuditModal(event)">Let's chat</button>
     </div>
   </nav>
 </header>
@@ -207,7 +214,7 @@ footer .fnav a:hover{ color:var(--ink); }
 
 <article class="post-body">
 <p>CRM drift becomes a board problem when the gap between how your GTM process is supposed to run and what HubSpot records actually say goes unmarked for a quarter. The views still sum. The forecast call still happens. Then the miss lands as if nobody saw it coming—because the drift lived in the records, not on a slide. Treat the miss as a process-truth signal, not only a sales-talent story.</p>
-<p>That is the job Buoy (buildwithbuoy.com) was built for. <strong>Buoy is the guide: a done-with-you managed service that gets the record Clean, Protected, and Filled in. Sonar, on the roadmap, will add Intelligence.</strong></p>
+<p>That is the job Buoy (buildwithbuoy.com) was built for. <strong>Buoy is a three-step managed service: the Audit, with Included Access to the workspace; Validation and AI fields; and Sonar and Ask Buoy for your leadership team.</strong></p>
 <h2>The board problem is not “we were wrong about a deal”</h2>
 <p>Boards tolerate variance. What they punish is <strong>unclear causality</strong>: Was this a market miss, an execution miss, or a system that could not tell the difference?</p>
 <p>CRM drift creates the third category. Leadership debates deal skills while the operating model was silently redefined in the records:</p>
@@ -374,7 +381,7 @@ footer .fnav a:hover{ color:var(--ink); }
 <p>Fix drift at the root and those downstream metrics inherit the honesty. Fix them one dashboard at a time and the miss migrates to the next slide.</p>
 <hr>
 <h2>What Buoy does</h2>
-<p>Buoy starts at the root. The <strong>Audit</strong> is Clean: top-down process and bottom-up property cleanup, as equal halves. You keep the written process. <strong>Validation</strong> is Protected: checks against decay and drift on the record. <strong>Filled in</strong> is our team filling the CRM from your own business — call transcripts, other systems, integrations — never generic AI-filled fields. <strong>Sonar</strong> is Intelligence, on the roadmap: it will be the revenue leader's second brain, with proactive insight. It isn't available yet.</p>
+<p>Buoy starts at the root. The <strong>Audit</strong> is a one-time engagement: we audit your process and your CRM with you, clean it up, and you keep the written process and Included Access to the workspace. <strong>Validation</strong> flags drift on every record, and our team fills in the fields your business needs from call transcripts, other systems, and integrations, built to your requirements, never generic AI fields. <strong>Sonar</strong> and Ask Buoy turn trusted data into answers for your leadership team.</p>
 <p>CEOs, COOs, and CROs own the definitions. RevOps runs the system and champions it.</p>
 <p>If your last miss felt “sudden” while HubSpot looked busy, start with the process—not another forecast meeting.</p>
 <hr>
@@ -391,9 +398,9 @@ footer .fnav a:hover{ color:var(--ink); }
 <p>The Audit (Clean) documents how your GTM process should run and cleans up the properties under it, as equal halves. Validation (Protected) then flags decay and drift on the record.</p>
 
 <div class="post-cta">
-  <h3>Trust the numbers you take to the board</h3>
-  <p>Book an audit call. We&rsquo;ll start from the numbers your board sees, agree on what each one means, then clean up the HubSpot properties behind them.</p>
-  <button class="btn btn-primary" onclick="openAuditModal(event)">Book an audit call</button>
+  <h3>Can your leadership team trust the numbers?</h3>
+  <p>Let's chat. We&rsquo;ll start from the numbers your leadership team uses, agree on what each one means, then clean up the HubSpot properties behind them.</p>
+  <button class="btn btn-primary" onclick="openAuditModal(event)">Let's chat</button>
 </div>
 </article>
 
@@ -406,7 +413,7 @@ footer .fnav a:hover{ color:var(--ink); }
         <img src="/assets/buoy-mark.svg" alt="Buoy">
         <span class="word">buoy<span class="dot" aria-hidden="true"></span></span>
       </a>
-      <p class="fnote">Done with you, a small number of clients at a time: the Audit (Clean), Validation (Protected), and Filled in from your own business. Sonar, on the roadmap, will add Intelligence.</p>
+      <p class="fnote">Done with you, a small number of clients at a time: the Audit, with Included Access to the workspace; Validation and AI fields; and Sonar and Ask Buoy for your leadership team.</p>
     </div>
     <div class="fnav">
       <a href="/#how-it-works">How it works</a>
@@ -414,6 +421,7 @@ footer .fnav a:hover{ color:var(--ink); }
       <a href="/#story">Why Buoy</a>
       <a href="/#pricing">Pricing</a>
       <a href="/blog/">Blog</a>
+      <a href="https://admin.buildwithbuoy.com/admin/login">Log in</a>
       <a href="mailto:alex@buildwithbuoy.com">alex@buildwithbuoy.com</a>
     </div>
   </div>
@@ -423,7 +431,7 @@ footer .fnav a:hover{ color:var(--ink); }
 <div class="hs-modal-overlay" id="hs-modal-overlay">
   <div class="hs-modal" role="dialog" aria-modal="true" aria-labelledby="hs-modal-title">
     <button class="hs-modal-close" onclick="closeAuditModal()" aria-label="Close">&times;</button>
-    <h3 id="hs-modal-title">Book an audit call</h3>
+    <h3 id="hs-modal-title">Let's chat</h3>
     <p class="sub">Tell us a bit about your business and we'll follow up to schedule a time.</p>
     <div class="hs-form-frame" data-region="na2" data-form-id="8dd9daaf-2e19-460c-90ba-590573d0a90c" data-portal-id="247350596"></div>
   </div>

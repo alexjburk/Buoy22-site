@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Buoy — Trust the numbers you take to the board</title>
-<meta name="description" content="Buoy is the guide: a high-touch, done-with-you service that gets your HubSpot Clean, Protected, and Filled in." />
-<meta property="og:title" content="Buoy — Trust the numbers you take to the board" />
-<meta property="og:description" content="Buoy is the guide: a high-touch, done-with-you service that gets your HubSpot Clean, Protected, and Filled in." />
+<title>Buoy — Trust the numbers that drive your business.</title>
+<meta name="description" content="Buoy is a three-step managed service for leadership teams: audit the process and the CRM, keep every record true, and understand what the data means." />
+<meta property="og:title" content="Buoy — Trust the numbers that drive your business." />
+<meta property="og:description" content="Buoy is a three-step managed service for leadership teams: audit the process and the CRM, keep every record true, and understand what the data means." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://buildwithbuoy.com/" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Buoy — Trust the numbers you take to the board" />
-<meta name="twitter:description" content="Buoy is the guide: a high-touch, done-with-you service that gets your HubSpot Clean, Protected, and Filled in." />
+<meta name="twitter:title" content="Buoy — Trust the numbers that drive your business." />
+<meta name="twitter:description" content="Buoy is a three-step managed service for leadership teams: audit the process and the CRM, keep every record true, and understand what the data means." />
 <meta property="og:image" content="https://buildwithbuoy.com/assets/og-image.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="Buoy — Trust the numbers you take to the board." />
+<meta property="og:image:alt" content="Buoy — Trust the numbers that drive your business." />
 <meta name="twitter:image" content="https://buildwithbuoy.com/assets/og-image.png" />
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
@@ -24,7 +24,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
   --ink:#161513;
@@ -64,6 +64,17 @@ header{
   position:sticky; top:0; z-index:20;
   background:#fff;
   border-bottom:1px solid #E4DED0;
+}
+#top,
+#problem,
+#how-it-works,
+#sonar,
+#product,
+#story,
+#proof,
+#pricing,
+#contact{
+  scroll-margin-top:89px;
 }
 nav.wrap{
   display:flex; align-items:center; justify-content:space-between;
@@ -107,48 +118,29 @@ nav.wrap{
 .btn-ghost{border-color:var(--ink); color:var(--ink); background:transparent;}
 .btn-ghost:hover{background:var(--navy); color:var(--paper);}
 .navcta{display:flex; gap:14px; align-items:center;}
+.nav-login{text-decoration:none; color:var(--ink); font-size:14px; white-space:nowrap;}
+.nav-login:hover{color:var(--navy);}
+.navlinks .nav-login{display:none;}
 
 .hero{padding:88px 0 96px; background:var(--paper);}
-.hero .wrap{display:grid; grid-template-columns:1.05fr 0.95fr; gap:64px; align-items:end;}
+.hero .wrap{display:grid; grid-template-columns:1fr; gap:48px; align-items:start;}
+.hero-copy{max-width:920px;}
 .eyebrow{
   font-family:"JetBrains Mono", ui-monospace, monospace;
   font-size:12px; letter-spacing:0.16em; text-transform:uppercase;
   color:var(--slate); margin:0 0 18px;
 }
-.hero h1{font-size:74px; line-height:0.98; letter-spacing:-0.03em;}
-.hero p.lede{font-size:18px; color:var(--slate); max-width:38ch; margin:22px 0 28px;}
+.hero h1{font-size:64px; line-height:1.02; letter-spacing:-0.03em;}
+.hero p.lede{font-size:18px; color:var(--slate); max-width:48ch; margin:22px 0 28px;}
 .hero .ctas{display:flex; gap:12px; flex-wrap:wrap;}
-.quiet{font-family:Newsreader, serif; font-size:20px; margin:28px 0 0; max-width:22ch;}
-.hero-visual{min-width:0;}
-.board{background:#fff; border:1px solid var(--line); box-shadow:0 10px 28px rgba(22,21,19,0.06); padding:22px 24px 8px;}
-.board .eyebrow{margin-bottom:8px;}
-.board dl{margin:0;}
-.board-row{
-  display:grid; grid-template-columns:1fr auto; gap:8px 16px; align-items:baseline;
-  padding:14px 0; border-top:1px solid var(--line);
+.quiet{font-family:Newsreader, serif; font-size:20px; margin:28px 0 0; max-width:28ch;}
+.hero-visual{min-width:0; margin:0;}
+.journey-card{
+  background:#FBF8F1; border:1px solid #D9D2C2; border-radius:12px; overflow:hidden;
+  box-shadow:0 6px 14px rgba(15,31,51,.08), 0 1px 2px rgba(15,31,51,.06);
 }
-.board dt{
-  font-family:"JetBrains Mono", ui-monospace, monospace;
-  font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:var(--slate);
-}
-.board dd{margin:0; font-family:"JetBrains Mono", ui-monospace, monospace; font-variant-numeric:tabular-nums; font-size:22px; font-weight:500; letter-spacing:-0.03em;}
-.board-row.flagged{
-  background:var(--tint); margin:0 -24px; padding:14px 24px;
-  box-shadow:inset 3px 0 0 #8C3B32;
-}
-.board-row.flagged dt{color:var(--oxblood);}
-.board dd.fig{display:flex; align-items:center; justify-content:flex-end; gap:8px;}
-.flag{width:11px; height:13px; display:block; flex:none;}
-.board .flag-note{
-  grid-column:1 / -1;
-  font-family:"JetBrains Mono", ui-monospace, monospace;
-  font-size:12px; font-weight:400; letter-spacing:0.08em; text-transform:uppercase; color:var(--oxblood);
-}
-.cap{
-  font-family:"JetBrains Mono", ui-monospace, monospace;
-  font-size:12px; letter-spacing:0.14em; text-transform:uppercase;
-  color:var(--slate); margin:12px 0 0;
-}
+.journey{display:block; width:100%; height:auto;}
+.journey-mobile{display:none;}
 
 .section{padding:96px 0; border-top:1px solid var(--line); background:#fff;}
 #how-it-works,
@@ -164,7 +156,7 @@ nav.wrap{
 .rule-card p{color:var(--slate); font-size:15.5px; margin:0;}
 .roi-prose{color:var(--ink); font-size:18px; margin:36px 0 0; max-width:46ch;}
 
-.stages{display:grid; grid-template-columns:repeat(4, 1fr); gap:28px;}
+.stages{display:grid; grid-template-columns:repeat(3, 1fr); gap:28px;}
 .stage{border-top:1px solid var(--ink); padding-top:18px;}
 .ico{display:block; width:28px; height:28px; color:var(--ink); margin-bottom:18px;}
 .stage-kicker{
@@ -172,6 +164,7 @@ nav.wrap{
   font-size:12px; letter-spacing:0.12em; text-transform:uppercase;
   color:var(--slate); margin:0 0 12px;
 }
+.stage .stage-kicker{min-height:2.6em;}
 .badge{
   display:block; width:max-content; margin:0 0 12px;
   font-family:"JetBrains Mono", ui-monospace, monospace;
@@ -206,27 +199,30 @@ nav.wrap{
 .prop-table tbody tr:last-child td{border-bottom:1px solid var(--ink);}
 .stat-source{font-size:13px; color:var(--slate); margin:0;}
 
-.pricing-grid{display:grid; grid-template-columns:repeat(3, 1fr); border:1px solid var(--ink); background:#fff;}
-.tier{display:flex; flex-direction:column; padding:28px 28px 8px 28px; border-right:1px solid var(--line);}
-.tier:first-child{padding-left:0;}
-.tier:last-child{border-right:none; padding-right:0;}
-.tier-badge{height:28px; flex:none; display:flex; align-items:center; overflow:hidden;}
-.tier-badge .badge, .tier-badge .stage-kicker{margin:0; line-height:1;}
-.tier h3{font-size:28px; margin-bottom:8px;}
-.tier-sub{font-size:14px; color:var(--slate); margin-bottom:8px;}
+.pricing-grid{
+  display:grid; grid-template-columns:repeat(3, 1fr); align-items:stretch;
+  border:1px solid var(--ink); background:#fff;
+}
+.tier{
+  display:flex; flex-direction:column; min-width:0;
+  padding:28px 24px 24px; border-right:1px solid var(--line);
+}
+.tier:last-child{border-right:none;}
+.tier .stage-kicker{margin:0 0 12px; min-height:2.6em;}
+.tier h3{font-size:28px; line-height:1.15; margin:0;}
+.price-slot{margin-top:16px;}
 .tier .price{
   font-family:"JetBrains Mono", ui-monospace, monospace; font-variant-numeric:tabular-nums;
-  font-size:32px; letter-spacing:-0.03em; margin:18px 0 8px;
+  font-size:32px; letter-spacing:-0.03em; margin:0; color:var(--ink);
 }
-.tier .price small{
-  display:block; margin-top:6px;
+.tier .price small, .price-note{
+  display:block; margin:6px 0 0;
+  font-family:"JetBrains Mono", ui-monospace, monospace;
   font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:var(--slate); font-weight:400;
 }
-.tier .scope{font-size:16px; color:var(--ink); margin:0 0 16px;}
-.tier .btn{margin:8px 0 18px;}
-.tier ul{list-style:none; padding:0; margin:0;}
+.tier ul{list-style:none; padding:0; margin:20px 0 20px;}
 .tier li{font-size:14.5px; color:var(--slate); padding:10px 0; border-top:1px solid var(--line);}
-.audit-tag{margin-bottom:12px;}
+.tier .btn{margin-top:auto; align-self:flex-start;}
 
 .final-cta{background:var(--navy); text-align:center; padding:104px 0;}
 .final-cta h2{font-size:52px; line-height:1.05; color:var(--paper); max-width:16ch; margin:0 auto 16px;}
@@ -266,10 +262,6 @@ footer .fnav a:hover{color:var(--ink);}
 .hs-modal p.sub{color:var(--slate); font-size:15px; margin:0 0 20px;}
 
 @media (max-width: 980px){
-  .stages{grid-template-columns:1fr 1fr;}
-  .pricing-grid{grid-template-columns:1fr;}
-  .tier{border-right:none; border-top:1px solid var(--line); padding:28px 0;}
-  .tier:first-child{border-top:none;}
   .hero h1{font-size:60px;}
 }
 @media (max-width: 720px){
@@ -279,6 +271,8 @@ footer .fnav a:hover{color:var(--ink);}
   .navlinks{display:none; order:3; width:100%; flex-direction:column; align-items:stretch; gap:0; padding:4px 0 8px;}
   .navlinks.is-open{display:flex;}
   .navlinks a{white-space:nowrap; min-height:44px; display:flex; align-items:center; padding:0 4px;}
+  .navcta .nav-login{display:none;}
+  .navlinks.is-open .nav-login{display:flex;}
   footer .fnav{width:100%; flex-wrap:wrap; overflow:visible;}
   footer .fnav a{white-space:nowrap; min-height:44px; display:inline-flex; align-items:center; padding:0 10px;}
   .hero{padding:48px 0 64px;}
@@ -288,10 +282,26 @@ footer .fnav a:hover{color:var(--ink);}
   .section-head h2, .story h2{font-size:34px;}
   .final-cta{padding:72px 0;}
   .final-cta h2{font-size:36px;}
-  .stages, .q-grid, .rule-grid{grid-template-columns:1fr;}
+  .stages, .q-grid, .rule-grid, .pricing-grid{grid-template-columns:1fr;}
+  .tier{border-right:none; border-top:1px solid var(--line);}
+  .tier:first-child{border-top:none;}
+  .stage .stage-kicker{min-height:0;}
   .story .wrap{padding-top:64px; padding-bottom:64px;}
-  .board{padding:18px 16px 6px;}
-  .board-row.flagged{margin:0 -16px; padding:14px 16px;}
+  .hero-visual{margin-left:-20px; margin-right:-20px;}
+  .journey-card{border-radius:0; border-left:none; border-right:none; box-shadow:none;}
+  .journey-desktop{display:none;}
+  .journey-mobile{display:block;}
+  #top,
+  #problem,
+  #how-it-works,
+  #sonar,
+  #product,
+  #story,
+  #proof,
+  #pricing,
+  #contact{
+    scroll-margin-top:77px;
+  }
 }
 </style>
 </head>
@@ -309,38 +319,215 @@ footer .fnav a:hover{color:var(--ink);}
       <a href="#story">Why Buoy</a>
       <a href="#pricing">Pricing</a>
       <a href="/blog/">Blog</a>
+      <a class="nav-login" href="https://admin.buildwithbuoy.com/admin/login">Log in</a>
     </div>
     <div class="navcta">
       <button class="nav-menu" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><span class="nav-menu-bars" aria-hidden="true"></span></button>
-      <button class="btn btn-primary" onclick="openAuditModal(event)">Book an audit call</button>
+      <a class="nav-login" href="https://admin.buildwithbuoy.com/admin/login">Log in</a>
+      <button class="btn btn-primary" onclick="openAuditModal(event)">Let's chat</button>
     </div>
   </nav>
 </header>
 
 <section class="hero" id="top">
   <div class="wrap">
-    <div>
+    <div class="hero-copy">
       <p class="eyebrow reveal">For Series A, B and PE-backed Growth stage companies</p>
       <h1 class="reveal d1">Trust the numbers that drive your business.</h1>
       <p class="lede reveal d2">Buoy is a three-step managed service to get your GTM processes documented, your CRM architecture set up and protected from drift, and an intelligence layer providing insight and action to keep driving the business forward.</p>
       <div class="ctas reveal d3">
-        <button class="btn btn-primary" onclick="openAuditModal(event)">Book an audit call</button>
+        <button class="btn btn-primary" onclick="openAuditModal(event)">Let's chat</button>
         <a class="btn btn-ghost" href="#how-it-works">See how it works</a>
       </div>
       <p class="quiet reveal d3">Stop questioning the data. Start making sound decisions.</p>
     </div>
-    <div class="hero-visual reveal d2">
-      <div class="board" aria-label="Illustrative board numbers">
-        <p class="eyebrow">Board numbers</p>
-        <dl>
-          <div class="board-row"><dt>Pipeline</dt><dd>$4.2M</dd></div>
-          <div class="board-row flagged"><dt>Forecast</dt><dd class="fig">$1.9M<svg class="flag" viewBox="0 0 12 14" aria-hidden="true"><path d="M1 1h9L8 7l2 6H1z" fill="#8C3B32"/></svg></dd><dd class="flag-note">Close dates missing</dd></div>
-          <div class="board-row"><dt>Win rate</dt><dd>27%</dd></div>
-          <div class="board-row"><dt>Net revenue retention</dt><dd>108%</dd></div>
-        </dl>
+    <figure class="hero-visual reveal d2">
+      <div class="journey-card">
+        <svg class="journey journey-desktop" viewBox="0 0 1040 520" width="1040" height="520" role="img" aria-label="Revenue journey, Northwind, last 12 months. Sessions not tracked. Leads 12,480 to 11,860, down 620. MQLs 3,120 to 2,890, down 230. SQLs 1,092 to 1,130, up 38. Opportunities 468 to 452, down 16. Closed won 94 to 118, up 24. CR1 not tracked. CR2 25.0 percent to 24.4 percent, down 0.6 points. CR3 35.0 percent to 39.1 percent, up 4.1 points. CR4 42.9 percent to 40.0 percent, down 2.9 points. CR5 20.1 percent to 26.1 percent, up 6.0 points. Drift changes 13 of 17 tracked numbers. Starting revenue 14.20 million, unchanged. Net new revenue 2.96 million to 3.48 million. Cross-sell not tracked. Upgrades 0.62 million to 0.88 million. Downgrades not tracked. Churn 1.31 million to 1.55 million. Renewal 212 to 226 accounts. Ending revenue 16.47 million to 17.01 million." xmlns="http://www.w3.org/2000/svg">
+        <text x="20.0" y="28.0" text-anchor="start" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#0F1F33">Revenue journey</text>
+        <rect x="868" y="10" width="152" height="24" rx="12" fill="#ECE6D8"/>
+        <text x="944.0" y="26.0" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="500" fill="#0F1F33">Last 12 months</text>
+        <line x1="0" y1="44" x2="1040" y2="44" stroke="#D9D2C2"/>
+        <text x="20" y="70" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="500"><tspan fill="#4A5768">12,480 today</tspan><tspan dx="8" fill="#0F1F33">→ 11,860 corrected</tspan><tspan dx="10" fill="#A8402B">−620</tspan><tspan dx="6" font-family="Inter, sans-serif" fill="#4A5768">difference</tspan></text>
+        <rect x="608" y="52" width="328" height="28" rx="6" fill="#F3E0DB"/>
+        <circle cx="624" cy="66" r="8" fill="#A8402B"/>
+        <text x="624.0" y="70.0" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#F3E0DB">!</text>
+        <text x="638.0" y="70.0" text-anchor="start" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#A8402B">Drift</text>
+        <text x="686.0" y="70.0" text-anchor="start" font-family="Inter, sans-serif" font-size="13" font-weight="500" fill="#A8402B">changes 13 of 17 tracked numbers</text>
+        <text x="20.0" y="104.0" text-anchor="start" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#4A5768" letter-spacing="0.8">WIN  ·  SESSIONS → CLOSED WON</text>
+        <text x="662.0" y="104.0" text-anchor="start" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#4A5768" letter-spacing="0.8">RETAIN AND GROW</text>
+        <line x1="646" y1="92" x2="646" y2="500" stroke="#D9D2C2"/>
+        <path d="M18,160 L506,228 L506,308 L18,376 Z" fill="#ECE6D8"/>
+        <line x1="114.0" y1="173.6" x2="114.0" y2="362.4" stroke="#FBF8F1" stroke-width="2"/>
+        <line x1="210.0" y1="187.2" x2="210.0" y2="348.8" stroke="#FBF8F1" stroke-width="2"/>
+        <line x1="306.0" y1="200.8" x2="306.0" y2="335.2" stroke="#FBF8F1" stroke-width="2"/>
+        <line x1="402.0" y1="214.4" x2="402.0" y2="321.6" stroke="#FBF8F1" stroke-width="2"/>
+        <text x="114.0" y="159.6" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#4A5768" letter-spacing="1.2">AWARENESS</text>
+        <text x="258.0" y="180.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#4A5768" letter-spacing="1.2">EDUCATION</text>
+        <text x="402.0" y="200.4" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#4A5768" letter-spacing="1.2">SELECTION</text>
+        <rect x="22.0" y="229.0" width="88" height="78" rx="8" fill="#FBF8F1" stroke="#4A5768" stroke-dasharray="3 2.5"/>
+        <text x="66.0" y="261.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#4A5768">CR1</text>
+        <text x="66.0" y="281.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#4A5768">Not tracked</text>
+        <rect x="120.0" y="229.0" width="84" height="78" rx="8" fill="#FBF8F1" stroke="#D9D2C2"/>
+        <text x="162.0" y="245.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#4A5768">CR2</text>
+        <text x="162.0" y="263.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="400" fill="#4A5768">25.0% →</text>
+        <text x="162.0" y="281.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="600" fill="#0F1F33">24.4%</text>
+        <text x="162.0" y="299.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#A8402B">−0.6 pts</text>
+        <rect x="216.0" y="229.0" width="84" height="78" rx="8" fill="#FBF8F1" stroke="#D9D2C2"/>
+        <text x="258.0" y="245.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#4A5768">CR3</text>
+        <text x="258.0" y="263.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="400" fill="#4A5768">35.0% →</text>
+        <text x="258.0" y="281.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="600" fill="#0F1F33">39.1%</text>
+        <text x="258.0" y="299.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#3F6B4E">+4.1 pts</text>
+        <rect x="312.0" y="229.0" width="84" height="78" rx="8" fill="#FBF8F1" stroke="#D9D2C2"/>
+        <text x="354.0" y="245.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#4A5768">CR4</text>
+        <text x="354.0" y="263.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="400" fill="#4A5768">42.9% →</text>
+        <text x="354.0" y="281.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="600" fill="#0F1F33">40.0%</text>
+        <text x="354.0" y="299.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#A8402B">−2.9 pts</text>
+        <rect x="408.0" y="229.0" width="84" height="78" rx="8" fill="#FBF8F1" stroke="#D9D2C2"/>
+        <text x="450.0" y="245.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#4A5768">CR5</text>
+        <text x="450.0" y="263.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="400" fill="#4A5768">20.1% →</text>
+        <text x="450.0" y="281.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="600" fill="#0F1F33">26.1%</text>
+        <text x="450.0" y="299.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#3F6B4E">+6.0 pts</text>
+        <rect x="498" y="228" width="112" height="80" rx="10" fill="#0F1F33"/>
+        <text x="554.0" y="250.0" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#FBF8F1">Closed won</text>
+        <text x="554.0" y="270.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="14" font-weight="500" fill="#FBF8F1">94 → 118</text>
+        <text x="554.0" y="288.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="500" fill="#C5DCCE">+24</text>
+        <text x="554.0" y="404.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#4A5768">V6</text>
+        <text x="66.0" y="404.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#4A5768">V1</text>
+        <text x="66.0" y="420.0" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#0F1F33">Sessions</text>
+        <rect x="20.0" y="428.0" width="92" height="22" rx="10" fill="#FBF8F1" stroke="#4A5768" stroke-dasharray="3 2.5"/>
+        <text x="66.0" y="442.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#4A5768">Not tracked</text>
+        <text x="162.0" y="404.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#4A5768">V2</text>
+        <text x="162.0" y="420.0" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#0F1F33">Leads</text>
+        <text x="162.0" y="438.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="400" fill="#4A5768">12,480 →</text>
+        <text x="162.0" y="454.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="14" font-weight="500" fill="#0F1F33">11,860</text>
+        <text x="162.0" y="470.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#A8402B">−620</text>
+        <text x="258.0" y="404.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#4A5768">V3</text>
+        <text x="258.0" y="420.0" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#0F1F33">MQLs</text>
+        <text x="258.0" y="438.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="400" fill="#4A5768">3,120 →</text>
+        <text x="258.0" y="454.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="14" font-weight="500" fill="#0F1F33">2,890</text>
+        <text x="258.0" y="470.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#A8402B">−230</text>
+        <text x="354.0" y="404.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#4A5768">V4</text>
+        <text x="354.0" y="420.0" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#0F1F33">SQLs</text>
+        <text x="354.0" y="438.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="400" fill="#4A5768">1,092 →</text>
+        <text x="354.0" y="454.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="14" font-weight="500" fill="#0F1F33">1,130</text>
+        <text x="354.0" y="470.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#3F6B4E">+38</text>
+        <text x="450.0" y="404.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#4A5768">V5</text>
+        <text x="450.0" y="420.0" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#0F1F33">Opportunities</text>
+        <text x="450.0" y="438.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="400" fill="#4A5768">468 →</text>
+        <text x="450.0" y="454.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="14" font-weight="500" fill="#0F1F33">452</text>
+        <text x="450.0" y="470.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#A8402B">−16</text>
+        <circle cx="848" cy="286" r="112" fill="none" stroke="#4A5768" stroke-width="1.25" stroke-dasharray="3 4"/>
+        <circle cx="848" cy="286" r="88" fill="#F4F0E6"/>
+        <text x="848.0" y="282.0" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#0F1F33">Recurring</text>
+        <text x="848.0" y="302.0" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#0F1F33">revenue</text>
+        <text x="848" y="135.0" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#4A5768">V7 Starting ARR<tspan dx="8" font-family="JetBrains Mono, ui-monospace, monospace" font-weight="500" fill="#0F1F33">$14.20M → $14.20M</tspan><tspan dx="8" font-family="JetBrains Mono, ui-monospace, monospace" font-weight="500" fill="#4A5768">±0</tspan></text>
+        <text x="848" y="451.0" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#4A5768">V13 Ending ARR<tspan dx="8" font-family="JetBrains Mono, ui-monospace, monospace" font-weight="500" fill="#0F1F33">$16.47M → $17.01M</tspan><tspan dx="8" font-family="JetBrains Mono, ui-monospace, monospace" font-weight="500" fill="#3F6B4E">+$0.54M</tspan></text>
+        <rect x="780.0" y="149.0" width="136" height="50" rx="8" fill="#FBF8F1" stroke="#D9D2C2"/>
+        <text x="848.0" y="164.0" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#4A5768">V8 Net new revenue</text>
+        <text x="848.0" y="180.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#0F1F33">$2.96M → $3.48M</text>
+        <text x="848.0" y="194.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#3F6B4E">+$0.52M</text>
+        <rect x="877.0" y="205.0" width="136" height="50" rx="8" fill="#FBF8F1" stroke="#D9D2C2"/>
+        <text x="945.0" y="224.0" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#4A5768">V9 Cross-sell</text>
+        <text x="945.0" y="242.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#4A5768">Not tracked</text>
+        <rect x="877.0" y="317.0" width="136" height="50" rx="8" fill="#FBF8F1" stroke="#D9D2C2"/>
+        <text x="945.0" y="332.0" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#4A5768">V10 Upgrades</text>
+        <text x="945.0" y="348.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#0F1F33">$0.62M → $0.88M</text>
+        <text x="945.0" y="362.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#3F6B4E">+$0.26M</text>
+        <rect x="780.0" y="373.0" width="136" height="50" rx="8" fill="#FBF8F1" stroke="#D9D2C2"/>
+        <text x="848.0" y="392.0" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#4A5768">V11 Downgrades</text>
+        <text x="848.0" y="410.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#4A5768">Not tracked</text>
+        <rect x="683.0" y="317.0" width="136" height="50" rx="8" fill="#FBF8F1" stroke="#D9D2C2"/>
+        <text x="751.0" y="332.0" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#4A5768">V12 Churn</text>
+        <text x="751.0" y="348.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#0F1F33">$1.31M → $1.55M</text>
+        <text x="751.0" y="362.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#3F6B4E">+$0.24M</text>
+        <rect x="683.0" y="205.0" width="136" height="50" rx="8" fill="#FBF8F1" stroke="#D9D2C2"/>
+        <text x="751.0" y="220.0" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#4A5768">Renewal (accounts)</text>
+        <text x="751.0" y="236.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#0F1F33">212 → 226</text>
+        <text x="751.0" y="250.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#3F6B4E">+14</text>
+        </svg>
+        <svg class="journey journey-mobile" viewBox="0 0 360 1134" width="360" height="1134" role="img" aria-label="Revenue journey, Northwind, last 12 months. Sessions not tracked. Leads 12,480 to 11,860, down 620. MQLs 3,120 to 2,890, down 230. SQLs 1,092 to 1,130, up 38. Opportunities 468 to 452, down 16. Closed won 94 to 118, up 24. CR1 not tracked. CR2 25.0 percent to 24.4 percent, down 0.6 points. CR3 35.0 percent to 39.1 percent, up 4.1 points. CR4 42.9 percent to 40.0 percent, down 2.9 points. CR5 20.1 percent to 26.1 percent, up 6.0 points. Drift changes 13 of 17 tracked numbers. Starting revenue 14.20 million, unchanged. Net new revenue 2.96 million to 3.48 million. Cross-sell not tracked. Upgrades 0.62 million to 0.88 million. Downgrades not tracked. Churn 1.31 million to 1.55 million. Renewal 212 to 226 accounts. Ending revenue 16.47 million to 17.01 million." xmlns="http://www.w3.org/2000/svg">
+        <text x="16" y="26" text-anchor="start" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#0F1F33">Revenue journey</text>
+        <rect x="214" y="10" width="130" height="22" rx="11" fill="#ECE6D8"/>
+        <text x="279" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#0F1F33">Last 12 months</text>
+        <line x1="0" y1="40" x2="360" y2="40" stroke="#D9D2C2"/>
+        <rect x="12" y="50" width="336" height="32" rx="6" fill="#F3E0DB"/>
+        <circle cx="28" cy="66" r="8" fill="#A8402B"/>
+        <text x="28" y="70" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#F3E0DB">!</text>
+        <text x="42" y="70" text-anchor="start" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#A8402B">Drift</text>
+        <text x="86" y="70" text-anchor="start" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#A8402B">changes 13 of 17 tracked numbers</text>
+        <text x="16" y="106" text-anchor="start" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#0F1F33">12,480 today → 11,860 corrected</text>
+        <text x="344" y="106" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#A8402B">−620</text>
+        <text x="16" y="132" text-anchor="start" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#4A5768" letter-spacing="0.4">WIN  ·  SESSIONS → CLOSED WON</text>
+        <line x1="16" y1="148" x2="344" y2="148" stroke="#D9D2C2"/>
+        <text x="16" y="168" text-anchor="start" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#0F1F33">V1  Sessions</text>
+        <text x="16" y="188" text-anchor="start" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="500" fill="#4A5768">Not tracked</text>
+        <text x="344" y="188" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#0F1F33">CR1  Not tracked</text>
+        <line x1="16" y1="200" x2="344" y2="200" stroke="#D9D2C2"/>
+        <text x="16" y="220" text-anchor="start" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#0F1F33">V2  Leads</text>
+        <text x="344" y="220" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="14" font-weight="500" fill="#A8402B">−620</text>
+        <text x="16" y="240" text-anchor="start" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="500" fill="#0F1F33">12,480 → 11,860</text>
+        <text x="344" y="240" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#0F1F33">CR2  25.0% → 24.4%</text>
+        <text x="344" y="256" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#A8402B">−0.6 pts</text>
+        <line x1="16" y1="268" x2="344" y2="268" stroke="#D9D2C2"/>
+        <text x="16" y="288" text-anchor="start" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#0F1F33">V3  MQLs</text>
+        <text x="344" y="288" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="14" font-weight="500" fill="#A8402B">−230</text>
+        <text x="16" y="308" text-anchor="start" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="500" fill="#0F1F33">3,120 → 2,890</text>
+        <text x="344" y="308" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#0F1F33">CR3  35.0% → 39.1%</text>
+        <text x="344" y="324" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#3F6B4E">+4.1 pts</text>
+        <line x1="16" y1="336" x2="344" y2="336" stroke="#D9D2C2"/>
+        <text x="16" y="356" text-anchor="start" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#0F1F33">V4  SQLs</text>
+        <text x="344" y="356" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="14" font-weight="500" fill="#3F6B4E">+38</text>
+        <text x="16" y="376" text-anchor="start" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="500" fill="#0F1F33">1,092 → 1,130</text>
+        <text x="344" y="376" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#0F1F33">CR4  42.9% → 40.0%</text>
+        <text x="344" y="392" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#A8402B">−2.9 pts</text>
+        <line x1="16" y1="404" x2="344" y2="404" stroke="#D9D2C2"/>
+        <text x="16" y="424" text-anchor="start" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#0F1F33">V5  Opportunities</text>
+        <text x="344" y="424" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="14" font-weight="500" fill="#A8402B">−16</text>
+        <text x="16" y="444" text-anchor="start" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="500" fill="#0F1F33">468 → 452</text>
+        <text x="344" y="444" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#0F1F33">CR5  20.1% → 26.1%</text>
+        <text x="344" y="460" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#3F6B4E">+6.0 pts</text>
+        <rect x="16" y="478" width="328" height="56" rx="10" fill="#0F1F33"/>
+        <text x="28" y="500" text-anchor="start" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#FBF8F1">V6  Closed won</text>
+        <text x="28" y="520" text-anchor="start" font-family="JetBrains Mono, ui-monospace, monospace" font-size="16" font-weight="500" fill="#FBF8F1">94 → 118</text>
+        <text x="328" y="514" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="16" font-weight="500" fill="#C5DCCE">+24</text>
+        <text x="16" y="556" text-anchor="start" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#4A5768" letter-spacing="0.3">RETAIN AND GROW  ·  RECURRING REVENUE</text>
+        <circle cx="180" cy="642" r="46" fill="none" stroke="#4A5768" stroke-width="1.25" stroke-dasharray="3 4"/>
+        <text x="180" y="640" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#0F1F33">Recurring</text>
+        <text x="180" y="656" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#0F1F33">revenue</text>
+        <line x1="16" y1="710" x2="344" y2="710" stroke="#D9D2C2"/>
+        <text x="16" y="730" text-anchor="start" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#0F1F33">V7 Starting ARR</text>
+        <text x="344" y="730" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="500" fill="#4A5768">±0</text>
+        <text x="16" y="750" text-anchor="start" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="500" fill="#0F1F33">$14.20M → $14.20M</text>
+        <line x1="16" y1="762" x2="344" y2="762" stroke="#D9D2C2"/>
+        <text x="16" y="782" text-anchor="start" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#0F1F33">V8 Net new revenue</text>
+        <text x="344" y="782" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="500" fill="#3F6B4E">+$0.52M</text>
+        <text x="16" y="802" text-anchor="start" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="500" fill="#0F1F33">$2.96M → $3.48M</text>
+        <line x1="16" y1="814" x2="344" y2="814" stroke="#D9D2C2"/>
+        <text x="16" y="834" text-anchor="start" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#0F1F33">V9 Cross-sell</text>
+        <text x="16" y="854" text-anchor="start" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="500" fill="#4A5768">Not tracked</text>
+        <line x1="16" y1="866" x2="344" y2="866" stroke="#D9D2C2"/>
+        <text x="16" y="886" text-anchor="start" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#0F1F33">V10 Upgrades</text>
+        <text x="344" y="886" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="500" fill="#3F6B4E">+$0.26M</text>
+        <text x="16" y="906" text-anchor="start" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="500" fill="#0F1F33">$0.62M → $0.88M</text>
+        <line x1="16" y1="918" x2="344" y2="918" stroke="#D9D2C2"/>
+        <text x="16" y="938" text-anchor="start" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#0F1F33">V11 Downgrades</text>
+        <text x="16" y="958" text-anchor="start" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="500" fill="#4A5768">Not tracked</text>
+        <line x1="16" y1="970" x2="344" y2="970" stroke="#D9D2C2"/>
+        <text x="16" y="990" text-anchor="start" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#0F1F33">V12 Churn</text>
+        <text x="344" y="990" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="500" fill="#3F6B4E">+$0.24M</text>
+        <text x="16" y="1010" text-anchor="start" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="500" fill="#0F1F33">$1.31M → $1.55M</text>
+        <line x1="16" y1="1022" x2="344" y2="1022" stroke="#D9D2C2"/>
+        <text x="16" y="1042" text-anchor="start" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#0F1F33">Renewal</text>
+        <text x="344" y="1042" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="500" fill="#3F6B4E">+14</text>
+        <text x="16" y="1062" text-anchor="start" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="500" fill="#0F1F33">212 → 226</text>
+        <line x1="16" y1="1074" x2="344" y2="1074" stroke="#D9D2C2"/>
+        <text x="16" y="1094" text-anchor="start" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#0F1F33">V13 Ending ARR</text>
+        <text x="344" y="1094" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="500" fill="#3F6B4E">+$0.54M</text>
+        <text x="16" y="1114" text-anchor="start" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="500" fill="#0F1F33">$16.47M → $17.01M</text>
+        </svg>
       </div>
-      <p class="cap">Illustrative</p>
-    </div>
+    </figure>
   </div>
 </section>
 
@@ -348,7 +535,7 @@ footer .fnav a:hover{color:var(--ink);}
   <div class="wrap">
     <div class="section-head">
       <h2>Ask three teams, get three numbers.</h2>
-      <p>RevOps brings the data, but the rest of the business debates it because everyone has their own stopwatch. Cohorts or conversions? Which filters are applied? Between data errors and definition errors, your CRM quickly drifts away from the truth.</p>
+      <p>RevOps brings the data, but the rest of the business debates it because everyone has their own stopwatch. Cohorts or conversions? Which filters are applied? Between data errors and definition errors, your CRM quickly drifts away from the truth. Then a senior leader opens the records and checks them, line by line. That deep dive is slow, and it takes the time the decision needed.</p>
     </div>
 
     <div class="q-grid">
@@ -358,11 +545,11 @@ footer .fnav a:hover{color:var(--ink);}
       </div>
       <div class="rule-card red">
         <h4>Where do we lose deals?</h4>
-        <p>Only if stage history and loss reasons are recorded the same way every time.</p>
+        <p>You can only answer that if stage history and loss reasons are recorded the same way every time.</p>
       </div>
       <div class="rule-card red">
         <h4>Why do customers churn?</h4>
-        <p>Only if the CRM agrees with the system finance reports from.</p>
+        <p>You can only answer that if the CRM agrees with the system finance reports from.</p>
       </div>
     </div>
 
@@ -379,27 +566,21 @@ footer .fnav a:hover{color:var(--ink);}
     <div class="stages">
       <article class="stage">
         <svg class="ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true"><rect x="6" y="4" width="20" height="24"/><path d="M11 12h10M11 17h10M11 22h6"/></svg>
-        <p class="stage-kicker">Start here</p>
-        <h3>Clean · The Audit</h3>
-        <p>Two equal halves: the top-down process, and bottom-up property cleanup. You keep the written process.</p>
+        <p class="stage-kicker">The Audit</p>
+        <h3>Get it right</h3>
+        <p>We audit your process and your CRM with you, clean it up, and you keep Included Access to the workspace.</p>
       </article>
       <article class="stage">
         <svg class="ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true"><path d="M16 4l10 4v8c0 6-4.2 10-10 12C10.2 26 6 22 6 16V8l10-4z"/></svg>
-        <p class="stage-kicker">Ongoing</p>
-        <h3>Protected · Validation</h3>
-        <p>Checks against decay and drift on the record, while your team is still in the deal.</p>
+        <p class="stage-kicker">Validation + AI fields</p>
+        <h3>Keep it right</h3>
+        <p>Validation flags drift on every record, and our team fills in the fields your business needs from call transcripts, other systems, and integrations. Built to your requirements, never generic AI fields.</p>
       </article>
-      <article class="stage">
-        <svg class="ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true"><rect x="5" y="5" width="22" height="22"/><path d="M5 13h22M5 20h22M13 5v22"/></svg>
-        <p class="stage-kicker">Our team</p>
-        <h3>Augmented · AI Filled in</h3>
-        <p>We fill the CRM from your custom business requirements: call transcripts, other systems, integrations. Never generic AI-filled fields. The skies the limit.</p>
-      </article>
-      <article class="stage">
+      <article class="stage" id="sonar">
         <svg class="ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true"><circle cx="13" cy="16" r="7"/><circle cx="20" cy="16" r="7"/></svg>
-        <p class="badge">On the roadmap</p>
-        <h3>Intelligence · Sonar</h3>
-        <p>Sonar will be the revenue leader's second brain, with proactive insight helping you see what's coming and what to do about it.</p>
+        <p class="stage-kicker">Sonar and Ask Buoy</p>
+        <h3>Know what it means</h3>
+        <p>Sonar and Ask Buoy turn trusted data into answers for your leadership team. They show what's coming, and what to do about it.</p>
       </article>
     </div>
   </div>
@@ -408,12 +589,12 @@ footer .fnav a:hover{color:var(--ink);}
 <section class="section product" id="product">
   <div class="wrap">
     <div class="section-head">
-      <h2>Protected: Validation on the record</h2>
+      <h2>Validation on the record</h2>
     </div>
     <div class="rule-grid">
         <div class="rule-card red">
           <h4>A gap in the record is a gap in the number.</h4>
-          <p>Empty close date or economic buyer is caught as soon as the field changes.</p>
+          <p>Empty close date or economic buyer is caught as soon as the record is saved.</p>
         </div>
         <div class="rule-card amber">
           <h4>Complete isn't the same as true.</h4>
@@ -430,8 +611,8 @@ footer .fnav a:hover{color:var(--ink);}
 <section class="story" id="story">
   <div class="wrap">
     <h2>Why Buoy is different</h2>
-    <p>Most CRM cleanup starts with the fields.</p>
-    <p>Buoy starts with the questions leadership needs answered, writes the definitions down, then flags drift on the record — it doesn't hard-block anyone from saving.</p>
+    <p>Most CRM cleanup starts with the fields. Buoy starts with the questions your leadership team needs answered.</p>
+    <p>We write the definitions down and flag drift on the record without blocking anyone from saving. One view of your customer journey shows whether the numbers are right, and Sonar and Ask Buoy explain what they mean. Buoy doesn't build your reports; your team takes the trusted data into the tools it already uses.</p>
   </div>
 </section>
 
@@ -461,55 +642,59 @@ footer .fnav a:hover{color:var(--ink);}
 <section class="section" id="pricing">
   <div class="wrap">
     <div class="section-head">
-      <h2>What this costs</h2>
-      <p>The only price is the Audit. Validation and Filled in are scoped after it. Sonar is on the roadmap.</p>
+      <h2>What it costs</h2>
+      <p>Start with a one-time Audit. Add the subscriptions when you're ready.</p>
     </div>
 
     <div class="pricing-grid">
-      <div class="tier">
-        <div class="tier-badge"><p class="stage-kicker">Start here</p></div>
-        <h3>The Audit</h3>
-        <div class="price">$20,000<small>one-time</small></div>
-        <button class="btn btn-primary" onclick="openAuditModal(event)">Book an audit call</button>
+      <article class="tier">
+        <p class="stage-kicker">The Audit</p>
+        <h3>Get it right</h3>
+        <div class="price-slot">
+          <p class="price-note">One-time</p>
+        </div>
         <ul>
-          <li>Top-down: how GTM should run</li>
-          <li>Bottom-up: property cleanup</li>
-          <li>You keep the written process</li>
+          <li>We audit your process and your CRM with you</li>
+          <li>We clean it up, and you keep the written process</li>
+          <li>Included Access to the audit and cleanup workspace</li>
         </ul>
-      </div>
-      <div class="tier">
-        <div class="tier-badge"></div>
-        <h3>Validation</h3>
-        <div class="tier-sub">Protected · done with you</div>
-        <div class="scope">Scoped to your process</div>
-        <button class="btn btn-primary" onclick="openAuditModal(event)">Book an audit call</button>
+        <button class="btn btn-primary" onclick="openAuditModal(event)">Let's chat</button>
+      </article>
+      <article class="tier">
+        <p class="stage-kicker">Validation + AI fields</p>
+        <h3>Keep it right</h3>
+        <div class="price-slot">
+          <p class="price-note">Subscription</p>
+        </div>
         <ul>
-          <li>Checks against decay and drift</li>
-          <li>On the record, while the team works</li>
-          <li>A small number of clients at a time</li>
+          <li>Validation flags drift as soon as the record is saved</li>
+          <li>We fill in the fields your business needs from your calls and systems</li>
+          <li>Built to your requirements, never generic AI fields</li>
         </ul>
-      </div>
-      <div class="tier">
-        <div class="tier-badge"><p class="badge">On the roadmap</p></div>
-        <h3>Sonar</h3>
-        <div class="tier-sub">Intelligence · not available yet</div>
-        <div class="scope">Scoped to your process</div>
-        <button class="btn btn-primary" onclick="openAuditModal(event)">Book an audit call</button>
+        <button class="btn btn-primary" onclick="openAuditModal(event)">Let's chat</button>
+      </article>
+      <article class="tier">
+        <p class="stage-kicker">Sonar and Ask Buoy</p>
+        <h3>Know what it means</h3>
+        <div class="price-slot">
+          <p class="price-note">Subscription</p>
+        </div>
         <ul>
-          <li>Will be the revenue leader's second brain</li>
-          <li>Will bring proactive insight</li>
-          <li>Will come after Validation is in place</li>
+          <li>Sonar turns trusted data into answers</li>
+          <li>Ask Buoy is there for the leadership team</li>
+          <li>Your team uses the data in the tools you already have</li>
         </ul>
-      </div>
+        <button class="btn btn-primary" onclick="openAuditModal(event)">Let's chat</button>
+      </article>
     </div>
   </div>
 </section>
 
 <section class="final-cta" id="contact">
   <div class="wrap">
-    <h2>Can you trust the numbers you take to the board?</h2>
+    <h2>Can your leadership team trust the numbers?</h2>
     <p class="cta-sub">Every engagement is scoped to your CRM and your process.</p>
-    <button class="btn btn-primary" onclick="openAuditModal(event)">Book an audit call</button>
+    <button class="btn btn-primary" onclick="openAuditModal(event)">Let's chat</button>
   </div>
 </section>
 
@@ -520,7 +705,7 @@ footer .fnav a:hover{color:var(--ink);}
         <img src="/assets/buoy-mark.svg" alt="Buoy">
         <span class="word">buoy<span class="dot" aria-hidden="true"></span></span>
       </a>
-      <p class="fnote">Done with you, a small number of clients at a time: the Audit (Clean), Validation (Protected), and Filled in from your own business. Sonar, on the roadmap, will add Intelligence.</p>
+      <p class="fnote">Done with you, a small number of clients at a time: the Audit, with Included Access to the workspace; Validation and AI fields; and Sonar and Ask Buoy for your leadership team.</p>
     </div>
     <div class="fnav">
       <a href="#how-it-works">How it works</a>
@@ -528,6 +713,7 @@ footer .fnav a:hover{color:var(--ink);}
       <a href="#story">Why Buoy</a>
       <a href="#pricing">Pricing</a>
       <a href="/blog/">Blog</a>
+      <a href="https://admin.buildwithbuoy.com/admin/login">Log in</a>
       <a href="mailto:alex@buildwithbuoy.com">alex@buildwithbuoy.com</a>
     </div>
   </div>
@@ -537,7 +723,7 @@ footer .fnav a:hover{color:var(--ink);}
 <div class="hs-modal-overlay" id="hs-modal-overlay">
   <div class="hs-modal" role="dialog" aria-modal="true" aria-labelledby="hs-modal-title">
     <button class="hs-modal-close" onclick="closeAuditModal()" aria-label="Close">&times;</button>
-    <h3 id="hs-modal-title">Book an audit call</h3>
+    <h3 id="hs-modal-title">Let's chat</h3>
     <p class="sub">Tell us a bit about your business and we'll follow up to schedule a time.</p>
     <div class="hs-form-frame" data-region="na2" data-form-id="8dd9daaf-2e19-460c-90ba-590573d0a90c" data-portal-id="247350596"></div>
   </div>
@@ -582,6 +768,23 @@ footer .fnav a:hover{color:var(--ink);}
       if (open){
         var first = document.querySelector('#site-nav a');
         if (first) first.focus();
+      }
+    });
+  }
+  var siteNav = document.getElementById('site-nav');
+  if (siteNav){
+    siteNav.addEventListener('click', function(e){
+      var link = e.target.closest('a');
+      if (!link || navMenu.getAttribute('aria-expanded') !== 'true') return;
+      var id = link.getAttribute('href') || '';
+      if (id.charAt(0) !== '#') return;
+      e.preventDefault();
+      setNavOpen(false);
+      if (location.hash === id){
+        var target = document.querySelector(id);
+        if (target) target.scrollIntoView();
+      } else {
+        location.hash = id;
       }
     });
   }
