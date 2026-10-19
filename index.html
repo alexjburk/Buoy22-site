@@ -73,6 +73,7 @@ header{
 #story,
 #proof,
 #pricing,
+#audit,
 #contact{
   scroll-margin-top:89px;
 }
@@ -143,8 +144,26 @@ nav.wrap{
 .journey-mobile{display:none;}
 
 .section{padding:96px 0; border-top:1px solid var(--line); background:#fff;}
-#how-it-works,
 #proof{background:var(--paper);}
+.plans{background:var(--paper);}
+.anchor{display:block; position:relative; height:0;}
+.debate .section-head{max-width:none; margin-bottom:72px;}
+.debate .section-head h2{font-size:60px; line-height:1.02; letter-spacing:-0.03em; max-width:16em;}
+.debate .section-head p{font-size:18px; line-height:1.55; margin-top:28px; max-width:42em;}
+.debate .pull{margin-top:72px;}
+.debate .pull-promise{margin-bottom:0;}
+.plan .stage-kicker{font-size:12px; line-height:1.4; letter-spacing:0.12em; margin:18px 0 0;}
+.plan-chat{
+  display:inline-flex; align-items:center; min-height:44px; margin-top:4px;
+  font-size:14px; font-weight:500; color:var(--navy);
+  text-decoration:underline; text-underline-offset:3px;
+}
+.plan-chat:hover{color:var(--ink);}
+.fnav-chat{
+  background:none; border:none; padding:0; margin:0; cursor:pointer;
+  font-family:Inter, sans-serif; font-size:14px; color:var(--slate);
+}
+.fnav-chat:hover{color:var(--ink);}
 .section-head{max-width:640px; margin-bottom:48px;}
 .section-head h2{font-size:44px; line-height:1.08;}
 .section-head p{color:var(--slate); font-size:17px; margin:14px 0 0;}
@@ -321,7 +340,11 @@ footer .fnav a:hover{color:var(--ink);}
   .section-head h2, .story h2{font-size:34px;}
   .pull p{font-size:22px;}
   .pull-next{margin-top:40px;}
+  .debate .section-head{margin-bottom:40px;}
+  .debate .section-head h2{font-size:42px;}
+  .debate .pull{margin-top:48px;}
   .problem-block h3{font-size:26px;}
+  .fnav-chat{min-height:44px; display:inline-flex; align-items:center; padding:0 10px;}
   .final-cta{padding:72px 0;}
   .final-cta h2{font-size:36px;}
   .stages, .q-grid, .pricing-grid{grid-template-columns:1fr;}
@@ -341,6 +364,7 @@ footer .fnav a:hover{color:var(--ink);}
   #story,
   #proof,
   #pricing,
+  #audit,
   #contact{
     scroll-margin-top:77px;
   }
@@ -356,8 +380,8 @@ footer .fnav a:hover{color:var(--ink);}
       <span class="word">buoy<span class="dot" aria-hidden="true"></span></span>
     </a>
     <div class="navlinks" id="site-nav">
-      <a href="#how-it-works">Three problems</a>
-      <a href="#pricing">Pricing</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="#audit">Plans</a>
       <a href="/blog/">Blog</a>
       <a class="nav-login" href="https://admin.buildwithbuoy.com/admin/login">Log in</a>
     </div>
@@ -569,7 +593,8 @@ footer .fnav a:hover{color:var(--ink);}
   </div>
 </section>
 
-<section class="section mist" id="problem">
+<section class="section debate" id="how-it-works">
+  <span id="problem" class="anchor"></span>
   <div class="wrap">
     <div class="section-head">
       <h2>Ask three teams, get three numbers.</h2>
@@ -591,98 +616,38 @@ footer .fnav a:hover{color:var(--ink);}
       </div>
     </div>
 
-    <p class="roi-prose" style="margin-bottom:0;">Keep debating whose number is right, or get back to deciding.</p>
-  </div>
-</section>
-
-<section class="section" id="how-it-works">
-  <div class="wrap">
-    <div class="section-head">
-      <h2>Three problems. One place to fix them.</h2>
-      <p id="story">Buoy doesn't build your reports or dashboards. It makes sure the data underneath holds up, so the tools you already use show numbers you can stand behind.</p>
-    </div>
-
     <blockquote class="pull">
       <p>Is that data right? That doesn't look right. Can you look into that and see if it's correct?</p>
     </blockquote>
     <p class="pull-promise">Buoy takes that question out of the conversation.</p>
-
-    <div class="problem-list">
-      <article class="problem-block" id="audit">
-        <p class="stage-kicker">Audit · One-time project</p>
-        <h3>Get it right from the start</h3>
-        <p>Most CRMs grew without a plan. Fields nobody uses, stages that mean different things to different teams. The Audit writes down how your GTM process is supposed to work and cleans up the CRM to match. It runs inside Buoy while we work together, and you take everything with you when it's done. Most Audits wrap in about a month.</p>
-      </article>
-      <article class="problem-block" id="product">
-        <p class="stage-kicker">Validation + AI fields · Subscription</p>
-        <h3>Keep it right as you grow</h3>
-        <p class="bridge">Subscribe to keep it right. Same login, more features.</p>
-        <p>People join and leave. The business changes. Data drifts. Validation checks your CRM against the rules from your Audit and flags drift early, so it's caught today and not next quarter. AI fields fill out the CRM for you, tailored to your own process, so reps spend less time on data entry.</p>
-        <ul class="outcome">
-          <li>Drift gets caught the week it starts, not in next quarter's review.</li>
-          <li>When someone leaves or a process changes, the rules still hold.</li>
-          <li>AI fields fill the CRM to match your process, so the numbers leaders see stay complete.</li>
-        </ul>
-      </article>
-    </div>
-
-    <blockquote class="pull pull-next">
-      <p>These charts look great, but what does it mean? What do we do?</p>
-    </blockquote>
-    <article class="problem-block" id="sonar">
-      <p class="stage-kicker">Intelligence layer · Ask Buoy · Subscription</p>
-      <h3>Know what it means</h3>
-      <p>You have the data. Now what does it mean, and what should you do? Ask Buoy answers in plain language, from data you already trust, so leaders can spend the meeting deciding instead of debating.</p>
-    </article>
   </div>
 </section>
 
-<section class="section" id="pricing">
+<section class="section plans" id="plans">
+  <span id="pricing" class="anchor"></span>
   <div class="wrap">
-    <div class="section-head">
-      <h2>The packages</h2>
-      <p>Start with a one-time Audit. Add the subscriptions when you're ready.</p>
-    </div>
-
-    <div class="pricing-grid">
-      <article class="tier">
-        <p class="stage-kicker">Audit</p>
+    <div class="problem-list">
+      <article class="problem-block plan" id="audit">
         <h3>Get it right from the start</h3>
-        <div class="price-slot">
-          <p class="price-note">One-time project</p>
-        </div>
-        <ul>
-          <li>Writes down how your GTM process is supposed to work</li>
-          <li>Cleans up the CRM to match</li>
-          <li>You take everything with you when it's done</li>
-        </ul>
-        <button class="btn btn-primary" onclick="openAuditModal(event)">Let's chat</button>
+        <p>Start with the Audit. We write down how your GTM process is supposed to work and clean up the CRM to match, inside Buoy, and you take everything with you when it's done.</p>
+        <p class="stage-kicker">Audit · One-time project</p>
+        <a class="plan-chat" href="#contact" onclick="openAuditModal(event)">Let's chat</a>
       </article>
-      <article class="tier">
-        <p class="stage-kicker">Validation + AI fields</p>
+      <article class="problem-block plan" id="product">
         <h3>Keep it right as you grow</h3>
-        <div class="price-slot">
-          <p class="price-note">Subscription</p>
-        </div>
-        <ul>
-          <li>Checks the CRM against the rules from your Audit</li>
-          <li>Flags drift early, the day it shows up</li>
-          <li>AI fields filled to your own process</li>
-        </ul>
-        <button class="btn btn-primary" onclick="openAuditModal(event)">Let's chat</button>
+        <p>Subscribe to keep it right, with the same login and more features. Validation flags drift as people and processes change, and AI fields fill out the CRM to match your process.</p>
+        <p class="stage-kicker">Validation + AI fields · Subscription</p>
+        <a class="plan-chat" href="#contact" onclick="openAuditModal(event)">Let's chat</a>
       </article>
-      <article class="tier">
-        <p class="stage-kicker">Intelligence layer</p>
+      <blockquote class="pull pull-next">
+        <p>These charts look great, but what does it mean? What do we do?</p>
+      </blockquote>
+      <article class="problem-block plan" id="sonar">
+        <span id="story" class="anchor"></span>
         <h3>Know what it means</h3>
-        <div class="price-slot">
-          <p class="price-note">Subscription</p>
-        </div>
-        <ul>
-          <li>Ask Buoy answers in plain language</li>
-          <li>From data you already trust</li>
-          <li>The meeting goes to deciding</li>
-        </ul>
-        <button class="btn btn-primary" onclick="openAuditModal(event)">Let's chat</button>
+        <p>Ask Buoy answers in plain language from data you already trust. Buoy doesn't build your reports or dashboards; it makes sure the numbers underneath hold up.</p>
+        <p class="stage-kicker">Intelligence layer · Subscription</p>
+        <a class="plan-chat" href="#contact" onclick="openAuditModal(event)">Let's chat</a>
       </article>
     </div>
   </div>
@@ -706,11 +671,11 @@ footer .fnav a:hover{color:var(--ink);}
       <p class="fnote">Done with you, a small number of clients at a time: a one-time Audit, Validation and AI fields, and Ask Buoy for your leadership team.</p>
     </div>
     <div class="fnav">
-      <a href="#how-it-works">Three problems</a>
-      <a href="#pricing">Pricing</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="#audit">Plans</a>
       <a href="/blog/">Blog</a>
       <a href="https://admin.buildwithbuoy.com/admin/login">Log in</a>
-      <a href="mailto:alex@buildwithbuoy.com">alex@buildwithbuoy.com</a>
+      <button class="fnav-chat" type="button" onclick="openAuditModal(event)">Let's chat</button>
     </div>
   </div>
   <div class="wrap"><p class="copyright">&copy; 2026 Buoy.</p></div>
