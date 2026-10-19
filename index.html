@@ -199,9 +199,22 @@ nav.wrap{
 .problem-block{border-top:1px solid var(--ink); padding-top:18px; max-width:44em;}
 .problem-block h3{font-size:32px; line-height:1.15; margin:0 0 12px;}
 .problem-block p{color:var(--slate); font-size:17px; line-height:1.5; margin:0;}
-
-.product{border-bottom:1px solid var(--line);}
-.rule-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:36px;}
+.outcome{
+  list-style:none;
+  margin:20px 0 0;
+  padding:4px 18px;
+  background:#fff;
+  border:1px solid var(--line);
+  max-width:40em;
+}
+.outcome li{
+  font-size:15px;
+  line-height:1.45;
+  color:var(--ink);
+  padding:12px 0;
+  border-top:1px solid var(--line);
+}
+.outcome li:first-child{border-top:none;}
 
 .story{background:var(--navy); color:var(--paper);}
 .story .wrap{padding-top:96px; padding-bottom:96px; max-width:760px;}
@@ -310,7 +323,7 @@ footer .fnav a:hover{color:var(--ink);}
   .problem-block h3{font-size:26px;}
   .final-cta{padding:72px 0;}
   .final-cta h2{font-size:36px;}
-  .stages, .q-grid, .rule-grid, .pricing-grid{grid-template-columns:1fr;}
+  .stages, .q-grid, .pricing-grid{grid-template-columns:1fr;}
   .tier{border-right:none; border-top:1px solid var(--line);}
   .tier:first-child{border-top:none;}
   .stage .stage-kicker{min-height:0;}
@@ -603,6 +616,11 @@ footer .fnav a:hover{color:var(--ink);}
         <p class="stage-kicker">Validation + AI fields · Subscription</p>
         <h3>Keep it right as you grow</h3>
         <p>People join and leave. The business changes. Data drifts. Validation checks your CRM against the rules from your Audit and flags drift early, so it's caught today and not next quarter. AI fields fill out the CRM for you, tailored to your own process, so reps spend less time on data entry.</p>
+        <ul class="outcome">
+          <li>Drift gets caught the week it starts, not in next quarter's review.</li>
+          <li>When someone leaves or a process changes, the rules still hold.</li>
+          <li>AI fields fill the CRM to match your process, so the numbers leaders see stay complete.</li>
+        </ul>
       </article>
     </div>
 
