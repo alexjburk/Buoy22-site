@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Buoy — Stop debating the numbers. Start deciding.</title>
+<title>Buoy — Trust the numbers that drive your business.</title>
 <meta name="description" content="Buoy is a three-step managed service for leadership teams: audit the process and the CRM, keep every record true, and understand what the data means." />
-<meta property="og:title" content="Buoy — Stop debating the numbers. Start deciding." />
+<meta property="og:title" content="Buoy — Trust the numbers that drive your business." />
 <meta property="og:description" content="Buoy is a three-step managed service for leadership teams: audit the process and the CRM, keep every record true, and understand what the data means." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://buildwithbuoy.com/" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Buoy — Stop debating the numbers. Start deciding." />
+<meta name="twitter:title" content="Buoy — Trust the numbers that drive your business." />
 <meta name="twitter:description" content="Buoy is a three-step managed service for leadership teams: audit the process and the CRM, keep every record true, and understand what the data means." />
 <meta property="og:image" content="https://buildwithbuoy.com/assets/og-image.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="Buoy — Stop debating the numbers. Start deciding." />
+<meta property="og:image:alt" content="Buoy — Trust the numbers that drive your business." />
 <meta name="twitter:image" content="https://buildwithbuoy.com/assets/og-image.png" />
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
@@ -121,16 +121,12 @@ nav.wrap{
 .hero .ctas{display:flex; gap:12px; flex-wrap:wrap;}
 .quiet{font-family:Newsreader, serif; font-size:20px; margin:28px 0 0; max-width:28ch;}
 .hero-visual{min-width:0; margin:0;}
-.bowtie{display:block; width:100%; height:auto;}
-.bowtie-enlarge{
-  display:none;
-  align-items:center;
-  min-height:44px;
-  margin:4px 0 0;
-  font-family:"JetBrains Mono", ui-monospace, monospace;
-  font-size:12px; letter-spacing:0.08em; text-transform:uppercase;
-  color:var(--navy);
+.journey-card{
+  background:#FBF8F1; border:1px solid #D9D2C2; border-radius:12px; overflow:hidden;
+  box-shadow:0 6px 14px rgba(15,31,51,.08), 0 1px 2px rgba(15,31,51,.06);
 }
+.journey{display:block; width:100%; height:auto;}
+.journey-mobile{display:none;}
 
 .section{padding:96px 0; border-top:1px solid var(--line); background:#fff;}
 #how-it-works,
@@ -279,7 +275,9 @@ footer .fnav a:hover{color:var(--ink);}
   .stage .stage-kicker{min-height:0;}
   .story .wrap{padding-top:64px; padding-bottom:64px;}
   .hero-visual{margin-left:-20px; margin-right:-20px;}
-  .bowtie-enlarge{display:inline-flex; margin-left:20px; margin-right:20px;}
+  .journey-card{border-radius:0; border-left:none; border-right:none; box-shadow:none;}
+  .journey-desktop{display:none;}
+  .journey-mobile{display:block;}
 }
 </style>
 </head>
@@ -309,7 +307,7 @@ footer .fnav a:hover{color:var(--ink);}
   <div class="wrap">
     <div class="hero-copy">
       <p class="eyebrow reveal">For Series A, B and PE-backed Growth stage companies</p>
-      <h1 class="reveal d1">Stop debating the numbers.<br>Start deciding.</h1>
+      <h1 class="reveal d1">Trust the numbers that drive your business.</h1>
       <p class="lede reveal d2">Buoy is a three-step managed service to get your GTM processes documented, your CRM architecture set up and protected from drift, and an intelligence layer providing insight and action to keep driving the business forward.</p>
       <div class="ctas reveal d3">
         <button class="btn btn-primary" onclick="openAuditModal(event)">Book an audit call</button>
@@ -318,8 +316,185 @@ footer .fnav a:hover{color:var(--ink);}
       <p class="quiet reveal d3">Stop questioning the data. Start making sound decisions.</p>
     </div>
     <figure class="hero-visual reveal d2">
-      <img class="bowtie" src="/assets/bowtie.svg" width="1019" height="476" alt="Customer journey. A funnel from Sessions to Closed Won, with conversion and volume on each stage, feeding Customer Onboarding, then a wheel of expansion, renewal, and churn.">
-      <a class="bowtie-enlarge" href="/assets/bowtie.svg" target="_blank" rel="noopener">View larger</a>
+      <div class="journey-card">
+        <svg class="journey journey-desktop" viewBox="0 0 1040 572" width="1040" height="572" role="img" aria-label="Revenue journey, Northwind, last 12 months. Win funnel from Sessions to Closed won: Sessions not tracked, Leads 12,480 to 11,860, down 620, MQLs 3,120 to 2,890, down 230, SQLs 1,092 to 1,130, up 38, Opportunities 468 to 452, down 16, Closed won 94 to 118, up 24. CR1 not tracked. CR2 25.0 percent to 24.4 percent, down 0.6 points. CR3 35.0 percent to 39.1 percent, up 4.1 points. CR4 42.9 percent to 40.0 percent, down 2.9 points. CR5 20.1 percent to 26.1 percent, up 6.0 points. Drift changes 13 of 17 tracked numbers. Retain and grow: starting ARR 14.20 million, net new revenue 2.96 million to 3.48 million, cross-sell not tracked, upgrades 0.62 million to 0.88 million, downgrades not tracked, churn 1.31 million to 1.55 million, renewal 212 to 226 accounts, ending ARR 16.47 million to 17.01 million." xmlns="http://www.w3.org/2000/svg">
+        <text x="20" y="28" text-anchor="start" font-family="Inter" font-size="16" font-weight="600" fill="#0F1F33">Revenue journey</text>
+        <rect x="868" y="10" width="152" height="24" rx="12" fill="#ECE6D8"/>
+        <text x="944" y="26" text-anchor="middle" font-family="Inter" font-size="13" font-weight="500" fill="#0F1F33">Last 12 months</text>
+        <line x1="0" y1="44" x2="1040" y2="44" stroke="#D9D2C2"/>
+        <rect x="20" y="56" width="392" height="28" rx="6" fill="#F3E0DB"/>
+        <circle cx="36" cy="70" r="8" fill="#A8402B"/>
+        <text x="36" y="74" text-anchor="middle" font-family="Inter" font-size="12" font-weight="700" fill="#F3E0DB">!</text>
+        <text x="50" y="74" text-anchor="start" font-family="Inter" font-size="13" font-weight="600" fill="#A8402B">Drift</text>
+        <text x="96" y="74" text-anchor="start" font-family="Inter" font-size="13" font-weight="500" fill="#A8402B">changes 13 of 17 tracked numbers</text>
+        <text x="20" y="110" text-anchor="start" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#4A5768" letter-spacing="1.2">WIN  ·  SESSIONS → CLOSED WON</text>
+        <text x="620" y="110" text-anchor="start" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#4A5768" letter-spacing="1.1">RETAIN AND GROW  ·  RECURRING REVENUE</text>
+        <path d="M16.0,200.0C44.0,200.0 44.0,200.0 72.0,200.0C120.0,200.0 120.0,212.0 168.0,212.0C216.0,212.0 216.0,226.0 264.0,226.0C312.0,226.0 312.0,240.0 360.0,240.0C408.0,240.0 408.0,252.0 456.0,252.0C492.0,252.0 492.0,260.0 528.0,260.0L528.0,324.0C492.0,324.0 492.0,332.0 456.0,332.0C408.0,332.0 408.0,344.0 360.0,344.0C312.0,344.0 312.0,358.0 264.0,358.0C216.0,358.0 216.0,372.0 168.0,372.0C120.0,372.0 120.0,384.0 72.0,384.0C44.0,384.0 44.0,384.0 16.0,384.0Z" fill="#ECE6D8"/>
+        <line x1="120" y1="210" x2="120" y2="360" stroke="#FBF8F1" stroke-width="3"/>
+        <line x1="216" y1="210" x2="216" y2="360" stroke="#FBF8F1" stroke-width="3"/>
+        <line x1="312" y1="210" x2="312" y2="360" stroke="#FBF8F1" stroke-width="3"/>
+        <line x1="408" y1="210" x2="408" y2="360" stroke="#FBF8F1" stroke-width="3"/>
+        <text x="120" y="178" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="11" font-weight="500" fill="#4A5768" letter-spacing="1.4">AWARENESS</text>
+        <text x="264" y="196" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="11" font-weight="500" fill="#4A5768" letter-spacing="1.4">EDUCATION</text>
+        <text x="408" y="214" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="11" font-weight="500" fill="#4A5768" letter-spacing="1.4">SELECTION</text>
+        <text x="72" y="270" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="11" font-weight="500" fill="#4A5768">V1</text>
+        <text x="72" y="288" text-anchor="middle" font-family="Inter" font-size="13" font-weight="600" fill="#0F1F33">Sessions</text>
+        <text x="72" y="314" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="500" fill="#4A5768">Not tracked</text>
+        <text x="168" y="270" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="11" font-weight="500" fill="#4A5768">V2</text>
+        <text x="168" y="288" text-anchor="middle" font-family="Inter" font-size="13" font-weight="600" fill="#0F1F33">Leads</text>
+        <text x="168" y="306" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#4A5768">12,480 →</text>
+        <text x="168" y="328" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="15" font-weight="500" fill="#0F1F33">11,860</text>
+        <text x="168" y="346" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#A8402B">−620</text>
+        <text x="264" y="270" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="11" font-weight="500" fill="#4A5768">V3</text>
+        <text x="264" y="288" text-anchor="middle" font-family="Inter" font-size="13" font-weight="600" fill="#0F1F33">MQLs</text>
+        <text x="264" y="306" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#4A5768">3,120 →</text>
+        <text x="264" y="328" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="15" font-weight="500" fill="#0F1F33">2,890</text>
+        <text x="264" y="346" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#A8402B">−230</text>
+        <text x="360" y="270" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="11" font-weight="500" fill="#4A5768">V4</text>
+        <text x="360" y="288" text-anchor="middle" font-family="Inter" font-size="13" font-weight="600" fill="#0F1F33">SQLs</text>
+        <text x="360" y="306" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#4A5768">1,092 →</text>
+        <text x="360" y="328" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="15" font-weight="500" fill="#0F1F33">1,130</text>
+        <text x="360" y="346" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#3F6B4E">+38</text>
+        <text x="456" y="270" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="11" font-weight="500" fill="#4A5768">V5</text>
+        <text x="456" y="288" text-anchor="middle" font-family="Inter" font-size="13" font-weight="600" fill="#0F1F33">Opportunities</text>
+        <text x="456" y="306" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#4A5768">468 →</text>
+        <text x="456" y="328" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="15" font-weight="500" fill="#0F1F33">452</text>
+        <text x="456" y="346" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#A8402B">−16</text>
+        <text x="72" y="408" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="11" font-weight="500" fill="#4A5768">CR1</text>
+        <text x="72" y="424" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="11" font-weight="500" fill="#0F1F33">Not tracked</text>
+        <text x="168" y="408" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="11" font-weight="500" fill="#4A5768">CR2</text>
+        <text x="168" y="424" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="11" font-weight="500" fill="#0F1F33">25.0% → 24.4%</text>
+        <text x="168" y="440" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="11" font-weight="500" fill="#A8402B">−0.6 pts</text>
+        <text x="264" y="408" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="11" font-weight="500" fill="#4A5768">CR3</text>
+        <text x="264" y="424" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="11" font-weight="500" fill="#0F1F33">35.0% → 39.1%</text>
+        <text x="264" y="440" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="11" font-weight="500" fill="#3F6B4E">+4.1 pts</text>
+        <text x="360" y="408" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="11" font-weight="500" fill="#4A5768">CR4</text>
+        <text x="360" y="424" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="11" font-weight="500" fill="#0F1F33">42.9% → 40.0%</text>
+        <text x="360" y="440" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="11" font-weight="500" fill="#A8402B">−2.9 pts</text>
+        <text x="456" y="408" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="11" font-weight="500" fill="#4A5768">CR5</text>
+        <text x="456" y="424" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="11" font-weight="500" fill="#0F1F33">20.1% → 26.1%</text>
+        <text x="456" y="440" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="11" font-weight="500" fill="#3F6B4E">+6.0 pts</text>
+        <rect x="528" y="252" width="112" height="80" rx="12" fill="#0F1F33"/>
+        <text x="584" y="278" text-anchor="middle" font-family="Inter" font-size="12" font-weight="600" fill="#FBF8F1">Closed won</text>
+        <text x="584" y="300" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="15" font-weight="500" fill="#FBF8F1">94 → 118</text>
+        <text x="584" y="318" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="500" fill="#B7D7C4">+24</text>
+        <text x="584" y="348" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="11" font-weight="500" fill="#4A5768">V6</text>
+        <line x1="640" y1="292" x2="668" y2="292" stroke="#0F1F33" stroke-width="2"/>
+        <circle cx="850" cy="300" r="108" fill="none" stroke="#4A5768" stroke-width="1.25" stroke-dasharray="3 4"/>
+        <text x="850" y="296" text-anchor="middle" font-family="Newsreader, serif" font-size="18" font-weight="500" fill="#0F1F33">Recurring</text>
+        <text x="850" y="318" text-anchor="middle" font-family="Newsreader, serif" font-size="18" font-weight="500" fill="#0F1F33">revenue</text>
+        <rect x="784.0" y="121.0" width="132" height="58" rx="8" fill="#FBF8F1" stroke="#D9D2C2"/>
+        <text x="850" y="136" text-anchor="middle" font-family="Inter" font-size="11" font-weight="600" fill="#4A5768">V7  Starting ARR</text>
+        <text x="850" y="154" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#0F1F33">$14.20M</text>
+        <rect x="892.0" y="185.0" width="132" height="58" rx="8" fill="#FBF8F1" stroke="#D9D2C2"/>
+        <text x="958" y="200" text-anchor="middle" font-family="Inter" font-size="11" font-weight="600" fill="#4A5768">V8  Net new revenue</text>
+        <text x="958" y="218" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#0F1F33">$2.96M → $3.48M</text>
+        <text x="958" y="234" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#3F6B4E">+$0.52M</text>
+        <rect x="892.0" y="357.0" width="132" height="58" rx="8" fill="#FBF8F1" stroke="#D9D2C2"/>
+        <text x="958" y="372" text-anchor="middle" font-family="Inter" font-size="11" font-weight="600" fill="#4A5768">V9  Cross-sell</text>
+        <text x="958" y="390" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#4A5768">Not tracked</text>
+        <rect x="784.0" y="429.0" width="132" height="58" rx="8" fill="#FBF8F1" stroke="#D9D2C2"/>
+        <text x="850" y="444" text-anchor="middle" font-family="Inter" font-size="11" font-weight="600" fill="#4A5768">V10  Upgrades</text>
+        <text x="850" y="462" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#0F1F33">$0.62M → $0.88M</text>
+        <text x="850" y="478" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#3F6B4E">+$0.26M</text>
+        <rect x="614.0" y="401.0" width="132" height="58" rx="8" fill="#FBF8F1" stroke="#D9D2C2"/>
+        <text x="680" y="416" text-anchor="middle" font-family="Inter" font-size="11" font-weight="600" fill="#4A5768">V11  Downgrades</text>
+        <text x="680" y="434" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#4A5768">Not tracked</text>
+        <rect x="664.0" y="271.0" width="132" height="58" rx="8" fill="#FBF8F1" stroke="#D9D2C2"/>
+        <text x="730" y="286" text-anchor="middle" font-family="Inter" font-size="11" font-weight="600" fill="#4A5768">V12  Churn</text>
+        <text x="730" y="304" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#0F1F33">$1.31M → $1.55M</text>
+        <text x="730" y="320" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#3F6B4E">+$0.24M</text>
+        <rect x="634.0" y="147.0" width="132" height="58" rx="8" fill="#FBF8F1" stroke="#D9D2C2"/>
+        <text x="700" y="162" text-anchor="middle" font-family="Inter" font-size="11" font-weight="600" fill="#4A5768">Renewal</text>
+        <text x="700" y="180" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#0F1F33">212 → 226</text>
+        <text x="700" y="196" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#3F6B4E">+14</text>
+        <rect x="748" y="498" width="244" height="62" rx="8" fill="#FBF8F1" stroke="#D9D2C2"/>
+        <text x="870" y="516" text-anchor="middle" font-family="Inter" font-size="12" font-weight="600" fill="#4A5768">V13  Ending ARR</text>
+        <text x="870" y="536" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="500" fill="#0F1F33">$16.47M → $17.01M</text>
+        <text x="870" y="552" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#3F6B4E">+$0.54M</text>
+        </svg>
+        <svg class="journey journey-mobile" viewBox="0 0 360 1004" width="360" height="1004" role="img" aria-label="Revenue journey, Northwind, last 12 months. Win funnel from Sessions to Closed won: Sessions not tracked, Leads 12,480 to 11,860, down 620, MQLs 3,120 to 2,890, down 230, SQLs 1,092 to 1,130, up 38, Opportunities 468 to 452, down 16, Closed won 94 to 118, up 24. CR1 not tracked. CR2 25.0 percent to 24.4 percent, down 0.6 points. CR3 35.0 percent to 39.1 percent, up 4.1 points. CR4 42.9 percent to 40.0 percent, down 2.9 points. CR5 20.1 percent to 26.1 percent, up 6.0 points. Drift changes 13 of 17 tracked numbers. Retain and grow: starting ARR 14.20 million, net new revenue 2.96 million to 3.48 million, cross-sell not tracked, upgrades 0.62 million to 0.88 million, downgrades not tracked, churn 1.31 million to 1.55 million, renewal 212 to 226 accounts, ending ARR 16.47 million to 17.01 million." xmlns="http://www.w3.org/2000/svg">
+        <text x="16" y="26" text-anchor="start" font-family="Inter" font-size="15" font-weight="600" fill="#0F1F33">Revenue journey</text>
+        <rect x="214" y="10" width="130" height="22" rx="11" fill="#ECE6D8"/>
+        <text x="279" y="25" text-anchor="middle" font-family="Inter" font-size="11" font-weight="500" fill="#0F1F33">Last 12 months</text>
+        <line x1="0" y1="40" x2="360" y2="40" stroke="#D9D2C2"/>
+        <rect x="12" y="50" width="336" height="32" rx="6" fill="#F3E0DB"/>
+        <circle cx="28" cy="66" r="8" fill="#A8402B"/>
+        <text x="28" y="70" text-anchor="middle" font-family="Inter" font-size="12" font-weight="700" fill="#F3E0DB">!</text>
+        <text x="42" y="70" text-anchor="start" font-family="Inter" font-size="13" font-weight="600" fill="#A8402B">Drift</text>
+        <text x="84" y="70" text-anchor="start" font-family="Inter" font-size="12" font-weight="500" fill="#A8402B">changes 13 of 17 tracked numbers</text>
+        <text x="16" y="106" text-anchor="start" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#4A5768" letter-spacing="0.6">WIN  ·  SESSIONS → CLOSED WON</text>
+        <path d="M16.0,120.0C43.0,120.0 43.0,122.0 70.0,122.0C105.0,122.0 105.0,126.0 140.0,126.0C175.0,126.0 175.0,130.0 210.0,130.0C245.0,130.0 245.0,134.0 280.0,134.0C312.0,134.0 312.0,138.0 344.0,138.0L344.0,158.0C312.0,158.0 312.0,162.0 280.0,162.0C245.0,162.0 245.0,166.0 210.0,166.0C175.0,166.0 175.0,170.0 140.0,170.0C105.0,170.0 105.0,174.0 70.0,174.0C43.0,174.0 43.0,176.0 16.0,176.0Z" fill="#ECE6D8"/>
+        <text x="70" y="152" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="11" font-weight="500" fill="#4A5768" letter-spacing="0.8">AWARENESS</text>
+        <text x="180" y="152" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="11" font-weight="500" fill="#4A5768" letter-spacing="0.8">EDUCATION</text>
+        <text x="280" y="152" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="11" font-weight="500" fill="#4A5768" letter-spacing="0.8">SELECTION</text>
+        <line x1="16" y1="186" x2="344" y2="186" stroke="#D9D2C2" stroke-width="1"/>
+        <text x="16" y="204" text-anchor="start" font-family="Inter" font-size="13" font-weight="600" fill="#0F1F33">V1  Sessions</text>
+        <text x="16" y="224" text-anchor="start" font-family="JetBrains Mono, ui-monospace, monospace" font-size="14" font-weight="500" fill="#4A5768">Not tracked</text>
+        <text x="344" y="224" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#0F1F33">CR1  Not tracked</text>
+        <line x1="16" y1="248" x2="344" y2="248" stroke="#D9D2C2" stroke-width="1"/>
+        <text x="16" y="266" text-anchor="start" font-family="Inter" font-size="13" font-weight="600" fill="#0F1F33">V2  Leads</text>
+        <text x="344" y="266" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="500" fill="#A8402B">−620</text>
+        <text x="16" y="286" text-anchor="start" font-family="JetBrains Mono, ui-monospace, monospace" font-size="14" font-weight="500" fill="#0F1F33">12,480 → 11,860</text>
+        <text x="344" y="286" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#0F1F33">CR2  25.0% → 24.4%</text>
+        <text x="344" y="302" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#A8402B">−0.6 pts</text>
+        <line x1="16" y1="310" x2="344" y2="310" stroke="#D9D2C2" stroke-width="1"/>
+        <text x="16" y="328" text-anchor="start" font-family="Inter" font-size="13" font-weight="600" fill="#0F1F33">V3  MQLs</text>
+        <text x="344" y="328" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="500" fill="#A8402B">−230</text>
+        <text x="16" y="348" text-anchor="start" font-family="JetBrains Mono, ui-monospace, monospace" font-size="14" font-weight="500" fill="#0F1F33">3,120 → 2,890</text>
+        <text x="344" y="348" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#0F1F33">CR3  35.0% → 39.1%</text>
+        <text x="344" y="364" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#3F6B4E">+4.1 pts</text>
+        <line x1="16" y1="372" x2="344" y2="372" stroke="#D9D2C2" stroke-width="1"/>
+        <text x="16" y="390" text-anchor="start" font-family="Inter" font-size="13" font-weight="600" fill="#0F1F33">V4  SQLs</text>
+        <text x="344" y="390" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="500" fill="#3F6B4E">+38</text>
+        <text x="16" y="410" text-anchor="start" font-family="JetBrains Mono, ui-monospace, monospace" font-size="14" font-weight="500" fill="#0F1F33">1,092 → 1,130</text>
+        <text x="344" y="410" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#0F1F33">CR4  42.9% → 40.0%</text>
+        <text x="344" y="426" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#A8402B">−2.9 pts</text>
+        <line x1="16" y1="434" x2="344" y2="434" stroke="#D9D2C2" stroke-width="1"/>
+        <text x="16" y="452" text-anchor="start" font-family="Inter" font-size="13" font-weight="600" fill="#0F1F33">V5  Opportunities</text>
+        <text x="344" y="452" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="500" fill="#A8402B">−16</text>
+        <text x="16" y="472" text-anchor="start" font-family="JetBrains Mono, ui-monospace, monospace" font-size="14" font-weight="500" fill="#0F1F33">468 → 452</text>
+        <text x="344" y="472" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#0F1F33">CR5  20.1% → 26.1%</text>
+        <text x="344" y="488" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#3F6B4E">+6.0 pts</text>
+        <rect x="16" y="502" width="328" height="56" rx="10" fill="#0F1F33"/>
+        <text x="28" y="524" text-anchor="start" font-family="Inter" font-size="13" font-weight="600" fill="#FBF8F1">V6  Closed won</text>
+        <text x="28" y="544" text-anchor="start" font-family="JetBrains Mono, ui-monospace, monospace" font-size="16" font-weight="500" fill="#FBF8F1">94 → 118</text>
+        <text x="328" y="538" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="16" font-weight="500" fill="#B7D7C4">+24</text>
+        <text x="16" y="582" text-anchor="start" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#4A5768" letter-spacing="0.4">RETAIN AND GROW  ·  RECURRING REVENUE</text>
+        <circle cx="180" cy="750" r="78" fill="none" stroke="#4A5768" stroke-width="1.25" stroke-dasharray="3 4"/>
+        <text x="180" y="748" text-anchor="middle" font-family="Newsreader, serif" font-size="16" font-weight="500" fill="#0F1F33">Recurring</text>
+        <text x="180" y="766" text-anchor="middle" font-family="Newsreader, serif" font-size="16" font-weight="500" fill="#0F1F33">revenue</text>
+        <rect x="124.0" y="590.0" width="112" height="56" rx="8" fill="#FBF8F1" stroke="#D9D2C2"/>
+        <text x="180" y="604" text-anchor="middle" font-family="Inter" font-size="12" font-weight="600" fill="#4A5768">V7 Starting ARR</text>
+        <text x="180" y="620" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#0F1F33">$14.20M</text>
+        <rect x="236.0" y="652.0" width="112" height="56" rx="8" fill="#FBF8F1" stroke="#D9D2C2"/>
+        <text x="292" y="666" text-anchor="middle" font-family="Inter" font-size="12" font-weight="600" fill="#4A5768">V8 Net new</text>
+        <text x="292" y="682" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#0F1F33">$2.96M → $3.48M</text>
+        <text x="292" y="698" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#3F6B4E">+$0.52M</text>
+        <rect x="236.0" y="792.0" width="112" height="56" rx="8" fill="#FBF8F1" stroke="#D9D2C2"/>
+        <text x="292" y="806" text-anchor="middle" font-family="Inter" font-size="12" font-weight="600" fill="#4A5768">V9 Cross-sell</text>
+        <text x="292" y="822" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#4A5768">Not tracked</text>
+        <rect x="124.0" y="854.0" width="112" height="56" rx="8" fill="#FBF8F1" stroke="#D9D2C2"/>
+        <text x="180" y="868" text-anchor="middle" font-family="Inter" font-size="12" font-weight="600" fill="#4A5768">V10 Upgrades</text>
+        <text x="180" y="884" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#0F1F33">$0.62M → $0.88M</text>
+        <text x="180" y="900" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#3F6B4E">+$0.26M</text>
+        <rect x="12.0" y="792.0" width="112" height="56" rx="8" fill="#FBF8F1" stroke="#D9D2C2"/>
+        <text x="68" y="806" text-anchor="middle" font-family="Inter" font-size="12" font-weight="600" fill="#4A5768">V12 Churn</text>
+        <text x="68" y="822" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#0F1F33">$1.31M → $1.55M</text>
+        <text x="68" y="838" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#3F6B4E">+$0.24M</text>
+        <rect x="12.0" y="652.0" width="112" height="56" rx="8" fill="#FBF8F1" stroke="#D9D2C2"/>
+        <text x="68" y="666" text-anchor="middle" font-family="Inter" font-size="12" font-weight="600" fill="#4A5768">Renewal</text>
+        <text x="68" y="682" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#0F1F33">212 → 226</text>
+        <text x="68" y="698" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#3F6B4E">+14</text>
+        <rect x="16" y="926" width="160" height="48" rx="8" fill="#FBF8F1" stroke="#D9D2C2"/>
+        <text x="96" y="944" text-anchor="middle" font-family="Inter" font-size="12" font-weight="600" fill="#4A5768">V11 Downgrades</text>
+        <text x="96" y="962" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="500" fill="#4A5768">Not tracked</text>
+        <rect x="184" y="926" width="160" height="62" rx="8" fill="#FBF8F1" stroke="#D9D2C2"/>
+        <text x="264" y="942" text-anchor="middle" font-family="Inter" font-size="12" font-weight="600" fill="#4A5768">V13 Ending ARR</text>
+        <text x="264" y="960" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#0F1F33">$16.47M → $17.01M</text>
+        <text x="264" y="976" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#3F6B4E">+$0.54M</text>
+        </svg>
+      </div>
     </figure>
   </div>
 </section>
