@@ -175,6 +175,31 @@ nav.wrap{
 .stage p{color:var(--slate); font-size:15px; margin:0;}
 .stage .badge{margin:0 0 12px; font-size:12px; color:var(--ink);}
 
+.pull{
+  margin:0 0 14px;
+  padding:0 0 0 16px;
+  border-left:2px solid var(--ink);
+  max-width:40em;
+}
+.pull p{
+  font-family:Newsreader, serif;
+  font-size:28px;
+  line-height:1.28;
+  color:var(--ink);
+  margin:0;
+}
+.pull-next{margin-top:56px;}
+.pull-promise{
+  margin:0 0 36px;
+  max-width:40em;
+  font-size:17px;
+  color:var(--ink);
+}
+.problem-list{display:flex; flex-direction:column; gap:48px;}
+.problem-block{border-top:1px solid var(--ink); padding-top:18px; max-width:44em;}
+.problem-block h3{font-size:32px; line-height:1.15; margin:0 0 12px;}
+.problem-block p{color:var(--slate); font-size:17px; line-height:1.5; margin:0;}
+
 .product{border-bottom:1px solid var(--line);}
 .rule-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:36px;}
 
@@ -280,6 +305,9 @@ footer .fnav a:hover{color:var(--ink);}
   .hero h1{font-size:44px;}
   .section{padding:64px 0;}
   .section-head h2, .story h2{font-size:34px;}
+  .pull p{font-size:22px;}
+  .pull-next{margin-top:40px;}
+  .problem-block h3{font-size:26px;}
   .final-cta{padding:72px 0;}
   .final-cta h2{font-size:36px;}
   .stages, .q-grid, .rule-grid, .pricing-grid{grid-template-columns:1fr;}
@@ -314,9 +342,7 @@ footer .fnav a:hover{color:var(--ink);}
       <span class="word">buoy<span class="dot" aria-hidden="true"></span></span>
     </a>
     <div class="navlinks" id="site-nav">
-      <a href="#how-it-works">How it works</a>
-      <a href="#product">Product</a>
-      <a href="#story">Why Buoy</a>
+      <a href="#how-it-works">Three problems</a>
       <a href="#pricing">Pricing</a>
       <a href="/blog/">Blog</a>
       <a class="nav-login" href="https://admin.buildwithbuoy.com/admin/login">Log in</a>
@@ -558,129 +584,83 @@ footer .fnav a:hover{color:var(--ink);}
 <section class="section" id="how-it-works">
   <div class="wrap">
     <div class="section-head">
-      <h2>How Buoy Works</h2>
-      <p>Buoy is the guide — a high-touch managed service, with a small number of clients at a time.</p>
+      <h2>Three problems. One place to fix them.</h2>
+      <p id="story">Buoy doesn't build your reports or dashboards. It makes sure the data underneath holds up, so the tools you already use show numbers you can stand behind.</p>
     </div>
-    <div class="stages">
-      <article class="stage">
-        <svg class="ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true"><rect x="6" y="4" width="20" height="24"/><path d="M11 12h10M11 17h10M11 22h6"/></svg>
-        <p class="stage-kicker">The Audit</p>
-        <h3>Get it right</h3>
-        <p>We audit your process and your CRM with you, clean it up, and you keep Included Access to the workspace.</p>
+
+    <blockquote class="pull">
+      <p>Is that data right? That doesn't look right. Can you look into that and see if it's correct?</p>
+    </blockquote>
+    <p class="pull-promise">Buoy takes that question out of the conversation.</p>
+
+    <div class="problem-list">
+      <article class="problem-block" id="audit">
+        <p class="stage-kicker">Audit · One-time</p>
+        <h3>Get it right from the start</h3>
+        <p>Most CRMs grew without a plan. Fields nobody uses, stages that mean different things to different teams. The Audit writes down how your GTM process is supposed to work and cleans up the CRM to match. It's a one-time project, done inside Buoy, not in a spreadsheet. You get a year of access to Buoy's audit area, and most Audits wrap in about a month.</p>
       </article>
-      <article class="stage">
-        <svg class="ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true"><path d="M16 4l10 4v8c0 6-4.2 10-10 12C10.2 26 6 22 6 16V8l10-4z"/></svg>
-        <p class="stage-kicker">Validation + AI fields</p>
-        <h3>Keep it right</h3>
-        <p>Validation flags drift on every record, and our team fills in the fields your business needs from call transcripts, other systems, and integrations. Built to your requirements, never generic AI fields.</p>
-      </article>
-      <article class="stage" id="sonar">
-        <svg class="ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true"><circle cx="13" cy="16" r="7"/><circle cx="20" cy="16" r="7"/></svg>
-        <p class="stage-kicker">Sonar and Ask Buoy</p>
-        <h3>Know what it means</h3>
-        <p>Sonar and Ask Buoy turn trusted data into answers for your leadership team. They show what's coming, and what to do about it.</p>
+      <article class="problem-block" id="product">
+        <p class="stage-kicker">Validation + AI fields · Subscription</p>
+        <h3>Keep it right as you grow</h3>
+        <p>People join and leave. The business changes. Data drifts. Validation checks your CRM against the rules from your Audit and flags drift early, so it's caught today and not next quarter. AI fields fill out the CRM for you, tailored to your own process, so reps spend less time on data entry.</p>
       </article>
     </div>
-  </div>
-</section>
 
-<section class="section product" id="product">
-  <div class="wrap">
-    <div class="section-head">
-      <h2>Validation on the record</h2>
-    </div>
-    <div class="rule-grid">
-        <div class="rule-card red">
-          <h4>A gap in the record is a gap in the number.</h4>
-          <p>Empty close date or economic buyer is caught as soon as the record is saved.</p>
-        </div>
-        <div class="rule-card amber">
-          <h4>Complete isn't the same as true.</h4>
-          <p>A vague next step can pass a simple rule and still fail real stage-exit criteria.</p>
-        </div>
-        <div class="rule-card harbor">
-          <h4>Two systems can both look right and still disagree.</h4>
-          <p>Buoy checks whether answers to the same question actually match.</p>
-        </div>
-    </div>
-  </div>
-</section>
-
-<section class="story" id="story">
-  <div class="wrap">
-    <h2>Why Buoy is different</h2>
-    <p>Most CRM cleanup starts with the fields. Buoy starts with the questions your leadership team needs answered.</p>
-    <p>We write the definitions down and flag drift on the record without blocking anyone from saving. One view of your customer journey shows whether the numbers are right, and Sonar and Ask Buoy explain what they mean. Buoy doesn't build your reports; your team takes the trusted data into the tools it already uses.</p>
-  </div>
-</section>
-
-<section class="section mist" id="proof">
-  <div class="wrap">
-    <div class="section-head">
-      <h2>What the data says</h2>
-      <p>Poor data quality costs most companies 15–25% of revenue (<a href="https://sloanreview.mit.edu/article/seizing-opportunity-in-data-quality/">Thomas Redman, MIT Sloan</a>).</p>
-    </div>
-
-    <div style="overflow-x:auto;">
-    <table class="prop-table">
-      <thead>
-        <tr><th>Object</th><th>Properties</th><th>Rarely used <span>(&lt;5% of records)</span></th><th>Reliably used <span>(&gt;80% of records)</span></th></tr>
-      </thead>
-      <tbody>
-        <tr><td class="serif">Deal</td><td>391</td><td class="warn">37%</td><td>10%</td></tr>
-        <tr><td class="serif">Company</td><td>330</td><td class="warn">50%</td><td>14%</td></tr>
-        <tr><td class="serif">Contact</td><td>346</td><td class="warn">49%</td><td>15%</td></tr>
-      </tbody>
-    </table>
-    </div>
-    <p class="stat-source">From real HubSpot property exports across three objects, reviewed during a Buoy audit.</p>
+    <blockquote class="pull pull-next">
+      <p>These charts look great, but what does it mean? What do we do?</p>
+    </blockquote>
+    <article class="problem-block" id="sonar">
+      <p class="stage-kicker">Intelligence layer · Ask Buoy · Subscription</p>
+      <h3>Know what it means</h3>
+      <p>You have the data. Now what does it mean, and what should you do? Ask Buoy answers in plain language, from data you already trust, so leaders can spend the meeting deciding instead of debating.</p>
+    </article>
   </div>
 </section>
 
 <section class="section" id="pricing">
   <div class="wrap">
     <div class="section-head">
-      <h2>What it costs</h2>
+      <h2>The packages</h2>
       <p>Start with a one-time Audit. Add the subscriptions when you're ready.</p>
     </div>
 
     <div class="pricing-grid">
       <article class="tier">
-        <p class="stage-kicker">The Audit</p>
-        <h3>Get it right</h3>
+        <p class="stage-kicker">Audit</p>
+        <h3>Get it right from the start</h3>
         <div class="price-slot">
-          <p class="price-note">One-time</p>
+          <p class="price-note">One-time · one year of access</p>
         </div>
         <ul>
-          <li>We audit your process and your CRM with you</li>
-          <li>We clean it up, and you keep the written process</li>
-          <li>Included Access to the audit and cleanup workspace</li>
+          <li>Writes down how your GTM process is supposed to work</li>
+          <li>Cleans up the CRM to match</li>
+          <li>A year of access to Buoy's audit area</li>
         </ul>
         <button class="btn btn-primary" onclick="openAuditModal(event)">Let's chat</button>
       </article>
       <article class="tier">
         <p class="stage-kicker">Validation + AI fields</p>
-        <h3>Keep it right</h3>
+        <h3>Keep it right as you grow</h3>
         <div class="price-slot">
           <p class="price-note">Subscription</p>
         </div>
         <ul>
-          <li>Validation flags drift as soon as the record is saved</li>
-          <li>We fill in the fields your business needs from your calls and systems</li>
-          <li>Built to your requirements, never generic AI fields</li>
+          <li>Checks the CRM against the rules from your Audit</li>
+          <li>Flags drift early, the day it shows up</li>
+          <li>AI fields filled to your own process</li>
         </ul>
         <button class="btn btn-primary" onclick="openAuditModal(event)">Let's chat</button>
       </article>
       <article class="tier">
-        <p class="stage-kicker">Sonar and Ask Buoy</p>
+        <p class="stage-kicker">Intelligence layer</p>
         <h3>Know what it means</h3>
         <div class="price-slot">
           <p class="price-note">Subscription</p>
         </div>
         <ul>
-          <li>Sonar turns trusted data into answers</li>
-          <li>Ask Buoy is there for the leadership team</li>
-          <li>Your team uses the data in the tools you already have</li>
+          <li>Ask Buoy answers in plain language</li>
+          <li>From data you already trust</li>
+          <li>The meeting goes to deciding</li>
         </ul>
         <button class="btn btn-primary" onclick="openAuditModal(event)">Let's chat</button>
       </article>
@@ -703,12 +683,10 @@ footer .fnav a:hover{color:var(--ink);}
         <img src="/assets/buoy-mark.svg" alt="Buoy">
         <span class="word">buoy<span class="dot" aria-hidden="true"></span></span>
       </a>
-      <p class="fnote">Done with you, a small number of clients at a time: the Audit, with Included Access to the workspace; Validation and AI fields; and Sonar and Ask Buoy for your leadership team.</p>
+      <p class="fnote">Done with you, a small number of clients at a time: a one-time Audit, Validation and AI fields, and Ask Buoy for your leadership team.</p>
     </div>
     <div class="fnav">
-      <a href="#how-it-works">How it works</a>
-      <a href="#product">Product</a>
-      <a href="#story">Why Buoy</a>
+      <a href="#how-it-works">Three problems</a>
       <a href="#pricing">Pricing</a>
       <a href="/blog/">Blog</a>
       <a href="https://admin.buildwithbuoy.com/admin/login">Log in</a>
