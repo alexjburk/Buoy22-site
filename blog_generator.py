@@ -151,7 +151,7 @@ HEAD = """<meta charset="UTF-8" />
 <meta property="og:image" content="https://buildwithbuoy.com/assets/og-image.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="Buoy — Trust the numbers you take to the board." />
+<meta property="og:image:alt" content="Buoy — Stop debating the numbers. Start deciding." />
 <meta property="og:site_name" content="Buoy" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="{title}" />
@@ -191,7 +191,7 @@ FOOTER_AND_MODAL = """<footer>
         <img src="/assets/buoy-mark.svg" alt="Buoy">
         <span class="word">buoy<span class="dot" aria-hidden="true"></span></span>
       </a>
-      <p class="fnote">Done with you, a small number of clients at a time: the Audit (Clean), Validation (Protected), and Filled in from your own business. Sonar, on the roadmap, will add Intelligence.</p>
+      <p class="fnote">Done with you, a small number of clients at a time: the Audit, with Included Access to the workspace; Validation and AI fields; and Sonar and Ask Buoy for your leadership team.</p>
     </div>
     <div class="fnav">
       <a href="/#how-it-works">How it works</a>

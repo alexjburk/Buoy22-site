@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Buoy — Trust the numbers you take to the board</title>
-<meta name="description" content="Buoy is the guide: a high-touch, done-with-you service that gets your HubSpot Clean, Protected, and Filled in." />
-<meta property="og:title" content="Buoy — Trust the numbers you take to the board" />
-<meta property="og:description" content="Buoy is the guide: a high-touch, done-with-you service that gets your HubSpot Clean, Protected, and Filled in." />
+<title>Buoy — Stop debating the numbers. Start deciding.</title>
+<meta name="description" content="Buoy is a three-step managed service for leadership teams: audit the process and the CRM, keep every record true, and understand what the data means." />
+<meta property="og:title" content="Buoy — Stop debating the numbers. Start deciding." />
+<meta property="og:description" content="Buoy is a three-step managed service for leadership teams: audit the process and the CRM, keep every record true, and understand what the data means." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://buildwithbuoy.com/" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Buoy — Trust the numbers you take to the board" />
-<meta name="twitter:description" content="Buoy is the guide: a high-touch, done-with-you service that gets your HubSpot Clean, Protected, and Filled in." />
+<meta name="twitter:title" content="Buoy — Stop debating the numbers. Start deciding." />
+<meta name="twitter:description" content="Buoy is a three-step managed service for leadership teams: audit the process and the CRM, keep every record true, and understand what the data means." />
 <meta property="og:image" content="https://buildwithbuoy.com/assets/og-image.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="Buoy — Trust the numbers you take to the board." />
+<meta property="og:image:alt" content="Buoy — Stop debating the numbers. Start deciding." />
 <meta name="twitter:image" content="https://buildwithbuoy.com/assets/og-image.png" />
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
@@ -109,41 +109,35 @@ nav.wrap{
 .navcta{display:flex; gap:14px; align-items:center;}
 
 .hero{padding:88px 0 96px; background:var(--paper);}
-.hero .wrap{display:grid; grid-template-columns:1.05fr 0.95fr; gap:64px; align-items:end;}
+.hero .wrap{display:grid; grid-template-columns:1fr; gap:48px; align-items:start;}
+.hero-copy{max-width:920px;}
 .eyebrow{
   font-family:"JetBrains Mono", ui-monospace, monospace;
   font-size:12px; letter-spacing:0.16em; text-transform:uppercase;
   color:var(--slate); margin:0 0 18px;
 }
-.hero h1{font-size:74px; line-height:0.98; letter-spacing:-0.03em;}
-.hero p.lede{font-size:18px; color:var(--slate); max-width:38ch; margin:22px 0 28px;}
+.hero h1{font-size:64px; line-height:1.02; letter-spacing:-0.03em;}
+.hero p.lede{font-size:18px; color:var(--slate); max-width:48ch; margin:22px 0 28px;}
 .hero .ctas{display:flex; gap:12px; flex-wrap:wrap;}
-.quiet{font-family:Newsreader, serif; font-size:20px; margin:28px 0 0; max-width:22ch;}
-.hero-visual{min-width:0;}
-.board{background:#fff; border:1px solid var(--line); box-shadow:0 10px 28px rgba(22,21,19,0.06); padding:22px 24px 8px;}
-.board .eyebrow{margin-bottom:8px;}
-.board dl{margin:0;}
-.board-row{
-  display:grid; grid-template-columns:1fr auto; gap:8px 16px; align-items:baseline;
-  padding:14px 0; border-top:1px solid var(--line);
+.quiet{font-family:Newsreader, serif; font-size:20px; margin:28px 0 0; max-width:28ch;}
+.hero-visual{min-width:0; margin:0;}
+.journey-card{background:#fff; border:1px solid var(--line); box-shadow:0 10px 28px rgba(22,21,19,0.06);}
+.journey-chrome{
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+  padding:16px 18px 0;
 }
-.board dt{
+.journey-chrome .eyebrow{margin:0;}
+.journey-period{
+  margin:0; flex:none;
   font-family:"JetBrains Mono", ui-monospace, monospace;
   font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:var(--slate);
+  background:var(--paper); border:1px solid var(--line); border-radius:999px; padding:6px 10px;
 }
-.board dd{margin:0; font-family:"JetBrains Mono", ui-monospace, monospace; font-variant-numeric:tabular-nums; font-size:22px; font-weight:500; letter-spacing:-0.03em;}
-.board-row.flagged{
-  background:var(--tint); margin:0 -24px; padding:14px 24px;
-  box-shadow:inset 3px 0 0 #8C3B32;
-}
-.board-row.flagged dt{color:var(--oxblood);}
-.board dd.fig{display:flex; align-items:center; justify-content:flex-end; gap:8px;}
-.flag{width:11px; height:13px; display:block; flex:none;}
-.board .flag-note{
-  grid-column:1 / -1;
-  font-family:"JetBrains Mono", ui-monospace, monospace;
-  font-size:12px; font-weight:400; letter-spacing:0.08em; text-transform:uppercase; color:var(--oxblood);
-}
+.journey-scroll{overflow-x:auto; padding:2px 6px 8px; -webkit-overflow-scrolling:touch; scrollbar-width:thin; scrollbar-color:#4A5768 transparent;}
+.journey-scroll::-webkit-scrollbar{height:8px;}
+.journey-scroll::-webkit-scrollbar-thumb{background:#4A5768; border-radius:8px;}
+.journey-svg{display:block; width:100%; height:auto; min-width:760px;}
+.journey-hint{display:none; margin:0; padding:0 16px 12px; font-family:"JetBrains Mono", ui-monospace, monospace; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:var(--slate);}
 .cap{
   font-family:"JetBrains Mono", ui-monospace, monospace;
   font-size:12px; letter-spacing:0.14em; text-transform:uppercase;
@@ -164,7 +158,7 @@ nav.wrap{
 .rule-card p{color:var(--slate); font-size:15.5px; margin:0;}
 .roi-prose{color:var(--ink); font-size:18px; margin:36px 0 0; max-width:46ch;}
 
-.stages{display:grid; grid-template-columns:repeat(4, 1fr); gap:28px;}
+.stages{display:grid; grid-template-columns:repeat(3, 1fr); gap:28px;}
 .stage{border-top:1px solid var(--ink); padding-top:18px;}
 .ico{display:block; width:28px; height:28px; color:var(--ink); margin-bottom:18px;}
 .stage-kicker{
@@ -172,6 +166,7 @@ nav.wrap{
   font-size:12px; letter-spacing:0.12em; text-transform:uppercase;
   color:var(--slate); margin:0 0 12px;
 }
+.stage .stage-kicker{min-height:2.6em;}
 .badge{
   display:block; width:max-content; margin:0 0 12px;
   font-family:"JetBrains Mono", ui-monospace, monospace;
@@ -206,27 +201,33 @@ nav.wrap{
 .prop-table tbody tr:last-child td{border-bottom:1px solid var(--ink);}
 .stat-source{font-size:13px; color:var(--slate); margin:0;}
 
-.pricing-grid{display:grid; grid-template-columns:repeat(3, 1fr); border:1px solid var(--ink); background:#fff;}
-.tier{display:flex; flex-direction:column; padding:28px 28px 8px 28px; border-right:1px solid var(--line);}
-.tier:first-child{padding-left:0;}
-.tier:last-child{border-right:none; padding-right:0;}
-.tier-badge{height:28px; flex:none; display:flex; align-items:center; overflow:hidden;}
-.tier-badge .badge, .tier-badge .stage-kicker{margin:0; line-height:1;}
-.tier h3{font-size:28px; margin-bottom:8px;}
-.tier-sub{font-size:14px; color:var(--slate); margin-bottom:8px;}
+.pricing-grid{
+  display:grid; grid-template-columns:repeat(3, 1fr); align-items:stretch;
+  border:1px solid var(--ink); background:#fff;
+}
+.tier{
+  display:flex; flex-direction:column; min-width:0;
+  padding:28px 24px 24px; border-right:1px solid var(--line);
+}
+.tier:last-child{border-right:none;}
+.tier .stage-kicker{margin:0 0 12px; min-height:2.6em;}
+.tier h3{font-size:28px; line-height:1.15; margin:0; min-height:calc(1.15em * 2);}
+.price-slot{
+  min-height:84px; margin-top:16px;
+  display:flex; flex-direction:column; justify-content:flex-end;
+}
 .tier .price{
   font-family:"JetBrains Mono", ui-monospace, monospace; font-variant-numeric:tabular-nums;
-  font-size:32px; letter-spacing:-0.03em; margin:18px 0 8px;
+  font-size:32px; letter-spacing:-0.03em; margin:0; color:var(--ink);
 }
-.tier .price small{
-  display:block; margin-top:6px;
+.tier .price small, .price-note{
+  display:block; margin:6px 0 0;
+  font-family:"JetBrains Mono", ui-monospace, monospace;
   font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:var(--slate); font-weight:400;
 }
-.tier .scope{font-size:16px; color:var(--ink); margin:0 0 16px;}
-.tier .btn{margin:8px 0 18px;}
-.tier ul{list-style:none; padding:0; margin:0;}
+.tier ul{list-style:none; padding:0; margin:20px 0 20px;}
 .tier li{font-size:14.5px; color:var(--slate); padding:10px 0; border-top:1px solid var(--line);}
-.audit-tag{margin-bottom:12px;}
+.tier .btn{margin-top:auto; align-self:flex-start;}
 
 .final-cta{background:var(--navy); text-align:center; padding:104px 0;}
 .final-cta h2{font-size:52px; line-height:1.05; color:var(--paper); max-width:16ch; margin:0 auto 16px;}
@@ -266,10 +267,6 @@ footer .fnav a:hover{color:var(--ink);}
 .hs-modal p.sub{color:var(--slate); font-size:15px; margin:0 0 20px;}
 
 @media (max-width: 980px){
-  .stages{grid-template-columns:1fr 1fr;}
-  .pricing-grid{grid-template-columns:1fr;}
-  .tier{border-right:none; border-top:1px solid var(--line); padding:28px 0;}
-  .tier:first-child{border-top:none;}
   .hero h1{font-size:60px;}
 }
 @media (max-width: 720px){
@@ -288,10 +285,13 @@ footer .fnav a:hover{color:var(--ink);}
   .section-head h2, .story h2{font-size:34px;}
   .final-cta{padding:72px 0;}
   .final-cta h2{font-size:36px;}
-  .stages, .q-grid, .rule-grid{grid-template-columns:1fr;}
+  .stages, .q-grid, .rule-grid, .pricing-grid{grid-template-columns:1fr;}
+  .tier{border-right:none; border-top:1px solid var(--line);}
+  .tier:first-child{border-top:none;}
+  .stage .stage-kicker{min-height:0;}
   .story .wrap{padding-top:64px; padding-bottom:64px;}
-  .board{padding:18px 16px 6px;}
-  .board-row.flagged{margin:0 -16px; padding:14px 16px;}
+  .journey-chrome{padding:14px 14px 0;}
+  .journey-hint{display:block;}
 }
 </style>
 </head>
@@ -319,9 +319,9 @@ footer .fnav a:hover{color:var(--ink);}
 
 <section class="hero" id="top">
   <div class="wrap">
-    <div>
+    <div class="hero-copy">
       <p class="eyebrow reveal">For Series A, B and PE-backed Growth stage companies</p>
-      <h1 class="reveal d1">Trust the numbers that drive your business.</h1>
+      <h1 class="reveal d1">Stop debating the numbers.<br>Start deciding.</h1>
       <p class="lede reveal d2">Buoy is a three-step managed service to get your GTM processes documented, your CRM architecture set up and protected from drift, and an intelligence layer providing insight and action to keep driving the business forward.</p>
       <div class="ctas reveal d3">
         <button class="btn btn-primary" onclick="openAuditModal(event)">Book an audit call</button>
@@ -329,18 +329,76 @@ footer .fnav a:hover{color:var(--ink);}
       </div>
       <p class="quiet reveal d3">Stop questioning the data. Start making sound decisions.</p>
     </div>
-    <div class="hero-visual reveal d2">
-      <div class="board" aria-label="Illustrative board numbers">
-        <p class="eyebrow">Board numbers</p>
-        <dl>
-          <div class="board-row"><dt>Pipeline</dt><dd>$4.2M</dd></div>
-          <div class="board-row flagged"><dt>Forecast</dt><dd class="fig">$1.9M<svg class="flag" viewBox="0 0 12 14" aria-hidden="true"><path d="M1 1h9L8 7l2 6H1z" fill="#8C3B32"/></svg></dd><dd class="flag-note">Close dates missing</dd></div>
-          <div class="board-row"><dt>Win rate</dt><dd>27%</dd></div>
-          <div class="board-row"><dt>Net revenue retention</dt><dd>108%</dd></div>
-        </dl>
+    <figure class="hero-visual reveal d2">
+      <div class="journey-card">
+        <div class="journey-chrome">
+          <p class="eyebrow">Customer journey</p>
+          <p class="journey-period">Last 12 months</p>
+        </div>
+        <div class="journey-scroll">
+          <svg class="journey-svg" viewBox="0 0 760 360" role="img" aria-labelledby="journey-title journey-desc">
+            <title id="journey-title">Northwind customer journey, last 12 months</title>
+            <desc id="journey-desc">Illustrative Northwind counts. MQLs 2,890. Qualified To Buy 447, 15%. Contract Sent 281, 63%, drift, stage skipped. Closed Won 94, 33%. Customer onboarding 91, 97%. Renewal 80, 88%. Upgrades 27, 34%.</desc>
+            <defs>
+              <linearGradient id="journey-band" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#0F1F33" stop-opacity="0.18"/>
+                <stop offset="0.5" stop-color="#0F1F33" stop-opacity="0.42"/>
+                <stop offset="1" stop-color="#0F1F33" stop-opacity="0.18"/>
+              </linearGradient>
+            </defs>
+            <text x="68" y="86" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="500" fill="#4A5768">MQLs</text>
+            <text x="172" y="70" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="500" fill="#4A5768">Qualified</text>
+            <text x="172" y="86" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="500" fill="#4A5768">To Buy</text>
+            <text x="276" y="70" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="500" fill="#4A5768">Contract</text>
+            <text x="276" y="86" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="500" fill="#4A5768">Sent</text>
+            <text x="380" y="86" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#0F1F33">Closed Won</text>
+            <text x="484" y="70" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="500" fill="#4A5768">Customer</text>
+            <text x="484" y="86" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="500" fill="#4A5768">onboarding</text>
+            <text x="588" y="86" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="500" fill="#4A5768">Renewal</text>
+            <text x="692" y="86" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="500" fill="#4A5768">Upgrades</text>
+            <path fill="url(#journey-band)" stroke="#0F1F33" stroke-opacity="0.55" stroke-width="1.5" d="M20.0,114.0C44.0,114.0 44.0,114.0 68.0,114.0C120.0,114.0 120.0,130.0 172.0,130.0C224.0,130.0 224.0,146.0 276.0,146.0C328.0,146.0 328.0,170.0 380.0,170.0C432.0,170.0 432.0,146.0 484.0,146.0C536.0,146.0 536.0,130.0 588.0,130.0C640.0,130.0 640.0,114.0 692.0,114.0C716.0,114.0 716.0,114.0 740.0,114.0L740.0,258.0C716.0,258.0 716.0,258.0 692.0,258.0C640.0,258.0 640.0,242.0 588.0,242.0C536.0,242.0 536.0,226.0 484.0,226.0C432.0,226.0 432.0,202.0 380.0,202.0C328.0,202.0 328.0,226.0 276.0,226.0C224.0,226.0 224.0,242.0 172.0,242.0C120.0,242.0 120.0,258.0 68.0,258.0C44.0,258.0 44.0,258.0 20.0,258.0Z"/>
+            <line x1="120" x2="120" y1="108" y2="264" stroke="#fff" stroke-width="3"/>
+            <line x1="328" x2="328" y1="140" y2="232" stroke="#fff" stroke-width="3"/>
+            <line x1="432" x2="432" y1="140" y2="232" stroke="#fff" stroke-width="3"/>
+            <line x1="536" x2="536" y1="124" y2="248" stroke="#fff" stroke-width="3"/>
+            <line x1="640" x2="640" y1="108" y2="264" stroke="#fff" stroke-width="3"/>
+            <text x="68" y="194" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="20" font-weight="600" fill="#0F1F33">2,890</text>
+            <text x="172" y="194" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="20" font-weight="600" fill="#0F1F33">447</text>
+            <text x="276" y="194" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="20" font-weight="600" fill="#0F1F33">281</text>
+            <rect x="330" y="152" width="100" height="68" rx="14" fill="#0F1F33"/>
+            <text x="380" y="194" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="22" font-weight="600" fill="#F4F0E6">94</text>
+            <text x="484" y="194" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="20" font-weight="600" fill="#0F1F33">91</text>
+            <text x="588" y="194" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="20" font-weight="600" fill="#0F1F33">80</text>
+            <text x="692" y="194" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="20" font-weight="600" fill="#0F1F33">27</text>
+            <line x1="120" x2="120" y1="264" y2="276" stroke="#D9D2C2" stroke-width="1.5"/>
+            <rect x="93" y="276" width="54" height="24" rx="12" fill="#F4F0E6" stroke="#D9D2C2"/>
+            <text x="120" y="293" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="600" fill="#0F1F33">15%</text>
+            <line x1="224" x2="224" y1="122" y2="276" stroke="#8C3B32" stroke-width="2" stroke-dasharray="4 3"/>
+            <rect x="197" y="276" width="54" height="24" rx="12" fill="#F4F0E6" stroke="#D9D2C2"/>
+            <text x="224" y="293" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="600" fill="#0F1F33">63%</text>
+            <line x1="328" x2="328" y1="232" y2="276" stroke="#D9D2C2" stroke-width="1.5"/>
+            <rect x="301" y="276" width="54" height="24" rx="12" fill="#F4F0E6" stroke="#D9D2C2"/>
+            <text x="328" y="293" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="600" fill="#0F1F33">33%</text>
+            <line x1="432" x2="432" y1="232" y2="276" stroke="#D9D2C2" stroke-width="1.5"/>
+            <rect x="405" y="276" width="54" height="24" rx="12" fill="#F4F0E6" stroke="#D9D2C2"/>
+            <text x="432" y="293" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="600" fill="#0F1F33">97%</text>
+            <line x1="536" x2="536" y1="248" y2="276" stroke="#D9D2C2" stroke-width="1.5"/>
+            <rect x="509" y="276" width="54" height="24" rx="12" fill="#F4F0E6" stroke="#D9D2C2"/>
+            <text x="536" y="293" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="600" fill="#0F1F33">88%</text>
+            <line x1="640" x2="640" y1="264" y2="276" stroke="#D9D2C2" stroke-width="1.5"/>
+            <rect x="613" y="276" width="54" height="24" rx="12" fill="#F4F0E6" stroke="#D9D2C2"/>
+            <text x="640" y="293" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="600" fill="#0F1F33">34%</text>
+            <line x1="224" x2="224" y1="300" y2="312" stroke="#8C3B32" stroke-width="2"/>
+            <rect x="130" y="312" width="188" height="26" rx="6" fill="#F3E4E1"/>
+            <circle cx="148" cy="325" r="8" fill="#8C3B32"/>
+            <text x="148" y="329" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#F3E4E1">!</text>
+            <text x="162" y="330" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#8C3B32">Drift · stage skipped</text>
+          </svg>
+        </div>
+        <p class="journey-hint">Scroll sideways for the full journey</p>
       </div>
-      <p class="cap">Illustrative</p>
-    </div>
+      <p class="cap">Northwind · illustrative</p>
+    </figure>
   </div>
 </section>
 
@@ -348,7 +406,7 @@ footer .fnav a:hover{color:var(--ink);}
   <div class="wrap">
     <div class="section-head">
       <h2>Ask three teams, get three numbers.</h2>
-      <p>RevOps brings the data, but the rest of the business debates it because everyone has their own stopwatch. Cohorts or conversions? Which filters are applied? Between data errors and definition errors, your CRM quickly drifts away from the truth.</p>
+      <p>RevOps brings the data, but the rest of the business debates it because everyone has their own stopwatch. Cohorts or conversions? Which filters are applied? Between data errors and definition errors, your CRM quickly drifts away from the truth. Then a senior leader opens the records and checks them, line by line. That deep dive is slow, and it takes the time the decision needed.</p>
     </div>
 
     <div class="q-grid">
@@ -358,11 +416,11 @@ footer .fnav a:hover{color:var(--ink);}
       </div>
       <div class="rule-card red">
         <h4>Where do we lose deals?</h4>
-        <p>Only if stage history and loss reasons are recorded the same way every time.</p>
+        <p>You can only answer that if stage history and loss reasons are recorded the same way every time.</p>
       </div>
       <div class="rule-card red">
         <h4>Why do customers churn?</h4>
-        <p>Only if the CRM agrees with the system finance reports from.</p>
+        <p>You can only answer that if the CRM agrees with the system finance reports from.</p>
       </div>
     </div>
 
@@ -379,27 +437,21 @@ footer .fnav a:hover{color:var(--ink);}
     <div class="stages">
       <article class="stage">
         <svg class="ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true"><rect x="6" y="4" width="20" height="24"/><path d="M11 12h10M11 17h10M11 22h6"/></svg>
-        <p class="stage-kicker">Start here</p>
-        <h3>Clean · The Audit</h3>
-        <p>Two equal halves: the top-down process, and bottom-up property cleanup. You keep the written process.</p>
+        <p class="stage-kicker">The Audit</p>
+        <h3>Get it right</h3>
+        <p>We audit your process and your CRM with you, clean it up, and you keep Included Access to the workspace.</p>
       </article>
       <article class="stage">
         <svg class="ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true"><path d="M16 4l10 4v8c0 6-4.2 10-10 12C10.2 26 6 22 6 16V8l10-4z"/></svg>
-        <p class="stage-kicker">Ongoing</p>
-        <h3>Protected · Validation</h3>
-        <p>Checks against decay and drift on the record, while your team is still in the deal.</p>
+        <p class="stage-kicker">Validation + AI fields</p>
+        <h3>Keep it right</h3>
+        <p>Validation flags drift on every record, and our team fills in the fields your business needs from call transcripts, other systems, and integrations. Built to your requirements, never generic AI fields.</p>
       </article>
-      <article class="stage">
-        <svg class="ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true"><rect x="5" y="5" width="22" height="22"/><path d="M5 13h22M5 20h22M13 5v22"/></svg>
-        <p class="stage-kicker">Our team</p>
-        <h3>Augmented · AI Filled in</h3>
-        <p>We fill the CRM from your custom business requirements: call transcripts, other systems, integrations. Never generic AI-filled fields. The skies the limit.</p>
-      </article>
-      <article class="stage">
+      <article class="stage" id="sonar">
         <svg class="ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true"><circle cx="13" cy="16" r="7"/><circle cx="20" cy="16" r="7"/></svg>
-        <p class="badge">On the roadmap</p>
-        <h3>Intelligence · Sonar</h3>
-        <p>Sonar will be the revenue leader's second brain, with proactive insight helping you see what's coming and what to do about it.</p>
+        <p class="stage-kicker">Sonar and Ask Buoy</p>
+        <h3>Know what it means</h3>
+        <p>Sonar and Ask Buoy turn trusted data into answers for your leadership team. They show what's coming, and what to do about it.</p>
       </article>
     </div>
   </div>
@@ -408,12 +460,12 @@ footer .fnav a:hover{color:var(--ink);}
 <section class="section product" id="product">
   <div class="wrap">
     <div class="section-head">
-      <h2>Protected: Validation on the record</h2>
+      <h2>Validation on the record</h2>
     </div>
     <div class="rule-grid">
         <div class="rule-card red">
           <h4>A gap in the record is a gap in the number.</h4>
-          <p>Empty close date or economic buyer is caught as soon as the field changes.</p>
+          <p>Empty close date or economic buyer is caught as soon as the record is saved.</p>
         </div>
         <div class="rule-card amber">
           <h4>Complete isn't the same as true.</h4>
@@ -431,7 +483,8 @@ footer .fnav a:hover{color:var(--ink);}
   <div class="wrap">
     <h2>Why Buoy is different</h2>
     <p>Most CRM cleanup starts with the fields.</p>
-    <p>Buoy starts with the questions leadership needs answered, writes the definitions down, then flags drift on the record — it doesn't hard-block anyone from saving.</p>
+    <p>Buoy starts with the questions your leadership team needs answered, writes the definitions down, then flags drift on the record. It doesn't hard-block anyone from saving.</p>
+    <p>The data underneath is correct. One view of the customer journey shows whether it is accurate. Sonar and Ask Buoy help your team understand what it means. Buoy does not build your reports. Your team uses the trusted data in the tools you already have.</p>
   </div>
 </section>
 
@@ -461,53 +514,57 @@ footer .fnav a:hover{color:var(--ink);}
 <section class="section" id="pricing">
   <div class="wrap">
     <div class="section-head">
-      <h2>What this costs</h2>
-      <p>The only price is the Audit. Validation and Filled in are scoped after it. Sonar is on the roadmap.</p>
+      <h2>What it costs</h2>
+      <p>The only price is the Audit. Validation + AI fields and Sonar are subscriptions.</p>
     </div>
 
     <div class="pricing-grid">
-      <div class="tier">
-        <div class="tier-badge"><p class="stage-kicker">Start here</p></div>
-        <h3>The Audit</h3>
-        <div class="price">$20,000<small>one-time</small></div>
-        <button class="btn btn-primary" onclick="openAuditModal(event)">Book an audit call</button>
+      <article class="tier">
+        <p class="stage-kicker">The Audit</p>
+        <h3>Get it right</h3>
+        <div class="price-slot">
+          <p class="price">$20,000<small>one-time</small></p>
+        </div>
         <ul>
-          <li>Top-down: how GTM should run</li>
-          <li>Bottom-up: property cleanup</li>
-          <li>You keep the written process</li>
+          <li>We audit your process and your CRM with you</li>
+          <li>We clean it up, and you keep the written process</li>
+          <li>Included Access to the audit and cleanup workspace</li>
         </ul>
-      </div>
-      <div class="tier">
-        <div class="tier-badge"></div>
-        <h3>Validation</h3>
-        <div class="tier-sub">Protected · done with you</div>
-        <div class="scope">Scoped to your process</div>
         <button class="btn btn-primary" onclick="openAuditModal(event)">Book an audit call</button>
+      </article>
+      <article class="tier">
+        <p class="stage-kicker">Validation + AI fields</p>
+        <h3>Keep it right</h3>
+        <div class="price-slot">
+          <p class="price-note">Subscription</p>
+        </div>
         <ul>
-          <li>Checks against decay and drift</li>
-          <li>On the record, while the team works</li>
-          <li>A small number of clients at a time</li>
+          <li>Validation flags drift as soon as the record is saved</li>
+          <li>We fill in the fields your business needs from your calls and systems</li>
+          <li>Built to your requirements, never generic AI fields</li>
         </ul>
-      </div>
-      <div class="tier">
-        <div class="tier-badge"><p class="badge">On the roadmap</p></div>
-        <h3>Sonar</h3>
-        <div class="tier-sub">Intelligence · not available yet</div>
-        <div class="scope">Scoped to your process</div>
         <button class="btn btn-primary" onclick="openAuditModal(event)">Book an audit call</button>
+      </article>
+      <article class="tier">
+        <p class="stage-kicker">Sonar and Ask Buoy</p>
+        <h3>Know what it means</h3>
+        <div class="price-slot">
+          <p class="price-note">Subscription</p>
+        </div>
         <ul>
-          <li>Will be the revenue leader's second brain</li>
-          <li>Will bring proactive insight</li>
-          <li>Will come after Validation is in place</li>
+          <li>Sonar turns trusted data into answers</li>
+          <li>Ask Buoy is there for the leadership team</li>
+          <li>Your team uses the data in the tools you already have</li>
         </ul>
-      </div>
+        <button class="btn btn-primary" onclick="openAuditModal(event)">Book an audit call</button>
+      </article>
     </div>
   </div>
 </section>
 
 <section class="final-cta" id="contact">
   <div class="wrap">
-    <h2>Can you trust the numbers you take to the board?</h2>
+    <h2>Can your leadership team trust the numbers?</h2>
     <p class="cta-sub">Every engagement is scoped to your CRM and your process.</p>
     <button class="btn btn-primary" onclick="openAuditModal(event)">Book an audit call</button>
   </div>
@@ -520,7 +577,7 @@ footer .fnav a:hover{color:var(--ink);}
         <img src="/assets/buoy-mark.svg" alt="Buoy">
         <span class="word">buoy<span class="dot" aria-hidden="true"></span></span>
       </a>
-      <p class="fnote">Done with you, a small number of clients at a time: the Audit (Clean), Validation (Protected), and Filled in from your own business. Sonar, on the roadmap, will add Intelligence.</p>
+      <p class="fnote">Done with you, a small number of clients at a time: the Audit, with Included Access to the workspace; Validation and AI fields; and Sonar and Ask Buoy for your leadership team.</p>
     </div>
     <div class="fnav">
       <a href="#how-it-works">How it works</a>
