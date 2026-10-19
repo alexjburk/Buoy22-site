@@ -121,27 +121,15 @@ nav.wrap{
 .hero .ctas{display:flex; gap:12px; flex-wrap:wrap;}
 .quiet{font-family:Newsreader, serif; font-size:20px; margin:28px 0 0; max-width:28ch;}
 .hero-visual{min-width:0; margin:0;}
-.journey-card{background:#fff; border:1px solid var(--line); box-shadow:0 10px 28px rgba(22,21,19,0.06);}
-.journey-chrome{
-  display:flex; align-items:center; justify-content:space-between; gap:12px;
-  padding:16px 18px 0;
-}
-.journey-chrome .eyebrow{margin:0;}
-.journey-period{
-  margin:0; flex:none;
+.bowtie{display:block; width:100%; height:auto;}
+.bowtie-enlarge{
+  display:none;
+  align-items:center;
+  min-height:44px;
+  margin:4px 0 0;
   font-family:"JetBrains Mono", ui-monospace, monospace;
-  font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:var(--slate);
-  background:var(--paper); border:1px solid var(--line); border-radius:999px; padding:6px 10px;
-}
-.journey-scroll{overflow-x:auto; padding:2px 6px 8px; -webkit-overflow-scrolling:touch; scrollbar-width:thin; scrollbar-color:#4A5768 transparent;}
-.journey-scroll::-webkit-scrollbar{height:8px;}
-.journey-scroll::-webkit-scrollbar-thumb{background:#4A5768; border-radius:8px;}
-.journey-svg{display:block; width:100%; height:auto; min-width:760px;}
-.journey-hint{display:none; margin:0; padding:0 16px 12px; font-family:"JetBrains Mono", ui-monospace, monospace; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:var(--slate);}
-.cap{
-  font-family:"JetBrains Mono", ui-monospace, monospace;
-  font-size:12px; letter-spacing:0.14em; text-transform:uppercase;
-  color:var(--slate); margin:12px 0 0;
+  font-size:12px; letter-spacing:0.08em; text-transform:uppercase;
+  color:var(--navy);
 }
 
 .section{padding:96px 0; border-top:1px solid var(--line); background:#fff;}
@@ -290,8 +278,8 @@ footer .fnav a:hover{color:var(--ink);}
   .tier:first-child{border-top:none;}
   .stage .stage-kicker{min-height:0;}
   .story .wrap{padding-top:64px; padding-bottom:64px;}
-  .journey-chrome{padding:14px 14px 0;}
-  .journey-hint{display:block;}
+  .hero-visual{margin-left:-20px; margin-right:-20px;}
+  .bowtie-enlarge{display:inline-flex; margin-left:20px; margin-right:20px;}
 }
 </style>
 </head>
@@ -330,74 +318,8 @@ footer .fnav a:hover{color:var(--ink);}
       <p class="quiet reveal d3">Stop questioning the data. Start making sound decisions.</p>
     </div>
     <figure class="hero-visual reveal d2">
-      <div class="journey-card">
-        <div class="journey-chrome">
-          <p class="eyebrow">Customer journey</p>
-          <p class="journey-period">Last 12 months</p>
-        </div>
-        <div class="journey-scroll">
-          <svg class="journey-svg" viewBox="0 0 760 360" role="img" aria-labelledby="journey-title journey-desc">
-            <title id="journey-title">Northwind customer journey, last 12 months</title>
-            <desc id="journey-desc">Illustrative Northwind counts. MQLs 2,890. Qualified To Buy 447, 15%. Contract Sent 281, 63%, drift, stage skipped. Closed Won 94, 33%. Customer onboarding 91, 97%. Renewal 80, 88%. Upgrades 27, 34%.</desc>
-            <defs>
-              <linearGradient id="journey-band" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0" stop-color="#0F1F33" stop-opacity="0.18"/>
-                <stop offset="0.5" stop-color="#0F1F33" stop-opacity="0.42"/>
-                <stop offset="1" stop-color="#0F1F33" stop-opacity="0.18"/>
-              </linearGradient>
-            </defs>
-            <text x="68" y="86" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="500" fill="#4A5768">MQLs</text>
-            <text x="172" y="70" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="500" fill="#4A5768">Qualified</text>
-            <text x="172" y="86" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="500" fill="#4A5768">To Buy</text>
-            <text x="276" y="70" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="500" fill="#4A5768">Contract</text>
-            <text x="276" y="86" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="500" fill="#4A5768">Sent</text>
-            <text x="380" y="86" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#0F1F33">Closed Won</text>
-            <text x="484" y="70" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="500" fill="#4A5768">Customer</text>
-            <text x="484" y="86" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="500" fill="#4A5768">onboarding</text>
-            <text x="588" y="86" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="500" fill="#4A5768">Renewal</text>
-            <text x="692" y="86" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="500" fill="#4A5768">Upgrades</text>
-            <path fill="url(#journey-band)" stroke="#0F1F33" stroke-opacity="0.55" stroke-width="1.5" d="M20.0,114.0C44.0,114.0 44.0,114.0 68.0,114.0C120.0,114.0 120.0,130.0 172.0,130.0C224.0,130.0 224.0,146.0 276.0,146.0C328.0,146.0 328.0,170.0 380.0,170.0C432.0,170.0 432.0,146.0 484.0,146.0C536.0,146.0 536.0,130.0 588.0,130.0C640.0,130.0 640.0,114.0 692.0,114.0C716.0,114.0 716.0,114.0 740.0,114.0L740.0,258.0C716.0,258.0 716.0,258.0 692.0,258.0C640.0,258.0 640.0,242.0 588.0,242.0C536.0,242.0 536.0,226.0 484.0,226.0C432.0,226.0 432.0,202.0 380.0,202.0C328.0,202.0 328.0,226.0 276.0,226.0C224.0,226.0 224.0,242.0 172.0,242.0C120.0,242.0 120.0,258.0 68.0,258.0C44.0,258.0 44.0,258.0 20.0,258.0Z"/>
-            <line x1="120" x2="120" y1="108" y2="264" stroke="#fff" stroke-width="3"/>
-            <line x1="328" x2="328" y1="140" y2="232" stroke="#fff" stroke-width="3"/>
-            <line x1="432" x2="432" y1="140" y2="232" stroke="#fff" stroke-width="3"/>
-            <line x1="536" x2="536" y1="124" y2="248" stroke="#fff" stroke-width="3"/>
-            <line x1="640" x2="640" y1="108" y2="264" stroke="#fff" stroke-width="3"/>
-            <text x="68" y="194" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="20" font-weight="600" fill="#0F1F33">2,890</text>
-            <text x="172" y="194" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="20" font-weight="600" fill="#0F1F33">447</text>
-            <text x="276" y="194" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="20" font-weight="600" fill="#0F1F33">281</text>
-            <rect x="330" y="152" width="100" height="68" rx="14" fill="#0F1F33"/>
-            <text x="380" y="194" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="22" font-weight="600" fill="#F4F0E6">94</text>
-            <text x="484" y="194" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="20" font-weight="600" fill="#0F1F33">91</text>
-            <text x="588" y="194" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="20" font-weight="600" fill="#0F1F33">80</text>
-            <text x="692" y="194" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="20" font-weight="600" fill="#0F1F33">27</text>
-            <line x1="120" x2="120" y1="264" y2="276" stroke="#D9D2C2" stroke-width="1.5"/>
-            <rect x="93" y="276" width="54" height="24" rx="12" fill="#F4F0E6" stroke="#D9D2C2"/>
-            <text x="120" y="293" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="600" fill="#0F1F33">15%</text>
-            <line x1="224" x2="224" y1="122" y2="276" stroke="#8C3B32" stroke-width="2" stroke-dasharray="4 3"/>
-            <rect x="197" y="276" width="54" height="24" rx="12" fill="#F4F0E6" stroke="#D9D2C2"/>
-            <text x="224" y="293" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="600" fill="#0F1F33">63%</text>
-            <line x1="328" x2="328" y1="232" y2="276" stroke="#D9D2C2" stroke-width="1.5"/>
-            <rect x="301" y="276" width="54" height="24" rx="12" fill="#F4F0E6" stroke="#D9D2C2"/>
-            <text x="328" y="293" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="600" fill="#0F1F33">33%</text>
-            <line x1="432" x2="432" y1="232" y2="276" stroke="#D9D2C2" stroke-width="1.5"/>
-            <rect x="405" y="276" width="54" height="24" rx="12" fill="#F4F0E6" stroke="#D9D2C2"/>
-            <text x="432" y="293" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="600" fill="#0F1F33">97%</text>
-            <line x1="536" x2="536" y1="248" y2="276" stroke="#D9D2C2" stroke-width="1.5"/>
-            <rect x="509" y="276" width="54" height="24" rx="12" fill="#F4F0E6" stroke="#D9D2C2"/>
-            <text x="536" y="293" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="600" fill="#0F1F33">88%</text>
-            <line x1="640" x2="640" y1="264" y2="276" stroke="#D9D2C2" stroke-width="1.5"/>
-            <rect x="613" y="276" width="54" height="24" rx="12" fill="#F4F0E6" stroke="#D9D2C2"/>
-            <text x="640" y="293" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="600" fill="#0F1F33">34%</text>
-            <line x1="224" x2="224" y1="300" y2="312" stroke="#8C3B32" stroke-width="2"/>
-            <rect x="130" y="312" width="188" height="26" rx="6" fill="#F3E4E1"/>
-            <circle cx="148" cy="325" r="8" fill="#8C3B32"/>
-            <text x="148" y="329" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#F3E4E1">!</text>
-            <text x="162" y="330" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#8C3B32">Drift · stage skipped</text>
-          </svg>
-        </div>
-        <p class="journey-hint">Scroll sideways for the full journey</p>
-      </div>
-      <p class="cap">Northwind · illustrative</p>
+      <img class="bowtie" src="/assets/bowtie.svg" width="1019" height="476" alt="Customer journey. A funnel from Sessions to Closed Won, with conversion and volume on each stage, feeding Customer Onboarding, then a wheel of expansion, renewal, and churn.">
+      <a class="bowtie-enlarge" href="/assets/bowtie.svg" target="_blank" rel="noopener">View larger</a>
     </figure>
   </div>
 </section>
