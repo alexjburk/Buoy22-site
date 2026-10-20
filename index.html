@@ -209,15 +209,12 @@ nav.wrap{
 .pipe-sum th{font-size:14px;}
 .pipe tbody tr:last-child th, .pipe tbody tr:last-child td{border-bottom:none;}
 .pipe-note, .insight-note{margin:14px 0 0; font-size:12px; line-height:1.4; color:#4A5768;}
-.insight-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px; align-items:start;}
-.insight-card{margin:0; padding:24px 22px 20px; border:1px solid #D9D2C2; background:#fff;}
+.insight-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px; align-items:stretch;}
+.insight-card{margin:0; padding:24px 22px 20px; border:1px solid #D9D2C2; background:#fff; display:flex; flex-direction:column; height:100%;}
 .insight-card h3{font-size:28px; line-height:1.15; margin:0 0 14px;}
-.insight-card p{margin:0; font-size:16px; line-height:1.5; color:var(--slate);}
 .insight-card ul{margin:0; padding:0 0 0 1.15em;}
 .insight-card li{margin:0 0 10px; font-size:15.5px; line-height:1.45; color:var(--ink);}
 .insight-card li:last-child{margin-bottom:0;}
-.insight-card h4{font-family:Inter, sans-serif; font-size:14px; font-weight:600; letter-spacing:0.01em; margin:20px 0 8px; color:#0F1F33;}
-.insight-card .gates li{color:var(--ink);}
 .anchor{display:block; position:relative; height:0;}
 .debate .section-head{max-width:none; margin-bottom:72px;}
 .debate .section-head h2{font-size:60px; line-height:1.02; letter-spacing:-0.03em; max-width:16em;}
@@ -852,15 +849,6 @@ footer .fnav a:hover{color:var(--ink);}
             <td class="num"></td>
           </tr>
           <tr class="pipe-sum">
-            <th scope="row">Timeline identified pipeline</th>
-            <td class="num"></td>
-            <td class="num"></td>
-            <td class="num"></td>
-            <td class="num"></td>
-            <td class="num" data-rep="29" data-buoy="14">29</td>
-            <td class="num" data-rep="$466,000" data-buoy="$206,000">$466,000</td>
-          </tr>
-          <tr class="pipe-sum">
             <th scope="row">Weighted pipeline</th>
             <td class="num"></td>
             <td class="num" data-rep="$348,600" data-buoy="$130,600">$348,600</td>
@@ -894,21 +882,22 @@ footer .fnav a:hover{color:var(--ink);}
     <div class="insight-grid">
       <article class="insight-card">
         <h3>Generic AI</h3>
-        <p>Only 18% of deals progressed past Discovery. Focus on earlier stages. The largest time gap is 6 days. Later stages convert well.</p>
+        <ul>
+          <li>Only 18% progressed past Discovery.</li>
+          <li>Focus on earlier stages.</li>
+          <li>Largest time gap is 6 days.</li>
+          <li>Later stages convert well.</li>
+          <li>Consider improving follow-up.</li>
+        </ul>
       </article>
       <article class="insight-card">
         <h3>Buoy</h3>
         <ul>
-          <li>Discovery pain shows up in won and lost deals alike, so it's table stakes, not a signal.</li>
-          <li>When verbal pricing agreement is missed, win rate drops from 68% to 2%.</li>
-          <li>Deals with no engaged economic buyer won 0%.</li>
-          <li>Confirmed dates without budget create false confidence.</li>
-          <li>Economic buyer engaged plus pricing agreed: 54% win rate.</li>
-        </ul>
-        <h4>Recommended stage gates</h4>
-        <ul class="gates">
-          <li>No quotes before the economic buyer is engaged and the pricing test-close is done.</li>
-          <li>Mutual action plans tied to contract milestones.</li>
+          <li>Discovery pain shows up in won and lost deals.</li>
+          <li>Missed pricing agreement: win rate 68% to 2%.</li>
+          <li>No engaged economic buyer: 0% won.</li>
+          <li>Economic buyer plus pricing agreed: 54% won.</li>
+          <li>Gate: no quotes before buyer and pricing test-close.</li>
         </ul>
       </article>
     </div>
