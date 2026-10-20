@@ -142,6 +142,38 @@ nav.wrap{
 }
 .journey{display:block; width:100%; height:auto;}
 .journey-mobile{display:none;}
+.journey-frame{overflow:hidden;}
+.journey-head{
+  display:flex; align-items:flex-start; justify-content:space-between; gap:16px;
+  padding:16px 20px 14px; border-bottom:1px solid #D9D2C2;
+}
+.journey-title{margin:0 0 10px; font-size:16px; font-weight:600; color:#0F1F33; line-height:1.2;}
+.journey-toggle{display:inline-flex; border:1px solid #0F1F33;}
+.journey-toggle button{
+  appearance:none; border:0; background:transparent; color:#0F1F33;
+  font-family:Inter, sans-serif; font-size:14px; font-weight:500;
+  min-height:44px; padding:8px 16px; cursor:pointer;
+}
+.journey-toggle button[aria-pressed="true"]{background:#0F1F33; color:#FBF8F1;}
+.journey-toggle button:focus-visible{outline:2px solid #0F1F33; outline-offset:2px;}
+.journey-caption{margin:8px 0 0; font-size:12px; line-height:1.4; color:#4A5768;}
+.journey-window{
+  margin:0; flex:none; background:#ECE6D8; border-radius:12px; padding:5px 12px;
+  font-size:13px; font-weight:500; color:#0F1F33; white-space:nowrap; line-height:1.3;
+}
+.journey-only, .journey-gap{opacity:0; transition:opacity 300ms ease;}
+.journey-card.is-with .journey-only,
+.journey-card.is-with .journey-gap{opacity:1;}
+.journey-card.is-with .journey-span{stroke-dasharray:5 4;}
+.journey-card.is-with .journey-arc{stroke-dasharray:3 4 3 4 3 4 3 4 3 4 3 4 3 4 3 4 3 4 3 4 3 4 3 4 3 4 3 4 3 4 3 4 3 4 3 4 3 4 3 4 3 4 3 4 3 4 3 4 3 4 3 4 3 4 3 4 3 4 3 4 3 4 3 4 3 4 3 4 3 4 3 4 3 4 3 4 3 4 3 4 3 4 3 11 8.94;}
+.journey-mobile .journey-flow{transform:translateY(16px);}
+.journey-mobile .journey-tail{transform:translateY(-156px);}
+.journey-mobile .journey-after-expansion{transform:translateY(-52px);}
+.journey-card.is-with .journey-mobile .journey-tail,
+.journey-card.is-with .journey-mobile .journey-after-expansion{transform:none;}
+@media (prefers-reduced-motion: reduce){
+  .journey-only, .journey-gap{transition:none;}
+}
 
 .section{padding:96px 0; border-top:1px solid var(--line); background:#fff;}
 #proof{background:var(--paper);}
@@ -354,6 +386,13 @@ footer .fnav a:hover{color:var(--ink);}
   .journey-card{border-radius:0; border-left:none; border-right:none; box-shadow:none;}
   .journey-desktop{display:none;}
   .journey-mobile{display:block;}
+  .journey-head{flex-wrap:wrap; gap:10px; padding:14px 16px 12px;}
+  .journey-head-copy{width:100%;}
+  .journey-toggle{display:flex; width:100%;}
+  .journey-toggle button{flex:1; min-height:44px;}
+  .journey-window{position:absolute; top:14px; right:16px; font-size:12px;}
+  .journey-head{position:relative; padding-top:14px;}
+  .journey-title{padding-right:132px;}
   #top,
   #problem,
   #how-it-works,
@@ -404,33 +443,41 @@ footer .fnav a:hover{color:var(--ink);}
       <p class="quiet reveal d3">Stop questioning the data. Start making sound decisions.</p>
     </div>
     <figure class="hero-visual reveal d2">
-      <div class="journey-card">
-        <svg class="journey journey-desktop" viewBox="0 0 1040 468" width="1040" height="468" role="img" aria-label="Revenue journey, last 12 months. MQL 1,000. Meeting booked 680, 68 percent, about 3 days. Estimated potential impact: 30 records fail your rules for this step. If they're counted wrongly, this rate could be anywhere from 65% to 71%. This range estimates how much data errors could move the rate. Meeting completed 456, 67 percent, about 5 days. Pipeline 255, 56 percent, about 2 days. Estimated potential impact: 18 records fail your rules for this step. If they're counted wrongly, this rate could be anywhere from 52% to 60%. This range estimates how much data errors could move the rate. Closed won 59, ACV 18 thousand dollars, new ARR plus 1.0 million, 23 percent, about 32 days. Estimated potential impact: 12 records fail your rules for this step. If they're counted wrongly, this rate could be anywhere from 18% to 28%. This range estimates how much data errors could move the rate. Onboarding 58, 98 percent, about 30 days. Three rules flag 60 records. Starting ARR 14.0 million. Upgrades plus 1.4 million. Downgrades minus 0.4 million. Churn minus 0.7 million. Net revenue retention 102 percent. Gross revenue retention 92 percent. Ending ARR 15.3 million, including plus 1.0 million new ARR. Plus or minus points means estimated potential impact. Ranges are estimates based on records that fail your rules. They show possible impact, not a promise about any figure." xmlns="http://www.w3.org/2000/svg">
-        <text x="20" y="28" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#0F1F33">Revenue journey</text>
-        <rect x="868" y="10" width="152" height="24" rx="12" fill="#ECE6D8"/>
-        <text x="944" y="26" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="500" fill="#0F1F33">Last 12 months</text>
-        <line x1="0" y1="44" x2="1040" y2="44" stroke="#D9D2C2"/>
-        <rect x="20" y="56" width="286" height="28" rx="14" fill="#F3E0DB"/>
+      <div class="journey-card" id="journey-card">
+        <div class="journey-head">
+          <div class="journey-head-copy">
+            <p class="journey-title">Revenue journey</p>
+            <div class="journey-toggle" role="group" aria-label="Revenue journey view">
+              <button type="button" id="journey-without" aria-pressed="true">Without Buoy</button>
+              <button type="button" id="journey-with" aria-pressed="false">With Buoy</button>
+            </div>
+            <p class="journey-caption" id="journey-caption">What the dashboard shows.</p>
+          </div>
+          <p class="journey-window">Last 12 months</p>
+        </div>
+        <div class="journey-frame" id="journey-frame">
+        <svg class="journey journey-desktop" viewBox="0 48 1040 470" width="1040" height="470" role="img" aria-label="Revenue journey, last 12 months. MQL 1,000. Meeting booked 680, 68 percent, about 3 days. Meeting completed 456, 67 percent, about 5 days. Pipeline 255, 56 percent, about 2 days. Closed won 59, ACV 18 thousand dollars, new ARR plus 1.0 million, 23 percent, about 32 days. Starting ARR 14.0 million. Upgrades plus 1.4 million. Downgrades minus 0.4 million. Churn minus 0.7 million. Net revenue retention 102 percent. Gross revenue retention 92 percent. Ending ARR 15.3 million, including plus 1.0 million new ARR." xmlns="http://www.w3.org/2000/svg">
+        <g class="journey-only" aria-hidden="true">
+        <rect x="20" y="56" width="458" height="28" rx="14" fill="#F3E0DB"/>
         <circle cx="36" cy="70" r="8" fill="#A8402B"/>
         <text x="36" y="74" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#F3E0DB">!</text>
         <text x="50" y="74" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#A8402B">Drift</text>
-        <text x="96" y="74" font-family="Inter, sans-serif" font-size="13" font-weight="500" fill="#A8402B">3 rules flag 60 records</text>
+        <text x="96" y="74" font-family="Inter, sans-serif" font-size="13" font-weight="500" fill="#A8402B">3 rules flag 60 records · 2 steps not tracked</text>
+        </g>
         <line x1="64" y1="196" x2="64" y2="335.4" stroke="#C4BBA8" stroke-width="1" stroke-dasharray="2 4" stroke-linecap="round"/>
         <line x1="176" y1="196" x2="176" y2="323.5" stroke="#C4BBA8" stroke-width="1" stroke-dasharray="2 4" stroke-linecap="round"/>
         <line x1="318" y1="196" x2="318" y2="308.4" stroke="#C4BBA8" stroke-width="1" stroke-dasharray="2 4" stroke-linecap="round"/>
         <line x1="452" y1="196" x2="452" y2="294.1" stroke="#C4BBA8" stroke-width="1" stroke-dasharray="2 4" stroke-linecap="round"/>
         <line x1="564" y1="216" x2="564" y2="248.0" stroke="#C4BBA8" stroke-width="1" stroke-dasharray="2 4" stroke-linecap="round"/>
-        <line x1="676" y1="196" x2="676" y2="234.9" stroke="#C4BBA8" stroke-width="1" stroke-dasharray="2 4" stroke-linecap="round"/>
-        <line x1="676" y1="278" x2="676" y2="307.1" stroke="#C4BBA8" stroke-width="1" stroke-dasharray="2 4" stroke-linecap="round"/>
         <line x1="764.4" y1="164" x2="764.4" y2="202.3" stroke="#C4BBA8" stroke-width="1" stroke-dasharray="2 4" stroke-linecap="round"/>
         <line x1="1011.6" y1="132" x2="1011.6" y2="202.3" stroke="#C4BBA8" stroke-width="1" stroke-dasharray="2 4" stroke-linecap="round"/>
         <path d="M 40 214 L 528 250 M 40 338 L 528 286 M 40 214 L 40 338" fill="none" stroke="#0F1F33" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
         <rect x="528" y="250" width="72" height="36" rx="18" fill="#0F1F33"/>
         <text x="564" y="273" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="14" font-weight="500" fill="#FBF8F1">59</text>
-        <path d="M 582 250 L 814.0 198 M 582 286 L 814.0 338 M 814.0 198 L 814.0 338" fill="none" stroke="#0F1F33" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+        <path class="journey-span" d="M 582 250 L 814.0 198 M 582 286 L 814.0 338 M 814.0 198 L 814.0 338" fill="none" stroke="#0F1F33" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
         <circle cx="888" cy="268" r="74" fill="none" stroke="#0F1F33" stroke-width="1.25"/>
         <circle cx="888" cy="268" r="50" fill="none" stroke="#C4BBA8" stroke-width="1.25"/>
-        <path d="M 1011.6 202.3 A 140.0 140.0 0 0 0 764.4 202.3" fill="none" stroke="#4A5768" stroke-width="1.15" stroke-dasharray="3 4" stroke-linecap="round"/>
+        <path class="journey-arc" d="M 1011.6 202.3 A 140.0 140.0 0 0 0 764.4 202.3" fill="none" stroke="#4A5768" stroke-width="1.15" stroke-dasharray="3 4" stroke-linecap="round"/>
         <line x1="935.0" y1="250.9" x2="957.5" y2="242.7" stroke="#C4BBA8" stroke-width="1.15" stroke-linecap="round"/>
         <line x1="849.7" y1="235.9" x2="831.3" y2="220.4" stroke="#C4BBA8" stroke-width="1.15" stroke-linecap="round"/>
         <line x1="879.3" y1="317.2" x2="875.2" y2="340.9" stroke="#C4BBA8" stroke-width="1.15" stroke-linecap="round"/>
@@ -445,76 +492,85 @@ footer .fnav a:hover{color:var(--ink);}
         <text x="564" y="168" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#0F1F33">Closed won</text>
         <text x="564" y="186" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#0F1F33">ACV $18k</text>
         <text x="564" y="204" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#0F1F33">New ARR +$1.0M</text>
-        <text x="676" y="168" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#0F1F33">Onboarding</text>
-        <text x="676" y="186" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="500" fill="#0F1F33">58</text>
+        <g class="journey-gap" aria-hidden="true">
+        <text x="698" y="252" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#0F1F33">Onboarding</text>
+        <text x="698" y="270" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#4A5768">Not tracked</text>
+        </g>
         <text x="764.4" y="132" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#0F1F33">Starting ARR</text>
         <text x="764.4" y="150" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="500" fill="#0F1F33">$14.0M</text>
         <text x="1024" y="78" text-anchor="end" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#0F1F33">Ending ARR</text>
         <text x="1024" y="96" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="500" fill="#0F1F33">$15.3M</text>
         <text x="1024" y="116" text-anchor="end" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#4A5768">incl. +$1.0M new</text>
-        <g><title>Estimated potential impact: 30 records fail your rules for this step. If they're counted wrongly, this rate could be anywhere from 65% to 71%. This range estimates how much data errors could move the rate.</title>
+        <g class="journey-only" aria-hidden="true"><title>Estimated potential impact: 30 records fail your rules for this step. If they're counted wrongly, this rate could be anywhere from 65% to 71%. This range estimates how much data errors could move the rate.</title>
         <circle cx="74.0" cy="270.6885245901639" r="4" fill="#A8402B"/>
         </g>
         <text x="120.0" y="274.6885245901639" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="500" fill="#0F1F33">← 68% →</text>
         <text x="247.0" y="272.60655737704917" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="500" fill="#0F1F33">← 67% →</text>
-        <g><title>Estimated potential impact: 18 records fail your rules for this step. If they're counted wrongly, this rate could be anywhere from 52% to 60%. This range estimates how much data errors could move the rate.</title>
+        <g class="journey-only" aria-hidden="true"><title>Estimated potential impact: 18 records fail your rules for this step. If they're counted wrongly, this rate could be anywhere from 52% to 60%. This range estimates how much data errors could move the rate.</title>
         <circle cx="339.0" cy="266.344262295082" r="4" fill="#A8402B"/>
         </g>
         <text x="385.0" y="270.344262295082" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="500" fill="#0F1F33">← 56% →</text>
-        <g><title>Estimated potential impact: 12 records fail your rules for this step. If they're counted wrongly, this rate could be anywhere from 18% to 28%. This range estimates how much data errors could move the rate.</title>
+        <g class="journey-only" aria-hidden="true"><title>Estimated potential impact: 12 records fail your rules for this step. If they're counted wrongly, this rate could be anywhere from 18% to 28%. This range estimates how much data errors could move the rate.</title>
         <circle cx="444.0" cy="264.62295081967216" r="4" fill="#A8402B"/>
         </g>
         <text x="490.0" y="268.62295081967216" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="500" fill="#0F1F33">← 23% →</text>
-        <text x="676" y="268" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="500" fill="#0F1F33">← 98% →</text>
         <text x="120.0" y="362" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#4A5768">← ~3d →</text>
-        <g><title>Estimated potential impact: 30 records fail your rules for this step. If they're counted wrongly, this rate could be anywhere from 65% to 71%. This range estimates how much data errors could move the rate.</title>
+        <g class="journey-only" aria-hidden="true"><title>Estimated potential impact: 30 records fail your rules for this step. If they're counted wrongly, this rate could be anywhere from 65% to 71%. This range estimates how much data errors could move the rate.</title>
         <text x="120.0" y="382" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#A8402B">30 records · ±3 pts</text>
         </g>
         <text x="247.0" y="362" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#4A5768">← ~5d →</text>
         <text x="385.0" y="362" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#4A5768">← ~2d →</text>
-        <g><title>Estimated potential impact: 18 records fail your rules for this step. If they're counted wrongly, this rate could be anywhere from 52% to 60%. This range estimates how much data errors could move the rate.</title>
+        <g class="journey-only" aria-hidden="true"><title>Estimated potential impact: 18 records fail your rules for this step. If they're counted wrongly, this rate could be anywhere from 52% to 60%. This range estimates how much data errors could move the rate.</title>
         <text x="369.0" y="382" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#A8402B">18 records · ±4 pts</text>
         </g>
         <text x="490.0" y="362" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#4A5768">← ~32d →</text>
-        <g><title>Estimated potential impact: 12 records fail your rules for this step. If they're counted wrongly, this rate could be anywhere from 18% to 28%. This range estimates how much data errors could move the rate.</title>
+        <g class="journey-only" aria-hidden="true"><title>Estimated potential impact: 12 records fail your rules for this step. If they're counted wrongly, this rate could be anywhere from 18% to 28%. This range estimates how much data errors could move the rate.</title>
         <text x="512.0" y="382" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#A8402B">12 records · ±5 pts</text>
         </g>
-        <text x="676" y="362" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#4A5768">← ~30d →</text>
         <text x="888" y="244" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#0F1F33">Recurring</text>
         <text x="888" y="266" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#0F1F33">revenue</text>
         <text x="888" y="288" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#0F1F33">NRR 102%</text>
         <text x="888" y="308" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#0F1F33">GRR 92%</text>
         <text x="888" y="160" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#0F1F33">Upgrades</text>
         <text x="888" y="180" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#0F1F33">+$1.4M</text>
+        <g class="journey-gap" aria-hidden="true">
+        <circle cx="888" cy="198" r="6" fill="none" stroke="#4A5768" stroke-width="1.15" stroke-dasharray="2 2"/>
+        <path d="M 752 188 L 881 196" fill="none" stroke="#4A5768" stroke-width="1" stroke-linecap="round"/>
+        <text x="740" y="180" text-anchor="end" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#0F1F33">Expansion stage</text>
+        <text x="740" y="196" text-anchor="end" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#4A5768">Not tracked</text>
+        </g>
         <text x="843.8" y="371.4" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#0F1F33">Churn</text>
         <text x="843.8" y="391.4" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#0F1F33">−$0.7M</text>
         <text x="987.5" y="329.1" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#0F1F33">Downgrades</text>
         <text x="987.5" y="349.1" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#0F1F33">−$0.4M</text>
+        <g class="journey-only" aria-hidden="true">
         <text x="20" y="416" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#4A5768">± pts = estimated potential impact</text>
         <text x="20" y="436" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#4A5768">Ranges are estimates based on records that fail your rules. They show possible impact, not a promise about any figure.</text>
+        <text x="20" y="456" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#4A5768">Not tracked = no stage or field in the CRM captures this step.</text>
+        </g>
         </svg>
-        <svg class="journey journey-mobile" viewBox="0 0 360 1160" width="360" height="1160" role="img" aria-label="Revenue journey, last 12 months. MQL 1,000. Meeting booked 680, 68 percent, about 3 days. Estimated potential impact: 30 records fail your rules for this step. If they're counted wrongly, this rate could be anywhere from 65% to 71%. This range estimates how much data errors could move the rate. Meeting completed 456, 67 percent, about 5 days. Pipeline 255, 56 percent, about 2 days. Estimated potential impact: 18 records fail your rules for this step. If they're counted wrongly, this rate could be anywhere from 52% to 60%. This range estimates how much data errors could move the rate. Closed won 59, ACV 18 thousand dollars, new ARR plus 1.0 million, 23 percent, about 32 days. Estimated potential impact: 12 records fail your rules for this step. If they're counted wrongly, this rate could be anywhere from 18% to 28%. This range estimates how much data errors could move the rate. Onboarding 58, 98 percent, about 30 days. Three rules flag 60 records. Starting ARR 14.0 million. Upgrades plus 1.4 million. Downgrades minus 0.4 million. Churn minus 0.7 million. Net revenue retention 102 percent. Gross revenue retention 92 percent. Ending ARR 15.3 million, including plus 1.0 million new ARR. Plus or minus points means estimated potential impact. Ranges are estimates based on records that fail your rules. They show possible impact, not a promise about any figure." xmlns="http://www.w3.org/2000/svg">
-        <text x="16" y="26" text-anchor="start" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#0F1F33">Revenue journey</text>
-        <rect x="214" y="10" width="130" height="22" rx="11" fill="#ECE6D8"/>
-        <text x="279" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#0F1F33">Last 12 months</text>
-        <line x1="0" y1="42" x2="360" y2="42" stroke="#D9D2C2"/>
-        <rect x="12" y="52" width="336" height="32" rx="16" fill="#F3E0DB"/>
-        <circle cx="28" cy="68" r="8" fill="#A8402B"/>
-        <text x="28" y="72" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#F3E0DB">!</text>
-        <text x="42" y="72" text-anchor="start" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#A8402B">Drift</text>
-        <text x="88" y="72" text-anchor="start" font-family="Inter, sans-serif" font-size="13" font-weight="500" fill="#A8402B">3 rules flag 60 records</text>
+        <svg class="journey journey-mobile" viewBox="0 46 360 1260" width="360" height="1260" role="img" aria-label="Revenue journey, last 12 months. MQL 1,000. Meeting booked 680, 68 percent, about 3 days. Meeting completed 456, 67 percent, about 5 days. Pipeline 255, 56 percent, about 2 days. Closed won 59, ACV 18 thousand dollars, new ARR plus 1.0 million, 23 percent, about 32 days. Starting ARR 14.0 million. Upgrades plus 1.4 million. Downgrades minus 0.4 million. Churn minus 0.7 million. Net revenue retention 102 percent. Gross revenue retention 92 percent. Ending ARR 15.3 million, including plus 1.0 million new ARR." xmlns="http://www.w3.org/2000/svg">
+        <g class="journey-only" aria-hidden="true">
+        <rect x="12" y="52" width="336" height="52" rx="16" fill="#F3E0DB"/>
+        <circle cx="28" cy="70" r="8" fill="#A8402B"/>
+        <text x="28" y="74" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#F3E0DB">!</text>
+        <text x="44" y="66" text-anchor="start" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#A8402B">Drift</text>
+        <text x="90" y="66" text-anchor="start" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#A8402B">3 rules flag 60 records</text>
+        <text x="44" y="90" text-anchor="start" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#A8402B">· 2 steps not tracked</text>
+        </g>
+        <g class="journey-flow">
         <text x="16" y="112" text-anchor="start" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#0F1F33">MQL</text>
         <text x="344" y="112" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="14" font-weight="500" fill="#0F1F33">1,000</text>
         <line x1="16" y1="128" x2="344" y2="128" stroke="#D9D2C2" stroke-width="1"/>
         <text x="16" y="152" text-anchor="start" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#0F1F33">Meeting booked</text>
         <text x="344" y="152" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="14" font-weight="500" fill="#0F1F33">680</text>
-        <g>
+        <g class="journey-only" aria-hidden="true">
         <title>Estimated potential impact: 30 records fail your rules for this step. If they're counted wrongly, this rate could be anywhere from 65% to 71%. This range estimates how much data errors could move the rate.</title>
         <circle cx="28" cy="170" r="4" fill="#A8402B"/>
-        <text x="40" y="174" text-anchor="start" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="500" fill="#0F1F33">← 68% →</text>
         </g>
+        <text x="40" y="174" text-anchor="start" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="500" fill="#0F1F33">← 68% →</text>
         <text x="16" y="194" text-anchor="start" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="500" fill="#4A5768">← ~3d →</text>
-        <g>
+        <g class="journey-only" aria-hidden="true">
         <title>Estimated potential impact: 30 records fail your rules for this step. If they're counted wrongly, this rate could be anywhere from 65% to 71%. This range estimates how much data errors could move the rate.</title>
         <text x="16" y="214" text-anchor="start" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#A8402B">30 records · ±3 pts</text>
         </g>
@@ -526,13 +582,13 @@ footer .fnav a:hover{color:var(--ink);}
         <line x1="16" y1="312" x2="344" y2="312" stroke="#D9D2C2" stroke-width="1"/>
         <text x="16" y="336" text-anchor="start" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#0F1F33">Pipeline</text>
         <text x="344" y="336" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="14" font-weight="500" fill="#0F1F33">255</text>
-        <g>
+        <g class="journey-only" aria-hidden="true">
         <title>Estimated potential impact: 18 records fail your rules for this step. If they're counted wrongly, this rate could be anywhere from 52% to 60%. This range estimates how much data errors could move the rate.</title>
         <circle cx="28" cy="354" r="4" fill="#A8402B"/>
-        <text x="40" y="358" text-anchor="start" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="500" fill="#0F1F33">← 56% →</text>
         </g>
+        <text x="40" y="358" text-anchor="start" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="500" fill="#0F1F33">← 56% →</text>
         <text x="16" y="378" text-anchor="start" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="500" fill="#4A5768">← ~2d →</text>
-        <g>
+        <g class="journey-only" aria-hidden="true">
         <title>Estimated potential impact: 18 records fail your rules for this step. If they're counted wrongly, this rate could be anywhere from 52% to 60%. This range estimates how much data errors could move the rate.</title>
         <text x="16" y="398" text-anchor="start" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#A8402B">18 records · ±4 pts</text>
         </g>
@@ -542,23 +598,24 @@ footer .fnav a:hover{color:var(--ink);}
         <text x="332" y="456" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="16" font-weight="500" fill="#FBF8F1">59</text>
         <text x="28" y="482" text-anchor="start" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="500" fill="#FBF8F1">ACV $18k</text>
         <text x="332" y="482" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="500" fill="#FBF8F1">New ARR +$1.0M</text>
-        <g>
+        <g class="journey-only" aria-hidden="true">
         <title>Estimated potential impact: 12 records fail your rules for this step. If they're counted wrongly, this rate could be anywhere from 18% to 28%. This range estimates how much data errors could move the rate.</title>
         <circle cx="28" cy="520" r="4" fill="#A8402B"/>
-        <text x="40" y="524" text-anchor="start" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="500" fill="#0F1F33">← 23% →</text>
         </g>
+        <text x="40" y="524" text-anchor="start" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="500" fill="#0F1F33">← 23% →</text>
         <text x="16" y="544" text-anchor="start" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="500" fill="#4A5768">← ~32d →</text>
-        <g>
+        <g class="journey-only" aria-hidden="true">
         <title>Estimated potential impact: 12 records fail your rules for this step. If they're counted wrongly, this rate could be anywhere from 18% to 28%. This range estimates how much data errors could move the rate.</title>
         <text x="16" y="564" text-anchor="start" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#A8402B">12 records · ±5 pts</text>
         </g>
         <line x1="16" y1="580" x2="344" y2="580" stroke="#D9D2C2" stroke-width="1"/>
-        <path d="M 148 594 L 206 594 L 268 628 L 112 628 Z" fill="none" stroke="#0F1F33" stroke-width="1.25" stroke-linejoin="round" stroke-linecap="round"/>
-        <rect x="12" y="640" width="336" height="48" rx="16" fill="none" stroke="#0F1F33" stroke-width="1.25"/>
-        <text x="28" y="670" text-anchor="start" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#0F1F33">Onboarding</text>
-        <text x="332" y="670" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="16" font-weight="500" fill="#0F1F33">58</text>
-        <text x="40" y="706" text-anchor="start" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="500" fill="#0F1F33">← 98% →</text>
-        <text x="16" y="726" text-anchor="start" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="500" fill="#4A5768">← ~30d →</text>
+        <g class="journey-gap" aria-hidden="true">
+        <path d="M 148 594 L 206 594 L 268 628 L 112 628 Z" fill="none" stroke="#4A5768" stroke-width="1.25" stroke-dasharray="4 3" stroke-linejoin="round" stroke-linecap="round"/>
+        <rect x="12" y="640" width="336" height="56" rx="16" fill="none" stroke="#4A5768" stroke-width="1.25" stroke-dasharray="4 3"/>
+        <text x="28" y="664" text-anchor="start" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#0F1F33">Onboarding</text>
+        <text x="28" y="684" text-anchor="start" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#4A5768">Not tracked</text>
+        </g>
+        <g class="journey-tail">
         <text x="16" y="760" text-anchor="start" font-family="JetBrains Mono, ui-monospace, monospace" font-size="12" font-weight="500" fill="#4A5768">RETAIN AND GROW</text>
         <text x="16" y="788" text-anchor="start" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#0F1F33">Starting ARR</text>
         <text x="344" y="788" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="14" font-weight="500" fill="#0F1F33">$14.0M</text>
@@ -566,26 +623,40 @@ footer .fnav a:hover{color:var(--ink);}
         <text x="16" y="828" text-anchor="start" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#0F1F33">Upgrades</text>
         <text x="344" y="828" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="14" font-weight="500" fill="#0F1F33">+$1.4M</text>
         <line x1="16" y1="844" x2="344" y2="844" stroke="#D9D2C2" stroke-width="1"/>
-        <text x="16" y="868" text-anchor="start" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#0F1F33">Downgrades</text>
-        <text x="344" y="868" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="14" font-weight="500" fill="#0F1F33">−$0.4M</text>
-        <line x1="16" y1="884" x2="344" y2="884" stroke="#D9D2C2" stroke-width="1"/>
-        <text x="16" y="908" text-anchor="start" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#0F1F33">Churn</text>
-        <text x="344" y="908" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="14" font-weight="500" fill="#0F1F33">−$0.7M</text>
-        <line x1="16" y1="924" x2="344" y2="924" stroke="#D9D2C2" stroke-width="1"/>
-        <text x="16" y="948" text-anchor="start" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#0F1F33">NRR</text>
-        <text x="344" y="948" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="14" font-weight="500" fill="#0F1F33">102%</text>
-        <line x1="16" y1="964" x2="344" y2="964" stroke="#D9D2C2" stroke-width="1"/>
-        <text x="16" y="988" text-anchor="start" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#0F1F33">GRR</text>
-        <text x="344" y="988" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="14" font-weight="500" fill="#0F1F33">92%</text>
-        <line x1="16" y1="1004" x2="344" y2="1004" stroke="#D9D2C2" stroke-width="1"/>
-        <text x="16" y="1028" text-anchor="start" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#0F1F33">Ending ARR</text>
-        <text x="344" y="1028" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="14" font-weight="500" fill="#0F1F33">$15.3M</text>
-        <text x="16" y="1048" text-anchor="start" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#4A5768">incl. +$1.0M new</text>
-        <text x="16" y="1080" text-anchor="start" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#4A5768">± pts = estimated potential impact</text>
-        <text x="16" y="1100" text-anchor="start" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#4A5768">Ranges are estimates based on records</text>
-        <text x="16" y="1118" text-anchor="start" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#4A5768">that fail your rules. They show possible</text>
-        <text x="16" y="1136" text-anchor="start" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#4A5768">impact, not a promise about any figure.</text>
+        <g class="journey-gap" aria-hidden="true">
+        <rect x="16" y="856" width="328" height="44" rx="8" fill="none" stroke="#4A5768" stroke-width="1.15" stroke-dasharray="4 3"/>
+        <text x="28" y="874" text-anchor="start" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#0F1F33">Expansion stage</text>
+        <text x="28" y="890" text-anchor="start" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#4A5768">Not tracked</text>
+        </g>
+        <g class="journey-after-expansion">
+        <text x="16" y="920" text-anchor="start" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#0F1F33">Downgrades</text>
+        <text x="344" y="920" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="14" font-weight="500" fill="#0F1F33">−$0.4M</text>
+        <line x1="16" y1="936" x2="344" y2="936" stroke="#D9D2C2" stroke-width="1"/>
+        <text x="16" y="960" text-anchor="start" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#0F1F33">Churn</text>
+        <text x="344" y="960" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="14" font-weight="500" fill="#0F1F33">−$0.7M</text>
+        <line x1="16" y1="976" x2="344" y2="976" stroke="#D9D2C2" stroke-width="1"/>
+        <text x="16" y="1000" text-anchor="start" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#0F1F33">NRR</text>
+        <text x="344" y="1000" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="14" font-weight="500" fill="#0F1F33">102%</text>
+        <line x1="16" y1="1016" x2="344" y2="1016" stroke="#D9D2C2" stroke-width="1"/>
+        <text x="16" y="1040" text-anchor="start" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#0F1F33">GRR</text>
+        <text x="344" y="1040" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="14" font-weight="500" fill="#0F1F33">92%</text>
+        <line x1="16" y1="1056" x2="344" y2="1056" stroke="#D9D2C2" stroke-width="1"/>
+        <text x="16" y="1080" text-anchor="start" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#0F1F33">Ending ARR</text>
+        <text x="344" y="1080" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="14" font-weight="500" fill="#0F1F33">$15.3M</text>
+        <text x="16" y="1100" text-anchor="start" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#4A5768">incl. +$1.0M new</text>
+        <g class="journey-only" aria-hidden="true">
+        <text x="16" y="1132" text-anchor="start" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#4A5768">± pts = estimated potential impact</text>
+        <text x="16" y="1152" text-anchor="start" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#4A5768">Ranges are estimates based on records</text>
+        <text x="16" y="1170" text-anchor="start" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#4A5768">that fail your rules. They show possible</text>
+        <text x="16" y="1188" text-anchor="start" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#4A5768">impact, not a promise about any figure.</text>
+        <text x="16" y="1214" text-anchor="start" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#4A5768">Not tracked = no stage or field in the</text>
+        <text x="16" y="1232" text-anchor="start" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#4A5768">CRM captures this step.</text>
+        </g>
+        </g>
+        </g>
+        </g>
         </svg>
+        </div>
       </div>
     </figure>
   </div>
@@ -726,6 +797,83 @@ footer .fnav a:hover{color:var(--ink);}
         if (first) first.focus();
       }
     });
+  }
+  var journeyCard = document.getElementById('journey-card');
+  var journeyWithout = document.getElementById('journey-without');
+  var journeyWith = document.getElementById('journey-with');
+  var journeyCaption = document.getElementById('journey-caption');
+  var journeyFrame = document.getElementById('journey-frame');
+  var journeyChosen = false;
+  var journeyAriaWithout = "Revenue journey, last 12 months. MQL 1,000. Meeting booked 680, 68 percent, about 3 days. Meeting completed 456, 67 percent, about 5 days. Pipeline 255, 56 percent, about 2 days. Closed won 59, ACV 18 thousand dollars, new ARR plus 1.0 million, 23 percent, about 32 days. Starting ARR 14.0 million. Upgrades plus 1.4 million. Downgrades minus 0.4 million. Churn minus 0.7 million. Net revenue retention 102 percent. Gross revenue retention 92 percent. Ending ARR 15.3 million, including plus 1.0 million new ARR.";
+  var journeyAriaWith = journeyAriaWithout.replace(
+    "Closed won 59, ACV 18 thousand dollars, new ARR plus 1.0 million, 23 percent, about 32 days. ",
+    "Closed won 59, ACV 18 thousand dollars, new ARR plus 1.0 million, 23 percent, about 32 days. Estimated potential impact: 12 records fail your rules for this step. If they're counted wrongly, this rate could be anywhere from 18% to 28%. This range estimates how much data errors could move the rate. Onboarding is not tracked. "
+  ).replace(
+    "Meeting booked 680, 68 percent, about 3 days. ",
+    "Meeting booked 680, 68 percent, about 3 days. Estimated potential impact: 30 records fail your rules for this step. If they're counted wrongly, this rate could be anywhere from 65% to 71%. This range estimates how much data errors could move the rate. "
+  ).replace(
+    "Pipeline 255, 56 percent, about 2 days. ",
+    "Pipeline 255, 56 percent, about 2 days. Estimated potential impact: 18 records fail your rules for this step. If they're counted wrongly, this rate could be anywhere from 52% to 60%. This range estimates how much data errors could move the rate. "
+  ) + " Upgrades include an expansion stage that is not tracked. Three rules flag 60 records. Two steps are not tracked. Plus or minus points means estimated potential impact. Ranges are estimates based on records that fail your rules. They show possible impact, not a promise about any figure. Not tracked means no stage or field in the CRM captures this step.";
+  function journeySvg(){
+    return window.matchMedia('(max-width: 720px)').matches
+      ? document.querySelector('.journey-mobile')
+      : document.querySelector('.journey-desktop');
+  }
+  function cropJourney(){
+    if (!journeyFrame || !journeyCard) return;
+    var svg = journeySvg();
+    var width = svg.getBoundingClientRect().width;
+    var vb = svg.viewBox.baseVal;
+    if (!width || !vb.width) return;
+    var scale = width / vb.width;
+    var showGaps = journeyCard.classList.contains('is-with');
+    var max = 0;
+    svg.querySelectorAll('text, circle, path, line, rect').forEach(function(el){
+      if (!showGaps && el.closest('.journey-only, .journey-gap')) return;
+      var b = el.getBoundingClientRect();
+      if (b.bottom > max) max = b.bottom;
+    });
+    var top = svg.getBoundingClientRect().top;
+    journeyFrame.style.height = Math.ceil(max - top + 18 * scale) + 'px';
+  }
+  function setJourney(mode){
+    var on = mode === 'with';
+    journeyCard.classList.toggle('is-with', on);
+    journeyWithout.setAttribute('aria-pressed', on ? 'false' : 'true');
+    journeyWith.setAttribute('aria-pressed', on ? 'true' : 'false');
+    journeyCaption.textContent = on ? 'What Buoy finds underneath.' : 'What the dashboard shows.';
+    var label = on ? journeyAriaWith : journeyAriaWithout;
+    document.querySelectorAll('.journey').forEach(function(svg){
+      svg.setAttribute('aria-label', label);
+    });
+    journeyCard.querySelectorAll('.journey-only, .journey-gap').forEach(function(el){
+      if (on) el.removeAttribute('aria-hidden');
+      else el.setAttribute('aria-hidden', 'true');
+    });
+    cropJourney();
+  }
+  if (journeyCard && journeyWithout && journeyWith){
+    journeyWithout.addEventListener('click', function(){ journeyChosen = true; setJourney('without'); });
+    journeyWith.addEventListener('click', function(){ journeyChosen = true; setJourney('with'); });
+    var journeyToggle = document.querySelector('.journey-toggle');
+    journeyToggle.addEventListener('keydown', function(e){
+      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+      e.preventDefault();
+      journeyChosen = true;
+      var next = e.key === 'ArrowRight' ? journeyWith : journeyWithout;
+      next.focus();
+      setJourney(next === journeyWith ? 'with' : 'without');
+    });
+    setJourney('without');
+    var journeyReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!journeyReduced){
+      setTimeout(function(){
+        if (!journeyChosen) setJourney('with');
+      }, 2500);
+    }
+    window.addEventListener('resize', cropJourney);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(cropJourney);
   }
   var siteNav = document.getElementById('site-nav');
   if (siteNav){
