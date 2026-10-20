@@ -344,6 +344,19 @@ nav.wrap{
 .tier ul{list-style:none; padding:0; margin:20px 0 20px;}
 .tier li{font-size:14.5px; color:var(--slate); padding:10px 0; border-top:1px solid var(--line);}
 .tier .btn{margin-top:auto; align-self:flex-start;}
+.tier.is-start{position:relative;}
+.tier-flag{
+  position:absolute; top:0; left:24px; transform:translateY(-50%);
+  margin:0; padding:4px 8px; background:var(--navy); color:var(--paper);
+  font-family:Inter, sans-serif; font-size:12px; font-weight:600; line-height:1.3;
+}
+.tier-term{
+  margin:16px 0 0;
+  font-family:"JetBrains Mono", ui-monospace, monospace;
+  font-size:13px; letter-spacing:0.04em; color:var(--ink); font-weight:500;
+}
+.tier .blurb{margin:16px 0 0; font-size:15px; line-height:1.5; color:var(--slate);}
+.tier .upsell{margin:12px 0 0; font-size:15px; line-height:1.45; color:var(--ink); font-weight:600;}
 
 .final-cta{background:var(--navy); text-align:center; padding:104px 0;}
 .final-cta h2{font-size:52px; line-height:1.05; color:var(--paper); max-width:16ch; margin:0 auto 16px;}
@@ -743,7 +756,6 @@ footer .fnav a:hover{color:var(--ink);}
 </section>
 
 <section class="section plans" id="plans">
-  <span id="pricing" class="anchor"></span>
   <div class="wrap">
     <div class="problem-list">
       <article class="problem-block plan" id="audit">
@@ -772,8 +784,8 @@ footer .fnav a:hover{color:var(--ink);}
 <section class="section fields" id="fields">
   <div class="wrap">
     <div class="section-head">
-      <h2>AI fields: your sales process</h2>
-      <p>Exit criteria sit on each stage. A deal moves when that work is done.</p>
+      <h2>Keep it right</h2>
+      <p>People leave, the business changes, and the CRM drifts. Buoy keeps your process true, and AI fills out the fields your process needs.</p>
     </div>
     <p class="pipe-caption">Pipeline based on your custom exit criteria, evaluated by AI across call transcripts, emails and notes, inside or outside your CRM.</p>
     <div class="pipe-scroll">
@@ -882,8 +894,8 @@ footer .fnav a:hover{color:var(--ink);}
 <section class="section insights" id="insights">
   <div class="wrap">
     <div class="section-head">
-      <h2>AI insights: generic advice vs. Buoy</h2>
-      <p>One pass reads the funnel. Buoy reads which missing steps change the outcome.</p>
+      <h2>Know what it means</h2>
+      <p>Generic AI reads your numbers. Buoy reads them against how your process is supposed to work.</p>
     </div>
     <div class="insight-grid">
       <article class="insight-card">
@@ -908,6 +920,40 @@ footer .fnav a:hover{color:var(--ink);}
       </article>
     </div>
     <p class="insight-note">Example data. Not a real customer.</p>
+  </div>
+</section>
+
+<section class="section" id="pricing">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>The packages</h2>
+      <p>Start with a one-time Audit. Subscribe when you want the rest.</p>
+    </div>
+    <div class="pricing-grid">
+      <article class="tier is-start">
+        <p class="tier-flag">Start here!</p>
+        <p class="stage-kicker">Audit</p>
+        <h3>Get it right from the start</h3>
+        <p class="tier-term">One-time</p>
+        <p class="blurb">A one-time setup and cleanup. The work runs inside the Audit Workspace during the engagement, and at the end you export everything.</p>
+        <p class="upsell">Subscribe to keep it right. Same login, more features.</p>
+        <button class="btn btn-primary" onclick="openAuditModal(event)">Let's chat</button>
+      </article>
+      <article class="tier">
+        <p class="stage-kicker">Validation + AI fields</p>
+        <h3>Keep it right</h3>
+        <p class="tier-term">Subscription</p>
+        <p class="blurb">The CRM stays matched to your process as people and the business change. AI fills the fields that process needs.</p>
+        <button class="btn btn-primary" onclick="openAuditModal(event)">Let's chat</button>
+      </article>
+      <article class="tier">
+        <p class="stage-kicker">Intelligence</p>
+        <h3>Know what it means</h3>
+        <p class="tier-term">Subscription</p>
+        <p class="blurb">Ask Buoy answers in plain language from the records underneath.</p>
+        <button class="btn btn-primary" onclick="openAuditModal(event)">Let's chat</button>
+      </article>
+    </div>
   </div>
 </section>
 
