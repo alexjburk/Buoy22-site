@@ -181,18 +181,13 @@ nav.wrap{
 .plans{background:var(--paper);}
 .insights{background:var(--paper);}
 .fields .section-head, .insights .section-head{max-width:40em;}
-.pipe-switch{display:inline-flex; border:1px solid #0F1F33; margin:0 0 12px;}
-.pipe-switch button{
-  appearance:none; border:0; background:transparent; color:#0F1F33;
-  font-family:Inter, sans-serif; font-size:14px; font-weight:500;
-  min-height:44px; padding:8px 16px; cursor:pointer;
-}
-.pipe-switch button[aria-pressed="true"]{background:#0F1F33; color:#FBF8F1;}
-.pipe-switch button:focus-visible{outline:2px solid #0F1F33; outline-offset:2px;}
 .pipe-caption{margin:0 0 16px; font-size:15px; line-height:1.45; color:var(--slate); max-width:46em;}
 .pipe-scroll{overflow-x:auto; -webkit-overflow-scrolling:touch; border:1px solid #D9D2C2; background:#fff;}
-.pipe{width:100%; min-width:820px; border-collapse:collapse; background:#fff;}
-.pipe th, .pipe td{padding:11px 14px; text-align:left; vertical-align:middle; white-space:nowrap; border-bottom:1px solid #E4DED0;}
+.pipe{width:100%; border-collapse:collapse; background:#fff;}
+.pipe th, .pipe td{padding:11px 12px; text-align:left; vertical-align:middle; white-space:nowrap; border-bottom:1px solid #E4DED0;}
+.pipe .drift{display:inline-flex; align-items:baseline; justify-content:flex-end; gap:8px;}
+.pipe s{color:#4A5768; font-weight:400; text-decoration:line-through;}
+.pipe strong{font-weight:600; color:#0F1F33;}
 .pipe .pipe-title th{
   font-family:Newsreader, serif; font-size:22px; font-weight:500; letter-spacing:-0.02em;
   color:#0F1F33; background:#FBF8F1; padding:16px 14px; border-bottom:1px solid #D9D2C2;
@@ -415,8 +410,23 @@ footer .fnav a:hover{color:var(--ink);}
   .final-cta{padding:72px 0;}
   .final-cta h2{font-size:36px;}
   .stages, .q-grid, .pricing-grid, .insight-grid{grid-template-columns:1fr;}
-  .pipe-switch{display:flex; width:100%;}
-  .pipe-switch button{flex:1;}
+  .pipe-scroll{overflow:visible; border:0;}
+  .pipe, .pipe thead, .pipe tbody, .pipe tr, .pipe th, .pipe td{display:block; width:auto;}
+  .pipe thead tr:last-child{display:none;}
+  .pipe tbody tr{border:1px solid #D9D2C2; margin:0 0 12px; background:#fff;}
+  .pipe tbody td:empty{display:none;}
+  .pipe tbody th{background:#FBF8F1; font-size:16px; white-space:normal;}
+  .pipe tbody td{
+    display:flex; justify-content:space-between; align-items:baseline; gap:12px;
+    white-space:normal; text-align:right;
+  }
+  .pipe tbody td::before{
+    content:attr(data-label);
+    font-family:Inter, sans-serif; font-size:12px; font-weight:500; letter-spacing:0.04em;
+    text-transform:uppercase; color:#4A5768; text-align:left;
+  }
+  .pipe .drift{flex-direction:column; align-items:flex-end; gap:2px;}
+  .pipe-sum{background:#F7F4EC;}
   .tier{border-right:none; border-top:1px solid var(--line);}
   .tier:first-child{border-top:none;}
   .stage .stage-kicker{min-height:0;}
@@ -765,11 +775,7 @@ footer .fnav a:hover{color:var(--ink);}
       <h2>AI fields: your sales process</h2>
       <p>Exit criteria sit on each stage. A deal moves when that work is done.</p>
     </div>
-    <div class="pipe-switch" role="group" aria-label="Pipeline view">
-      <button type="button" id="pipe-rep" aria-pressed="true">Rep pipeline</button>
-      <button type="button" id="pipe-buoy" aria-pressed="false">Buoy pipeline</button>
-    </div>
-    <p class="pipe-caption" id="pipe-caption">Stages as reps report them, with most of the pipeline sitting in late stages.</p>
+    <p class="pipe-caption">Pipeline based on your custom exit criteria, evaluated by AI across call transcripts, emails and notes, inside or outside your CRM.</p>
     <div class="pipe-scroll">
       <table class="pipe">
         <thead>
@@ -787,71 +793,71 @@ footer .fnav a:hover{color:var(--ink);}
         <tbody>
           <tr>
             <th scope="row">Meeting Booked</th>
-            <td class="num">10%</td>
-            <td class="num" data-rep="$48,000" data-buoy="$84,000">$48,000</td>
-            <td class="num">$12,000</td>
-            <td class="num" data-rep="5 days" data-buoy="7 days">5 days</td>
-            <td class="num" data-rep="4" data-buoy="7">4</td>
-            <td class="num" data-rep="$24,000" data-buoy="$36,000">$24,000</td>
+            <td class="num" data-label="Weight">10%</td>
+            <td class="num" data-label="New Business"><span class="drift"><s>$48,000</s> <strong>$84,000</strong></span></td>
+            <td class="num" data-label="ACV">$12,000</td>
+            <td class="num" data-label="Avg. Time in Stage"><span class="drift"><s>5 days</s> <strong>7 days</strong></span></td>
+            <td class="num" data-label="# of Deals"><span class="drift"><s>4</s> <strong>7</strong></span></td>
+            <td class="num" data-label="Q4 Pipe"><span class="drift"><s>$24,000</s> <strong>$36,000</strong></span></td>
           </tr>
           <tr>
             <th scope="row">Initial Discovery</th>
-            <td class="num">20%</td>
-            <td class="num" data-rep="$70,000" data-buoy="$112,000">$70,000</td>
-            <td class="num">$14,000</td>
-            <td class="num" data-rep="8 days" data-buoy="12 days">8 days</td>
-            <td class="num" data-rep="5" data-buoy="8">5</td>
-            <td class="num" data-rep="$42,000" data-buoy="$56,000">$42,000</td>
+            <td class="num" data-label="Weight">20%</td>
+            <td class="num" data-label="New Business"><span class="drift"><s>$70,000</s> <strong>$112,000</strong></span></td>
+            <td class="num" data-label="ACV">$14,000</td>
+            <td class="num" data-label="Avg. Time in Stage"><span class="drift"><s>8 days</s> <strong>12 days</strong></span></td>
+            <td class="num" data-label="# of Deals"><span class="drift"><s>5</s> <strong>8</strong></span></td>
+            <td class="num" data-label="Q4 Pipe"><span class="drift"><s>$42,000</s> <strong>$56,000</strong></span></td>
           </tr>
           <tr>
             <th scope="row">Solution Presentation</th>
-            <td class="num">30%</td>
-            <td class="num">$96,000</td>
-            <td class="num">$16,000</td>
-            <td class="num" data-rep="11 days" data-buoy="14 days">11 days</td>
-            <td class="num">6</td>
-            <td class="num" data-rep="$64,000" data-buoy="$48,000">$64,000</td>
+            <td class="num" data-label="Weight">30%</td>
+            <td class="num" data-label="New Business">$96,000</td>
+            <td class="num" data-label="ACV">$16,000</td>
+            <td class="num" data-label="Avg. Time in Stage"><span class="drift"><s>11 days</s> <strong>14 days</strong></span></td>
+            <td class="num" data-label="# of Deals">6</td>
+            <td class="num" data-label="Q4 Pipe"><span class="drift"><s>$64,000</s> <strong>$48,000</strong></span></td>
           </tr>
           <tr>
             <th scope="row">Multi-Threaded Validation</th>
-            <td class="num">50%</td>
-            <td class="num" data-rep="$126,000" data-buoy="$72,000">$126,000</td>
-            <td class="num">$18,000</td>
-            <td class="num" data-rep="16 days" data-buoy="18 days">16 days</td>
-            <td class="num" data-rep="7" data-buoy="4">7</td>
-            <td class="num" data-rep="$90,000" data-buoy="$36,000">$90,000</td>
+            <td class="num" data-label="Weight">50%</td>
+            <td class="num" data-label="New Business"><span class="drift"><s>$126,000</s> <strong>$72,000</strong></span></td>
+            <td class="num" data-label="ACV">$18,000</td>
+            <td class="num" data-label="Avg. Time in Stage"><span class="drift"><s>16 days</s> <strong>18 days</strong></span></td>
+            <td class="num" data-label="# of Deals"><span class="drift"><s>7</s> <strong>4</strong></span></td>
+            <td class="num" data-label="Q4 Pipe"><span class="drift"><s>$90,000</s> <strong>$36,000</strong></span></td>
           </tr>
           <tr>
             <th scope="row">Commercial Justification</th>
-            <td class="num">70%</td>
-            <td class="num" data-rep="$160,000" data-buoy="$32,000">$160,000</td>
-            <td class="num" data-rep="$20,000" data-buoy="$16,000">$20,000</td>
-            <td class="num" data-rep="21 days" data-buoy="20 days">21 days</td>
-            <td class="num" data-rep="8" data-buoy="2">8</td>
-            <td class="num" data-rep="$120,000" data-buoy="$16,000">$120,000</td>
+            <td class="num" data-label="Weight">70%</td>
+            <td class="num" data-label="New Business"><span class="drift"><s>$160,000</s> <strong>$32,000</strong></span></td>
+            <td class="num" data-label="ACV"><span class="drift"><s>$20,000</s> <strong>$16,000</strong></span></td>
+            <td class="num" data-label="Avg. Time in Stage"><span class="drift"><s>21 days</s> <strong>20 days</strong></span></td>
+            <td class="num" data-label="# of Deals"><span class="drift"><s>8</s> <strong>2</strong></span></td>
+            <td class="num" data-label="Q4 Pipe"><span class="drift"><s>$120,000</s> <strong>$16,000</strong></span></td>
           </tr>
           <tr>
             <th scope="row">Contract Execution</th>
-            <td class="num">90%</td>
-            <td class="num" data-rep="$140,000" data-buoy="$14,000">$140,000</td>
-            <td class="num">$14,000</td>
-            <td class="num" data-rep="14 days" data-buoy="9 days">14 days</td>
-            <td class="num" data-rep="10" data-buoy="1">10</td>
-            <td class="num" data-rep="$126,000" data-buoy="$14,000">$126,000</td>
+            <td class="num" data-label="Weight">90%</td>
+            <td class="num" data-label="New Business"><span class="drift"><s>$140,000</s> <strong>$14,000</strong></span></td>
+            <td class="num" data-label="ACV">$14,000</td>
+            <td class="num" data-label="Avg. Time in Stage"><span class="drift"><s>14 days</s> <strong>9 days</strong></span></td>
+            <td class="num" data-label="# of Deals"><span class="drift"><s>10</s> <strong>1</strong></span></td>
+            <td class="num" data-label="Q4 Pipe"><span class="drift"><s>$126,000</s> <strong>$14,000</strong></span></td>
           </tr>
           <tr class="pipe-sum">
             <th scope="row">Total pipeline</th>
             <td class="num"></td>
-            <td class="num" data-rep="$640,000" data-buoy="$410,000">$640,000</td>
+            <td class="num" data-label="New Business"><span class="drift"><s>$640,000</s> <strong>$410,000</strong></span></td>
             <td class="num"></td>
             <td class="num"></td>
-            <td class="num" data-rep="40" data-buoy="28">40</td>
+            <td class="num" data-label="# of Deals"><span class="drift"><s>40</s> <strong>28</strong></span></td>
             <td class="num"></td>
           </tr>
           <tr class="pipe-sum">
             <th scope="row">Weighted pipeline</th>
             <td class="num"></td>
-            <td class="num" data-rep="$348,600" data-buoy="$130,600">$348,600</td>
+            <td class="num" data-label="New Business"><span class="drift"><s>$348,600</s> <strong>$130,600</strong></span></td>
             <td class="num"></td>
             <td class="num"></td>
             <td class="num"></td>
@@ -860,7 +866,7 @@ footer .fnav a:hover{color:var(--ink);}
           <tr class="pipe-sum">
             <th scope="row">Pipeline coverage</th>
             <td class="num"></td>
-            <td class="num" data-rep="2.2×" data-buoy="1.4×">2.2×</td>
+            <td class="num" data-label="New Business"><span class="drift"><s>2.2×</s> <strong>1.4×</strong></span></td>
             <td class="num"></td>
             <td class="num"></td>
             <td class="num"></td>
@@ -1060,31 +1066,6 @@ footer .fnav a:hover{color:var(--ink);}
     }
     window.addEventListener('resize', cropJourney);
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(cropJourney);
-  }
-  var pipeRep = document.getElementById('pipe-rep');
-  var pipeBuoy = document.getElementById('pipe-buoy');
-  var pipeCaption = document.getElementById('pipe-caption');
-  function setPipe(mode){
-    var buoy = mode === 'buoy';
-    pipeRep.setAttribute('aria-pressed', buoy ? 'false' : 'true');
-    pipeBuoy.setAttribute('aria-pressed', buoy ? 'true' : 'false');
-    document.querySelectorAll('#fields [data-rep]').forEach(function(el){
-      el.textContent = buoy ? el.getAttribute('data-buoy') : el.getAttribute('data-rep');
-    });
-    pipeCaption.textContent = buoy
-      ? 'Pipeline based on your custom exit criteria, evaluated by AI across call transcripts, emails and notes, inside or outside your CRM.'
-      : 'Stages as reps report them, with most of the pipeline sitting in late stages.';
-  }
-  if (pipeRep && pipeBuoy){
-    pipeRep.addEventListener('click', function(){ setPipe('rep'); });
-    pipeBuoy.addEventListener('click', function(){ setPipe('buoy'); });
-    pipeRep.parentElement.addEventListener('keydown', function(e){
-      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
-      e.preventDefault();
-      var next = e.key === 'ArrowRight' ? pipeBuoy : pipeRep;
-      next.focus();
-      setPipe(next === pipeBuoy ? 'buoy' : 'rep');
-    });
   }
   var siteNav = document.getElementById('site-nav');
   if (siteNav){
