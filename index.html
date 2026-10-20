@@ -231,9 +231,68 @@ nav.wrap{
 }
 .fnav-chat:hover{color:var(--ink);}
 .section-head{max-width:640px; margin-bottom:48px;}
+.step .section-head{max-width:44em;}
 .section-head h2{font-size:44px; line-height:1.08;}
 .section-head p{color:var(--slate); font-size:17px; margin:14px 0 0;}
 .section-head a{text-underline-offset:3px;}
+.step-num{
+  font-family:Newsreader, serif; font-weight:500; color:var(--navy);
+  margin-right:0.28em;
+}
+.cleanup{
+  display:grid; grid-template-columns:minmax(240px, 320px) 40px minmax(0, 1fr);
+  gap:8px 4px; align-items:center; margin:0;
+  background:#FBF8F1; border:1px solid #D9D2C2; padding:18px 18px 16px;
+}
+.cleanup-kicker{
+  margin:0 0 10px;
+  font-family:"JetBrains Mono", ui-monospace, monospace;
+  font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#4A5768;
+}
+.prop-list{list-style:none; margin:0; padding:0;}
+.prop-list li{
+  display:flex; justify-content:space-between; align-items:center; gap:12px;
+  padding:8px 0; border-top:1px solid #E4DED0; font-size:15px; line-height:1.3;
+}
+.prop-list li:first-child{border-top:none; padding-top:0;}
+.prop-list li:last-child{padding-bottom:0;}
+.prop-list .is-delete .prop-name{color:#4A5768; text-decoration:line-through;}
+.mark{
+  flex:none;
+  font-family:"JetBrains Mono", ui-monospace, monospace;
+  font-size:12px; letter-spacing:0.06em; text-transform:uppercase; line-height:1.3;
+  padding:3px 7px;
+}
+.mark-keep{color:#0F1F33; border:1px solid #0F1F33;}
+.mark-fix{color:#A8402B; background:#F3E0DB;}
+.mark-del{color:#4A5768; border:1px solid #C4BBA8;}
+.cleanup-arrow{display:flex; justify-content:center;}
+.cleanup-arrow svg{display:block;}
+.journey-shape{display:flex; align-items:flex-end; gap:14px; min-width:0;}
+.funnel-body{flex:1; min-width:0; max-width:520px;}
+.funnel-stages{
+  list-style:none; display:grid; grid-template-columns:repeat(4, minmax(0, 1fr));
+  gap:6px; margin:0 0 6px; padding:0;
+}
+.funnel-stages li{
+  margin:0; font-size:13px; font-weight:600; line-height:1.25; color:#0F1F33; text-align:center;
+}
+.funnel-svg{display:block; width:100%; height:96px;}
+.funnel-end{display:flex; align-items:center; gap:12px; flex:none; margin:0 0 4px;}
+.funnel-won{
+  margin:0; background:#0F1F33; color:#FBF8F1;
+  border-radius:999px; padding:10px 14px;
+  font-size:13px; font-weight:600; line-height:1.2; text-align:center;
+}
+.funnel-wheel{
+  position:relative; width:84px; height:84px; margin:0;
+  display:grid; place-items:center;
+}
+.funnel-wheel span{
+  position:relative; z-index:1;
+  font-size:13px; font-weight:600; line-height:1.15; color:#0F1F33; text-align:center;
+}
+.funnel-wheel svg{position:absolute; inset:0;}
 
 .q-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:32px;}
 .rule-card{margin:0; padding:18px 18px 16px; border:1px solid var(--line); background:#fff;}
@@ -398,6 +457,8 @@ footer .fnav a:hover{color:var(--ink);}
 
 @media (max-width: 980px){
   .hero h1{font-size:60px;}
+  .cleanup{grid-template-columns:1fr; gap:12px;}
+  .cleanup-arrow svg{transform:rotate(90deg);}
 }
 @media (max-width: 720px){
   .wrap{padding:0 20px;}
@@ -426,6 +487,21 @@ footer .fnav a:hover{color:var(--ink);}
   .final-cta{padding:72px 0;}
   .final-cta h2{font-size:36px;}
   .stages, .q-grid, .pricing-grid, .insight-grid{grid-template-columns:1fr;}
+  .cleanup{grid-template-columns:1fr; gap:14px; padding:16px;}
+  .cleanup-arrow svg{transform:rotate(90deg);}
+  .journey-shape{flex-direction:column; align-items:stretch; gap:10px;}
+  .funnel-body{max-width:none;}
+  .funnel-svg{display:none;}
+  .funnel-end{flex-direction:column; align-items:center; gap:10px; margin:0;}
+  .funnel-stages{display:flex; flex-direction:column; align-items:center; width:100%; gap:8px; margin:0;}
+  .funnel-stages li{
+    width:100%; padding:8px 10px; border:1px solid #0F1F33; background:#fff;
+  }
+  .funnel-stages li:nth-child(2){width:86%;}
+  .funnel-stages li:nth-child(3){width:72%;}
+  .funnel-stages li:nth-child(4){width:58%;}
+  .funnel-won{width:auto; min-width:42%; margin:0; border-radius:18px; white-space:nowrap;}
+  .funnel-wheel{margin:4px 0 0;}
   .pipe-scroll{overflow:visible; border:0;}
   .pipe, .pipe thead, .pipe tbody, .pipe tr, .pipe th, .pipe td{display:block; width:auto;}
   .pipe thead tr:last-child{display:none;}
@@ -758,20 +834,67 @@ footer .fnav a:hover{color:var(--ink);}
   </div>
 </section>
 
-<section class="section" id="get-right">
+<section class="section step" id="get-right">
   <div class="wrap">
     <div class="section-head">
-      <h2>Get it right</h2>
-      <p>Get it right is the Audit, a one-time setup and cleanup in the Audit Workspace. Your process and definitions get written down there, and the CRM gets cleaned to match. At the end, you export everything.</p>
+      <h2><span class="step-num">1</span>Get it right</h2>
+      <p>Get it right is the Audit. Setup and cleanup happen in the Audit Workspace: your process and definitions get written down, and the CRM properties get cleaned up. At the end, you export everything.</p>
     </div>
+    <figure class="cleanup">
+      <div>
+        <p class="cleanup-kicker">CRM properties</p>
+        <ul class="prop-list">
+          <li><span class="prop-name">Deal stage</span><span class="mark mark-fix">Fix</span></li>
+          <li><span class="prop-name">Close date</span><span class="mark mark-fix">Fix</span></li>
+          <li class="is-delete"><span class="prop-name">Next step</span><span class="mark mark-del">Delete</span></li>
+          <li><span class="prop-name">Lead source</span><span class="mark mark-keep">Keep</span></li>
+          <li><span class="prop-name">Amount</span><span class="mark mark-keep">Keep</span></li>
+          <li><span class="prop-name">Loss reason</span><span class="mark mark-fix">Fix</span></li>
+        </ul>
+      </div>
+      <div class="cleanup-arrow" aria-hidden="true">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+          <path d="M4 14H22M16 8l6 6-6 6" stroke="#0F1F33" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div>
+        <p class="cleanup-kicker">Customer journey</p>
+        <div class="journey-shape">
+          <div class="funnel-body">
+            <ol class="funnel-stages">
+              <li>MQL</li>
+              <li>Meeting booked</li>
+              <li>Meeting completed</li>
+              <li>Pipeline</li>
+            </ol>
+            <svg class="funnel-svg" viewBox="0 0 400 100" preserveAspectRatio="none" aria-hidden="true">
+              <path d="M2 4 L398 28 L398 72 L2 96 Z" fill="#fff" stroke="#0F1F33" stroke-width="1.5" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+              <line x1="100" y1="10" x2="100" y2="90" stroke="#C4BBA8" stroke-width="1" stroke-dasharray="2 4" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+              <line x1="200" y1="16" x2="200" y2="84" stroke="#C4BBA8" stroke-width="1" stroke-dasharray="2 4" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+              <line x1="300" y1="22" x2="300" y2="78" stroke="#C4BBA8" stroke-width="1" stroke-dasharray="2 4" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+            </svg>
+          </div>
+          <div class="funnel-end">
+            <p class="funnel-won">Closed won</p>
+            <p class="funnel-wheel">
+              <svg viewBox="0 0 84 84" aria-hidden="true">
+                <circle cx="42" cy="42" r="40" fill="none" stroke="#0F1F33" stroke-width="1.25"/>
+                <circle cx="42" cy="42" r="26" fill="none" stroke="#C4BBA8" stroke-width="1.25"/>
+              </svg>
+              <span>Recurring</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </figure>
   </div>
 </section>
 
-<section class="section fields" id="fields">
+<section class="section fields step" id="fields">
   <div class="wrap">
     <div class="section-head">
-      <h2>Keep it right</h2>
-      <p>Keep it right is Validation. Rules, plus a HubSpot extension, stop drift as reps work. AI fields fill your CRM from call transcripts and emails.</p>
+      <h2><span class="step-num">2</span>Keep it right</h2>
+      <p>Keep it right is Validation. Rules, plus a HubSpot extension, stop drift as reps work. AI fields fill your CRM from transcripts and emails, so the data doesn't drift.</p>
     </div>
     <p class="pipe-caption">Pipeline based on your custom exit criteria, evaluated by AI across call transcripts, emails and notes, inside or outside your CRM.</p>
     <div class="pipe-scroll">
@@ -877,11 +1000,11 @@ footer .fnav a:hover{color:var(--ink);}
   </div>
 </section>
 
-<section class="section insights" id="insights">
+<section class="section insights step" id="insights">
   <div class="wrap">
     <div class="section-head">
-      <h2>Know what it means</h2>
-      <p>Know what it means is Intelligence. You get CRO-level insights and actions, delivered before you ask. They read your numbers against how your process is supposed to work.</p>
+      <h2><span class="step-num">3</span>Make it right</h2>
+      <p>Make it right is how you hit your goals. Intelligence delivers CRO-level insights and actions to you, before you ask. They read your numbers against how your process is supposed to work.</p>
     </div>
     <div class="insight-grid">
       <article class="insight-card">
