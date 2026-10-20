@@ -125,7 +125,9 @@ nav.wrap{
 .nav-login:hover{color:var(--navy);}
 .navlinks .nav-login{display:none;}
 
-.hero{padding:88px 0 96px; background:var(--paper);}
+.hero{padding:88px 0 72px; background:var(--paper);}
+.does{background:var(--paper); padding:0 0 72px; border-top:none;}
+.does p{margin:0; max-width:42em; font-size:22px; line-height:1.45; color:var(--ink);}
 .hero .wrap{display:grid; grid-template-columns:1fr; gap:48px; align-items:start;}
 .hero-copy{max-width:920px;}
 .eyebrow{
@@ -215,7 +217,7 @@ nav.wrap{
 .debate .section-head h2{font-size:60px; line-height:1.02; letter-spacing:-0.03em; max-width:16em;}
 .debate .section-head p{font-size:18px; line-height:1.55; margin-top:28px; max-width:42em;}
 .debate .pull{margin-top:72px;}
-.debate .pull-promise{margin-bottom:0;}
+.debate .pull-promise{margin:28px 0 0;}
 .plan .stage-kicker{font-size:12px; line-height:1.4; letter-spacing:0.12em; margin:18px 0 0;}
 .plan-chat{
   display:inline-flex; align-items:center; min-height:44px; margin-top:4px;
@@ -408,7 +410,9 @@ footer .fnav a:hover{color:var(--ink);}
   .navlinks.is-open .nav-login{display:flex;}
   footer .fnav{width:100%; flex-wrap:wrap; overflow:visible;}
   footer .fnav a{white-space:nowrap; min-height:44px; display:inline-flex; align-items:center; padding:0 10px;}
-  .hero{padding:48px 0 64px;}
+  .hero{padding:48px 0 40px;}
+  .does{padding:0 0 48px;}
+  .does p{font-size:18px;}
   .hero .wrap{grid-template-columns:1fr; gap:36px;}
   .hero h1{font-size:44px;}
   .section{padding:64px 0;}
@@ -724,12 +728,41 @@ footer .fnav a:hover{color:var(--ink);}
   </div>
 </section>
 
+<section class="does" id="what">
+  <div class="wrap">
+    <p>Buoy makes sure your CRM data is right, shows whether you can trust it on one simple customer journey view, and helps your leadership team understand what it means.</p>
+  </div>
+</section>
+
+<section class="section debate" id="how-it-works">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Ask three teams, get three numbers.</h2>
+      <p>RevOps brings the numbers, and the meeting turns into a debate about whose number is right. The definitions were never written down, so the CRM drifts.</p>
+    </div>
+    <div class="q-grid">
+      <div class="rule-card">
+        <h4>Can I trust the forecast?</h4>
+        <p>Only if a stage means the same thing to every rep, and a close date reflects a real commitment.</p>
+      </div>
+      <div class="rule-card">
+        <h4>Where do we lose deals?</h4>
+        <p>Only if stage history and loss reasons are recorded the same way every time.</p>
+      </div>
+      <div class="rule-card">
+        <h4>Why do customers churn?</h4>
+        <p>Only if the CRM agrees with the system finance reports from.</p>
+      </div>
+    </div>
+    <p class="pull-promise">Buoy takes that question out of the conversation.</p>
+  </div>
+</section>
+
 <section class="section" id="get-right">
-  <span id="how-it-works" class="anchor"></span>
   <div class="wrap">
     <div class="section-head">
       <h2>Get it right</h2>
-      <p>The Audit writes down how your process should work and cleans the CRM to match.</p>
+      <p>Get it right is the Audit, a one-time setup and cleanup in the Audit Workspace. Your process and definitions get written down there, and the CRM gets cleaned to match. At the end, you export everything.</p>
     </div>
   </div>
 </section>
@@ -738,7 +771,7 @@ footer .fnav a:hover{color:var(--ink);}
   <div class="wrap">
     <div class="section-head">
       <h2>Keep it right</h2>
-      <p>Buoy keeps your process true, and AI fills out the fields your process needs.</p>
+      <p>Keep it right is Validation. Rules, plus a HubSpot extension, stop drift as reps work. AI fields fill your CRM from call transcripts and emails.</p>
     </div>
     <p class="pipe-caption">Pipeline based on your custom exit criteria, evaluated by AI across call transcripts, emails and notes, inside or outside your CRM.</p>
     <div class="pipe-scroll">
@@ -848,7 +881,7 @@ footer .fnav a:hover{color:var(--ink);}
   <div class="wrap">
     <div class="section-head">
       <h2>Know what it means</h2>
-      <p>Buoy reads your numbers against how your process is supposed to work.</p>
+      <p>Know what it means is Intelligence. You get CRO-level insights and actions, delivered before you ask. They read your numbers against how your process is supposed to work.</p>
     </div>
     <div class="insight-grid">
       <article class="insight-card">
