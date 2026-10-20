@@ -497,12 +497,29 @@ footer .fnav a:hover{color:var(--ink);}
               <button type="button" id="journey-without" aria-pressed="true">Without Buoy</button>
               <button type="button" id="journey-with" aria-pressed="false">With Buoy</button>
             </div>
-            <p class="journey-caption" id="journey-caption">What the dashboard shows.</p>
+            <p class="journey-caption" id="journey-caption">What the CRM reports today.</p>
           </div>
           <p class="journey-window">Last 12 months</p>
         </div>
         <div class="journey-frame" id="journey-frame">
         <svg class="journey journey-desktop" viewBox="0 48 1040 470" width="1040" height="470" role="img" aria-label="Revenue journey, last 12 months. MQL 1,000. Meeting booked 680, 68 percent, about 3 days. Meeting completed 456, 67 percent, about 5 days. Pipeline 255, 56 percent, about 2 days. Closed won 59, ACV 18 thousand dollars, new ARR plus 1.0 million, 23 percent, about 32 days. Starting ARR 14.0 million. Upgrades plus 1.4 million. Downgrades minus 0.4 million. Churn minus 0.7 million. Net revenue retention 102 percent. Gross revenue retention 92 percent. Ending ARR 15.3 million, including plus 1.0 million new ARR." xmlns="http://www.w3.org/2000/svg">
+        <defs>
+        <linearGradient id="exit-a" gradientUnits="userSpaceOnUse" x1="60" y1="310" x2="220" y2="370">
+        <stop offset="0" stop-color="#A8402B" stop-opacity="0.62"/>
+        <stop offset="0.65" stop-color="#A8402B" stop-opacity="0.4"/>
+        <stop offset="1" stop-color="#A8402B" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="exit-b" gradientUnits="userSpaceOnUse" x1="240" y1="300" x2="360" y2="360">
+        <stop offset="0" stop-color="#A8402B" stop-opacity="0.62"/>
+        <stop offset="0.65" stop-color="#A8402B" stop-opacity="0.4"/>
+        <stop offset="1" stop-color="#A8402B" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="exit-c" gradientUnits="userSpaceOnUse" x1="360" y1="290" x2="450" y2="345">
+        <stop offset="0" stop-color="#A8402B" stop-opacity="0.58"/>
+        <stop offset="0.7" stop-color="#A8402B" stop-opacity="0.35"/>
+        <stop offset="1" stop-color="#A8402B" stop-opacity="0"/>
+        </linearGradient>
+        </defs>
         <g class="journey-only" aria-hidden="true">
         <rect x="20" y="56" width="458" height="28" rx="14" fill="#F3E0DB"/>
         <circle cx="36" cy="70" r="8" fill="#A8402B"/>
@@ -517,17 +534,27 @@ footer .fnav a:hover{color:var(--ink);}
         <line x1="564" y1="216" x2="564" y2="248.0" stroke="#C4BBA8" stroke-width="1" stroke-dasharray="2 4" stroke-linecap="round"/>
         <line x1="764.4" y1="164" x2="764.4" y2="202.3" stroke="#C4BBA8" stroke-width="1" stroke-dasharray="2 4" stroke-linecap="round"/>
         <line x1="1011.6" y1="132" x2="1011.6" y2="202.3" stroke="#C4BBA8" stroke-width="1" stroke-dasharray="2 4" stroke-linecap="round"/>
-        <g class="journey-only" aria-hidden="true">
-        <path d="M 52 224 C 140 229, 230 236, 330 244 L 330 252 C 230 244, 140 237, 52 232 Z" fill="#0F1F33" fill-opacity="0.16"/>
-        <path d="M 52 324 C 160 312, 300 296, 508 278 L 508 286 C 300 304, 160 320, 52 332 Z" fill="#0F1F33" fill-opacity="0.2"/>
-        </g>
-        <g class="journey-messy">
-        <path d="M 140 220 C 168 220, 182 228, 196 236 C 218 250, 244 254, 274 250" fill="none" stroke="#4A5768" stroke-width="4" stroke-linecap="round"/>
-        <path d="M 292 302 C 324 324, 338 344, 346 358" fill="none" stroke="#4A5768" stroke-width="4" stroke-linecap="round"/>
-        <text x="96" y="206" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#0F1F33">Enters mid-funnel · no MQL date</text>
-        <text x="226" y="384" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#0F1F33">Leaves the funnel · no reason</text>
+        <g class="journey-flow-ribbons">
+        <path d="M 46.0 219.4 L 112.9 223.8 L 179.7 228.3 L 246.6 232.7 L 313.4 237.2 L 380.3 241.6 L 447.1 246.1 L 514.0 250.5 L 514.0 255.8 L 447.1 253.0 L 380.3 250.2 L 313.4 247.4 L 246.6 244.6 L 179.7 241.8 L 112.9 239.0 L 46.0 236.2 Z" fill="#0F1F33" fill-opacity="0.32"/>
+        <path d="M 46.0 238.6 L 112.9 241.2 L 179.7 243.7 L 246.6 246.3 L 313.4 248.9 L 380.3 251.4 L 447.1 254.0 L 514.0 256.5 L 514.0 261.8 L 447.1 260.9 L 380.3 260.0 L 313.4 259.1 L 246.6 258.2 L 179.7 257.2 L 112.9 256.3 L 46.0 255.4 Z" fill="#0F1F33" fill-opacity="0.42"/>
+        <path d="M 46.0 257.9 L 112.9 258.5 L 179.7 259.2 L 246.6 259.9 L 313.4 260.6 L 380.3 261.2 L 447.1 261.9 L 514.0 262.6 L 514.0 267.8 L 447.1 268.8 L 380.3 269.8 L 313.4 270.8 L 246.6 271.7 L 179.7 272.7 L 112.9 273.7 L 46.0 274.7 Z" fill="#0F1F33" fill-opacity="0.32"/>
+        <path d="M 46.0 277.1 L 112.9 275.9 L 179.7 274.7 L 246.6 273.5 L 313.4 272.3 L 380.3 271.0 L 447.1 269.8 L 514.0 268.6 L 514.0 273.9 L 447.1 276.7 L 380.3 279.6 L 313.4 282.5 L 246.6 285.3 L 179.7 288.2 L 112.9 291.1 L 46.0 293.9 Z" fill="#0F1F33" fill-opacity="0.42"/>
+        <path d="M 46.0 296.4 L 112.9 293.3 L 179.7 290.2 L 246.6 287.1 L 313.4 284.0 L 380.3 280.9 L 447.1 277.8 L 514.0 274.7 L 514.0 279.9 L 447.1 284.7 L 380.3 289.4 L 313.4 294.2 L 246.6 298.9 L 179.7 303.7 L 112.9 308.4 L 46.0 313.2 Z" fill="#0F1F33" fill-opacity="0.32"/>
+        <path d="M 46.0 315.6 L 112.9 310.7 L 179.7 305.7 L 246.6 300.7 L 313.4 295.7 L 380.3 290.7 L 447.1 285.7 L 514.0 280.7 L 514.0 286.0 L 447.1 292.6 L 380.3 299.2 L 313.4 305.9 L 246.6 312.5 L 179.7 319.2 L 112.9 325.8 L 46.0 332.4 Z" fill="#0F1F33" fill-opacity="0.42"/>
         </g>
         <path d="M 40 214 L 528 250 M 40 338 L 528 286 M 40 214 L 40 338" fill="none" stroke="#0F1F33" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+        <g class="journey-messy">
+        <path d="M 72 198 L 158 198 C 186 198, 198 216, 214 232 L 300 246 L 300 264 L 204 252 C 186 236, 172 216, 148 216 L 72 216 Z" fill="#A8402B" fill-opacity="0.55"/>
+        <path d="M 248 196 L 318 196 C 348 196, 358 218, 372 238 L 448 252 L 448 270 L 362 258 C 346 238, 332 214, 304 214 L 248 214 Z" fill="#A8402B" fill-opacity="0.5"/>
+        <path d="M 392 198 L 458 200 C 478 208, 486 226, 496 240 L 516 250 L 516 264 L 486 254 C 474 238, 462 216, 442 214 L 392 212 Z" fill="#A8402B" fill-opacity="0.48"/>
+        <path d="M 52 312 L 168 300 C 196 296, 206 324, 214 348 L 226 362 L 208 368 C 196 344, 180 318, 150 320 L 52 332 Z" fill="url(#exit-a)"/>
+        <path d="M 236 304 L 328 290 C 352 286, 360 318, 348 346 L 334 358 C 346 328, 336 306, 304 310 L 236 322 Z" fill="url(#exit-b)"/>
+        <path d="M 360 292 L 424 278 C 446 274, 452 308, 438 332 L 422 340 C 436 312, 428 294, 400 298 L 360 310 Z" fill="url(#exit-c)"/>
+        <text x="78" y="211" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#A8402B" stroke="#FBF8F1" stroke-width="3" paint-order="stroke" stroke-linejoin="round">No MQL date</text>
+        <text x="252" y="210" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#A8402B" stroke="#FBF8F1" stroke-width="3" paint-order="stroke" stroke-linejoin="round">No meeting date</text>
+        <text x="52" y="386" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#A8402B">Leaves with no reason</text>
+        <text x="300" y="386" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#A8402B">Stuck, no next step</text>
+        </g>
         <rect x="528" y="250" width="72" height="36" rx="18" fill="#0F1F33"/>
         <text x="564" y="273" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="14" font-weight="500" fill="#FBF8F1">59</text>
         <path class="journey-span" d="M 582 250 L 814.0 198 M 582 286 L 814.0 338 M 814.0 198 L 814.0 338" fill="none" stroke="#0F1F33" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
@@ -612,6 +639,16 @@ footer .fnav a:hover{color:var(--ink);}
         </g>
         </svg>
         <svg class="journey journey-mobile" viewBox="0 46 360 1260" width="360" height="1260" role="img" aria-label="Revenue journey, last 12 months. MQL 1,000. Meeting booked 680, 68 percent, about 3 days. Meeting completed 456, 67 percent, about 5 days. Pipeline 255, 56 percent, about 2 days. Closed won 59, ACV 18 thousand dollars, new ARR plus 1.0 million, 23 percent, about 32 days. Starting ARR 14.0 million. Upgrades plus 1.4 million. Downgrades minus 0.4 million. Churn minus 0.7 million. Net revenue retention 102 percent. Gross revenue retention 92 percent. Ending ARR 15.3 million, including plus 1.0 million new ARR." xmlns="http://www.w3.org/2000/svg">
+        <defs>
+        <linearGradient id="m-exit-a" gradientUnits="userSpaceOnUse" x1="16" y1="210" x2="266" y2="210">
+        <stop offset="0" stop-color="#A8402B" stop-opacity="0.28"/>
+        <stop offset="1" stop-color="#A8402B" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="m-exit-b" gradientUnits="userSpaceOnUse" x1="16" y1="394" x2="246" y2="394">
+        <stop offset="0" stop-color="#A8402B" stop-opacity="0.28"/>
+        <stop offset="1" stop-color="#A8402B" stop-opacity="0"/>
+        </linearGradient>
+        </defs>
         <g class="journey-only" aria-hidden="true">
         <rect x="12" y="52" width="336" height="52" rx="16" fill="#F3E0DB"/>
         <circle cx="28" cy="70" r="8" fill="#A8402B"/>
@@ -621,6 +658,7 @@ footer .fnav a:hover{color:var(--ink);}
         <text x="44" y="90" text-anchor="start" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#A8402B">· 2 steps not tracked</text>
         </g>
         <g class="journey-flow">
+        <rect x="4" y="104" width="8" height="470" rx="4" fill="#0F1F33" fill-opacity="0.3"/>
         <text x="16" y="112" text-anchor="start" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#0F1F33">MQL</text>
         <text x="344" y="112" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="14" font-weight="500" fill="#0F1F33">1,000</text>
         <line x1="16" y1="128" x2="344" y2="128" stroke="#D9D2C2" stroke-width="1"/>
@@ -631,9 +669,15 @@ footer .fnav a:hover{color:var(--ink);}
         <circle cx="28" cy="170" r="4" fill="#A8402B"/>
         </g>
         <text x="40" y="174" text-anchor="start" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="500" fill="#0F1F33">← 68% →</text>
-        <g class="journey-messy"><line x1="40" y1="170" x2="104" y2="170" stroke="#A8402B" stroke-width="1.25"/></g>
+        <g class="journey-messy"><line x1="40" y1="170" x2="104" y2="170" stroke="#A8402B" stroke-width="1.25"/>
+        <rect x="148" y="164" width="112" height="16" rx="8" fill="#A8402B" fill-opacity="0.22"/>
+        <text x="156" y="176" text-anchor="start" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#A8402B">No MQL date</text>
+        </g>
         <text x="16" y="194" text-anchor="start" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="500" fill="#4A5768">← ~3d →</text>
-        <text class="journey-messy" x="16" y="214" text-anchor="start" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#0F1F33">Enters mid-funnel · no MQL date</text>
+        <g class="journey-messy">
+        <rect x="16" y="202" width="250" height="16" rx="8" fill="url(#m-exit-a)"/>
+        <text x="24" y="214" text-anchor="start" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#A8402B">Leaves with no reason</text>
+        </g>
         <g class="journey-only" aria-hidden="true">
         <title>Estimated potential impact: 30 records fail your rules for this step. If they're counted wrongly, this rate could be anywhere from 65% to 71%. This range estimates how much data errors could move the rate.</title>
         <text x="16" y="214" text-anchor="start" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#A8402B">30 records · ±3 pts</text>
@@ -642,7 +686,10 @@ footer .fnav a:hover{color:var(--ink);}
         <text x="16" y="254" text-anchor="start" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#0F1F33">Meeting completed</text>
         <text x="344" y="254" text-anchor="end" font-family="JetBrains Mono, ui-monospace, monospace" font-size="14" font-weight="500" fill="#0F1F33">456</text>
         <text x="40" y="276" text-anchor="start" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="500" fill="#0F1F33">← 67% →</text>
-        <g class="journey-messy"><line x1="40" y1="272" x2="104" y2="272" stroke="#A8402B" stroke-width="1.25"/></g>
+        <g class="journey-messy"><line x1="40" y1="272" x2="104" y2="272" stroke="#A8402B" stroke-width="1.25"/>
+        <rect x="148" y="266" width="132" height="16" rx="8" fill="#A8402B" fill-opacity="0.22"/>
+        <text x="156" y="278" text-anchor="start" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#A8402B">No meeting date</text>
+        </g>
         <text x="16" y="296" text-anchor="start" font-family="JetBrains Mono, ui-monospace, monospace" font-size="13" font-weight="500" fill="#4A5768">← ~5d →</text>
         <line x1="16" y1="312" x2="344" y2="312" stroke="#D9D2C2" stroke-width="1"/>
         <text x="16" y="336" text-anchor="start" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#0F1F33">Pipeline</text>
@@ -658,7 +705,10 @@ footer .fnav a:hover{color:var(--ink);}
         <title>Estimated potential impact: 18 records fail your rules for this step. If they're counted wrongly, this rate could be anywhere from 52% to 60%. This range estimates how much data errors could move the rate.</title>
         <text x="16" y="398" text-anchor="start" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#A8402B">18 records · ±4 pts</text>
         </g>
-        <text class="journey-messy" x="16" y="398" text-anchor="start" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#0F1F33">Leaves the funnel · no reason</text>
+        <g class="journey-messy">
+        <rect x="16" y="386" width="230" height="16" rx="8" fill="url(#m-exit-b)"/>
+        <text x="24" y="398" text-anchor="start" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#A8402B">Stuck, no next step</text>
+        </g>
         <line x1="16" y1="414" x2="344" y2="414" stroke="#D9D2C2" stroke-width="1"/>
         <rect x="12" y="428" width="336" height="76" rx="16" fill="#0F1F33"/>
         <text x="28" y="456" text-anchor="start" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#FBF8F1">Closed won</text>
@@ -925,7 +975,7 @@ footer .fnav a:hover{color:var(--ink);}
   var journeyCaption = document.getElementById('journey-caption');
   var journeyFrame = document.getElementById('journey-frame');
   var journeyChosen = false;
-  var journeyAriaWithout = "Revenue journey, last 12 months. MQL 1,000. Meeting booked 680, 68 percent struck through, about 3 days. A record with no MQL date enters at Meeting booked. Meeting completed 456, 67 percent struck through, about 5 days. Pipeline 255, 56 percent struck through, about 2 days. Some records leave the funnel with no reason. Closed won 59, ACV 18 thousand dollars, new ARR plus 1.0 million, 23 percent struck through, about 32 days. Starting ARR 14.0 million. Upgrades plus 1.4 million. Downgrades minus 0.4 million. Churn minus 0.7 million. Net revenue retention 102 percent. Gross revenue retention 92 percent. Ending ARR 15.3 million, including plus 1.0 million new ARR.";
+  var journeyAriaWithout = "Revenue journey, last 12 months. Records enter and leave the funnel out of order. MQL 1,000. No MQL date, a ribbon joins at Meeting booked. Meeting booked 680, 68 percent struck through, about 3 days. No meeting date, a ribbon joins at Meeting completed. Meeting completed 456, 67 percent struck through, about 5 days. Pipeline 255, 56 percent struck through, about 2 days. Some records leave with no reason. Some are stuck with no next step. Closed won 59, ACV 18 thousand dollars, new ARR plus 1.0 million, 23 percent struck through, about 32 days. Starting ARR 14.0 million. Upgrades plus 1.4 million. Downgrades minus 0.4 million. Churn minus 0.7 million. Net revenue retention 102 percent. Gross revenue retention 92 percent. Ending ARR 15.3 million, including plus 1.0 million new ARR.";
   var journeyAriaWith = "Revenue journey, last 12 months. Records flow from stage to stage. MQL 1,000. Meeting booked 680, 68 percent, about 3 days. Estimated potential impact: 30 records fail your rules for this step. If they're counted wrongly, this rate could be anywhere from 65% to 71%. This range estimates how much data errors could move the rate. Meeting completed 456, 67 percent, about 5 days. Pipeline 255, 56 percent, about 2 days. Estimated potential impact: 18 records fail your rules for this step. If they're counted wrongly, this rate could be anywhere from 52% to 60%. This range estimates how much data errors could move the rate. Closed won 59, ACV 18 thousand dollars, new ARR plus 1.0 million, 23 percent, about 32 days. Estimated potential impact: 12 records fail your rules for this step. If they're counted wrongly, this rate could be anywhere from 18% to 28%. This range estimates how much data errors could move the rate. Onboarding is not tracked. Starting ARR 14.0 million. Upgrades plus 1.4 million. Downgrades minus 0.4 million. Churn minus 0.7 million. Net revenue retention 102 percent. Gross revenue retention 92 percent. Ending ARR 15.3 million, including plus 1.0 million new ARR. Upgrades include an expansion stage that is not tracked. Three rules flag 60 records. Two steps are not tracked. Plus or minus points means estimated potential impact. Ranges are estimates based on records that fail your rules. They show possible impact, not a promise about any figure. Not tracked means no stage or field in the CRM captures this step.";
   function journeySvg(){
     return window.matchMedia('(max-width: 720px)').matches
@@ -955,7 +1005,7 @@ footer .fnav a:hover{color:var(--ink);}
     journeyCard.classList.toggle('is-with', on);
     journeyWithout.setAttribute('aria-pressed', on ? 'false' : 'true');
     journeyWith.setAttribute('aria-pressed', on ? 'true' : 'false');
-    journeyCaption.textContent = on ? 'What Buoy finds underneath.' : 'What the dashboard shows.';
+    journeyCaption.textContent = on ? 'What Buoy finds underneath.' : 'What the CRM reports today.';
     var label = on ? journeyAriaWith : journeyAriaWithout;
     document.querySelectorAll('.journey').forEach(function(svg){
       svg.setAttribute('aria-label', label);
