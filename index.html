@@ -74,6 +74,8 @@ header{
 #proof,
 #pricing,
 #audit,
+#fields,
+#insights,
 #contact{
   scroll-margin-top:89px;
 }
@@ -177,6 +179,42 @@ nav.wrap{
 .section{padding:96px 0; border-top:1px solid var(--line); background:#fff;}
 #proof{background:var(--paper);}
 .plans{background:var(--paper);}
+.insights{background:var(--paper);}
+.fields .section-head, .insights .section-head{max-width:40em;}
+.pipe-switch{display:inline-flex; border:1px solid #0F1F33; margin:0 0 12px;}
+.pipe-switch button{
+  appearance:none; border:0; background:transparent; color:#0F1F33;
+  font-family:Inter, sans-serif; font-size:14px; font-weight:500;
+  min-height:44px; padding:8px 16px; cursor:pointer;
+}
+.pipe-switch button[aria-pressed="true"]{background:#0F1F33; color:#FBF8F1;}
+.pipe-switch button:focus-visible{outline:2px solid #0F1F33; outline-offset:2px;}
+.pipe-caption{margin:0 0 16px; font-size:15px; line-height:1.45; color:var(--slate); max-width:46em;}
+.pipe-scroll{overflow-x:auto; -webkit-overflow-scrolling:touch; border:1px solid #D9D2C2; background:#fff;}
+.pipe{width:100%; min-width:820px; border-collapse:collapse; background:#fff;}
+.pipe th, .pipe td{padding:11px 14px; text-align:left; vertical-align:middle; white-space:nowrap; border-bottom:1px solid #E4DED0;}
+.pipe .pipe-title th{
+  font-family:Newsreader, serif; font-size:22px; font-weight:500; letter-spacing:-0.02em;
+  color:#0F1F33; background:#FBF8F1; padding:16px 14px; border-bottom:1px solid #D9D2C2;
+}
+.pipe thead tr:last-child th{
+  font-family:"JetBrains Mono", ui-monospace, monospace;
+  font-size:12px; font-weight:500; letter-spacing:0.08em; text-transform:uppercase;
+  color:#4A5768; background:#fff; border-bottom:1px solid #0F1F33;
+}
+.pipe tbody th{font-size:14px; font-weight:500; color:var(--ink);}
+.pipe td{font-family:"JetBrains Mono", ui-monospace, monospace; font-size:13px; color:#0F1F33;}
+.pipe .num{text-align:right;}
+.pipe-sum th, .pipe-sum td{background:#F7F4EC; font-weight:600;}
+.pipe-sum th{font-size:14px;}
+.pipe tbody tr:last-child th, .pipe tbody tr:last-child td{border-bottom:none;}
+.pipe-note, .insight-note{margin:14px 0 0; font-size:12px; line-height:1.4; color:#4A5768;}
+.insight-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px; align-items:stretch;}
+.insight-card{margin:0; padding:24px 22px 20px; border:1px solid #D9D2C2; background:#fff; display:flex; flex-direction:column; height:100%;}
+.insight-card h3{font-size:28px; line-height:1.15; margin:0 0 14px;}
+.insight-card ul{margin:0; padding:0 0 0 1.15em;}
+.insight-card li{margin:0 0 10px; font-size:15.5px; line-height:1.45; color:var(--ink);}
+.insight-card li:last-child{margin-bottom:0;}
 .anchor{display:block; position:relative; height:0;}
 .debate .section-head{max-width:none; margin-bottom:72px;}
 .debate .section-head h2{font-size:60px; line-height:1.02; letter-spacing:-0.03em; max-width:16em;}
@@ -376,7 +414,9 @@ footer .fnav a:hover{color:var(--ink);}
   .fnav-chat{min-height:44px; display:inline-flex; align-items:center; padding:0 10px;}
   .final-cta{padding:72px 0;}
   .final-cta h2{font-size:36px;}
-  .stages, .q-grid, .pricing-grid{grid-template-columns:1fr;}
+  .stages, .q-grid, .pricing-grid, .insight-grid{grid-template-columns:1fr;}
+  .pipe-switch{display:flex; width:100%;}
+  .pipe-switch button{flex:1;}
   .tier{border-right:none; border-top:1px solid var(--line);}
   .tier:first-child{border-top:none;}
   .stage .stage-kicker{min-height:0;}
@@ -401,6 +441,8 @@ footer .fnav a:hover{color:var(--ink);}
   #proof,
   #pricing,
   #audit,
+  #fields,
+  #insights,
   #contact{
     scroll-margin-top:77px;
   }
@@ -717,6 +759,152 @@ footer .fnav a:hover{color:var(--ink);}
   </div>
 </section>
 
+<section class="section fields" id="fields">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>AI fields: your sales process</h2>
+      <p>Exit criteria sit on each stage. A deal moves when that work is done.</p>
+    </div>
+    <div class="pipe-switch" role="group" aria-label="Pipeline view">
+      <button type="button" id="pipe-rep" aria-pressed="true">Rep pipeline</button>
+      <button type="button" id="pipe-buoy" aria-pressed="false">Buoy pipeline</button>
+    </div>
+    <p class="pipe-caption" id="pipe-caption">Stages as reps report them, with most of the pipeline sitting in late stages.</p>
+    <div class="pipe-scroll">
+      <table class="pipe">
+        <thead>
+          <tr class="pipe-title"><th colspan="7" scope="colgroup">Pipeline overview: New business</th></tr>
+          <tr>
+            <th scope="col">Deal Stage</th>
+            <th scope="col" class="num">Weight</th>
+            <th scope="col" class="num">New Business</th>
+            <th scope="col" class="num">ACV</th>
+            <th scope="col" class="num">Avg. Time in Stage</th>
+            <th scope="col" class="num"># of Deals</th>
+            <th scope="col" class="num">Q4 Pipe</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Meeting Booked</th>
+            <td class="num">10%</td>
+            <td class="num" data-rep="$48,000" data-buoy="$84,000">$48,000</td>
+            <td class="num">$12,000</td>
+            <td class="num" data-rep="5 days" data-buoy="7 days">5 days</td>
+            <td class="num" data-rep="4" data-buoy="7">4</td>
+            <td class="num" data-rep="$24,000" data-buoy="$36,000">$24,000</td>
+          </tr>
+          <tr>
+            <th scope="row">Initial Discovery</th>
+            <td class="num">20%</td>
+            <td class="num" data-rep="$70,000" data-buoy="$112,000">$70,000</td>
+            <td class="num">$14,000</td>
+            <td class="num" data-rep="8 days" data-buoy="12 days">8 days</td>
+            <td class="num" data-rep="5" data-buoy="8">5</td>
+            <td class="num" data-rep="$42,000" data-buoy="$56,000">$42,000</td>
+          </tr>
+          <tr>
+            <th scope="row">Solution Presentation</th>
+            <td class="num">30%</td>
+            <td class="num">$96,000</td>
+            <td class="num">$16,000</td>
+            <td class="num" data-rep="11 days" data-buoy="14 days">11 days</td>
+            <td class="num">6</td>
+            <td class="num" data-rep="$64,000" data-buoy="$48,000">$64,000</td>
+          </tr>
+          <tr>
+            <th scope="row">Multi-Threaded Validation</th>
+            <td class="num">50%</td>
+            <td class="num" data-rep="$126,000" data-buoy="$72,000">$126,000</td>
+            <td class="num">$18,000</td>
+            <td class="num" data-rep="16 days" data-buoy="18 days">16 days</td>
+            <td class="num" data-rep="7" data-buoy="4">7</td>
+            <td class="num" data-rep="$90,000" data-buoy="$36,000">$90,000</td>
+          </tr>
+          <tr>
+            <th scope="row">Commercial Justification</th>
+            <td class="num">70%</td>
+            <td class="num" data-rep="$160,000" data-buoy="$32,000">$160,000</td>
+            <td class="num" data-rep="$20,000" data-buoy="$16,000">$20,000</td>
+            <td class="num" data-rep="21 days" data-buoy="20 days">21 days</td>
+            <td class="num" data-rep="8" data-buoy="2">8</td>
+            <td class="num" data-rep="$120,000" data-buoy="$16,000">$120,000</td>
+          </tr>
+          <tr>
+            <th scope="row">Contract Execution</th>
+            <td class="num">90%</td>
+            <td class="num" data-rep="$140,000" data-buoy="$14,000">$140,000</td>
+            <td class="num">$14,000</td>
+            <td class="num" data-rep="14 days" data-buoy="9 days">14 days</td>
+            <td class="num" data-rep="10" data-buoy="1">10</td>
+            <td class="num" data-rep="$126,000" data-buoy="$14,000">$126,000</td>
+          </tr>
+          <tr class="pipe-sum">
+            <th scope="row">Total pipeline</th>
+            <td class="num"></td>
+            <td class="num" data-rep="$640,000" data-buoy="$410,000">$640,000</td>
+            <td class="num"></td>
+            <td class="num"></td>
+            <td class="num" data-rep="40" data-buoy="28">40</td>
+            <td class="num"></td>
+          </tr>
+          <tr class="pipe-sum">
+            <th scope="row">Weighted pipeline</th>
+            <td class="num"></td>
+            <td class="num" data-rep="$348,600" data-buoy="$130,600">$348,600</td>
+            <td class="num"></td>
+            <td class="num"></td>
+            <td class="num"></td>
+            <td class="num"></td>
+          </tr>
+          <tr class="pipe-sum">
+            <th scope="row">Pipeline coverage</th>
+            <td class="num"></td>
+            <td class="num" data-rep="2.2×" data-buoy="1.4×">2.2×</td>
+            <td class="num"></td>
+            <td class="num"></td>
+            <td class="num"></td>
+            <td class="num"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="pipe-note">Example data. Not a real customer.</p>
+  </div>
+</section>
+
+<section class="section insights" id="insights">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>AI insights: generic advice vs. Buoy</h2>
+      <p>One pass reads the funnel. Buoy reads which missing steps change the outcome.</p>
+    </div>
+    <div class="insight-grid">
+      <article class="insight-card">
+        <h3>Generic AI</h3>
+        <ul>
+          <li>Only 18% progressed past Initial Discovery.</li>
+          <li>Focus on earlier stages.</li>
+          <li>Largest time gap is 6 days.</li>
+          <li>Later stages convert well.</li>
+          <li>Consider improving follow-up.</li>
+        </ul>
+      </article>
+      <article class="insight-card">
+        <h3>Buoy</h3>
+        <ul>
+          <li>Discovery pain shows up in won and lost deals.</li>
+          <li>Missed pricing agreement: win rate 68% to 2%.</li>
+          <li>No engaged economic buyer: 0% won.</li>
+          <li>Economic buyer plus pricing agreed: 54% won.</li>
+          <li>Gate: no quotes before buyer and pricing test-close.</li>
+        </ul>
+      </article>
+    </div>
+    <p class="insight-note">Example data. Not a real customer.</p>
+  </div>
+</section>
+
 <section class="final-cta" id="contact">
   <div class="wrap">
     <h2>Can your leadership team trust the numbers?</h2>
@@ -872,6 +1060,31 @@ footer .fnav a:hover{color:var(--ink);}
     }
     window.addEventListener('resize', cropJourney);
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(cropJourney);
+  }
+  var pipeRep = document.getElementById('pipe-rep');
+  var pipeBuoy = document.getElementById('pipe-buoy');
+  var pipeCaption = document.getElementById('pipe-caption');
+  function setPipe(mode){
+    var buoy = mode === 'buoy';
+    pipeRep.setAttribute('aria-pressed', buoy ? 'false' : 'true');
+    pipeBuoy.setAttribute('aria-pressed', buoy ? 'true' : 'false');
+    document.querySelectorAll('#fields [data-rep]').forEach(function(el){
+      el.textContent = buoy ? el.getAttribute('data-buoy') : el.getAttribute('data-rep');
+    });
+    pipeCaption.textContent = buoy
+      ? 'Pipeline based on your custom exit criteria, evaluated by AI across call transcripts, emails and notes, inside or outside your CRM.'
+      : 'Stages as reps report them, with most of the pipeline sitting in late stages.';
+  }
+  if (pipeRep && pipeBuoy){
+    pipeRep.addEventListener('click', function(){ setPipe('rep'); });
+    pipeBuoy.addEventListener('click', function(){ setPipe('buoy'); });
+    pipeRep.parentElement.addEventListener('keydown', function(e){
+      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+      e.preventDefault();
+      var next = e.key === 'ArrowRight' ? pipeBuoy : pipeRep;
+      next.focus();
+      setPipe(next === pipeBuoy ? 'buoy' : 'rep');
+    });
   }
   var siteNav = document.getElementById('site-nav');
   if (siteNav){
