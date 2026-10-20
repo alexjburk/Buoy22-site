@@ -126,7 +126,7 @@ nav.wrap{
 .navlinks .nav-login{display:none;}
 
 .hero{padding:88px 0 72px; background:var(--paper);}
-.does{background:var(--paper); padding:0 0 72px; border-top:none;}
+.does{background:#fff; padding:0 0 72px; border-top:none;}
 .does p{margin:0; max-width:42em; font-size:22px; line-height:1.45; color:var(--ink);}
 .hero .wrap{display:grid; grid-template-columns:1fr; gap:48px; align-items:start;}
 .hero-copy{max-width:920px;}
@@ -181,7 +181,9 @@ nav.wrap{
 .section{padding:96px 0; border-top:1px solid var(--line); background:#fff;}
 #proof{background:var(--paper);}
 .plans{background:var(--paper);}
-.insights{background:var(--paper);}
+.debate, #get-right, .insights{background:var(--paper);}
+.why .section-head{margin-bottom:0;}
+.section-head p.why-next{color:var(--ink); margin-top:18px;}
 .fields .section-head, .insights .section-head{max-width:40em;}
 .pipe-caption{margin:0 0 16px; font-size:15px; line-height:1.45; color:var(--slate); max-width:46em;}
 .pipe-scroll{overflow-x:auto; -webkit-overflow-scrolling:touch; border:1px solid #D9D2C2; background:#fff;}
@@ -206,7 +208,7 @@ nav.wrap{
 .pipe-sum th{font-size:14px;}
 .pipe tbody tr:last-child th, .pipe tbody tr:last-child td{border-bottom:none;}
 .pipe-note, .insight-note{margin:14px 0 0; font-size:12px; line-height:1.4; color:#4A5768;}
-.insight-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px; align-items:stretch;}
+.insight-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px; align-items:stretch; margin-top:40px;}
 .insight-card{margin:0; padding:24px 22px 20px; border:1px solid #D9D2C2; background:#fff; display:flex; flex-direction:column; height:100%;}
 .insight-card h3{font-size:28px; line-height:1.15; margin:0 0 14px;}
 .insight-card ul{margin:0; padding:0 0 0 1.15em;}
@@ -293,6 +295,55 @@ nav.wrap{
   font-size:13px; font-weight:600; line-height:1.15; color:#0F1F33; text-align:center;
 }
 .funnel-wheel svg{position:absolute; inset:0;}
+.record{
+  display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:0;
+}
+.record-card{
+  min-width:0; background:#fff; border:1px solid #D9D2C2; padding:16px 16px 14px;
+}
+.record-name{font-size:26px; line-height:1.15; margin:0 0 8px;}
+.check-list, .ext-list{list-style:none; margin:0; padding:0;}
+.check-list li, .ext-list li{
+  display:flex; align-items:center; gap:10px;
+  padding:8px 0; border-top:1px solid #E4DED0; font-size:14px; line-height:1.35;
+}
+.check-list li:first-child, .ext-list li:first-child{border-top:none;}
+.check-name{color:var(--ink);}
+.check-val{margin-left:auto; font-family:"JetBrains Mono", ui-monospace, monospace; font-size:13px; text-align:right;}
+.check-val.is-empty{color:#A8402B;}
+.dot{width:10px; height:10px; border-radius:50%; flex:none;}
+.dot-r{background:#A8402B;}
+.dot-y{background:#C4922A;}
+.dot-g{background:#2F6B4F;}
+.ext-list b{
+  margin-left:auto; font-weight:600; font-size:12px; letter-spacing:0.04em;
+  text-transform:uppercase; font-family:"JetBrains Mono", ui-monospace, monospace;
+}
+.ext-r b{color:#A8402B;}
+.ext-y b{color:#8A6416;}
+.ext-g b{color:#2F6B4F;}
+.ai-block{margin-top:16px; padding-top:12px; border-top:1px solid #D9D2C2;}
+.ai-line{display:flex; align-items:baseline; gap:8px; margin:0 0 8px; min-width:0;}
+.ai-line:last-child{margin-bottom:0;}
+.ai-tag{
+  flex:none; font-family:"JetBrains Mono", ui-monospace, monospace;
+  font-size:12px; letter-spacing:0.06em; line-height:1.3;
+  background:#0F1F33; color:#FBF8F1; padding:2px 6px;
+}
+.ai-text{
+  min-width:0; font-size:14px; line-height:1.35; color:var(--ink);
+  clip-path:inset(0 100% 0 0); animation:ai-fill 0.7s ease forwards;
+}
+.ai-line:nth-child(2) .ai-text{animation-delay:0.35s;}
+.ai-line:nth-child(3) .ai-text{animation-delay:0.7s;}
+.ai-line:nth-child(4) .ai-text{animation-delay:1.05s;}
+@keyframes ai-fill{to{clip-path:inset(0 0 0 0);}}
+@media (prefers-reduced-motion: reduce){
+  .ai-text{animation:none; clip-path:none;}
+}
+.insight-prose{margin:0; font-size:15.5px; line-height:1.45; color:var(--ink);}
+.insight-prose p{margin:0 0 10px;}
+.insight-prose p:last-child{margin-bottom:0;}
 
 .q-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:32px;}
 .rule-card{margin:0; padding:18px 18px 16px; border:1px solid var(--line); background:#fff;}
@@ -416,7 +467,7 @@ nav.wrap{
   font-family:"JetBrains Mono", ui-monospace, monospace;
   font-size:13px; letter-spacing:0.04em; color:var(--ink); font-weight:500;
 }
-.tier .blurb{margin:16px 0 0; font-size:14px; line-height:1.45; color:var(--slate);}
+.tier .blurb{margin:16px 0 28px; font-size:14px; line-height:1.45; color:var(--slate);}
 
 .final-cta{background:var(--navy); text-align:center; padding:104px 0;}
 .final-cta h2{font-size:52px; line-height:1.05; color:var(--paper); max-width:16ch; margin:0 auto 16px;}
@@ -486,7 +537,7 @@ footer .fnav a:hover{color:var(--ink);}
   .fnav-chat{min-height:44px; display:inline-flex; align-items:center; padding:0 10px;}
   .final-cta{padding:72px 0;}
   .final-cta h2{font-size:36px;}
-  .stages, .q-grid, .pricing-grid, .insight-grid{grid-template-columns:1fr;}
+  .stages, .q-grid, .pricing-grid, .insight-grid, .record{grid-template-columns:1fr;}
   .cleanup{grid-template-columns:1fr; gap:14px; padding:16px;}
   .cleanup-arrow svg{transform:rotate(90deg);}
   .journey-shape{flex-direction:column; align-items:stretch; gap:10px;}
@@ -578,7 +629,7 @@ footer .fnav a:hover{color:var(--ink);}
     <div class="hero-copy">
       <p class="eyebrow reveal">For Series A, B and PE-backed Growth stage companies</p>
       <h1 class="reveal d1">Trust the numbers that drive your business.</h1>
-      <p class="lede reveal d2">Buoy keeps your CRM data right, so leaders can stop arguing about the numbers.</p>
+      <p class="lede reveal d2">Buoy keeps your CRM data right, so leaders can stop arguing about the numbers and start making confident decisions.</p>
       <div class="ctas reveal d3">
         <button class="btn btn-primary" onclick="openAuditModal(event)">Let's chat</button>
         <a class="btn btn-ghost" href="#how-it-works">See how it works</a>
@@ -834,11 +885,21 @@ footer .fnav a:hover{color:var(--ink);}
   </div>
 </section>
 
+<section class="section why" id="why">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Why Buoy</h2>
+      <p>A buoy marks the safe channel and keeps you off the rocks. Buoy does that for your revenue data: it marks how your process is supposed to run and flags when the CRM drifts.</p>
+      <p class="why-next">From there, the work runs in three steps.</p>
+    </div>
+  </div>
+</section>
+
 <section class="section step" id="get-right">
   <div class="wrap">
     <div class="section-head">
-      <h2><span class="step-num">1</span>Get it right</h2>
-      <p>Get it right is the Audit. Setup and cleanup happen in the Audit Workspace: your process and definitions get written down, and the CRM properties get cleaned up. At the end, you export everything.</p>
+      <h2>Step 1: The Audit</h2>
+      <p>First we map your revenue funnel, then we audit your CRM and clean it up, so the revenue engine is built on solid ground.</p>
     </div>
     <figure class="cleanup">
       <div>
@@ -893,8 +954,47 @@ footer .fnav a:hover{color:var(--ink);}
 <section class="section fields step" id="fields">
   <div class="wrap">
     <div class="section-head">
-      <h2><span class="step-num">2</span>Keep it right</h2>
-      <p>Keep it right is Validation. Rules, plus a HubSpot extension, stop drift as reps work. AI fields fill your CRM from transcripts and emails, so the data doesn't drift.</p>
+      <h2>Step 2: Validation + AI-filled properties</h2>
+      <p>This is the enforcement layer that prevents drift. The HubSpot extension checks fields as reps work, and AI fills properties from transcripts and emails.</p>
+    </div>
+    <figure class="record">
+      <div class="record-card">
+        <p class="cleanup-kicker">HubSpot deal</p>
+        <p class="record-name">Northwind renewal</p>
+        <ul class="check-list">
+          <li><span class="dot dot-g" aria-hidden="true"></span><span class="check-name">Amount</span><span class="check-val">$48,000</span></li>
+          <li><span class="dot dot-r" aria-hidden="true"></span><span class="check-name">Close date</span><span class="check-val is-empty">Empty</span></li>
+          <li><span class="dot dot-y" aria-hidden="true"></span><span class="check-name">Next step</span><span class="check-val">Followed up</span></li>
+          <li><span class="dot dot-r" aria-hidden="true"></span><span class="check-name">Economic buyer</span><span class="check-val is-empty">Empty</span></li>
+          <li><span class="dot dot-g" aria-hidden="true"></span><span class="check-name">Lead source</span><span class="check-val">Website</span></li>
+        </ul>
+      </div>
+      <div class="record-card">
+        <p class="cleanup-kicker">Buoy extension</p>
+        <ul class="ext-list">
+          <li class="ext-r"><span>Close date</span><b>Required</b></li>
+          <li class="ext-y"><span>Next step</span><b>Too vague</b></li>
+          <li class="ext-r"><span>Economic buyer</span><b>Required</b></li>
+          <li class="ext-g"><span>Amount</span><b>Ok</b></li>
+          <li class="ext-g"><span>Lead source</span><b>Ok</b></li>
+        </ul>
+        <div class="ai-block">
+          <p class="cleanup-kicker">AI-filled properties</p>
+          <p class="ai-line"><span class="ai-tag">AI</span><span class="ai-text">Pain: budget tied to the renewal</span></p>
+          <p class="ai-line"><span class="ai-tag">AI</span><span class="ai-text">Buyer: finance lead</span></p>
+          <p class="ai-line"><span class="ai-tag">AI</span><span class="ai-text">Next step: pricing call</span></p>
+        </div>
+      </div>
+    </figure>
+    <p class="pipe-note">Example data. Not a real customer.</p>
+  </div>
+</section>
+
+<section class="section insights step" id="insights">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Step 3: Intelligence</h2>
+      <p>Intelligence is insights on what your data is telling you.</p>
     </div>
     <p class="pipe-caption">Pipeline based on your custom exit criteria, evaluated by AI across call transcripts, emails and notes, inside or outside your CRM.</p>
     <div class="pipe-scroll">
@@ -997,15 +1097,6 @@ footer .fnav a:hover{color:var(--ink);}
       </table>
     </div>
     <p class="pipe-note">Example data. Not a real customer.</p>
-  </div>
-</section>
-
-<section class="section insights step" id="insights">
-  <div class="wrap">
-    <div class="section-head">
-      <h2><span class="step-num">3</span>Make it right</h2>
-      <p>Make it right is how you hit your goals. Intelligence delivers CRO-level insights and actions to you, before you ask. They read your numbers against how your process is supposed to work.</p>
-    </div>
     <div class="insight-grid">
       <article class="insight-card">
         <h3>Generic AI</h3>
@@ -1019,13 +1110,11 @@ footer .fnav a:hover{color:var(--ink);}
       </article>
       <article class="insight-card">
         <h3>Buoy</h3>
-        <ul>
-          <li>Discovery pain shows up in won and lost deals.</li>
-          <li>Missed pricing agreement: win rate 68% to 2%.</li>
-          <li>No engaged economic buyer: 0% won.</li>
-          <li>Economic buyer plus pricing agreed: 54% won.</li>
-          <li>Gate: no quotes before buyer and pricing test-close.</li>
-        </ul>
+        <div class="insight-prose">
+          <p>On the Northwind renewal, pricing was never agreed and the economic buyer never joined a call.</p>
+          <p>Ask the AE to get the economic buyer on a pricing call before sending a quote.</p>
+          <p>The Acme Corp expansion has the same gap, so have the sales manager hold both quotes until that call happens.</p>
+        </div>
       </article>
     </div>
     <p class="insight-note">Example data. Not a real customer.</p>
@@ -1035,7 +1124,7 @@ footer .fnav a:hover{color:var(--ink);}
 <section class="section" id="pricing">
   <div class="wrap">
     <div class="section-head">
-      <h2>The packages</h2>
+      <h2>How to get started</h2>
       <p>Start with the Audit.</p>
     </div>
     <div class="pricing-grid">
@@ -1043,19 +1132,19 @@ footer .fnav a:hover{color:var(--ink);}
         <p class="tier-flag">Start here!</p>
         <h3>Audit</h3>
         <p class="tier-term">One-time</p>
-        <p class="blurb">A one-time setup and cleanup inside the Audit Workspace. You export everything at the end.</p>
+        <p class="blurb">Every engagement begins with an Audit, so we understand how your business actually runs and what your numbers mean.</p>
         <button class="btn btn-primary" onclick="openAuditModal(event)">Let's chat</button>
       </article>
       <article class="tier">
         <h3>Validation + AI fields</h3>
         <p class="tier-term">Subscription</p>
-        <p class="blurb">AI fills out your CRM for your process, and the HubSpot extension stops drift as reps work.</p>
+        <p class="blurb">From the Audit, this keeps records in line as reps work: rules in the HubSpot extension, and AI-filled properties.</p>
         <button class="btn btn-primary" onclick="openAuditModal(event)">Let's chat</button>
       </article>
       <article class="tier">
         <h3>Intelligence</h3>
         <p class="tier-term">Subscription</p>
-        <p class="blurb">CRO-level insights and actions, delivered to you before you ask.</p>
+        <p class="blurb">From there, Intelligence reads the data against your process and delivers CRO-level insights and actions before you ask.</p>
         <button class="btn btn-primary" onclick="openAuditModal(event)">Let's chat</button>
       </article>
     </div>
@@ -1064,7 +1153,7 @@ footer .fnav a:hover{color:var(--ink);}
 
 <section class="final-cta" id="contact">
   <div class="wrap">
-    <h2>Can your leadership team trust the numbers?</h2>
+    <h2>Do you trust the numbers your team brings you?</h2>
     <p class="cta-sub">Every engagement is scoped to your CRM and your process.</p>
     <button class="btn btn-primary" onclick="openAuditModal(event)">Let's chat</button>
   </div>
@@ -1077,6 +1166,7 @@ footer .fnav a:hover{color:var(--ink);}
         <img src="/assets/buoy-mark.svg" alt="Buoy">
         <span class="word">buoy<span class="dot" aria-hidden="true"></span></span>
       </a>
+      <p class="fnote">Buoy documents how your process is supposed to run, then flags the moment your CRM drifts from it.</p>
     </div>
     <div class="fnav">
       <a href="#how-it-works">How it works</a>
