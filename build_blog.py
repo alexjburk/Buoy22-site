@@ -79,6 +79,24 @@ POSTS = [
         "excerpt": "You want your leadership team to trust the numbers. Another dashboard won't get you there. Fix the root, process truth in HubSpot, and reporting and decisions follow.",
         "body_file": "blog_sources/root-cause-before-reporting-why-buoys-approach-cascades.html",
     },
+    {
+        "slug": "the-decision-foundation-audit-disposition-before-you-enforce-anything",
+        "title": "The Decision Foundation Audit: Agree on the Numbers, Then Clean Up What Feeds Them",
+        "description": "Before you add another required field or stage gate, decide which numbers your leadership team needs to trust. The Decision Foundation Audit agrees on their definitions, then cleans up the HubSpot properties behind them.",
+        "date": "2026-10-15",
+        "date_display": "October 15, 2026",
+        "excerpt": "Decide which numbers your leadership team uses, agree on what they mean, then clean up every HubSpot property behind them. Enforce nothing until both halves are done.",
+        "body_file": "blog_sources/the-decision-foundation-audit-disposition-before-you-enforce-anything.html",
+    },
+    {
+        "slug": "the-five-dispositions-keep-delete-rule-pending-blocked",
+        "title": "The Five Dispositions: Keep / Delete / Rule / Pending / Blocked",
+        "description": "Give every HubSpot property behind your leadership numbers one honest outcome: Keep, Delete, Turn into a rule, Pending, or Blocked. Here's how to decide, and why cleanup is half the audit.",
+        "date": "2026-10-20",
+        "date_display": "October 20, 2026",
+        "excerpt": "Decide one outcome for every property that feeds a leadership number: Keep, Delete, Turn into a rule, Pending on a named person, or Blocked on a process decision. No field gets a shrug.",
+        "body_file": "blog_sources/the-five-dispositions-keep-delete-rule-pending-blocked.html",
+    },
 ]
 
 
@@ -121,7 +139,7 @@ post_body = f"""
 
 <p>Drift is asymptomatic by design. Every individual skipped field, every vague "will follow up" logged as a next step, looks harmless in isolation — it's one deal, one rep, one bad day. Nothing breaks. No error message fires. The CRM keeps working exactly as before, which is precisely the problem: a system that keeps functioning gives you no signal that what it's telling you has quietly stopped being true.</p>
 
-<p>The cost shows up downstream, disconnected from the cause. Thomas Redman, writing in MIT Sloan Management Review, estimates poor data quality costs most companies <a href="https://sloanreview.mit.edu/article/seizing-opportunity-in-data-quality/">15–25% of revenue</a> — not from one catastrophic failure, but from thousands of small ones compounding. By the time it's visible, it usually looks like a forecasting problem, not a data problem: <a href="https://www.xactlycorp.com/company/press-room/new-forecasting-research-uncovers-need-collaboration">Xactly's 2024 benchmark</a> found 4 in 5 sales and finance leaders missed a quarterly forecast in the past year. Nobody traces a missed forecast back to a next-step field that quietly stopped meaning anything six months earlier — but that's usually exactly where it started.</p>
+<p>The cost shows up downstream, disconnected from the cause. Thomas Redman, writing in MIT Sloan Management Review, estimates poor data quality costs most companies <a href="https://sloanreview.mit.edu/article/seizing-opportunity-in-data-quality/">15–25% of revenue</a> — not from one catastrophic failure, but from thousands of small ones compounding. By the time it's visible, it usually looks like a forecasting problem, not a data problem: <a href="https://www.xactlycorp.com/company/press-room/new-forecasting-research-uncovers-need-collaboration">Xactly's 2024 forecasting research</a> found 4 in 5 sales and finance leaders missed a quarterly forecast in the past year. Nobody traces a missed forecast back to a next-step field that quietly stopped meaning anything six months earlier — but that's usually exactly where it started.</p>
 
 <h2>What drift actually looks like inside a real CRM</h2>
 
@@ -235,7 +253,7 @@ post2_article_html = """
 </ul>
 <p>Hygiene dashboards celebrate filled. Forecast meetings discover false.</p>
 <h3>Forecast and leadership impact</h3>
-<p>When stage definitions drift and freeform updates look complete but are not, leadership does not get a “slightly noisy” forecast. They get a confident wrong number. Ops then spends the quarter explaining variance instead of fixing the record-level behavior that created it. Industry commentary often cites large revenue and productivity costs from bad CRM data; whatever the external number, the internal cost is measurable: forecast miss size, time spent scrubbing pipeline before board packs, and coaching sessions that re-litigate what the CRM should already show.</p>
+<p>When stage definitions drift and freeform updates look complete but are not, leadership does not get a “slightly noisy” forecast. They get a confident wrong number. Ops then spends the quarter explaining variance instead of fixing the record-level behavior that created it. Outside research often cites large revenue and productivity costs from bad CRM data; whatever the external number, the internal cost is measurable: forecast miss size, time spent scrubbing pipeline before board packs, and coaching sessions that re-litigate what the CRM should already show.</p>
 <h3>Ownership gaps</h3>
 <p>If Marketing owns lifecycle, Sales owns pipeline stages, CS owns tickets, and “the HubSpot admin” owns properties without a RACI, quality becomes everyone’s problem and nobody’s job. Tools do not fix missing owners. Cadence without owners becomes another ignored Slack reminder.</p>
 <hr />
@@ -295,7 +313,7 @@ post2_article_html = """
 <p><strong>Takeaway:</strong> Native HubSpot is excellent at <strong>presence, format, and stage-transition control</strong>. Native HubSpot is limited at <strong>semantic freeform quality</strong> and <strong>continuous checks on the record</strong>. Hygiene platforms help you <em>find</em> sprawl and broken configuration. They are not Validation.</p>
 <hr />
 <h2>The playbook scorecard: 6–8 metrics that matter</h2>
-<p>Do not start with a 40-metric dashboard. Start with a scorecard your VP Sales will actually open. The table below is a <strong>playbook framework</strong> (illustrative thresholds you can tune)—not a published Buoy customer benchmark.</p>
+<p>Do not start with a 40-metric dashboard. Start with a scorecard your VP Sales will actually open. The table below is a <strong>playbook framework</strong> (illustrative thresholds you can tune)—not published Buoy customer figures.</p>
 <div class="table-wrap"><table>
 <thead>
 <tr>
@@ -376,7 +394,7 @@ post2_article_html = """
 </ol>
 <p>If metrics 1–2 look fine but 5–6 look terrible, you have already found the gap: <strong>complete ≠ true</strong>. Hygiene tools will congratulate you. Process quality will not.</p>
 <hr />
-<h2>A 10-day DIY pass, and when to book the Audit</h2>
+<h2>A 10-day DIY pass, and when to bring in the Audit</h2>
 <p>This outline is a DIY sketch. The <strong>Audit</strong> is a one-time engagement, done with you: top-down process and bottom-up property cleanup, as equal halves. <a href="/#contact" onclick="openAuditModal(event)">Let's chat</a> when the portal is too tangled to sort in ten days.</p>
 <h3>Day 1–2: Inventory and owners</h3>
 <ul>
@@ -427,7 +445,7 @@ post2_article_html = """
 <li>If the work expands into process redesign + enforcement design across objects, that is the natural handoff to a structured Audit engagement rather than another month of heroics.</li>
 </ul>
 <p><strong>When DIY is enough:</strong> one primary pipeline, engaged sales leadership, and willingness to delete/deprecate ruthlessly.</p>
-<p><strong>When to book an Audit:</strong> sprawl across years of admins, PE portfolio comparison needs, or when you already know blank checks are not catching the forecast miss.</p>
+<p><strong>When an Audit makes sense:</strong> sprawl across years of admins, PE portfolio comparison needs, or when you already know blank checks are not catching the forecast miss. <a href="/#contact" onclick="openAuditModal(event)">Let's chat</a>.</p>
 <hr />
 <h2>Property sprawl and unused properties: keep / deprecate / delete</h2>
 <p>Unused properties are not just clutter. They confuse forms, slow onboarding of new reps, and make every “required field” conversation political. Use a decision matrix—not vibes.</p>
@@ -473,7 +491,7 @@ post2_article_html = """
 <td>Only after integration owner signs off</td>
 </tr>
 <tr>
-<td>Duplicate meaning (two “Industry” fields)</td>
+<td>Duplicate meaning (two “Segment” fields)</td>
 <td>Keep the canonical one</td>
 <td>Deprecate the alias</td>
 <td>Delete alias after migration</td>
@@ -566,7 +584,7 @@ post2_article_html = """
 </ol>
 <p>Three or four points = pass. Zero to two = fail. Track pass rate on the scorecard.</p>
 <h3>Where Buoy fits</h3>
-<p><strong>Buoy</strong> is a three-step managed service, not another cleanup tool. The <strong>Audit</strong> is a one-time engagement: we audit your process and your CRM with you, clean it up, and you keep Included Access to the workspace. <strong>Validation</strong> flags drift on every record, and our team fills in the fields your business needs from call transcripts, other systems, and integrations, built to your requirements, never generic AI fields. <strong>Sonar</strong> and Ask Buoy turn trusted data into answers for your leadership team.</p>
+<p><strong>Buoy</strong> is a three-step managed service, not another cleanup tool. The <strong>Audit</strong> is a one-time setup and cleanup project: we audit your process and your CRM with you and clean it up. <strong>Validation</strong> flags drift on every record, and our team fills in the fields your business needs from call transcripts, other systems, and integrations, built to your requirements, never generic AI fields. Subscribe to keep it right. Same login, more features. <strong>Sonar</strong> and Ask Buoy are on the roadmap: they will turn trusted data into answers for your leadership team.</p>
 <p>If your scorecard shows strong completion and weak freeform pass rates, you are past another cleanup tool. <a href="/#contact" onclick="openAuditModal(event)">Let's chat</a>.</p>
 <hr />
 <h2>Governance: owners, cadence, and SLAs</h2>
@@ -738,7 +756,7 @@ post2_article_html = """
 <h3>When are native HubSpot tools not enough?</h3>
 <p>When completion rates look healthy but freeform fields fail process criteria; when gates are bypassed by workflows, API, or Super Admins; when drift happens between stage moves; or when you need the same process truth across deals, tickets, and onboarding—not just blank checks on one pipeline.</p>
 <hr />
-<p>If you only do one thing after reading this playbook, baseline the scorecard on a single pipeline and score twenty next steps with a manager. Use the checklist above. When the portal is past a DIY pass, <a href="/#contact" onclick="openAuditModal(event)">Let's chat</a>. The Audit is a one-time engagement. Validation + AI fields and Sonar are subscriptions.</p>"""
+<p>If you only do one thing after reading this playbook, baseline the scorecard on a single pipeline and score twenty next steps with a manager. Use the checklist above. When the portal is past a DIY pass, <a href="/#contact" onclick="openAuditModal(event)">Let's chat</a>. The Audit is a one-time setup and cleanup project. Sonar is on the roadmap.</p>"""
 
 post_body = f"""
 <p class="eyebrow">Published {post['date_display']}</p>
@@ -804,7 +822,7 @@ post_body = f"""
 <p>Most CRMs calculate certain things automatically — days since last contact, weighted pipeline value, that kind of thing. It's extremely common to find a custom-built field quietly recreating one of these, usually because whoever built it didn't know the native version existed, or built it before the platform added one. Neither field is wrong exactly, but now there are two sources of truth for the same number, and nothing forces them to agree.</p>
 
 <h3>Fields that are populated and still wrong</h3>
-<p>The most common surprise in any real audit isn't a blank field — it's a filled-in one that's quietly inaccurate. A date field everyone assumes is reliable turns out to be off by a meaningful margin on a real share of records, and often nobody can say exactly why. This is the sharpest version of the problem an audit exists to catch: the field isn't broken in any way a formatting check would notice. It's just not telling the truth, and it's been that way long enough that it's shaped decisions before anyone caught it.</p>
+<p>The most common surprise in any real audit isn't a blank field — it's a filled-in one that's quietly wrong. A date field everyone assumes is reliable turns out to be off by a meaningful margin on a real share of records, and often nobody can say exactly why. This is the sharpest version of the problem an audit exists to catch: the field isn't broken in any way a formatting check would notice. It's just not telling the truth, and it's been that way long enough that it's shaped decisions before anyone caught it.</p>
 
 <h3>Dependencies that live outside the CRM entirely</h3>
 <p>Before removing or hiding anything, a real audit has to check more than internal usage. A property can show zero workflows, zero forms, and zero reports referencing it inside the CRM, and still break something the moment it's deleted — because a finance spreadsheet or a reporting export pulls that column every month, completely invisible from inside the CRM itself. Checking internal usage alone isn't enough; the audit has to account for what consumes the data downstream, outside the platform.</p>
@@ -913,7 +931,7 @@ index_body = f"""
 
 index_html = build_page(
     title="Blog | Buoy",
-    description="How a leadership team gets one set of numbers: the Audit, Validation and AI fields, and Sonar.",
+    description="How a leadership team gets one set of numbers: the Audit, Validation and AI fields, and Sonar on the roadmap.",
     canonical=f"{SITE_URL}/blog/",
     body_html=index_body
 )
@@ -923,7 +941,7 @@ with open("blog/index.html", "w") as f:
 print("wrote blog/index.html")
 
 # ---------------------------------------------------------------------------
-# Reusable template for future posts — copy this file, fill in the marked
+# Reusable template for future posts — copy template_body, fill in the marked
 # spots, add an entry to POSTS in this script, then rebuild. Do not
 # hand-edit the generated HTML.
 # ---------------------------------------------------------------------------
@@ -959,9 +977,8 @@ template_html = build_page(
     og_type="article"
 )
 
-with open("blog/_post-template.html", "w") as f:
-    f.write(template_html)
-print("wrote blog/_post-template.html")
+# Not written to disk: every file in this repo is served by GitHub Pages, so a
+# template page would go live. Copy template_body above when starting a post.
 
 # ---------------------------------------------------------------------------
 # sitemap.xml — every real page, so search engines and AI crawlers can find
