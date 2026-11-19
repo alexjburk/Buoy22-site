@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Handoffs That Invent a Second Source of Truth | Buoy</title>
+<meta name="description" content="Before you trust Closed-Won, check where your team actually works after the handoff. If seats, package, and renewal dates live in a kickoff sheet, HubSpot is no longer your source of truth." />
+<link rel="canonical" href="https://buildwithbuoy.com/blog/handoffs-that-invent-a-second-source-of-truth.html" />
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="64x64" href="/favicon-64.png">
+<link rel="icon" type="image/png" sizes="128x128" href="/favicon-128.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Handoffs That Invent a Second Source of Truth | Buoy" />
+<meta property="og:description" content="Before you trust Closed-Won, check where your team actually works after the handoff. If seats, package, and renewal dates live in a kickoff sheet, HubSpot is no longer your source of truth." />
+<meta property="og:url" content="https://buildwithbuoy.com/blog/handoffs-that-invent-a-second-source-of-truth.html" />
+<meta property="og:image" content="https://buildwithbuoy.com/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Buoy — Trust the numbers that drive your business." />
+<meta property="og:site_name" content="Buoy" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Handoffs That Invent a Second Source of Truth | Buoy" />
+<meta name="twitter:description" content="Before you trust Closed-Won, check where your team actually works after the handoff. If seats, package, and renewal dates live in a kickoff sheet, HubSpot is no longer your source of truth." />
+<meta name="twitter:image" content="https://buildwithbuoy.com/assets/og-image.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#161513; --navy:#0F1F33; --paper:#F4F0E6; --slate:#4A5768; --oxblood:#8C3B32;
+  --line:rgba(22,21,19,0.18); --max:760px;
+}
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  margin:0; background:#fff; color:var(--ink);
+  font-family:Inter, sans-serif; font-size:17px; line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,.serif{
+  font-family:Newsreader, serif; font-optical-sizing:auto; font-weight:500;
+  letter-spacing:-0.02em; margin:0; color:var(--ink);
+}
+a{ color:inherit; }
+.wrap{ max-width:var(--max); margin:0 auto; padding:0 32px; }
+img{ max-width:100%; display:block; }
+:focus-visible{ outline:2px solid var(--navy); outline-offset:3px; }
+
+header{
+  position:sticky; top:0; z-index:20;
+  background:#fff;
+  border-bottom:1px solid #E4DED0;
+}
+nav.wrap{ display:flex; align-items:center; justify-content:space-between; height:72px; max-width:1120px; }
+.brand{ display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--ink); }
+.brand img{ height:32px; width:32px; flex:none; display:block; }
+.word{ font-family:Newsreader, serif; font-weight:500; font-size:26px; letter-spacing:-0.03em; line-height:1; text-transform:lowercase; }
+.dot{ display:inline-block; width:5px; height:5px; margin:0 0 11px 3px; border-radius:50%; background:var(--oxblood); vertical-align:middle; }
+.navlinks{ display:flex; align-items:center; gap:28px; }
+.navlinks a{ text-decoration:none; color:var(--ink); font-size:14px; }
+.navlinks a:hover{ color:var(--navy); }
+.nav-menu{
+  display:none; width:44px; height:44px; flex:none; padding:0;
+  border:1px solid var(--ink); background:transparent; color:var(--ink); cursor:pointer;
+  align-items:center; justify-content:center;
+}
+.nav-menu-bars, .nav-menu-bars::before, .nav-menu-bars::after{
+  display:block; width:16px; height:1.5px; background:currentColor; position:relative;
+}
+.nav-menu-bars::before, .nav-menu-bars::after{ content:""; position:absolute; left:0; }
+.nav-menu-bars::before{ top:-5px; }
+.nav-menu-bars::after{ top:5px; }
+.nav-menu[aria-expanded="true"] .nav-menu-bars{ background:transparent; }
+.nav-menu[aria-expanded="true"] .nav-menu-bars::before{ top:0; transform:rotate(45deg); }
+.nav-menu[aria-expanded="true"] .nav-menu-bars::after{ top:0; transform:rotate(-45deg); }
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  min-height:44px; padding:12px 18px; border-radius:0;
+  font-family:Inter, sans-serif; font-size:14px; font-weight:500;
+  white-space:nowrap; text-decoration:none; border:1px solid transparent; cursor:pointer;
+}
+.btn-primary{ background:var(--navy); color:var(--paper); }
+.btn-primary:hover{ background:#183049; }
+.navcta{ display:flex; gap:14px; align-items:center; }
+.nav-login{ text-decoration:none; color:var(--ink); font-size:14px; white-space:nowrap; }
+.nav-login:hover{ color:var(--navy); }
+.navlinks .nav-login{ display:none; }
+
+main{ padding:96px 0 96px; }
+.eyebrow{
+  font-family:"JetBrains Mono", ui-monospace, monospace;
+  font-size:12px; letter-spacing:0.14em; text-transform:uppercase;
+  color:var(--slate); margin:0 0 12px;
+}
+.post-title{ font-size:48px; line-height:1.08; margin-bottom:14px; }
+.post-meta{
+  font-family:"JetBrains Mono", ui-monospace, monospace;
+  font-size:12px; letter-spacing:0.04em; color:var(--slate); margin-bottom:40px;
+}
+article.post-body{ max-width:620px; }
+article.post-body h2{ font-size:28px; margin:48px 0 14px; line-height:1.2; }
+article.post-body h3{ font-size:22px; margin:32px 0 10px; line-height:1.25; }
+article.post-body p{ margin:0 0 18px; }
+article.post-body a{ text-underline-offset:3px; }
+article.post-body ul, article.post-body ol{ margin:0 0 18px; padding-left:22px; }
+article.post-body li{ margin-bottom:8px; }
+article.post-body strong{ font-weight:600; }
+article.post-body blockquote{ margin:28px 0; padding:0 0 0 18px; border-left:2px solid var(--ink); color:var(--ink); font-family:Newsreader, serif; font-size:22px; line-height:1.35; font-weight:500; }
+article.post-body table{ width:100%; border-collapse:collapse; margin:0 0 22px; font-size:15px; }
+article.post-body th, article.post-body td{ border-bottom:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top; }
+article.post-body th{ font-family:"JetBrains Mono", ui-monospace, monospace; font-size:12px; letter-spacing:0.06em; text-transform:uppercase; font-weight:500; color:var(--slate); }
+article.post-body td{ font-variant-numeric:tabular-nums; }
+article.post-body code{ font-family:"JetBrains Mono", ui-monospace, monospace; font-size:0.9em; background:#EBE6DA; padding:1px 5px; }
+article.post-body hr{ border:none; border-top:1px solid var(--line); margin:40px 0; }
+.table-wrap{ overflow-x:auto; margin:0 0 22px; }
+.table-wrap table{ width:100%; border-collapse:collapse; font-size:15px; }
+.table-wrap th, .table-wrap td{ text-align:left; padding:10px 14px; border-bottom:1px solid var(--line); vertical-align:top; }
+.table-wrap th{ font-family:"JetBrains Mono", ui-monospace, monospace; font-size:12px; letter-spacing:0.06em; text-transform:uppercase; font-weight:500; color:var(--slate); }
+.table-wrap td{ font-variant-numeric:tabular-nums; }
+.post-cta{ background:var(--navy); color:var(--paper); padding:36px 32px; margin:56px 0 48px; }
+.post-cta h3,
+article.post-body .post-cta h3{ font-size:32px; line-height:1.15; color:var(--paper); margin:0 0 10px; max-width:22ch; font-weight:500; }
+.post-cta p{ color:var(--paper); margin:0 0 18px; }
+.post-cta .btn-primary{ background:var(--paper); color:var(--navy); }
+.post-cta .btn-primary:hover{ background:#fff; }
+.post-cta :focus-visible{ outline-color:var(--paper); }
+
+.post-list-item{ padding:28px 0; border-top:1px solid var(--line); }
+.post-list-item:first-of-type{ border-top:1px solid var(--line); }
+.post-list-item h2{ font-size:28px; line-height:1.2; margin-bottom:8px; }
+.post-list-item h2 a{ text-decoration:none; }
+.post-list-item h2 a:hover{ text-decoration:underline; text-underline-offset:3px; }
+.post-list-item p{ color:var(--slate); margin:0; }
+
+footer{ background:var(--paper); border-top:1px solid var(--line); padding:48px 0 28px; }
+footer .wrap{ display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:28px; max-width:1120px; }
+footer .word{ font-size:22px; }
+footer .fnote{ font-size:14px; color:var(--slate); margin-top:12px; max-width:46ch; line-height:1.5; }
+footer .fnav{ display:flex; gap:22px; flex-wrap:wrap; }
+footer .fnav a{ text-decoration:none; font-size:14px; color:var(--slate); }
+footer .fnav a:hover{ color:var(--ink); }
+.copyright{ font-size:12px; letter-spacing:0.04em; color:var(--slate); margin-top:28px; max-width:1120px; margin-left:auto; margin-right:auto; padding:0 32px; font-family:"JetBrains Mono", ui-monospace, monospace; }
+
+.hs-modal-overlay{ display:none; position:fixed; inset:0; z-index:1000; background:rgba(15,31,51,0.72); align-items:center; justify-content:center; padding:24px; }
+.hs-modal-overlay.open{ display:flex; }
+.hs-modal{ background:var(--paper); border-radius:0; width:100%; max-width:500px; max-height:88vh; overflow-y:auto; padding:36px 28px 28px; position:relative; border:1px solid var(--line); }
+.hs-modal-close{ position:absolute; top:8px; right:8px; width:44px; height:44px; background:none; border:none; font-size:26px; line-height:1; cursor:pointer; color:var(--ink); }
+.hs-modal h3{ font-size:28px; margin:0 0 8px; }
+.hs-modal p.sub{ color:var(--slate); font-size:15px; margin:0 0 20px; }
+
+@media (max-width: 720px){
+  nav.wrap{ flex-wrap:wrap; height:auto; padding-top:8px; padding-bottom:8px; row-gap:0; }
+  .nav-menu{ display:inline-flex; }
+  .navlinks{ display:none; order:3; width:100%; flex-direction:column; align-items:stretch; gap:0; padding:4px 0 8px; }
+  .navlinks.is-open{ display:flex; }
+  .navlinks a{ white-space:nowrap; min-height:44px; display:flex; align-items:center; padding:0 4px; }
+  .navcta .nav-login{ display:none; }
+  .navlinks.is-open .nav-login{ display:flex; }
+  footer .fnav{ width:100%; flex-wrap:wrap; overflow:visible; }
+  footer .fnav a{ white-space:nowrap; min-height:44px; display:inline-flex; align-items:center; padding:0 10px; }
+  .post-title{ font-size:36px; }
+  .wrap{ padding:0 20px; }
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Handoffs That Invent a Second Source of Truth",
+  "description": "Before you trust Closed-Won, check where your team actually works after the handoff. If seats, package, and renewal dates live in a kickoff sheet, HubSpot is no longer your source of truth.",
+  "datePublished": "2026-11-19",
+  "dateModified": "2026-11-19",
+  "author": {
+    "@type": "Organization",
+    "name": "Buoy"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Buoy",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://buildwithbuoy.com/logo-512.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://buildwithbuoy.com/blog/handoffs-that-invent-a-second-source-of-truth.html"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a second source of truth in a Sales-to-CS handoff?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is any working copy of commercial or process facts—seats, package, success criteria, renewal date—that lives outside the owned CRM (or linked system) and is what the team actually operates from. HubSpot becomes an announcement log; decisions follow the shadow system."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are kickoff documents always bad?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. They fail when they replace dispositioned CRM truth instead of narrating it. Reference the record; do not re-key the commercial spine into a doc that never writes back."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who should own handoff field definitions?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Leaders cosign meaning (CRO, COO, Head of CS, Finance as needed). RevOps implements. If RevOps alone owns “what good looks like at handoff,” definitions soft-fail the first hard disagreement."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What comes after the handoff fields are defined?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Audit defines which handoff-critical fields must be true and who owns them. Flagging those fields in the record when they go blank, contradict, or drift is on the roadmap—so risks show while there’s still time to act, not only when onboarding is already late."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What should a CEO ask instead of “improve our handoff process”?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ask which fields must be true after Sales→CS and Won→Entitlement, who owns conflict when systems disagree, and whether a customer can be narrated without a translator. Process follows that foundation—not the other way around."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <nav class="wrap">
+    <a class="brand" href="/">
+      <img src="/assets/buoy-mark.svg" alt="Buoy">
+      <span class="word">buoy<span class="dot" aria-hidden="true"></span></span>
+    </a>
+    <div class="navlinks" id="site-nav">
+      <a href="/#how-it-works">How it works</a>
+      <a href="/#product">Product</a>
+      <a href="/#story">Why Buoy</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/blog/">Blog</a>
+      <a class="nav-login" href="https://admin.buildwithbuoy.com/admin/login">Log in</a>
+    </div>
+    <div class="navcta">
+      <button class="nav-menu" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><span class="nav-menu-bars" aria-hidden="true"></span></button>
+      <a class="nav-login" href="https://admin.buildwithbuoy.com/admin/login">Log in</a>
+      <button class="btn btn-primary" onclick="openAuditModal(event)">Let's chat</button>
+    </div>
+  </nav>
+</header>
+<main>
+<div class="wrap">
+<p class="eyebrow">Published November 19, 2026</p>
+<h1 class="post-title">Handoffs That Invent a Second Source of Truth</h1>
+<p class="post-meta">By the Buoy team &middot; 11 min read</p>
+
+<article class="post-body">
+<p>Every handoff is a chance to invent a second source of truth. Sales celebrates Closed-Won. CS opens a kickoff sheet. Product provisions from a ticket. Finance books from a contract PDF. None of those motions are wrong—until the facts that leadership will defend live only in the handoff artifact and not in HubSpot (or an explicitly linked, owned system). CEOs, COOs, and CROs who ignore handoff design inherit three CRMs and one leadership deck that reconciles them. Trust the handoff model first; then trust the numbers.</p>
+<p><strong>By the Buoy team</strong> · <a href="https://buildwithbuoy.com/">buildwithbuoy.com</a> · ~11 min read</p>
+<hr />
+<h2>What a handoff is at executive altitude</h2>
+<p>A <strong>handoff</strong> is any moment where ownership of the customer story moves—and the receiving team needs facts the sending team believes are already “done.” Classic ones:</p>
+<ul>
+<li>Sales → CS (or Onboarding)</li>
+<li>Quote / CPQ → Deal → Entitlement / Product</li>
+<li>CS → Renewal / Expansion motion</li>
+<li>Support ↔ CS ↔ Sales on risk and champions</li>
+<li>Portco ops → PE reporting pack</li>
+</ul>
+<p>The operating question is not “did we schedule a meeting?” It is: <strong>after the handoff, which object holds the commercial and process facts—and can leadership drill without a translator?</strong></p>
+<p>If the answer is “the Google Doc,” “the Slack canvas,” or “what the CSM remembers from kickoff,” you have invented a second source of truth. The CRM stays full. Decisions get worse.</p>
+<p>Filled ≠ true. A Closed-Won with every required field completed still fails if CS re-enters seats, package, and success criteria in a parallel system that never writes back.</p>
+<hr />
+<h2>Why handoffs invent second truths (even on good teams)</h2>
+<p>It is rational under pressure:</p>
+<ul>
+<li>Kickoff needs richer narrative than the deal layout allows</li>
+<li>Product needs provisioning detail Sales never captured cleanly</li>
+<li>CS tools feel faster for health and playbooks than HubSpot custom objects</li>
+<li>Finance trusts the signed PDF more than the deal amount</li>
+<li>PE asks for a portfolio template that does not match any portco’s fields</li>
+</ul>
+<p>Speed creates shadow systems. Shadow systems become the real operating model. HubSpot becomes a museum of the win announcement.</p>
+<p>The fix is blunt: handoffs only hold when the fields they carry are dispositioned against how your process is supposed to work—not when teams are nicer about emailing attachments.</p>
+<hr />
+<h2>The handoffs that break decisions most often</h2>
+<table>
+<thead>
+<tr>
+<th>Handoff</th>
+<th>Facts leadership needs after</th>
+<th>Second-truth pattern</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sales → CS</strong></td>
+<td>Package, seats, use case, champions, success criteria, commercial start</td>
+<td>Kickoff sheet becomes system of record; deal goes cold</td>
+</tr>
+<tr>
+<td><strong>Quote → Won</strong></td>
+<td>SKU mix and amount Finance will recognize</td>
+<td>PDF ≠ deal fields; “we’ll fix in billing”</td>
+</tr>
+<tr>
+<td><strong>Won → Entitlement</strong></td>
+<td>What was provisioned vs sold</td>
+<td>Seats edited in product/billing; CRM never updated</td>
+</tr>
+<tr>
+<td><strong>CS → Renewal</strong></td>
+<td>Contract end + current entitlement + risk</td>
+<td>Health score and a spreadsheet calendar; no renewal deal</td>
+</tr>
+<tr>
+<td><strong>Expansion sell</strong></td>
+<td>Same commercial vocabulary as original</td>
+<td>New deal invents ARR that NRR will not cosign</td>
+</tr>
+<tr>
+<td><strong>Risk escalation</strong></td>
+<td>Champion loss, usage drop, open risk</td>
+<td>Slack thread; CRM risk field blank or “Other”</td>
+</tr>
+</tbody>
+</table>
+<p>Each pattern is a foundation incident dressed as collaboration.</p>
+<hr />
+<h2>The fifteen-minute handoff honesty check</h2>
+<p>Use this in a CRO/COO/Head of CS working session. Sample fifteen Closed-Won deals from the last two quarters that should have reached CS.</p>
+<p>For each, score Yes / No / Unknown:</p>
+<ol>
+<li>Can you see <strong>package / seats / commercial start</strong> on the HubSpot record (or linked owned source) without opening a kickoff doc?</li>
+<li>Did CS <strong>re-key</strong> any of those facts into another system as the working copy?</li>
+<li>Is there a <strong>written rule</strong> for which system wins when deal and CS workspace disagree?</li>
+<li>Is <strong>renewal date</strong> present where leadership expects it—or only in the handoff artifact?</li>
+<li>If you asked a new CSM to run the account from HubSpot alone for a week, would they be <strong>flying blind</strong>?</li>
+</ol>
+<p>If (2) is often Yes and (3) is No, you do not have a training problem. You have an undispositioned handoff. Dashboards that roll up those deals are decorative.</p>
+<hr />
+<h2>“We have a handoff process” vs “we have one source of truth”</h2>
+<p>Process theater looks like:</p>
+<ul>
+<li>A checklist PDF nobody updates when the product catalog changes</li>
+<li>A mandatory kickoff meeting with no field-level write-back</li>
+<li>Required HubSpot properties filled with “see Notion”</li>
+<li>A Zap that creates a CS project but does not sync commercial truth</li>
+<li>Managers who “know the real package” in forecast and QBRs</li>
+</ul>
+<p>One source of truth looks like:</p>
+<ul>
+<li>Dispositioned material fields with object ownership</li>
+<li>Handoff artifacts that <strong>reference</strong> CRM truth, not replace it</li>
+<li>Conflict rules when quote, CRM, billing, and CS disagree—and visibility in-record when conflict exists</li>
+<li>Renewal and expansion motions that read entitlement language Sales and Finance already own</li>
+<li>Later (on the roadmap): in-record markers when handoff-critical fields drift or stay blank past the motion’s definition of good</li>
+</ul>
+<p>Enforcement without disposition locks theater: every deal gets “Implementation notes: TBD” so the stage gate opens, and CS still builds the real plan elsewhere.</p>
+<hr />
+<h2>Disposition the handoff before you buy another tool</h2>
+<ol>
+<li><strong>Name the decisions</strong> the handoff feeds — time-to-value, expansion coverage, renewal Commit, NRR, support routing, PE “what did they buy?”</li>
+<li><strong>Inventory material handoff fields</strong> on deal, company, line item/subscription, ticket—material means: if this lies or only lives in a sheet, an executive decision gets worse</li>
+<li><strong>Disposition each one</strong> — Keep / Delete / Turn into a rule / Pending on a named person / Blocked on a process decision</li>
+<li><strong>Assign ownership</strong> — who owns meaning at each stage; who is allowed to change seats after won; where renewal date lives</li>
+<li><strong>Only then</strong> automate project creation, sync, or in-record honesty markers</li>
+</ol>
+<p>Pending on “does CS or Sales own success criteria after Closed-Won?” is an executive conversation. RevOps should not silently pick a side in a workflow.</p>
+<hr />
+<h2>Operating posture for leaders</h2>
+<h3>For CEOs and COOs</h3>
+<ul>
+<li>Treat parallel kickoff systems that rewrite commercial facts as foundation risk, not “CS tooling preference”</li>
+<li>Demand that one mid-market customer be narratable from HubSpot + linked owned sources without Slack archaeology</li>
+<li>Put commercial-loop handoffs on the same visual weight as pipeline hygiene in operating reviews</li>
+</ul>
+<h3>For CROs</h3>
+<ul>
+<li>Do not call the deal done at Closed-Won if handoff fields leadership needs are still Pending or Blocked</li>
+<li>Align AEs on package language that CS and Finance will inherit—not nicknames that die at kickoff</li>
+<li>Refuse expansion forecasts that ignore current entitlement invented in the CS workspace</li>
+</ul>
+<h3>For Heads of CS and Product (stakeholders)</h3>
+<ul>
+<li>Own the receiving definition of good: which fields must be true before you accept the account</li>
+<li>Escalate missing contract dates—do not rebuild them quietly in a sheet</li>
+<li>Cosign conflict rules with Sales and Finance; do not absorb second-truth work as heroics</li>
+</ul>
+<p>Leaders decide meaning. RevOps runs the system. When handoffs are “owned by whoever is nicest in Slack,” the second source of truth wins by default.</p>
+<hr />
+<h2>A thirty-day shift from handoff theater to record truth</h2>
+<h3>Week 1 — Map three handoffs only</h3>
+<p>Sales→CS, Won→Entitlement, CS→Renewal. Write what must be true in-record after each for the decisions you actually run.</p>
+<h3>Week 2 — Sample and list second truths</h3>
+<p>Fifteen deals. Every time a sheet, ticket, or Slack message held the working copy, log it. That list is the backlog—not a shame list.</p>
+<h3>Week 3 — Disposition the break fields</h3>
+<p>Keep / Delete / Rule / Pending / Blocked. Schedule the Blocked fights (catalog language, seat-change authority, renewal object ownership).</p>
+<h3>Week 4 — Change the motion</h3>
+<p>Kickoff starts from the CRM record. Handoff docs become views or links, not re-keys. Any in-record markers come after the model—not as a substitute for deciding who owns the fact.</p>
+<p>You will not collapse every tool in thirty days. You will stop pretending the win announcement was the foundation.</p>
+<hr />
+<h2>What good looks like</h2>
+<p>Operating evidence beats slogans:</p>
+<ul>
+<li>Material handoff fields dispositioned with owners</li>
+<li>CS and Product can run from CRM-true commercial facts (or explicitly linked systems)</li>
+<li>Conflict rules when systems disagree—and visibility when they do</li>
+<li>Renewal and expansion using the same vocabulary as the original won</li>
+<li>Leadership team and PE questions that survive drill-down without a war room</li>
+<li>Later, in-record markers (on the roadmap) when handoff-critical facts drift</li>
+</ul>
+<p>If you cannot point to those, another kickoff template will not create one source of truth. It will format the second one more nicely.</p>
+<hr />
+<h2>What Buoy does in this picture (without the hard sell)</h2>
+<p>Buoy’s team works with you, hands-on, to document how your GTM process is supposed to work and find where HubSpot has drifted from it—so the decisions you take to your leadership team run on process-true data, not theater. Handoffs are where that drift usually starts. The <strong>Audit</strong> documents how GTM should run across those moments and dispositions every material property, top-down and bottom-up. Keeping the model honest <strong>in-record</strong> after the Audit is on the roadmap. You keep the docs. Leaders decide. RevOps runs it.</p>
+<p>If Closed-Won looks clean and CS still rebuilds the customer in a sheet, you do not have a communication problem. You have a second source of truth.</p>
+<p><strong>Soft next step:</strong> <a href="https://buildwithbuoy.com/">Book an audit call</a> to disposition the Sales→CS and commercial handoff fields your customer journey and renewal Commit actually depend on—before you add another kickoff tool on soft records.</p>
+<hr />
+<h2>FAQ</h2>
+<h3>What is a second source of truth in a Sales-to-CS handoff?</h3>
+<p>It is any working copy of commercial or process facts—seats, package, success criteria, renewal date—that lives outside the owned CRM (or linked system) and is what the team actually operates from. HubSpot becomes an announcement log; decisions follow the shadow system.</p>
+<h3>Are kickoff documents always bad?</h3>
+<p>No. They fail when they <em>replace</em> dispositioned CRM truth instead of narrating it. Reference the record; do not re-key the commercial spine into a doc that never writes back.</p>
+<h3>Who should own handoff field definitions?</h3>
+<p>Leaders cosign meaning (CRO, COO, Head of CS, Finance as needed). RevOps implements. If RevOps alone owns “what good looks like at handoff,” definitions soft-fail the first hard disagreement.</p>
+<h3>What comes after the handoff fields are defined?</h3>
+<p>The Audit defines which handoff-critical fields must be true and who owns them. Flagging those fields <strong>in the record</strong> when they go blank, contradict, or drift is on the roadmap—so risks show while there’s still time to act, not only when onboarding is already late.</p>
+<h3>What should a CEO ask instead of “improve our handoff process”?</h3>
+<p>Ask which fields must be true after Sales→CS and Won→Entitlement, who owns conflict when systems disagree, and whether a customer can be narrated without a translator. Process follows that foundation—not the other way around.</p>
+
+<div class="post-cta">
+  <h3>Can your leadership team trust the numbers?</h3>
+  <p>Book an audit call. We&rsquo;ll start from the numbers your leadership team uses, agree on what each one means, then clean up the HubSpot properties behind them.</p>
+  <button class="btn btn-primary" onclick="openAuditModal(event)">Book an audit call</button>
+</div>
+</article>
+
+</div>
+</main>
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="brand" href="/">
+        <img src="/assets/buoy-mark.svg" alt="Buoy">
+        <span class="word">buoy<span class="dot" aria-hidden="true"></span></span>
+      </a>
+      <p class="fnote">Done with you, a small number of clients at a time: the Audit, with Included Access to the workspace; Validation and AI fields; and Sonar and Ask Buoy for your leadership team.</p>
+    </div>
+    <div class="fnav">
+      <a href="/#how-it-works">How it works</a>
+      <a href="/#product">Product</a>
+      <a href="/#story">Why Buoy</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/blog/">Blog</a>
+      <a href="https://admin.buildwithbuoy.com/admin/login">Log in</a>
+      <a href="mailto:alex@buildwithbuoy.com">alex@buildwithbuoy.com</a>
+    </div>
+  </div>
+  <p class="copyright">&copy; 2026 Buoy.</p>
+</footer>
+
+<div class="hs-modal-overlay" id="hs-modal-overlay">
+  <div class="hs-modal" role="dialog" aria-modal="true" aria-labelledby="hs-modal-title">
+    <button class="hs-modal-close" onclick="closeAuditModal()" aria-label="Close">&times;</button>
+    <h3 id="hs-modal-title">Let's chat</h3>
+    <p class="sub">Tell us a bit about your business and we'll follow up to schedule a time.</p>
+    <div class="hs-form-frame" data-region="na2" data-form-id="8dd9daaf-2e19-460c-90ba-590573d0a90c" data-portal-id="247350596"></div>
+  </div>
+</div>
+<script src="https://js-na2.hsforms.net/forms/embed/247350596.js" defer></script>
+<script>
+  function openAuditModal(e){
+    if (e) e.preventDefault();
+    document.getElementById('hs-modal-overlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeAuditModal(){
+    document.getElementById('hs-modal-overlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('hs-modal-overlay').addEventListener('click', function(e){
+    if (e.target === this) closeAuditModal();
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key !== 'Escape') return;
+    var menu = document.querySelector('.nav-menu');
+    if (menu && menu.getAttribute('aria-expanded') === 'true'){
+      setNavOpen(false);
+      menu.focus();
+      return;
+    }
+    closeAuditModal();
+  });
+  function setNavOpen(open){
+    var menu = document.querySelector('.nav-menu');
+    var nav = document.getElementById('site-nav');
+    if (!menu || !nav) return;
+    menu.setAttribute('aria-expanded', open ? 'true' : 'false');
+    menu.setAttribute('aria-label', open ? 'Close menu' : 'Menu');
+    nav.classList.toggle('is-open', open);
+  }
+  var navMenu = document.querySelector('.nav-menu');
+  if (navMenu){
+    navMenu.addEventListener('click', function(){
+      var open = navMenu.getAttribute('aria-expanded') !== 'true';
+      setNavOpen(open);
+      if (open){
+        var first = document.querySelector('#site-nav a');
+        if (first) first.focus();
+      }
+    });
+  }
+</script>
+
+<!-- HubSpot tracking code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/247350596.js"></script>
+</body>
+</html>
