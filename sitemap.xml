@@ -52,4 +52,8 @@
     <loc>https://buildwithbuoy.com/blog/handoffs-that-invent-a-second-source-of-truth.html</loc>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://buildwithbuoy.com/blog/when-pipeline-and-nrr-speak-different-dialects.html</loc>
+    <priority>0.7</priority>
+  </url>
 </urlset>
